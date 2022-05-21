@@ -3,12 +3,51 @@ layout: layouts/home.njk
 eleventyNavigation:
   key: Home
   order: 1
+pagination:
+  data: collections.posts
+  size: 2
+  alias: posts
 ---
-{% set maxPosts = collections.posts.length | min(3) %}
-<h1>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>
+{% set postslist = collections.posts | head(-3) %}
+{% set postslistCounter = collections.posts | length %}
+{% include "recentposts.njk" %}
+{% include "postlist.njk" %}
+
+{% for post in posts | reverse %}
+  <h1 class="title-font text-lg font-medium text-gray-900 dark:text-white mb-3">
+    <a href="{{ post.url | url }}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+  </h1>
+{% endfor %}
+
+{# Pagination starts #}
+<div class="w-full border-t border-gray-200 dark:border-gray-800 font-mono mt-16">
+  <nav class="pagination flex flex-wrap justify-center text-gray-700 -mt-px">
+    {% if page.url != pagination.href.first %}
+      <a href="{{ pagination.href.first }}" class="p-2 mx-1 border-t border-transparent hover:border-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="align-middle fill-current text-gray-700 inline-block h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+        </svg>
+      </a>
+    {% endif %}
+    {% for pageEntry in pagination.pages %}
+      <a href="{{ pagination.hrefs[ loop.index0 ] }}" class="p-2 mx-1 border-t hover:border-gray-700 {% if page.url == pagination.hrefs[ loop.index0 ] %} border-black{% else %}{% endif %}" {% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ loop.index }}</a>
+    {% endfor %}
+    {% if pagination.href.next %}
+    <a class="p-2 mx-1" href="{{ pagination.href.next }}">
+      <svg xmlns="http://www.w3.org/2000/svg" class="align-middle fill-current text-gray-700 inline-block h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+      </svg>
+    </a>
+    {% endif %}
+  </nav>
+</div>
+{# Pagination ends #}
+
+{# {% set maxPosts = collections.posts.length | min(3) %}
 
 {% set postslist = collections.posts | head(-3) %}
 {% set postslistCounter = collections.posts | length %}
-{% include "postslist.njk" %}
+{% include "recentposts.njk" %}
+{% include "postlist.njk" %} #}
 
-<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
+{# <p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p> #}

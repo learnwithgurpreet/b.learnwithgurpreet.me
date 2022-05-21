@@ -3,10 +3,31 @@ const fs = require("fs");
 const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const readingTime = require("eleventy-plugin-reading-time");
+const striptags = require("striptags");
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
+
+function extractExcerpt(article) {
+  if (!article.hasOwnProperty("templateContent")) {
+    console.warn(
+      'Failed to extract excerpt: Document has no property "templateContent".'
+    );
+    return null;
+  }
+
+  let excerpt = null;
+  const content = article.templateContent;
+
+  excerpt = striptags(content)
+    .substring(0, 200) // Cap at 200 characters
+    .replace(/^\s+|\s+$|\s+(?=\s)/g, "")
+    .trim()
+    .concat("...");
+  return excerpt;
+}
 
 module.exports = function (eleventyConfig) {
   // Copy the `img`, `js` and `css` folders to the output
@@ -18,7 +39,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
-
+  eleventyConfig.addPlugin(readingTime);
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
       "dd LLL yyyy"
@@ -98,6 +119,9 @@ module.exports = function (eleventyConfig) {
     ui: false,
     ghostMode: false,
   });
+
+  // Add short codes
+  eleventyConfig.addShortcode("excerpt", (article) => extractExcerpt(article));
 
   return {
     // Control which files Eleventy will process

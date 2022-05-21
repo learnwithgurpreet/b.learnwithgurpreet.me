@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply dark:bg-gray-800 bg-white;
+}
+
 .active {
   @apply font-bold;
 }
