@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active {
+  @apply font-bold;
+}
+
+/* ***********
+Toggle Button
+************* */
+
+.mode-toggle {
+  display: flex;
+  height: 1.5rem;
+  width: 1.5rem;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.is-ready > .mode-toggle-icons {
+  transition: all .1s cubic-bezier(.24,.82,.79,1.22);
+}
+
+.dark .mode-toggle-icons {
+  transform: translateY(-50%);
+}
