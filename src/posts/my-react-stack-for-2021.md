@@ -11,7 +11,7 @@ My ReactJS tech stack in which you might be interested. I will showcase what opt
 
 People often use [create-react-app](https://github.com/facebook/create-react-app) for their ReactJS projects. The default setup comes with ES6 syntax, but you can also switch your default installer to install TypeScript-based ReactJS App.
 
-```
+```bash
 # Default install command
 $ npx create-react-app my-app
 
@@ -25,7 +25,7 @@ It will help you to make your JavaScript code less error-prone since it validate
 
 When it comes to developing medium to large-scale applications, I would prefer to use [React Router](https://reactrouter.com/). This helps you to define your routes for your single-page application projects. React Router is a collection of navigational components that compose declaratively with your application. Whether you want to bookmark URLs for your web app or a composable way to navigate in React Native, React Router works wherever React is rendering.
 
-```
+```bash
 $ npm i react-router
 ```
 
@@ -41,7 +41,7 @@ It is also known as an internal state of a component, which can be managed by yo
 
 The application-level state is similar to the component state but works on the application level. For example, if you want to change the shopping cart count when someone adds a product to the cart. You need an application-level shared state which can work as a single source of truth for your application state. There are a couple of options to go with but I prefer using [Redux library](https://redux.js.org/). It is a powerful library to handle a predictable state for your application. You can install this library as the initial setup of your ReactJS project.
 
-```
+```bash
 # This command provides react boilerplate with redux
 $ npx create-react-app my-app --template redux
 
@@ -65,7 +65,7 @@ One of the most important parts of every project. It’s been a couple of years 
 
 You can use this library in your old ReactJS project as well
 
-```
+```bash
 $ npm i -D @testing-library/react
 ```
 
@@ -73,7 +73,7 @@ $ npm i -D @testing-library/react
 
 [Storybook](https://storybook.js.org/) is an isolated library that can help to showcase ReactJS based components from the end-user perspective. It simplifies building, documenting, and testing UIs. You can develop presentational components even without having backend services in place.
 
-```
+```bash
 # Following command will automatically detect your project type
 $ npx sb init
 ```
@@ -82,6 +82,6 @@ $ npx sb init
 
 [NextJS](https://nextjs.org/) comes with lots of built-in features which will surely take time to build if you want to build them from scratch. It has default support to server-side rendering which helps you to make better SEO-friendly applications. It also has built-in support for TypeScript.
 
-```
+```bash
 $ npx create-next-app
 ```

@@ -32,8 +32,8 @@ Note: If you want to check what all packages are being installed, simply remove 
 
 In the above-mentioned command, I showed you how to install the latest packages, but you need to do it manually. What if I give you an option where you don't need to perform manually but your Raspberry Pi will do it for you like Windows/Ubuntu.
 
-```
-# Intall following package
+```bash
+# Install following package
 $ sudo apt install unattended-upgrades -y
 
 # After installation open following file
@@ -56,7 +56,7 @@ Since now we are up to date with our packages and auto-updates, it's time to set
 
 Raspberry Pi comes with a default user pi which every hacker is aware of. To get rid of the obvious chance to get hacked is to create a new user.
 
-```
+```bash
 # First, create new user (gurpreet is a new user)
 $ sudo adduser gurpreet
 
@@ -73,7 +73,7 @@ Try: `sudo whoami` to check sudo user and it should return `root` as output.
 
 Job is not done here, we need to lock the default `pi` user as well.
 
-```
+```bash
 $ sudo passwd -l pi
 ```
 
@@ -87,13 +87,13 @@ By default Raspberry Pi has open lots of ports for communication, sometimes hack
 
 There are some packages that you can install to add a firewall, sometimes it gets very difficult to set up. I would recommend a package called [UFW](https://help.ubuntu.com/community/UFW) which is quite easy to set up and is being widely used by industry-leading hosting companies like [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-20-04).
 
-```
+```bash
 $ sudo apt install ufw -y
 ```
 
 After the installation, enable `SSH` as a very first thing because I believe you will be logged in via `SSH`.
 
-```
+```bash
 $ sudo ufw allow 22/tcp comment "SSH"
 ```
 
@@ -104,13 +104,13 @@ Nginx, etc...
 
 After adding all required ports, please enable `ufw` the firewall by triggering the following command.
 
-```
+```bash
 $ sudo ufw enable
 ```
 
 It will immediately enable defined firewall rules on your Raspberry Pi. You can anytime check these defined rules with a command.
 
-```
+```bash
 $ sudo ufw status numbered
 ```
 
@@ -128,19 +128,19 @@ These days systems are capable enough to perform millions of calculations in a f
 
 To prevent our Raspberry Pi from a brute-force attack we need to install another package that will protect it from it.
 
-```
+```bash
 $ sudo apt install fail2ban -y
 ```
 
 After installing it you need to configure it for your personal use.
 
-```
+```bash
 # Open fail2ban configuration file
 
 $ sudoedit /etc/fail2ban/jail.local
 ```
 
-```
+```bash
 # Add following information
 
 [DEFAULT]

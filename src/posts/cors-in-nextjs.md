@@ -13,7 +13,7 @@ These serverless functions are nothing but open up NodeJS server-side script acc
 
 ## How to setup NextJS API
 
-```
+```bash
 npx create-next-app --example with-mongodb with-mongodb-app
 # or
 yarn create next-app --example with-mongodb with-mongodb-app
@@ -38,7 +38,7 @@ Set each variable on `.env.local`:
 
 ## Run Next.js in development mode
 
-```
+```bash
 npm install
 npm run dev
 
@@ -56,7 +56,7 @@ After setting up the database and server, now it’s time to set CORS settings.
 
 Create `vercel.json` under the root folder.
 
-```
+```bash
 {
   "headers": [
     {
@@ -82,7 +82,7 @@ The above change will work for `GET` requests but you will face problems while m
 
 Go to `/api/index.js` file.
 
-```
+```bash
 export default async (req, res) => {
   const { method } = req
 

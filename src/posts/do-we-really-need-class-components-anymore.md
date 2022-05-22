@@ -15,19 +15,19 @@ Do you want to know why?
 
 ## Rendering JSX
 
-```
-import React from "react"
+```js
+import React from "react";
 
 const FunctionalComponent = () => {
-  return <h1>Hello, world!</h1>
-}
+  return <h1>Hello, world!</h1>;
+};
 ```
 
-```
-import React, { Component } from "react"
+```js
+import React, { Component } from "react";
 class ClassComponent extends Component {
   render() {
-    return <h1>Hello, world!</h1>
+    return <h1>Hello, world!</h1>;
   }
 }
 ```
@@ -40,18 +40,18 @@ When it comes to handling states in ReactJS, it is debatable which type of compo
 
 We can handle the state with **React hooks** since **React 16.8** within functional components.
 
-```
+```js
 /* State handling with class component */
 
-import React, { Component } from "react"
+import React, { Component } from "react";
 
 class ClassComponent extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     // Initial state
     this.state = {
       count: 0,
-    }
+    };
   }
   render() {
     return (
@@ -61,26 +61,26 @@ class ClassComponent extends Component {
           Click
         </button>
       </div>
-    )
+    );
   }
 }
 ```
 
-```
+```js
 /* State handling with the functional component, using react hooks */
 
-import React, { useState } from "react"
+import React, { useState } from "react";
 
 const FunctionalComponent = () => {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div>
       <p>count: {count}</p>
       <button onClick={() => setCount(count + 1)}>Click</button>
     </div>
-  )
-}
+  );
+};
 ```
 
 **That was easy, right?**
@@ -93,45 +93,45 @@ Let’s talk about React lifecycle methods now. These methods are the backbone o
 
 ### On Mount (componentDidMount)
 
-```
+```js
 /* Class component */
 
-import React, { Component } from "react"
+import React, { Component } from "react";
 
 class ClassComponent extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       name: "",
-    }
+    };
   }
   componentDidMount() {
     fetch("some-api.com/user")
-      .then(response => response.json())
-      .then(data => this.setState({ name: data }))
+      .then((response) => response.json())
+      .then((data) => this.setState({ name: data }));
   }
 
   render() {
-    return <h1>{`Hello, my name is ${this.state.name}`}</h1>
+    return <h1>{`Hello, my name is ${this.state.name}`}</h1>;
   }
 }
 ```
 
-```
+```js
 /* Functional component, using react hooks */
 
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 
 const FunctionalComponent = () => {
-  const [name, setName] = useState("")
+  const [name, setName] = useState("");
   useEffect(() => {
     fetch("some-api.com/user")
-      .then(response => response.json())
-      .then(data => setName(data))
-  }, [])
+      .then((response) => response.json())
+      .then((data) => setName(data));
+  }, []);
 
-  return <h1>{`Hello, my name is ${name}`}</h1>
-}
+  return <h1>{`Hello, my name is ${name}`}</h1>;
+};
 ```
 
 See, how easy it is to call an API within a functional component using [useEffect](https://reactjs.org/docs/hooks-reference.html#useeffect).
@@ -142,37 +142,37 @@ Note: The second parameter of the `useEffect` hook is basically listening to an 
 
 In some instances, where you need to clear your timers and de-allocate memory on the unmount.
 
-```
+```js
 /* Class component */
 
-import React, { Component } from "react"
+import React, { Component } from "react";
 
 class ClassComponent extends Component {
   componentDidMount() {
-    const element = document.getElementById("someId")
-    element.removeEventListener("click", this.onLinkClick)
-    element.addEventListener("click", this.onLinkClick)
+    const element = document.getElementById("someId");
+    element.removeEventListener("click", this.onLinkClick);
+    element.addEventListener("click", this.onLinkClick);
   }
 
   componentWillUnmount() {
-    const element = document.getElementById("someId")
-    element.removeEventListener("click", this.onLinkClick)
+    const element = document.getElementById("someId");
+    element.removeEventListener("click", this.onLinkClick);
   }
 
   onLinkClick = () => {
     /* Something in this function */
-  }
+  };
 
   render() {
-    return <button id="someId">I am button</button>
+    return <button id="someId">I am button</button>;
   }
 }
 ```
 
-```
+```js
 /* Functional component, using react hooks */
 
-import React, { useEffect } from "react"
+import React, { useEffect } from "react";
 
 const FunctionalComponent = () => {
   function onLinkClick() {
@@ -180,15 +180,15 @@ const FunctionalComponent = () => {
   }
 
   useEffect(() => {
-    element.removeEventListener("click", onLinkClick)
-    element.addEventListener("click", onLinkClick)
+    element.removeEventListener("click", onLinkClick);
+    element.addEventListener("click", onLinkClick);
     return () => {
-      element.removeEventListener("click", onLinkClick)
-    }
-  }, [])
+      element.removeEventListener("click", onLinkClick);
+    };
+  }, []);
 
-  return <button id="someId">I am button</button>
-}
+  return <button id="someId">I am button</button>;
+};
 ```
 
 ## Conclusion

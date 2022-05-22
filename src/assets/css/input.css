@@ -10,6 +10,38 @@ body {
   @apply font-bold;
 }
 
+.post-content {
+  @apply pb-10 overflow-hidden;
+}
+
+.post-content p {
+  @apply mb-5;
+}
+
+.post-content blockquote {
+  @apply bg-emerald-100 text-emerald-700 border-l-8 border-l-emerald-700 rounded-sm my-6 px-6 py-4;
+}
+
+.post-content blockquote p {
+  @apply mb-0;
+}
+
+.post-content ul {
+  @apply list-disc pl-7;
+}
+
+.post-content ul li {
+  @apply pl-1 my-2;
+}
+
+.post-content ol {
+  @apply list-decimal pl-7;
+}
+
+.post-content ol li {
+  @apply pl-1 my-2;
+}
+
 .post-content h2 {
   @apply font-semibold text-2xl my-6;
 }
@@ -28,8 +60,8 @@ body {
   @apply mx-auto my-4;
 }
 
-.post-content {
-  @apply pb-10;
+.post-content code:not([class*="language-"]) {
+  @apply bg-gray-900 text-gray-200 p-1 rounded-md break-words;
 }
 
 /* ***********

@@ -13,14 +13,14 @@ Web developers often treat accessibility as the last check-in of their component
 
 For example, what tag would you prefer to use to define your button?
 
-```js
+```html
 <!-- with button tag? -->
 <button>My button</button>
 ```
 
 or
 
-```
+```html
 <!-- with div tag? -->
 <div tabindex="0" role="button" aria-pressed="false">
   My button
@@ -36,7 +36,7 @@ Following are some semantic HTML attributes that behave the way they are defined
 
 ## Examples
 
-```
+```html
 <!-- Buttons -->
 Bad Practice 🚫
 <div tabindex="0" role="button" aria-pressed="false">

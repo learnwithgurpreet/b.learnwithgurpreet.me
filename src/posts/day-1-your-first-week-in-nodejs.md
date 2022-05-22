@@ -23,21 +23,21 @@ download nodejs page
 
 After the installation, you can simply open your terminal/command prompt, to check if it’s running or not.
 
-```
+```bash
 $ node --version
 // v14.16.1 (in my case)
 ```
 
 In addition to the above, you can also go to any editor and create a file `app.js` (or any name).
 
-```
+```js
 // app.js
-console.log("node is working")
+console.log("node is working");
 ```
 
 Now run this file using Node.js
 
-```
+```bash
 $ node app.js
 // node is working
 ```
@@ -52,7 +52,7 @@ The main difference between JavaScript (window) vs. Node.js global objects is, y
 
 You can try following code examples in Node.js
 
-```
+```js
 // app.js
 setTimeout(() => {
   console.log("5 seconds have passed");
@@ -66,7 +66,7 @@ Another useful global object is `process`, we will use this a lot in further les
 
 The common use case is to store credentials inside `process` to later use them in your program.
 
-```
+```bash
 // Setting process variable
 $ export DB_NAME=demo_db
 $ export DB_PASSWORD=yes_you_are_right
@@ -90,75 +90,75 @@ It can be a file or a function within the same file, you must have heard of the 
 
 ### Let’s take an example, you want to count the `length` of an array.
 
-```
+```js
 // Create a new file next to your app.js
 // count.js
 
-const count = arr => {
-  return arr.length
-}
+const count = (arr) => {
+  return arr.length;
+};
 ```
 
 Now you have `count.js` in place, it’s time to make it re-usable for the application.
 
 > Before calling it a module, we need to make some changes to the `count.js` file.
 
-```
+```js
 // count.js
 
-const count = arr => {
-  return arr.length
-}
+const count = (arr) => {
+  return arr.length;
+};
 
-module.exports = count // It will export this component as a module
+module.exports = count; // It will export this component as a module
 ```
 
 Since we have the `count` module ready to include, let’s call it in `app.js`.
 
-```
+```js
 // app.js
 
-const count = require("./count") // including `count` function as a module
-console.log(count([1, 98, 22, 41])) // return: 4
+const count = require("./count"); // including `count` function as a module
+console.log(count([1, 98, 22, 41])); // return: 4
 ```
 
 You can send multiple modules from your single file.
 
-```
+```js
 // utils.js
 
 const add = (a, b) => {
-  return a + b
-}
+  return a + b;
+};
 
 const sub = (a, b) => {
-  return a - b
-}
+  return a - b;
+};
 
-const getDatabaseName = () => process.env.DB_NAME
+const getDatabaseName = () => process.env.DB_NAME;
 
 module.exports = {
   add,
   sub,
   getDatabaseName,
-}
+};
 
 // You also change your public function names
 module.exports = {
   plus: add,
   minus: sub,
   DBName: getDatabaseName,
-}
+};
 ```
 
-```
+```js
 // app.js
 
-const utils = require("./utils")
+const utils = require("./utils");
 
-console.log(utils.add(1, 2)) // result: 3
-console.log(utils.sub(2, 1)) // result: 1
-console.log(utils.getDatabaseName()) // result: demo_db
+console.log(utils.add(1, 2)); // result: 3
+console.log(utils.sub(2, 1)); // result: 1
+console.log(utils.getDatabaseName()); // result: demo_db
 ```
 
 ## 4\. Event emitting
@@ -167,28 +167,28 @@ Like the above-defined module, we have some built-in core Node.js modules availa
 
 Similar to JavaScript `click`/`onChange` events Node.js has the capability to define your own events which can be used when needed.
 
-```
+```js
 // custom-events.js
 
-const events = require("events")
-const utils = require("./utils")
+const events = require("events");
+const utils = require("./utils");
 
-const eventEmitter = new events.EventEmitter()
+const eventEmitter = new events.EventEmitter();
 
 eventEmitter.on("showSum", (a, b) => {
-  console.log(`Sum is: ${utils.add(a, b)}`)
-})
+  console.log(`Sum is: ${utils.add(a, b)}`);
+});
 
-module.exports = eventEmitter
+module.exports = eventEmitter;
 ```
 
 Our event emitter module is now ready, let’s use it in our application.
 
-```
+```js
 // app.js
 
-const customEvents = require("./custom-events")
-customEvents.emit("showSum", 1, 2) // Sum is: 3
+const customEvents = require("./custom-events");
+customEvents.emit("showSum", 1, 2); // Sum is: 3
 ```
 
 ## 5\. Read/Write/Steam files
@@ -199,30 +199,30 @@ Let’s read the file first in order to try the `fs` module. But first, we need 
 
 ### Read operation ()
 
-```
+```bash
 // Inside the same directory
 $ touch read.txt
 $ vim ./read.text  // Add some content and save the file.
 ```
 
-```
+```js
 // app.js
 
-const fs = require("fs")
+const fs = require("fs");
 
-const readMeFile = fs.readFileSync("./read.txt", "utf-8")
-console.log(readMeFile) // File contents
+const readMeFile = fs.readFileSync("./read.txt", "utf-8");
+console.log(readMeFile); // File contents
 ```
 
 ### Write operation
 
-```
+```js
 // app.js
 
-const fs = require("fs")
+const fs = require("fs");
 
-const readMeFile = fs.readFileSync("./read.txt", "utf-8")
-fs.writeFileSync("./read-new.txt", readMeFile)
+const readMeFile = fs.readFileSync("./read.txt", "utf-8");
+fs.writeFileSync("./read-new.txt", readMeFile);
 ```
 
 The above statement will simply read the contents from the `read.txt` file write another file `read-new.txt` with its content.
@@ -233,17 +233,17 @@ On the other hand, `fs.readFile` can read files asynchronously, sometimes we use
 
 > Let’s quick touch upon async. file read operation:
 
-```
-const fs = require("fs")
+```js
+const fs = require("fs");
 
 fs.readFile("./read.txt", "utf-8", (err, data) => {
   if (err) {
-    console.error(err)
+    console.error(err);
   }
-  console.log(data)
-})
+  console.log(data);
+});
 
-console.log("Am I first?")
+console.log("Am I first?");
 
 // Result:
 // file content

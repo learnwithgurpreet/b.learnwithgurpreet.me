@@ -20,7 +20,7 @@ If you want to use Heroku as a deployment server then I would suggest you choose
 
 ### Local Postgre database setup
 
-```
+```bash
 $ psql
 $ CREATE DATABASE strapi_db;
 $ CREATE USER your_user_name WITH PASSWORD 'strong_password';
@@ -33,7 +33,7 @@ now you have a database setup on your local machine you are all set to install S
 
 Create strapi project by using the following commands:
 
-```
+```bash
 # Using yarn
 $ yarn create strapi-app app
 
@@ -63,12 +63,12 @@ Copy your `./config/database.js` file and put it into `./config/env/production/d
 
 Now we have two `database.js` files. Please do the following changes to the `./config/env/production/database.js` file.
 
-```
+```bash
 # you can now install the package to parse the database configs
 $ npm i pg-connection-string
 ```
 
-```
+```bash
 const parse = require("pg-connection-string").parse
 const config = parse(process.env.DATABASE_URL)
 
@@ -102,7 +102,7 @@ This process of keeping configurations is secure since no one can see these valu
 
 I believe you have Heroku already installed on your local if not you can follow the below commands:
 
-```
+```bash
 $ brew tap heroku/brew && brew install heroku
 ```
 
@@ -110,25 +110,25 @@ Or go to [Heroku](https://devcenter.heroku.com/articles/heroku-cli#download-and-
 
 Once you have Heroku install, you can log in.
 
-```
+```bash
 $ heroku login
 ```
 
 Create a new Heroku project
 
-```
+```bash
 $ heroku create heroku-app-name
 ```
 
 Add the Heroku Postgres [add-on](https://elements.heroku.com/addons/heroku-postgresql):
 
-```
+```bash
 $ heroku addons:create heroku-postgresql:hobby-dev --app heroku-app-name
 ```
 
 > You can check your Postgres configurations by triggering the following command.
 
-```
+```bash
 $ heroku config --app heroku-app-name
 
 # you will get a similar kind of string
@@ -141,7 +141,7 @@ You don’t have to worry to get these parameters since `pg-connection-string` w
 
 Deploy the project:
 
-```
+```bash
 # connect heroku git repo
 $ git init  # in if your directory is not git enabled
 $ git remote add heroku https://git.heroku.com/your-app-name.git

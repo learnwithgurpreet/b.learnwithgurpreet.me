@@ -11,49 +11,49 @@ There were a couple of questions that came to my mind when I saw this first. In 
 
 If you have noticed a recent post by Github, Copilot is an AI engine that helps you to write programs. It is a smart autocomplete peer programming bot that can smarty understand simple English and write code.
 
-```
+```bash
 // find images without an alt attribute
 // and give them a red border
 ```
 
 The above code will create a program that directly can find missing `alt` attribute images and perform the following action.
 
-```
+```js
 // find images without an alt attribute
 // and give them a red border
 function nonAltImages() {
-  const images = document.querySelectorAll("img")
+  const images = document.querySelectorAll("img");
   for (let i = 0; i < images.length; i++) {
     if (!images[i].hasAttribute("alt")) {
-      images[i].style.border = "1px solid red"
+      images[i].style.border = "1px solid red";
     }
   }
 }
 ```
 
-```
-import React from "react"
-import { render, fireEvent } from "@testing-library/react"
+```js
+import React from "react";
+import { render, fireEvent } from "@testing-library/react";
 
 function Counter() {
-  const [count, setCount] = React.useState(0)
+  const [count, setCount] = React.useState(0);
   return (
     <div>
-      <button onClick={() => setCount(currCount => currCount + 1)}>
+      <button onClick={() => setCount((currCount) => currCount + 1)}>
         Increment
       </button>
       <p>Count: {count}</p>
     </div>
-  )
+  );
 }
 
 // a unit test that asserts that count increases when the button is clicked
 it("increments count", () => {
-  const { getByText } = render(<Counter />)
-  const button = getByText("Increment")
-  fireEvent.click(button)
-  expect(getByText("Count: 1")).toBeInTheDocument()
-})
+  const { getByText } = render(<Counter />);
+  const button = getByText("Increment");
+  fireEvent.click(button);
+  expect(getByText("Count: 1")).toBeInTheDocument();
+});
 ```
 
 ## Will AI replace developers?

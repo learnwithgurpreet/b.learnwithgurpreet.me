@@ -14,7 +14,7 @@ Let's check how to restrict external traffic from your RaspberryPi with [PiHole]
 
 The first step to defining a place where you want to install PiHole. In my case, I am going to keep it under the `~` path.
 
-```
+```bash
 $ cd ~
 $ mkdir pihole
 $ cd pihole
@@ -23,11 +23,11 @@ $ touch docker-compose.yml
 
 Once you create the _docker-compose.yml_ file inside the _pihole_ directory, add the following code into it.
 
-```
+```bash
 $ nano docker-compose.yml
 ```
 
-```
+```yml
 version: "3"
 
 services:
@@ -52,7 +52,7 @@ services:
 
 After saving the _docker-compose.yml_ file, you can run the following command to bring your PiHole server up and running.
 
-```
+```bash
 $ docker-compose up --detach
 ```
 
@@ -60,7 +60,7 @@ $ docker-compose up --detach
 
 After a successful run, you can check PiHole instance is running on RaspberryPi as a docker service.
 
-```
+```bash
 # Try following commands to check PiHole service
 
 $ docker ps

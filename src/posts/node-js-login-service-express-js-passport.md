@@ -14,24 +14,24 @@ Let me take you through the step-by-step setup.
 
 ## Project structure
 
-```
+```yml
 # Create the following project structure
 
 app
- |-- includes
-    - header.ejs
- |-- public
-    |-- styles
-      - global.css
- |-- views
-    - index.ejs
-    - login.ejs
-    - register.ejs
- |- index.js
- |- passport-config.js
- |- package.json
- |- .env
- |- .gitignore
+|-- includes
+- header.ejs
+|-- public
+|-- styles
+- global.css
+|-- views
+- index.ejs
+- login.ejs
+- register.ejs
+|- index.js
+|- passport-config.js
+|- package.json
+|- .env
+|- .gitignore
 ```
 
 After having the above structure in place, it’s time to configure `npm` by triggering `npm init` (will update this file later while installing new modules)
@@ -40,7 +40,7 @@ After having the above structure in place, it’s time to configure `npm` by tri
 
 Please install the following packages with node commands.
 
-```
+```bash
 $ npm i bcrypt ejs express express-flash express-session passport passport-local
 
 $ npm --save-dev i dotenv nodemon
@@ -50,7 +50,7 @@ So basically I installed some of the modules as dependencies and two modules are
 
 Your `package.json` the file should look like this now.
 
-```
+```json
 {
   "name": "nodejs-login-service",
   "version": "1.0.0",
@@ -83,59 +83,59 @@ Your `package.json` the file should look like this now.
 
 ## Server setup
 
-```
+```js
 // index.js
 
 // This is only require on local machine
 if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config()
+  require("dotenv").config();
 }
 
-const bcrypt = require("bcrypt")
-const express = require("express")
-const passport = require("passport")
-const flash = require("express-flash")
-const session = require("express-session")
-const initPassport = require("./passport-config")
+const bcrypt = require("bcrypt");
+const express = require("express");
+const passport = require("passport");
+const flash = require("express-flash");
+const session = require("express-session");
+const initPassport = require("./passport-config");
 
 // Initialize Passport module
 initPassport(
   passport,
-  email => users.find(user => user.email === email),
-  id => users.find(user => user.id === id)
-)
+  (email) => users.find((user) => user.email === email),
+  (id) => users.find((user) => user.id === id)
+);
 
 // Initialize express.js
-const app = express()
+const app = express();
 
 // Setup template engine to ejs
-app.set("view-engine", "ejs")
+app.set("view-engine", "ejs");
 
 // Setup static path for global.css file include
-app.use(express.static(__dirname + "/public"))
+app.use(express.static(__dirname + "/public"));
 
-app.use(express.urlencoded({ extended: false }))
-app.use(flash())
+app.use(express.urlencoded({ extended: false }));
+app.use(flash());
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
   })
-)
-app.use(passport.initialize())
-app.use(passport.session())
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
-const PORT = process.env.PORT || 3000
-const users = []
+const PORT = process.env.PORT || 3000;
+const users = [];
 
 app.get("/", checkAuthenticated, (req, res) => {
-  res.render("index.ejs", { name: req.user.name })
-})
+  res.render("index.ejs", { name: req.user.name });
+});
 
 app.get("/login", checkNotAuthenticated, (req, res) => {
-  res.render("login.ejs")
-})
+  res.render("login.ejs");
+});
 
 app.post(
   "/login",
@@ -145,103 +145,103 @@ app.post(
     failureRedirect: "/login",
     failureFlash: true,
   })
-)
+);
 
 app.get("/register", checkNotAuthenticated, (req, res) => {
-  res.render("register.ejs")
-})
+  res.render("register.ejs");
+});
 
 app.post("/register", checkNotAuthenticated, async (req, res) => {
   try {
-    const hashedPwd = await bcrypt.hash(req.body.password, 10)
+    const hashedPwd = await bcrypt.hash(req.body.password, 10);
     users.push({
       id: Date.now().toString(),
       name: req.body.name,
       email: req.body.email,
       password: hashedPwd,
-    })
-    res.redirect("/login")
+    });
+    res.redirect("/login");
   } catch {
-    res.redirect("/register")
+    res.redirect("/register");
   }
-})
+});
 
 app.get("/logout", (req, res) => {
-  req.logOut()
-  res.redirect("/login")
-})
+  req.logOut();
+  res.redirect("/login");
+});
 
 function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
-    return next()
+    return next();
   }
-  res.redirect("/login")
+  res.redirect("/login");
 }
 
 function checkNotAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
-    return res.redirect("/")
+    return res.redirect("/");
   }
-  next()
+  next();
 }
 
 app.listen(PORT, () => {
-  console.log(`App is running on localhost:${PORT}`)
-})
+  console.log(`App is running on localhost:${PORT}`);
+});
 ```
 
 ## Passport module setup
 
 After configuring express.js-based node.js server it’s time to configure your passport module with passport-local settings.
 
-```
+```js
 // passport-config.js
 
-const LocalStrategy = require("passport-local").Strategy
-const bcrypt = require("bcrypt")
+const LocalStrategy = require("passport-local").Strategy;
+const bcrypt = require("bcrypt");
 
 function init(passport, getUserByEmail, getUserById) {
   const authenticateUser = async (email, password, done) => {
-    const user = getUserByEmail(email)
+    const user = getUserByEmail(email);
     if (user === null) {
-      return done(null, false, { message: "No user with that email" })
+      return done(null, false, { message: "No user with that email" });
     }
     try {
       if (await bcrypt.compare(password, user.password)) {
-        return done(null, user)
+        return done(null, user);
       } else {
-        return done(null, false, { message: "Password incorrect" })
+        return done(null, false, { message: "Password incorrect" });
       }
     } catch (e) {
-      return done(e)
+      return done(e);
     }
-  }
-  passport.use(new LocalStrategy({ usernameField: "email" }, authenticateUser))
-  passport.serializeUser((user, done) => done(null, user.id))
+  };
+  passport.use(new LocalStrategy({ usernameField: "email" }, authenticateUser));
+  passport.serializeUser((user, done) => done(null, user.id));
   passport.deserializeUser((id, done) => {
-    done(null, getUserById(id))
-  })
+    done(null, getUserById(id));
+  });
 }
 
-module.exports = init
+module.exports = init;
 ```
 
 ## Local env file setup
 
-```
+```bash
 SESSION_SECRET=<some random string>
 ```
 
 > These secret keys shouldn’t be visible to others, so please put this in the `.gitignore` file.
 
-```
+```bash
 node_modules
 .env
 ```
 
 ## Configure views
 
-```
+```html
 <!-- index.ejs -->
 
 <!DOCTYPE html>
@@ -263,7 +263,7 @@ node_modules
 </html>
 ```
 
-```
+```html
 <!-- login.ejs -->
 
 <!DOCTYPE html>
@@ -303,7 +303,7 @@ node_modules
 </html>
 ```
 
-```
+```html
 <!-- register.ejs -->
 
 <!DOCTYPE html>
@@ -345,7 +345,7 @@ node_modules
 
 ## Global includes
 
-```
+```html
 <!-- header.ejs -->
 
 <header>
@@ -364,15 +364,15 @@ node_modules
 </header>
 <script>
   function toggle(element) {
-    element.classList.toggle("open")
-    document.getElementsByTagName("nav")[0].classList.toggle("open")
+    element.classList.toggle("open");
+    document.getElementsByTagName("nav")[0].classList.toggle("open");
   }
 </script>
 ```
 
 ## Global CSS file
 
-```
+```css
 /* public/styles/global.css */
 
 :root {

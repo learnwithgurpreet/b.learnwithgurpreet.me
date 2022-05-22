@@ -35,19 +35,19 @@ Request and Response architecture
 
 #### JSON response example
 
-```
+```js
 // app.js
 
-const http = require("http")
+const http = require("http");
 
 const server = http.createServer((request, response) => {
-  response.writeHead(200, { "Content-Type": "application/JSON" })
-  response.end(JSON.stringify({ name: "John", employee_id: "DS123" }))
-})
+  response.writeHead(200, { "Content-Type": "application/JSON" });
+  response.end(JSON.stringify({ name: "John", employee_id: "DS123" }));
+});
 
 server.listen(3000, "127.0.0.1", () =>
   console.log("Server is started on http://127.0.0.1:3000")
-)
+);
 ```
 
 To run the above file you need to run `$ node app.js` in your console and you will see a response in JSON format.
@@ -58,7 +58,7 @@ It is important to understand response headers here, If you check I am sending t
 
 #### HTML response example
 
-```
+```html
 <!-- index.html -->
 
 <!DOCTYPE html>
@@ -87,22 +87,22 @@ It is important to understand response headers here, If you check I am sending t
 </html>
 ```
 
-```
+```js
 // app.js
 
-const http = require("http")
-const fs = require("fs")
+const http = require("http");
+const fs = require("fs");
 
 const server = http.createServer((request, response) => {
-  console.log(`request made: ${request.url}`)
-  response.writeHead(200, { "Content-Type": "text/html" })
-  const readStream = fs.createReadStream(`${__dirname}/index.html`, "utf8")
-  readStream.pipe(response)
-})
+  console.log(`request made: ${request.url}`);
+  response.writeHead(200, { "Content-Type": "text/html" });
+  const readStream = fs.createReadStream(`${__dirname}/index.html`, "utf8");
+  readStream.pipe(response);
+});
 
 server.listen(3000, "127.0.0.1", () =>
   console.log("Server is started on http://127.0.0.1:3000")
-)
+);
 ```
 
 #### Output
@@ -123,7 +123,7 @@ Routing is nothing but letting users redirect from one page to another. It also 
 
 We will quickly create another `HTML` page so users can navigate through these two different pages.
 
-```
+```html
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -168,7 +168,7 @@ We will quickly create another `HTML` page so users can navigate through these t
 </html>
 ```
 
-```
+```html
 <!-- contact.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -213,31 +213,31 @@ We will quickly create another `HTML` page so users can navigate through these t
 </html>
 ```
 
-```
+```js
 // app.js
 
-const http = require("http")
-const fs = require("fs")
+const http = require("http");
+const fs = require("fs");
 
 const server = http.createServer((request, response) => {
-  let readStream
-  const url = request.url
+  let readStream;
+  const url = request.url;
 
-  console.log(`request made: ${url}`)
-  response.writeHead(200, { "Content-Type": "text/html" })
+  console.log(`request made: ${url}`);
+  response.writeHead(200, { "Content-Type": "text/html" });
 
   if (url === "/contact") {
-    readStream = fs.createReadStream(`${__dirname}/contact.html`, "utf8")
+    readStream = fs.createReadStream(`${__dirname}/contact.html`, "utf8");
   } else {
-    readStream = fs.createReadStream(`${__dirname}/index.html`, "utf8")
+    readStream = fs.createReadStream(`${__dirname}/index.html`, "utf8");
   }
 
-  readStream.pipe(response)
-})
+  readStream.pipe(response);
+});
 
 server.listen(3000, "127.0.0.1", () =>
   console.log("Server is started on http://127.0.0.1:3000")
-)
+);
 ```
 
 ![home page](/assets/images/pokvIuVoQV-1024x520.png "index page")
@@ -268,7 +268,7 @@ You can install this package with `npm install nodemon` and you will see another
 
 We will now quickly open our `package.json` file and make the following changes:
 
-```
+```json
 {
   "name": "node",
   "version": "1.0.0",

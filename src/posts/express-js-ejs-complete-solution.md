@@ -16,26 +16,26 @@ Let’s directly jump to work!
 
 ## Project structure
 
-```
+```yml
 # setup project structure
 
 app
- |-- public
-    - styles.css
- |-- views
-     - index.ejs
-     -- components
-        - header.ejs
-        - footer.ejs
- |- app.js
- |- data.json
+|-- public
+- styles.css
+|-- views
+- index.ejs
+-- components
+- header.ejs
+- footer.ejs
+|- app.js
+|- data.json
 ```
 
 Once you create the above file/folder structure we will start configuring our server by installing node modules.
 
 ## NPM scripts
 
-```
+```bash
 # initialize npm (please follow the steps)
 $ npm init
 ```
@@ -44,13 +44,13 @@ After executing the above command you will see the `package.json` file inside th
 
 Now we can start installing our node modules.
 
-```
+```bash
 $ npm i ejs express
 ```
 
 After you install the above two modules, your `package.json` file should look like this.
 
-```
+```json
 /* package.json */
 
 {
@@ -74,36 +74,36 @@ After you install the above two modules, your `package.json` file should look li
 
 ## Server setup
 
-```
+```js
 /* app.js */
 
-const express = require("express")
-const server = express()
-const data = require("./data.json")
+const express = require("express");
+const server = express();
+const data = require("./data.json");
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000;
 
-server.set("view engine", "ejs")
-server.use(express.static(__dirname + "/public"))
+server.set("view engine", "ejs");
+server.use(express.static(__dirname + "/public"));
 
 server.get("/", (req, res) => {
-  res.render("index", { data: { nav: data.nav, page: data.pages.index } })
-})
+  res.render("index", { data: { nav: data.nav, page: data.pages.index } });
+});
 
 server.get("/contact", (req, res) => {
-  res.render("index", { data: { nav: data.nav, page: data.pages.contact } })
-})
+  res.render("index", { data: { nav: data.nav, page: data.pages.contact } });
+});
 
 server.get("/about", (req, res) => {
-  res.render("index", { data: { nav: data.nav, page: data.pages.about } })
-})
+  res.render("index", { data: { nav: data.nav, page: data.pages.about } });
+});
 
 server.listen(PORT, () => {
-  console.log(`Sever is started on ${PORT}`)
-})
+  console.log(`Sever is started on ${PORT}`);
+});
 ```
 
-```
+```json
 /* data.json */
 
 {
@@ -138,7 +138,7 @@ server.listen(PORT, () => {
 }
 ```
 
-```
+```html
 <!-- views/index.ejs -->
 
 <!DOCTYPE html>
@@ -162,7 +162,7 @@ server.listen(PORT, () => {
 </html>
 ```
 
-```
+```html
 <!-- views/conponents/header.ejs -->
 
 <header>
@@ -174,7 +174,7 @@ server.listen(PORT, () => {
 </header>
 ```
 
-```
+```html
 <!-- views/conponents/footer.ejs -->
 
 <footer>
@@ -182,7 +182,7 @@ server.listen(PORT, () => {
 </footer>
 ```
 
-```
+```css
 /* public/css/style.css */
 
 body {

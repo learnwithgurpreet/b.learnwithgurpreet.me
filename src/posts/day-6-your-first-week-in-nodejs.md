@@ -45,7 +45,7 @@ Download and install the [Heroku CLI](https://devcenter.heroku.com/articles/hero
 
 If you haven’t already, log in to your Heroku account and follow the prompts to create a new SSH public key.
 
-```
+```bash
 $ heroku login
 ```
 
@@ -53,7 +53,7 @@ $ heroku login
 
 Initialize a git repository in a new or existing directory
 
-```
+```bash
 $ cd my-project/
 $ git init
 $ heroku git:remote -a not-failing
@@ -63,7 +63,7 @@ $ heroku git:remote -a not-failing
 
 Commit your code to the repository and deploy it to Heroku using Git.
 
-```
+```bash
 $ git add .
 $ git commit -am "make it better"
 $ git push heroku master
@@ -73,7 +73,7 @@ $ git push heroku master
 
 For existing repositories, simply add the `heroku` remote
 
-```
+```bash
 $ heroku git:remote -a not-failing
 ```
 
@@ -83,7 +83,7 @@ You would also need to migrate your `.env` file variables and their values to He
 
 There are two ways to set them, let’s check the command line.
 
-```
+```bash
 $ heroku config:set MONGO_HOST=my_hostname
 $ heroku config:set MONGO_PASS=my_password
 $ heroku config:set MONGO_USER=my_username
@@ -94,19 +94,19 @@ You can later check your config variables by typing `$ heroku config:get MONGO_H
 
 > Before pushing your code you need to make the following changes in the `app.js` file.
 
-```
+```js
 // app.js
 
 // Add a condition to render "dotenv" package only on local
 if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config()
+  require("dotenv").config();
 }
 
 // Get PORT from process variables (to get Heroku PORT)
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000;
 
 // Replace hardcoded PORT with variable.
-app.listen(PORT)
+app.listen(PORT);
 ```
 
 I believe your App is up and running on Heroku now, like mine :)

@@ -26,7 +26,7 @@ After installing it, you need to enable your RaspberryPi with `ssh`. Go to your 
 
 > It is advisable to update the app of the packages after initial installation.
 
-```
+```bash
 # log into your RaspberryPi with default password: raspberry
 $ ssh pi@ip-address-of-your-rpi
 
@@ -39,7 +39,7 @@ $ sudo apt-get upgrade
 
 It is always easy to work with static IP. You can assign a static IP address to your RaspberryPi to open the application from the same IP. Following are the steps which you can follow to setup:
 
-```
+```bash
 # Open following file
 $ sudo nano /etc/dhcpcd.conf
 
@@ -60,7 +60,7 @@ After assigning static IP, you can now proceed with docker installation.
 
 Download the docker bash file on your local and run it with `sudo`.
 
-```
+```bash
 # It will download the docker installation file and save it as get-docker.sh
 $ curl -fsSL https://get.docker.com -o get-docker.sh
 
@@ -72,7 +72,7 @@ $ sudo sh get-docker.sh
 
 It will take some time to install docker. Once it’s done, you can now add your user to the docker group, which is an optional step but helps you run docker commands without adding sudo it.
 
-```
+```bash
 $ sudo usermod -aG docker ${USER}
 
 # Be Careful, now onwards you will run all the commands with sudo rights
@@ -83,14 +83,14 @@ $ sudo su - ${USER}
 
 Once it’s done you can now run `docker --version` it should show the installed version.
 
-```
+```bash
 # In my case
 Docker version 20.10.6, build 370c289
 ```
 
 You can also try to run a hello-world docker image with the following command:
 
-```
+```bash
 $ docker run hello-world
 ```
 
@@ -102,12 +102,12 @@ First, you need to install the docker-compose by typing the following command:
 
 > Make sure you have `python3` and `python3-pip`.
 
-```
+```bash
 # to install python3 and python3-pip
 $ sudo apt-get install -y python3 python3-pip
 ```
 
-```
+```bash
 $ sudo pip3 install docker-compose
 ```
 
