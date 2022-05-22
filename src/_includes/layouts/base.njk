@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title or metadata.title }}</title>
+    <title>{{ metadata.metaTitle + " - " + title }}</title>
     <meta name="description" content="{{ description or metadata.description }}">
     <meta name="generator" content="{{ eleventy.generator }}">
 
@@ -26,7 +26,7 @@
     <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
       {{ content | safe }}
     </main>
-    <footer></footer>
+    {% include "../footer.njk" %}
     <!-- Current page: {{ page.url | url }} -->
     <script src="{{ '/assets/js/app.js' | url }}"></script>
   </body>

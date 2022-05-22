@@ -1,23 +1,20 @@
 ---
 layout: layouts/home.njk
+title: Home
 eleventyNavigation:
   key: Home
   order: 1
 pagination:
   data: collections.posts
-  size: 2
+  size: 7
   alias: posts
 ---
 {% set postslist = collections.posts | head(-3) %}
 {% set postslistCounter = collections.posts | length %}
+{% set showTags = true %}
+{% set showExcerpt = true %}
 {% include "recentposts.njk" %}
 {% include "postlist.njk" %}
-
-{% for post in posts | reverse %}
-  <h1 class="title-font text-lg font-medium text-gray-900 dark:text-white mb-3">
-    <a href="{{ post.url | url }}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-  </h1>
-{% endfor %}
 
 {# Pagination starts #}
 <div class="w-full border-t border-gray-200 dark:border-gray-800 font-mono mt-16">
@@ -42,12 +39,3 @@ pagination:
   </nav>
 </div>
 {# Pagination ends #}
-
-{# {% set maxPosts = collections.posts.length | min(3) %}
-
-{% set postslist = collections.posts | head(-3) %}
-{% set postslistCounter = collections.posts | length %}
-{% include "recentposts.njk" %}
-{% include "postlist.njk" %} #}
-
-{# <p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p> #}
