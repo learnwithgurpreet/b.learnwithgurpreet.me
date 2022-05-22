@@ -1,4 +1,4 @@
-<section class="text-gray-600 body-font overflow-hidden">
+<section class="body-font overflow-hidden">
   <div class="container py-24 mx-auto">
       <ol reversed class="-my-8 divide-y-2 divide-gray-100" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
       {% for post in posts | reverse %}
@@ -11,8 +11,8 @@
               {% endfor %}
             {% endif %}
             <div class="flex flex-row md:flex-col">
-              <time class="mt-2 text-gray-500 text-sm mr-2" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-              <span class="mt-2 text-gray-400 inline-flex items-center leading-none text-sm">
+              <time class="mt-2 text-sm mr-2" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+              <span class="mt-2 inline-flex items-center leading-none text-sm">
                 <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>{{ post | readingTime }}
@@ -20,7 +20,7 @@
             </div>
           </div>
           <div class="md:flex-grow">
-            <h2 class="text-2xl font-medium text-gray-900 title-font mb-2"><a href="{{ post.url | url }}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a></h2>
+            <h2 class="text-2xl font-medium title-font mb-2"><a href="{{ post.url | url }}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a></h2>
             {% if showExcerpt %}<p class="leading-relaxed">{% excerpt post %}</p>{% endif %}
             <a href="{{ post.url | url }}" class="text-blue-600 dark:text-blue-500 hover:text-blue-600 dark:hover:text-blue-600 inline-flex items-center mt-4">Learn More
               <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">

@@ -1,6 +1,8 @@
 ---
 title: "Are you logging your NodeJS code?"
 date: "2021-01-16"
+image: /assets/images/cover5.jpg
+imageAlt: "Photo by Christina on Unsplash"
 tags:
   - "nodejs"
   - "programming"
@@ -62,10 +64,10 @@ There are some obvious mistakes developers does while configuring loggings. One 
 
 #### Bad Example 🚫
 
-```
-const express = require("express")
-const winston = require("winston")
-const app = express()
+```js
+const express = require("express");
+const winston = require("winston");
+const app = express();
 
 // configuring logger
 const logger = winston.createLogger({
@@ -73,7 +75,7 @@ const logger = winston.createLogger({
     new winston.transports.Console(),
     new winston.transports.File({ filename: "combined.log" }),
   ],
-})
+});
 
 app.post("/user/add", (req, res) => {
   try {
@@ -86,24 +88,24 @@ app.post("/user/add", (req, res) => {
         logger.log({
           level: "info",
           message: `${req.email} with password ${pwd} has been successfully registered`,
-        })
-        res.send(200)
-      })
+        });
+        res.send(200);
+      });
   } catch (err) {
     logger.log({
       level: "error",
       message: `${req.email} with password ${pwd} wasn't registered`,
-    })
+    });
   }
-})
+});
 ```
 
 #### Good Example ✅
 
-```
-const express = require("express")
-const winston = require("winston")
-const app = express()
+```js
+const express = require("express");
+const winston = require("winston");
+const app = express();
 
 // configuring logger
 const logger = winston.createLogger({
@@ -111,7 +113,7 @@ const logger = winston.createLogger({
     new winston.transports.Console(),
     new winston.transports.File({ filename: "combined.log" }),
   ],
-})
+});
 
 app.post("/user/add", (req, res) => {
   try {
@@ -120,20 +122,20 @@ app.post("/user/add", (req, res) => {
         email: req.email,
         password: req.pwd,
       })
-      .then(response => {
+      .then((response) => {
         logger.log({
           level: "info",
           message: `Success: ${response.data.id} user has been successfully registered`,
-        })
-        res.send(200)
-      })
+        });
+        res.send(200);
+      });
   } catch (err) {
     logger.log({
       level: "error",
       message: `An exception occurred while registering new user: ${err}`,
-    })
+    });
   }
-})
+});
 ```
 
 ## Conclusion

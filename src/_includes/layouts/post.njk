@@ -1,25 +1,43 @@
 ---
 layout: layouts/base.njk
-templateClass: tmpl-post
+templateClass: tmpl-post mt-8 container mx-auto px-6
 ---
-<h1>{{ title }}</h1>
+<section class="min-h-screen w-full lg:max-w-6xl mx-auto">
+  <article>
+    <h1 class="text-3xl lg:text-4xl font-semibold pt-12">{{ title }}</h1>
+    <div class="flex flex-row my-3">
+      <time class="text-sm mr-2" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+      <span class="inline-flex items-center leading-none text-sm">
+        <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>{{ content | readingTime }} read
+      </span>
+    </div>
+    {% if image %}
+    <figure class="mb-4"> 
+      <img src="{{ image }}" alt="{% if imageAlt %}{{ imageAlt }}{% else %}presentation{% endif %}" width="680" height="350" class="mx-auto" />
+      <figcaption class="text-center pt-2 text-sm">{{ imageAlt }}</figcaption>
+    </figure>
+    {% endif %}
+    <div class="post-content">
+      {{ content | safe }}
+    </div>
 
-<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
-{%- for tag in tags | filterTagList -%}
-{%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-{%- endfor %}
+    {# {%- for tag in tags | filterTagList -%}
+    {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+    <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+    {%- endfor %} #}
 
-{{ content | safe }}
-
-{%- if collections.posts %}
-{%- set nextPost = collections.posts | getNextCollectionItem(page) %}
-{%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
-{%- if nextPost or previousPost %}
-<hr>
-<ul>
-  {%- if nextPost %}<li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
-  {%- if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-</ul>
-{%- endif %}
-{%- endif %}
+    {%- if collections.posts %}
+    {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
+    {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+    {%- if nextPost or previousPost %}
+    <hr>
+    <ul>
+      {%- if nextPost %}<li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+      {%- if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+    </ul>
+    {%- endif %}
+    {%- endif %}
+  </article>
+</section>

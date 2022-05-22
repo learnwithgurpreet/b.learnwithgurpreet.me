@@ -13,7 +13,7 @@ Web developers often treat accessibility as the last check-in of their component
 
 For example, what tag would you prefer to use to define your button?
 
-```
+```js
 <!-- with button tag? -->
 <button>My button</button>
 ```

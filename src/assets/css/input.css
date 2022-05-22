@@ -10,6 +10,28 @@ body {
   @apply font-bold;
 }
 
+.post-content h2 {
+  @apply font-semibold text-2xl my-6;
+}
+
+.post-content h3 {
+  @apply font-semibold text-xl my-4;
+}
+
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  @apply font-semibold text-lg my-2;
+}
+
+.post-content img {
+  @apply mx-auto my-4;
+}
+
+.post-content {
+  @apply pb-10;
+}
+
 /* ***********
 Toggle Button
 ************* */

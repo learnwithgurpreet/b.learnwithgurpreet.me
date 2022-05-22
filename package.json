@@ -28,7 +28,6 @@
     "@11ty/eleventy": "^1.0.1",
     "@11ty/eleventy-navigation": "^0.3.3",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "eleventy-plugin-reading-time": "^0.0.1",
     "html-minifier": "^4.0.0",
     "luxon": "^2.4.0",
@@ -39,6 +38,7 @@
     "tailwindcss": "^3.0.24"
   },
   "devDependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "crypto-js": "^4.1.1",
     "jsdom": "^19.0.0",
     "path": "^0.12.7",
