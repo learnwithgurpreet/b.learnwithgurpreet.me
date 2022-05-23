@@ -22,7 +22,7 @@
   },
   "technology": {
     "framework": "https://www.11ty.dev/",
-    "hosting": "https://www.netlify.com",
+    "hosting": "https://vercel.com/",
     "source": "https://github.com/gsin11/learnwithgurpreet"
   }
 }

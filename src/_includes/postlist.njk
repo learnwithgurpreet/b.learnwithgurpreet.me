@@ -2,7 +2,7 @@
   <div class="container pb-16 mx-auto">
       <ol reversed class="-my-8 divide-y-2 divide-gray-100" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
       {% for post in posts %}
-      {% if page.url != pagination.href.first %}
+      {% if page.url != pagination.href.first or page.fileSlug == "archive" %}
         <li class="py-8 flex flex-wrap md:flex-nowrap">
           <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
             {% if showTags %}
