@@ -20,10 +20,13 @@ templateClass: tmpl-post mt-8 container mx-auto px-6
       {%- endfor %}
     </ul>
     {% if image %}
-    <figure class="mb-4"> 
-      <img src="{{ image }}" alt="{% if imageAlt %}{{ imageAlt }}{% else %}presentation{% endif %}" width="680" height="350" class="mx-auto" />
-      <figcaption class="text-center pt-2 text-sm">{{ imageAlt }}</figcaption>
-    </figure>
+      {% if imageAlt %}
+        {% set alt = imageAlt %}
+      {% else %}
+        {% set alt = "featured" %}
+      {% endif %}
+      {% responsiveImage "src" + image, alt %}
+      <p class="text-center pt-2 pb-4 text-sm">{{ imageAlt }}</p>
     {% endif %}
     <div class="post-content">
       {{ content | safe }}

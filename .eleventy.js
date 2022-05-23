@@ -6,10 +6,34 @@ const markdownItAnchor = require("markdown-it-anchor");
 const readingTime = require("eleventy-plugin-reading-time");
 const striptags = require("striptags");
 
+const Image = require("@11ty/eleventy-img");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginTOC = require("eleventy-plugin-toc");
+
+async function imageShortcode(src, alt, sizes = "100vw") {
+  let metadata = await Image(src, {
+    widths: [400, 640],
+    formats: ["avif", "jpeg", "webp"],
+    outputDir: "_site/assets/images/",
+    urlPath: "/assets/images/",
+    sharpOptions: {
+      animated: true,
+    },
+  });
+
+  let imageAttributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async",
+    class: "mx-auto",
+  };
+
+  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+  return Image.generateHTML(metadata, imageAttributes);
+}
 
 function extractExcerpt(article) {
   if (!article.hasOwnProperty("templateContent")) {
@@ -48,6 +72,7 @@ module.exports = function (eleventyConfig) {
     );
   });
   eleventyConfig.addPlugin(pluginTOC);
+  eleventyConfig.addNunjucksAsyncShortcode("responsiveImage", imageShortcode);
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
