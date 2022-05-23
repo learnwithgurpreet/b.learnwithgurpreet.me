@@ -32,9 +32,10 @@ function extractExcerpt(article) {
 
 module.exports = function (eleventyConfig) {
   // Copy the `img`, `js` and `css` folders to the output
-  eleventyConfig.addPassthroughCopy("src/assets/**");
+  // eleventyConfig.addPassthroughCopy("src/assets/**");
   // eleventyConfig.addPassthroughCopy("src/css");
-  // eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addPassthroughCopy("src/assets/js");
+  eleventyConfig.addPassthroughCopy("src/assets/images");
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
