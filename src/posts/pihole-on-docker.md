@@ -2,6 +2,7 @@
 title: "PiHole on Docker"
 date: "2021-05-21"
 image: /assets/images/docker-rpi-e1643359911626.webp
+excerpt: This article is my follow-up article to Up and running with RaspberryPi with Docker. In the previous article, I showed how you can configure docker and docker-compose on your RaspberryPi.
 tags:
   - "programming"
   - "raspberry-pi"

@@ -1,11 +1,11 @@
 {
   "title": "gS",
   "metaTitle": "Learn with Gurpreet",
-  "url": "https://learnwithgurpreet.com/",
+  "url": "https://learnwithgurpreet.com",
   "language": "en",
   "description": "Every space has a story",
   "feed": {
-    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "subtitle": "I like creating and using specialized tools for making development processes as efficient as possible. I have the experience to work with big projects and big development teams.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "id": "https://example.com/"
@@ -18,7 +18,13 @@
     "name": "Gurpreet Singh",
     "description": "I like creating and using specialized tools for making development processes as efficient as possible. I have the experience to work with big projects and big development teams.",
     "email": "hello@gsin.in",
-    "url": "/contact/"
+    "url": "/contact/",
+    "twitter": "https://twitter.com/gsin11",
+    "linkedin": "https://linkedin.com/in/gsin11/",
+    "github": "https://github.com/gsin11",
+    "mastodon": "https://mastodon.social/web/@gsin",
+    "creator": "@gsin11",
+    "image": "/assets/images/profile-pic.jpg"
   },
   "technology": {
     "framework": "https://www.11ty.dev/",

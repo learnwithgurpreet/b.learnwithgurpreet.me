@@ -2,6 +2,7 @@
 title: "Day 2 - Your first week in NodeJS"
 date: 2021-08-04
 image: /assets/images/nodejs-day2.webp
+excerpt: I believe you have already read my previous article where I explained, the basics of Node.js, from creating custom modules, event handling, and file read/write operations.
 tags:
   - "nodejs"
   - "programming"

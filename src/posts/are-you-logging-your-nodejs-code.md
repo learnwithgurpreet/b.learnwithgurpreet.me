@@ -3,6 +3,7 @@ title: "Are you logging your NodeJS code?"
 date: "2021-01-16"
 image: /assets/images/cover5.jpg
 imageAlt: "Photo by Christina on Unsplash"
+excerpt: Logs are an essential part of an application, it provides you deep level access of output comes from user inputs. When the application is in production
 tags:
   - "nodejs"
   - "programming"

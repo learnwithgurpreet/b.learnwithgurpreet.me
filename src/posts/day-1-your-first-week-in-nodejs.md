@@ -2,6 +2,7 @@
 title: "Day 1 - Your first week in NodeJS"
 date: 2021-08-03
 image: /assets/images/nodejs-day1.webp
+excerpt: I believe you know something about Node.js before starting this course, just to refresh your memory. Node.js is a JavaScript runtime, built on Chrome’s V8 JavaScript engine.
 tags:
   - "nodejs"
   - "programming"

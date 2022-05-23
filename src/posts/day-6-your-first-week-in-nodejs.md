@@ -2,6 +2,7 @@
 title: "Day 6 (last) - Your first week in NodeJS"
 date: 2021-08-10
 image: /assets/images/nodejs-day6.webp
+excerpt: During the course of this series, we have already developed a Node.js application that can be deployed on the cloud.
 tags:
   - "nodejs"
   - "programming"

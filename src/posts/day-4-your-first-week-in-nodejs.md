@@ -2,6 +2,7 @@
 title: "Day 4 - Your first week in NodeJS"
 date: 2021-08-08
 image: /assets/images/nodejs-day4.webp
+excerpt: I believe by now you are already comfortable with core modules of Node.js and have created your own RESTFul API service.
 tags:
   - "nodejs"
   - "programming"

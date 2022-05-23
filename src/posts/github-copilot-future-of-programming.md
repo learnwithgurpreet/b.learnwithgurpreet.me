@@ -2,6 +2,7 @@
 title: "GitHub Copilot - Future of Programming?"
 date: "2021-07-10"
 image: /assets/images/copilot.webp
+excerpt: There were a couple of questions that came to my mind when I saw this first. In this article, I’ll go through an example of the Copilot peer programming plugin for VSCode.
 tags:
   - "thoughts"
 ---

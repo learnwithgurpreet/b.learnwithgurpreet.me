@@ -2,6 +2,7 @@
 title: "Day 3 - Your first week in NodeJS"
 date: 2021-08-07
 image: /assets/images/nodejs-day3.webp
+excerpt: I believe you have already read my previous article where I explained, how to spin up a Node.js server instance
 tags:
   - "nodejs"
   - "programming"

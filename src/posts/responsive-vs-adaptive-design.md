@@ -2,6 +2,7 @@
 title: "Responsive vs. Adaptive Design"
 date: "2020-09-06"
 image: /assets/images/taras-shypka-iFSvn82XfGo-unsplash.webp
+excerpt: One of the regular topics which usually comes in every discussion before starting a website is actually a bit confusing too.
 tags:
   - "programming"
 ---

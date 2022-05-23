@@ -7,6 +7,27 @@
     <meta name="description" content="{{ description or metadata.description }}">
     <meta name="generator" content="{{ eleventy.generator }}">
 
+    <meta itemprop="name" content="{{ title }} - {{ metadata.metaTitle }}">
+    <meta itemprop="description" content="{{ excerpt or metadata.description }}">
+
+    <meta name="twitter:title" content="{{ title }} - {{ metadata.metaTitle }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="{{ excerpt or metadata.description }}">
+    <meta name="twitter:site" content="{{metadata.author.creator}}">
+    <meta name="twitter:creator" content="{{metadata.author.creator}}">
+    <meta name="twitter:image:src" content="{{metadata.url}}{{ image or metadata.author.image }}">
+
+    <meta name="og:title" content="{{ title }} - {{ metadata.metaTitle }}">
+    <meta name="og:description" content="{{ excerpt or metadata.description }}">
+    <meta name="og:image" content="{{metadata.url}}{{ image or metadata.author.image }}">
+    {% if canonical %}
+      <link rel="canonical" href="{{ canonical }}" />
+      <meta name="og:url" content="{{ canonical }}">
+    {% endif %}
+    <meta name="og:site_name" content="{{ metadata.metaTitle }}">
+    <meta name="og:locale" content="en_GB">
+    <meta name="og:type" content="website">
+
     <link rel="stylesheet" href="{{ '/assets/css/output.css' | url }}">
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">

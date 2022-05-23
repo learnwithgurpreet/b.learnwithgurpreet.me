@@ -2,6 +2,7 @@
 title: "CORS in NextJS"
 date: "2021-07-19"
 image: /assets/images/next-and-cors.webp
+excerpt: Setting up CORS is always a challenge for people who are not really from server-side application backgrounds. Luckily it wasn’t the case for me, but Vercel.
 tags:
   - "programming"
 ---

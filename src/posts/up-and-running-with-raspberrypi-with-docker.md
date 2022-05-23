@@ -2,6 +2,7 @@
 title: "Up and running with RaspberryPi with Docker"
 date: "2021-05-19"
 image: /assets/images/docker-e1643359892387.webp
+excerpt: How to configure RaspberryPi with docker and docker-compose. I am personally using it for my local hone projects where I can run these projects without interfering RaspbianOS image.
 tags:
   - "programming"
   - "raspberry-pi"
