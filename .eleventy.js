@@ -12,7 +12,12 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginTOC = require("eleventy-plugin-toc");
 
-async function imageShortcode(src, alt, sizes = "100vw") {
+async function imageShortcode(
+  src,
+  alt,
+  classList = "mx-auto",
+  sizes = "100vw"
+) {
   let metadata = await Image(src, {
     widths: [400, 640],
     formats: ["avif", "jpeg", "webp"],
@@ -28,7 +33,7 @@ async function imageShortcode(src, alt, sizes = "100vw") {
     sizes,
     loading: "lazy",
     decoding: "async",
-    class: "mx-auto",
+    class: classList,
   };
 
   // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
