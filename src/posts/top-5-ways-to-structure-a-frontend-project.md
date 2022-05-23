@@ -1,6 +1,8 @@
 ---
 title: "Top 5 ways to structure a frontend project"
 date: "2021-09-11"
+image: /assets/images/cover1.jpg
+imageAlt: "Photo by George Bakos on Unsplash"
 tags:
   - "programming"
   - "thoughts"

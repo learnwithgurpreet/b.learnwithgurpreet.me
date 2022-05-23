@@ -1,6 +1,7 @@
 ---
 title: "I don't know JavaScript but ReactJS"
 date: "2021-07-25"
+image: /assets/images/i-dont-know-javascript-but-reactjs.webp
 tags:
   - "thoughts"
 ---

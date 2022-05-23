@@ -1,11 +1,13 @@
 <section class="body-font">
-  <div class="container pb-12 mx-auto">
+  <div class="container pb-16 mx-auto">
     <h1 class="text-3xl font-bold py-12">Recent Posts</h1>
     <ol reversed class="flex flex-wrap -m-4" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
       {% for post in postslist | reverse %}
         <li class="p-4 md:w-1/3">
           <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-            <a href="{{ post.url | url }}"><img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/720x400" alt="featured"></a>
+            <a href="{{ post.url | url }}">
+              <img src="{{ post.data.image }}" alt="{% if imageAlt %}{{ imageAlt }}{% else %}featured{% endif %}" width="680" height="350" class="lg:h-48 md:h-36 w-full object-cover object-center" />
+            </a>
             <div class="p-6">
               {% for tag in post.data.tags | filterTagList %}
                 {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}

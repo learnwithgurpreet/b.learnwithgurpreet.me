@@ -4,8 +4,7 @@ templateClass: tmpl-post mt-8 container mx-auto px-6
 ---
 <section class="min-h-screen w-full lg:max-w-6xl mx-auto">
   <article>
-    <h1 class="text-3xl lg:text-4xl font-semibold pt-12">{{ title }}</h1>
-    <div class="flex flex-row my-3">
+    <div class="flex flex-row pb-3 pt-12">
       <time class="text-sm mr-2" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
       <span class="inline-flex items-center leading-none text-sm">
         <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
@@ -13,6 +12,13 @@ templateClass: tmpl-post mt-8 container mx-auto px-6
         </svg>{{ content | readingTime }} read
       </span>
     </div>
+    <h1 class="text-3xl lg:text-4xl font-semibold">{{ title }}</h1>
+    <ul class="flex flex-wrap gap-2 py-3">
+      {%- for tag in tags | filterTagList -%}
+        {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+        <li><a href="{{ tagUrl | url }}" class="underline font-medium text-lg">#{{ tag }}</a><li>
+      {%- endfor %}
+    </ul>
     {% if image %}
     <figure class="mb-4"> 
       <img src="{{ image }}" alt="{% if imageAlt %}{{ imageAlt }}{% else %}presentation{% endif %}" width="680" height="350" class="mx-auto" />
@@ -22,11 +28,6 @@ templateClass: tmpl-post mt-8 container mx-auto px-6
     <div class="post-content">
       {{ content | safe }}
     </div>
-
-    {# {%- for tag in tags | filterTagList -%}
-    {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-    <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-    {%- endfor %} #}
 
     {%- if collections.posts %}
     {%- set nextPost = collections.posts | getNextCollectionItem(page) %}

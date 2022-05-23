@@ -1,6 +1,7 @@
 ---
 title: "Up and running with RaspberryPi with Docker"
 date: "2021-05-19"
+image: /assets/images/docker-e1643359892387.webp
 tags:
   - "programming"
   - "raspberry-pi"

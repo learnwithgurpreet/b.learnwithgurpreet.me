@@ -1,6 +1,7 @@
 ---
 title: "Can we use Google services without compromising privacy?"
 date: "2021-02-24"
+image: /assets/images/Nu1AmbsTd-e1643359769782.webp
 tags:
   - "privacy"
   - "thoughts"

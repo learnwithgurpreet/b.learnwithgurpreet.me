@@ -1,7 +1,8 @@
 <section class="body-font overflow-hidden">
-  <div class="container py-24 mx-auto">
+  <div class="container pb-16 mx-auto">
       <ol reversed class="-my-8 divide-y-2 divide-gray-100" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
-      {% for post in posts | reverse %}
+      {% for post in posts %}
+      {% if page.url != pagination.href.first %}
         <li class="py-8 flex flex-wrap md:flex-nowrap">
           <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
             {% if showTags %}
@@ -30,6 +31,39 @@
             </a>
           </div>
         </li>
+      {% else %}
+      {% if loop.index0 > 2 %}
+        <li class="py-8 flex flex-wrap md:flex-nowrap">
+          <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+            {% if showTags %}
+              {% for tag in post.data.tags | filterTagList %}
+                {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+                <span class="tracking-widest text-xs title-font font-medium uppercase mb-1"><a class="text-green-600 dark:text-green-500 hover:text-green-600 dark:hover:text-green-600" href="{{ tagUrl | url }}">{{ tag }}</a></span>
+              {% endfor %}
+            {% endif %}
+            <div class="flex flex-row md:flex-col">
+              <time class="mt-2 text-sm mr-2" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+              <span class="mt-2 inline-flex items-center leading-none text-sm">
+                <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>{{ post | readingTime }}
+              </span>
+            </div>
+          </div>
+          <div class="md:flex-grow">
+            <h2 class="text-2xl font-medium title-font mb-2"><a href="{{ post.url | url }}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a></h2>
+            {% if showExcerpt %}<p class="leading-relaxed">{% excerpt post %}</p>{% endif %}
+            <a href="{{ post.url | url }}" class="text-blue-600 dark:text-blue-500 hover:text-blue-600 dark:hover:text-blue-600 inline-flex items-center mt-4">Learn More
+              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </li>
+      {% endif %}
+      {% endif %}
+        
       {% endfor %}
     </ol>
   </div>

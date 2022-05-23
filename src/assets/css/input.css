@@ -23,7 +23,7 @@ body {
 }
 
 .post-content blockquote p {
-  @apply mb-0;
+  @apply mb-1;
 }
 
 .post-content ul {
@@ -61,7 +61,8 @@ body {
 }
 
 .post-content code:not([class*="language-"]) {
-  @apply bg-gray-900 text-gray-200 p-1 rounded-md break-words;
+  background-color: #272822;
+  @apply text-gray-200 p-1 rounded-md break-words;
 }
 
 /* ***********

@@ -1,6 +1,7 @@
 ---
 title: "Responsive vs. Adaptive Design"
 date: "2020-09-06"
+image: /assets/images/taras-shypka-iFSvn82XfGo-unsplash.webp
 tags:
   - "programming"
 ---

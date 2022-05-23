@@ -1,6 +1,7 @@
 ---
 title: "How to write short JavaScript code?"
 date: "2021-07-28"
+image: /assets/images/how-to-write-js.webp
 tags:
   - "programming"
 ---

@@ -1,6 +1,7 @@
 ---
 title: "My first Strapi project experience"
 date: "2021-02-26"
+image: /assets/images/ou46q3ChA-e1643359809377.webp
 tags:
   - "nodejs"
   - "programming"

@@ -1,6 +1,8 @@
 ---
 title: "How to secure a Raspberry Pi on your network"
 date: "2022-05-14"
+image: /assets/images/cover2.jpg
+imageAlt: "Photo by Christina on Unsplash"
 tags:
   - "privacy"
   - "raspberry-pi"

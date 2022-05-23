@@ -1,6 +1,7 @@
 ---
 title: "Express.js + EJS complete solution"
 date: "2021-03-02"
+image: /assets/images/lPj3Gib3z-e1643359823522.webp
 tags:
   - "nodejs"
   - "programming"

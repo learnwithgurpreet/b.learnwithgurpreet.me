@@ -1,6 +1,7 @@
 ---
 title: "Aria is not my thing"
 date: "2021-03-27"
+image: /assets/images/xeVWgc_Ki-e1643359851424.webp
 tags:
   - "programming"
 ---

@@ -9,6 +9,7 @@ const striptags = require("striptags");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
+const pluginTOC = require("eleventy-plugin-toc");
 
 function extractExcerpt(article) {
   if (!article.hasOwnProperty("templateContent")) {
@@ -45,6 +46,7 @@ module.exports = function (eleventyConfig) {
       "dd LLL yyyy"
     );
   });
+  eleventyConfig.addPlugin(pluginTOC);
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {

@@ -1,6 +1,7 @@
 ---
 title: "PiHole on Docker"
 date: "2021-05-21"
+image: /assets/images/docker-rpi-e1643359911626.webp
 tags:
   - "programming"
   - "raspberry-pi"

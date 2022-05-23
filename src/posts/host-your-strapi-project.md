@@ -1,6 +1,7 @@
 ---
 title: "Host your Strapi project"
 date: "2021-02-25"
+image: /assets/images/ou46q3ChA-e1643359809377.webp
 tags:
   - "nodejs"
   - "programming"

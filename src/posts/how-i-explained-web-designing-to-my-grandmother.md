@@ -1,6 +1,7 @@
 ---
 title: "How I explained Web designing to my Grandmother"
 date: "2020-09-10"
+image: /assets/images/3kZii7hdQ-e1643359718726.webp
 tags:
   - "thoughts"
 ---

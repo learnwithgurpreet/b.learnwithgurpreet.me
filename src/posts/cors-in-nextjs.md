@@ -1,6 +1,7 @@
 ---
 title: "CORS in NextJS"
 date: "2021-07-19"
+image: /assets/images/next-and-cors.webp
 tags:
   - "programming"
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Day 3 - Your first week in NodeJS"
-date: "2021-08-07"
+date: 2021-08-07
+image: /assets/images/nodejs-day3.webp
 tags:
   - "nodejs"
   - "programming"
