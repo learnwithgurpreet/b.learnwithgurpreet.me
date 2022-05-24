@@ -427,7 +427,7 @@ ul.users li {
 }
 ```
 
-Now we can include `styles.css` files <link href="/assets/styles.css" rel="stylesheet" type="text/css" /> in all templates and HTML files.
+Now we can include `styles.css` files `<link href="/assets/styles.css" rel="stylesheet" type="text/css" />` in all templates and HTML files.
 
 Now we need to inform our server that we are going to load the static files. By using the `app.use` function we can call `express.static` middleware to include static files.
 

@@ -12,6 +12,7 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginTOC = require("eleventy-plugin-toc");
 const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
+const { JSDOM } = require("jsdom");
 
 const cacheBusterOptions = {
   createResourceHash(outputDirectoy, url, target) {
@@ -162,6 +163,23 @@ module.exports = function (eleventyConfig) {
 
   // Add short codes
   eleventyConfig.addShortcode("excerpt", (article) => extractExcerpt(article));
+
+  eleventyConfig.addTransform("lazy-load-images", (content, outputPath) => {
+    if (outputPath.endsWith(".html")) {
+      const dom = new JSDOM(content);
+      const document = dom.window.document;
+
+      const [...images] = document.getElementsByTagName("img");
+
+      images.forEach((image) => {
+        image.setAttribute("loading", "lazy");
+      });
+
+      return document.documentElement.outerHTML;
+    } else {
+      return content;
+    }
+  });
 
   return {
     // Control which files Eleventy will process
