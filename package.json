@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
+    "@mightyplow/eleventy-plugin-cache-buster": "^1.1.3",
     "crypto-js": "^4.1.1",
     "jsdom": "^19.0.0",
     "path": "^0.12.7",

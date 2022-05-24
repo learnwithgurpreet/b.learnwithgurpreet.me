@@ -11,6 +11,13 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginTOC = require("eleventy-plugin-toc");
+const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
+
+const cacheBusterOptions = {
+  createResourceHash(outputDirectoy, url, target) {
+    return Date.now();
+  },
+};
 
 async function imageShortcode(
   src,
@@ -77,6 +84,7 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addPlugin(pluginTOC);
   eleventyConfig.addNunjucksAsyncShortcode("responsiveImage", imageShortcode);
+  eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
