@@ -8,7 +8,7 @@
             {% if showTags %}
               {% for tag in post.data.tags | filterTagList %}
                 {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-                <span class="tracking-widest text-xs title-font font-medium uppercase mb-1"><a class="text-green-600 dark:text-green-500 hover:text-green-600 dark:hover:text-green-600" href="{{ tagUrl | url }}">{{ tag }}</a></span>
+                <span class="tracking-widest text-xs title-font font-medium uppercase mb-1"><a class="text-green-700 dark:text-green-500 hover:text-green-800 dark:hover:text-green-600" href="{{ tagUrl | url }}">{{ tag }}</a></span>
               {% endfor %}
             {% endif %}
             <div class="flex flex-row md:flex-col">
@@ -38,7 +38,7 @@
             {% if showTags %}
               {% for tag in post.data.tags | filterTagList %}
                 {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-                <span class="tracking-widest text-xs title-font font-medium uppercase mb-1"><a class="text-green-600 dark:text-green-500 hover:text-green-600 dark:hover:text-green-600" href="{{ tagUrl | url }}">{{ tag }}</a></span>
+                <span class="tracking-widest text-xs title-font font-medium uppercase mb-1"><a class="text-green-700 dark:text-green-500 hover:text-green-800 dark:hover:text-green-600" href="{{ tagUrl | url }}">{{ tag }}</a></span>
               {% endfor %}
             {% endif %}
             <div class="flex flex-row md:flex-col">

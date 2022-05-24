@@ -16,7 +16,7 @@
             <div class="p-6">
               {% for tag in post.data.tags | filterTagList %}
                 {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-                <h2 class="tracking-widest text-xs title-font font-medium uppercase mb-1"><a class="text-green-600 dark:text-green-500 hover:text-green-600 dark:hover:text-green-600" href="{{ tagUrl | url }}">{{ tag }}</a></h2>
+                <h2 class="tracking-widest text-xs title-font font-medium uppercase mb-1"><a class="text-green-700 dark:text-green-500 hover:text-green-800 dark:hover:text-green-600" href="{{ tagUrl | url }}">{{ tag }}</a></h2>
               {% endfor %}
               <h1 class="title-font text-lg font-medium mb-3"><a href="{{ post.url | url }}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a></h1>
               <p class="leading-relaxed mb-3">{{ post.data.excerpt }}...</p>
