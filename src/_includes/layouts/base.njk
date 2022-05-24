@@ -10,6 +10,10 @@
     <meta itemprop="name" content="{{ title }} - {{ metadata.metaTitle }}">
     <meta itemprop="description" content="{{ excerpt or metadata.description }}">
 
+    <link rel="shortcut icon" href="{{ '/assets/favicons/favicon.ico' | url }}">
+    <link rel="icon" type="image/png" href="{{ '/assets/favicons/favicon-32x32.png' | url }}" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicons/apple-touch-icon.png' | url }}">
+
     <meta name="twitter:title" content="{{ title }} - {{ metadata.metaTitle }}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="{{ excerpt or metadata.description }}">
