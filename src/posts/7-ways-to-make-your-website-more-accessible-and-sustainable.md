@@ -28,9 +28,9 @@ A single image on a webpage can emit as much as 50 grams of CO2e (e = "equivalen
 
 It looks very small, but imagine, a page having 5 images, will produce 225 grams of CO2e which is sufficient for an electric car to drive up to 10 Kms.
 
-## 1. Web Accessibility
+Everything that makes your page faster, more accessible or easier to find, reduces your web-services carbon footprint.
 
-Everything that makes your page faster, more accessible, or easier to find, reduces your web-services carbon footprint.
+## 1. Web Accessibility
 
 It is a basic right of the user to be presented with an accessible platform over the internet. Accessibility should be implemented for all users.
 
