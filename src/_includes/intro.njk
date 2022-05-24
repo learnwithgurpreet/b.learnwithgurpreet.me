@@ -38,7 +38,7 @@
             <div class="mt-8 lg:mt-0 lg:w-1/2">
                 <div class="flex items-center justify-center lg:justify-end">
                     <div class="max-w-lg">
-                        <img class="object-cover object-center w-full h-64 rounded-md shadow" src="{{'/assets/images/profile-pic.jpg' | url}}" alt="">
+                        {% responsiveImage "src/assets/images/profile-pic.jpg", metadata.author.name, "object-cover object-center w-full h-64 rounded-md shadow" %}
                     </div>
                 </div>
             </div>
