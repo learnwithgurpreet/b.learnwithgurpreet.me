@@ -1,11 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/7-ways-to-make-your-website-more-accessible-and-sustainable/",
-      "destination": "https://learnwithgurpreet.com/posts/7-ways-to-make-your-website-more-accessible-and-sustainable/",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
