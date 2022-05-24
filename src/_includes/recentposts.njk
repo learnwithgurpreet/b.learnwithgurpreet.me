@@ -11,7 +11,6 @@
               {% else %}
                 {% set alt = "featured" %}
               {% endif %}
-              {# <img src="{{ post.data.image }}" alt="{% if imageAlt %}{{ imageAlt }}{% else %}featured{% endif %}" width="680" height="350" class="lg:h-48 md:h-36 w-full object-cover object-center" /> #}
               {% responsiveImage "src" + post.data.image, alt, "lg:h-48 md:h-36 w-full object-cover object-center" %}
             </a>
             <div class="p-6">
