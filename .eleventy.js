@@ -48,20 +48,12 @@ async function imageShortcode(
   return Image.generateHTML(metadata, imageAttributes);
 }
 
-function extractExcerpt(article) {
-  if (!article.hasOwnProperty("templateContent")) {
-    console.warn(
-      'Failed to extract excerpt: Document has no property "templateContent".'
-    );
-    return null;
-  }
-
+function extractExcerpt(content) {
   let excerpt = null;
-  const content = article.templateContent;
-
   excerpt = striptags(content)
     .substring(0, 200) // Cap at 200 characters
     .replace(/^\s+|\s+$|\s+(?=\s)/g, "")
+    .replace(/\r?\n|\r/g, " ")
     .trim()
     .concat("...");
   return excerpt;
@@ -161,8 +153,7 @@ module.exports = function (eleventyConfig) {
     ghostMode: false,
   });
 
-  // Add short codes
-  eleventyConfig.addShortcode("excerpt", (article) => extractExcerpt(article));
+  eleventyConfig.addFilter("excerpt", (content) => extractExcerpt(content));
 
   eleventyConfig.addTransform("lazy-load-images", (content, outputPath) => {
     if (outputPath.endsWith(".html")) {

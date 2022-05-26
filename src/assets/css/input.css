@@ -2,8 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+body,
+.search {
   @apply dark:bg-gray-800 bg-white;
+}
+
+.search-root {
+  @apply items-center border-b-4 border-b-gray-800 dark:border-b-white flex justify-between py-1;
+}
+
+.search-root form {
+  @apply flex w-full mb-0;
 }
 
 .active {

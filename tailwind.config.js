@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./src/**/*.njk"],
+  content: ["./src/**/*.njk", "./src/assets/js/app.js"],
   darkMode: "class",
   theme: {
     extend: {},

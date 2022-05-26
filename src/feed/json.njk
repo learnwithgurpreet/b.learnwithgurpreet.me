@@ -21,7 +21,7 @@ eleventyExcludeFromCollections: true
       "id": "{{ absolutePostUrl }}",
       "url": "{{ absolutePostUrl }}",
       "title": "{{ post.data.title }}",
-      "content_html": {% if post.templateContent %}{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | dump | safe }}{% else %}""{% endif %},
+      "excerpt": "{{ post.templateContent | excerpt }}",
       "date_published": "{{ post.date | rssDate }}"
     }
     {%- if not loop.last -%}
