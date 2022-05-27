@@ -3,7 +3,9 @@
     <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
   </svg>
 </button>
-<section id="search-box" class="search absolute inset-0 w-full h-screen z-10 hidden overflow-y-auto">
+<section role="dialog" aria-labelledby="dialogTitle" aria-describedby="dialogDesc" id="search-box" class="search absolute inset-0 w-full h-screen z-10 hidden overflow-y-auto">
+  <span class="hidden" id="dialogTitle">Search form</span>
+  <span class="hidden" id="dialogDesc">This search is powered by algolia.</span>
   <div class="min-h-screen flex flex-col">
     <header class="w-full flex justify-end mx-auto items-center h-12 sm:h-16 px-6 z-10">
       <button id="btn-search-close" class="h-6 sm:h-8 block">
