@@ -8,7 +8,7 @@ tags:
   - "raspberry-pi"
 ---
 
-This article is my follow-up article to [Up and running with RaspberryPi with Docker](/up-and-running-with-raspberrypi-with-docker/). In the previous article, I showed how you can configure docker and docker-compose on your RaspberryPi.
+This article is my follow-up article to [Up and running with RaspberryPi with Docker](/posts/up-and-running-with-raspberrypi-with-docker/). In the previous article, I showed how you can configure docker and docker-compose on your RaspberryPi.
 
 Let's check how to restrict external traffic from your RaspberryPi with [PiHole](https://hub.docker.com/r/pihole/pihole) using docker and docker-compose.
 
