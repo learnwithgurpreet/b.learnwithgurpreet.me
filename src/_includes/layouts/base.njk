@@ -24,10 +24,9 @@
     <meta name="og:title" content="{{ title }} - {{ metadata.metaTitle }}">
     <meta name="og:description" content="{{ excerpt or metadata.description }}">
     <meta name="og:image" content="{{metadata.url}}{{ image or metadata.author.image }}">
-    {% if canonical %}
-      <link rel="canonical" href="{{ canonical }}" />
-      <meta name="og:url" content="{{ canonical }}">
-    {% endif %}
+    {% set canonical = metadata.url + page.url %}
+    <link rel="canonical" href="{{ canonical | url }}" />
+    <meta name="og:url" content="{{ canonical | url }}">
     <meta name="og:site_name" content="{{ metadata.metaTitle }}">
     <meta name="og:locale" content="en_GB">
     <meta name="og:type" content="website">
