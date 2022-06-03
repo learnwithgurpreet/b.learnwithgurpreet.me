@@ -11,7 +11,7 @@ tags:
 
 ## Prerequisite
 
-1. [Day 1 - Your first week in NodeJS](/day-1-your-first-week-in-nodejs)
+1. [Day 1 - Your first week in NodeJS](/posts/day-1-your-first-week-in-nodejs)
 
 I believe you have already read my previous article where I explained, the basics of Node.js, from creating custom modules, event handling, and file read/write operations. Let’s jump on today’s topic and write the code together.
 

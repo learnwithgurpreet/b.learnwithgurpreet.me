@@ -11,8 +11,8 @@ tags:
 
 ## Prerequisite
 
-1. [Day 1 - Your first week in NodeJS](/day-1-your-first-week-in-nodejs)
-2. [Day 2 - Your first week in NodeJS](/day-2-your-first-week-in-nodejs)
+1. [Day 1 - Your first week in NodeJS](/posts/day-1-your-first-week-in-nodejs)
+2. [Day 2 - Your first week in NodeJS](/posts/day-2-your-first-week-in-nodejs)
 
 I believe you have already read my previous article where I explained, how to spin up a Node.js server instance, serve HTML/JSON data via an endpoint, basic routing, npm, and nodemon from creating custom modules, event handling, and file read/write operations. Let’s jump on today’s topic and write the code together.
 

@@ -11,11 +11,11 @@ tags:
 
 ## Prerequisite
 
-1. [Day 1 - Your first week in NodeJS](/day-1-your-first-week-in-nodejs)
-2. [Day 2 - Your first week in NodeJS](/day-2-your-first-week-in-nodejs)
-3. [Day 3 - Your first week in NodeJS](/day-3-your-first-week-in-nodejs)
-4. [Day 4 - Your first week in NodeJS](/day-4-your-first-week-in-nodejs)
-5. [Day 5 - Your first week in NodeJS](/day-5-your-first-week-in-nodejs)
+1. [Day 1 - Your first week in NodeJS](/posts/day-1-your-first-week-in-nodejs)
+2. [Day 2 - Your first week in NodeJS](/posts/day-2-your-first-week-in-nodejs)
+3. [Day 3 - Your first week in NodeJS](/posts/day-3-your-first-week-in-nodejs)
+4. [Day 4 - Your first week in NodeJS](/posts/day-4-your-first-week-in-nodejs)
+5. [Day 5 - Your first week in NodeJS](/posts/day-5-your-first-week-in-nodejs)
 
 ## Overview
 
