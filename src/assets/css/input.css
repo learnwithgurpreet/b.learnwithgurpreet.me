@@ -78,6 +78,18 @@ body,
   @apply text-gray-200 p-1 rounded-md break-words;
 }
 
+h2 .direct-link,
+h3 .direct-link {
+  display: none;
+}
+
+h2:hover .direct-link,
+h3:hover .direct-link,
+h2:target .direct-link,
+h3:target .direct-link {
+  display: inline-block;
+}
+
 /* ***********
 Toggle Button
 ************* */
