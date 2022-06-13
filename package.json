@@ -1,7 +1,7 @@
 {
-  "name": "eleventy-base-blog",
-  "version": "6.0.0",
-  "description": "A starter repository for a blog web site using the Eleventy static site generator.",
+  "name": "learnwithgurpreet-blog",
+  "version": "1.0.0",
+  "description": "Personal technology blog by Gurpreet Singh",
   "scripts": {
     "dev:css": "npx tailwindcss -i src/assets/css/input.css -o _site/assets/css/output.css -w",
     "dev:11ty": "eleventy --serve --watch",
@@ -12,18 +12,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/11ty/eleventy-base-blog.git"
+    "url": "git@github.com:gsin11/learnwithgurpreet.git"
   },
   "author": {
-    "name": "Zach Leatherman",
-    "email": "zachleatherman@gmail.com",
-    "url": "https://zachleat.com/"
+    "name": "Gurpreet Singh",
+    "email": "learnwithgurpreet@gmail.com",
+    "url": "https://learnwithgurpreet.com/"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/11ty/eleventy-base-blog/issues"
+  "issues": {
+    "url": "https://github.com/gsin11/learnwithgurpreet/issues"
   },
-  "homepage": "https://github.com/11ty/eleventy-base-blog#readme",
   "dependencies": {
     "@11ty/eleventy": "^1.0.1",
     "@11ty/eleventy-img": "^2.0.1",
