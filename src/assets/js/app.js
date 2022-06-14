@@ -31,6 +31,36 @@
         toggleSearch(event);
       }
     });
+
+    if (window.IntersectionObserver) {
+      if (document.querySelector("nav.toc")) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            const id = entry.target.getAttribute("id");
+            if (entry.intersectionRatio > 0) {
+              document
+                .querySelector(`nav.toc ol li a[href="#${id}"]`)
+                .classList.add("active");
+            } else {
+              document
+                .querySelector(`nav.toc ol li a[href="#${id}"]`)
+                .classList.remove("active");
+            }
+          });
+        });
+
+        // Track all sections that have an `id` applied
+        document
+          .querySelectorAll(".post-content .direct-link")
+          .forEach((section) => {
+            observer.observe(section.parentElement, { rootMargin: "0px" });
+          });
+      }
+    } else {
+      console.error(
+        "ActiveToc cannot run on this device because the Intersection Observer API is not supported."
+      );
+    }
   });
 
   function bindSearch() {

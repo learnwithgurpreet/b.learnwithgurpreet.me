@@ -90,6 +90,17 @@ h3:target .direct-link {
   display: inline-block;
 }
 
+.toc li {
+  @apply py-1;
+}
+.toc a {
+  @apply no-underline inline-block text-green-700 dark:text-green-500 hover:text-green-800 dark:hover:text-green-600;
+}
+
+.toc a.active {
+  @apply font-bold;
+}
+
 /* ***********
 Toggle Button
 ************* */
