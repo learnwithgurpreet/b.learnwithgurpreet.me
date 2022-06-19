@@ -30,5 +30,11 @@
         }
       ]
     }
-  ]
+  ],
+  "functions": {
+    "pages/api/generatecache.js": {
+      "memory": 3008,
+      "maxDuration": 60
+    }
+  }
 }
