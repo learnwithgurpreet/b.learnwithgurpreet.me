@@ -32,7 +32,7 @@
     }
   ],
   "functions": {
-    "pages/api/generatecache.js": {
+    "/api/generatecache.js": {
       "memory": 1024,
       "maxDuration": 10
     }
