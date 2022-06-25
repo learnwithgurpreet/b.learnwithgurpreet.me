@@ -34,7 +34,7 @@
 
     <link rel="stylesheet" href="{{ '/assets/css/output.css' | url }}">
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
-    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+    <linkrel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
     <script>
       // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -55,6 +55,8 @@
     <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js" integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
     <script src="{{ '/assets/js/app.js' | url }}"></script>
+    {% if env.environment == "production" %}
     <script async defer data-website-id="be37258c-ab65-4498-a0e0-2c79ed7ac36f" src="https://umami.learnwithgurpreet.com/umami.js"></script>
+    {% endif %}
   </body>
 </html>
