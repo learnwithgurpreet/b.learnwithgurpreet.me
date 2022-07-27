@@ -1,7 +1,7 @@
 {
   "title": "gS",
   "metaTitle": "Learn with Gurpreet",
-  "url": "https://learnwithgurpreet.com",
+  "url": "https://www.learnwithgurpreet.com",
   "language": "en",
   "description": "Every space has a story",
   "feed": {
@@ -21,7 +21,7 @@
     "url": "/contact/",
     "twitter": "https://twitter.com/gsin11",
     "linkedin": "https://linkedin.com/in/gsin11/",
-    "github": "https://github.com/gsin11",
+    "github": "https://github.com/learnwithgurpreet",
     "mastodon": "https://mastodon.social/web/@gsin",
     "creator": "@gsin11",
     "image": "/assets/images/profile-pic.jpg"
@@ -29,6 +29,6 @@
   "technology": {
     "framework": "https://www.11ty.dev/",
     "hosting": "https://vercel.com/",
-    "source": "https://github.com/gsin11/learnwithgurpreet"
+    "source": "https://github.com/learnwithgurpreet/learnwithgurpreet"
   }
 }
