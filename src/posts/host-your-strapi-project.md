@@ -8,7 +8,7 @@ tags:
   - "programming"
 ---
 
-In this article, I will walk you through the [Strapi CMS setup](https://www.learnwithgurpreet.com/my-first-strapi-project-experience/) on your local machine followed by deploying it to Heroku.
+In this article, I will walk you through the [Strapi CMS setup](https://learnwithgurpreet.com/my-first-strapi-project-experience/) on your local machine followed by deploying it to Heroku.
 
 ## Prerequisites
 

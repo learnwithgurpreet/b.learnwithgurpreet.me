@@ -1,3 +1,3 @@
 # learnwithgurpreet
 
-Personal blog deployed [www.learnwithgurpreet.com](https://www.learnwithgurpreet.com)
+Personal blog deployed [learnwithgurpreet.com](https://learnwithgurpreet.com)

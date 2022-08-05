@@ -1,18 +1,18 @@
 {
   "title": "gS",
   "metaTitle": "Learn with Gurpreet",
-  "url": "https://www.learnwithgurpreet.com",
+  "url": "https://learnwithgurpreet.com",
   "language": "en",
   "description": "Every space has a story",
   "feed": {
     "subtitle": "I like creating and using specialized tools for making development processes as efficient as possible. I have the experience to work with big projects and big development teams.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
-    "id": "https://www.learnwithgurpreet.com/"
+    "id": "https://learnwithgurpreet.com/"
   },
   "jsonfeed": {
     "path": "/feed/feed.json",
-    "url": "https://www.learnwithgurpreet.com/feed/feed.json"
+    "url": "https://learnwithgurpreet.com/feed/feed.json"
   },
   "author": {
     "name": "Gurpreet Singh",
