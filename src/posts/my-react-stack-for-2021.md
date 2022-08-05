@@ -7,7 +7,7 @@ tags:
   - "thoughts"
 ---
 
-My ReactJS tech stack in which you might be interested. I will showcase what options are available in the market to start on a [ReactJS based application](https://www.learnwithgurpreet.com/structure-your-frontend-project/).
+My ReactJS tech stack in which you might be interested. I will showcase what options are available in the market to start on a [ReactJS based application](https://learnwithgurpreet.com/structure-your-frontend-project/).
 
 ## ReactJS (with TypeScript)
 
