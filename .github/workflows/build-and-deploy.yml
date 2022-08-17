@@ -32,3 +32,6 @@ jobs:
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: _site
+
+      - name: Lighthouse CI
+        run: npm install -g @lhci/cli@0.8.x && lhci autorun --upload.target=temporary-public-storage --collect.url=https://learnwithgurpreet.com
