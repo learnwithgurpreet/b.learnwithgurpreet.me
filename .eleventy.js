@@ -65,6 +65,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/favicons");
   eleventyConfig.addPassthroughCopy("src/site.webmanifest");
   eleventyConfig.addPassthroughCopy("./CNAME");
+  eleventyConfig.addPassthroughCopy("./loaderio-df4eb9fd0acf4fc4420b21484140a74e.txt");
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
