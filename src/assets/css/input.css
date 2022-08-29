@@ -15,7 +15,7 @@ body,
   @apply flex w-full mb-0;
 }
 
-.active {
+#main-nav [aria-current=page] {
   @apply font-bold;
 }
 

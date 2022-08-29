@@ -10,6 +10,12 @@
       searchTextBox.classList.toggle("hidden");
       document.body.classList.toggle("overflow-hidden");
       bindSearch();
+      if (
+        document.querySelector("body").classList.contains("overflow-hidden") ===
+        false
+      ) {
+        searchBtn.focus();
+      }
     }
 
     document
@@ -106,7 +112,6 @@
           container: "#hits",
           templates: { empty: emptyRow, item: results },
           transformItems: (e) => {
-            console.log(e);
             return e.map(
               (e) => (
                 (e.publish_date = new Date(e.date_published)

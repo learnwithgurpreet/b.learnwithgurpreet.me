@@ -1,5 +1,5 @@
 <header>
-  <nav class="shadow">
+  <div class="shadow">
     <div class="container px-6 py-4 mx-auto flex justify-between items-center">
       <div class="flex items-center justify-between">
         <div>
@@ -8,12 +8,14 @@
         </div>
       </div>
       <div class="items-center flex">
-        <div class="hidden md:flex flex-col md:flex-row md:mx-6">
-          {%- for entry in collections.all | eleventyNavigation %}
-            <a class="{% if entry.url == page.url %}active {% endif %}my-1 font-medium transition-colors duration-200 transform hover:text-blue-600 dark:hover:text-blue-600 md:mx-4 md:my-0"
-              href="{{ entry.url | url }}">{{ entry.title }}</a>
-          {%- endfor %}
-        </div>
+        <nav aria-label="Main Navigation" tabindex="-1" id="main-nav">
+          <ul class="hidden md:flex flex-col md:flex-row md:mx-6">
+            {%- for entry in collections.all | eleventyNavigation %}
+              <li class="my-1 font-medium md:mx-4 md:my-0"><a class="transition-colors duration-200 transform hover:text-blue-600 dark:hover:text-blue-600"
+                href="{{ entry.url | url }}" {%if entry.url == page.url%}aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+            {%- endfor %}
+          </ul>
+        </nav>
         <div class="flex flex-row gap-6">
           {% include "search.njk" %}
           <button id="mode-toggle" class="mode-toggle is-ready" aria-label="Toggle dark mode" title="Toggle dark mode">
@@ -29,5 +31,5 @@
         </div>
       </div>
     </div>
-  </nav>
+  </div>
 </header>
