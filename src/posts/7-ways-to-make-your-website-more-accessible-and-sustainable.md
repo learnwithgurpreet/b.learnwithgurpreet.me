@@ -3,7 +3,7 @@ title: "7 ways to make your website more accessible and sustainable"
 date: "2022-05-21"
 image: /assets/images/cover3.jpg
 imageAlt: "Photo by Nick Fewings on Unsplash"
-excerpt: We often talk about sustainability and try to decrease our CO₂ footprints by driving eco-friendly cars, going vegan, etc.
+excerpt: We often talk about sustainability and try to decrease our CO₂
 tags:
   - "design"
   - "sustainable-web"
