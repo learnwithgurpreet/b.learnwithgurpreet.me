@@ -36,6 +36,67 @@
       ) {
         toggleSearch(event);
       }
+      if (
+        event.key.toLowerCase() === "arrowdown" &&
+        ![...searchTextBox.classList].includes("hidden") &&
+        document.querySelectorAll(".ais-Hits-item")?.length > 0
+      ) {
+        if (
+          !document.querySelector(".ais-Hits-list > .ais-Hits-item a:focus")
+        ) {
+          var firstItem = document.querySelector(
+            ".ais-Hits-list > .ais-Hits-item a"
+          );
+          firstItem.setAttribute("aria-selected", true);
+          firstItem.focus();
+        } else if (
+          document
+            .querySelector(".ais-Hits-list > .ais-Hits-item a:focus")
+            .parentElement.nextSibling?.querySelector("a")
+        ) {
+          var focusedNode = document.querySelector(
+            ".ais-Hits-list > .ais-Hits-item a:focus"
+          );
+          focusedNode.removeAttribute("aria-selected");
+
+          var nextNode =
+            focusedNode.parentElement.nextSibling.querySelector("a");
+          nextNode.setAttribute("aria-selected", true);
+          nextNode.focus();
+        }
+      }
+
+      if (
+        event.key.toLowerCase() === "arrowup" &&
+        ![...searchTextBox.classList].includes("hidden") &&
+        document.querySelectorAll(".ais-Hits-item")?.length > 0
+      ) {
+        if (
+          !document.querySelector(
+            ".ais-Hits-list > .ais-Hits-item a:last-child:focus"
+          )
+        ) {
+          var lastItem = document.querySelector(
+            ".ais-Hits-list > .ais-Hits-item a:last-child"
+          );
+          lastItem.setAttribute("aria-selected", true);
+          lastItem.focus();
+        } else if (
+          document
+            .querySelector(".ais-Hits-list > .ais-Hits-item a:focus")
+            .parentElement.previousSibling?.querySelector("a")
+        ) {
+          var focusedNode = document.querySelector(
+            ".ais-Hits-list > .ais-Hits-item a:focus"
+          );
+          focusedNode.removeAttribute("aria-selected");
+
+          var nextNode =
+            focusedNode.parentElement.previousSibling.querySelector("a");
+          nextNode.setAttribute("aria-selected", true);
+          nextNode.focus();
+        }
+      }
     });
 
     if (window.IntersectionObserver) {
@@ -73,8 +134,11 @@
     if (!document.querySelector(".search-root")) {
       const emptyRow =
         '<div class="flex items-center bg-blue text-white text-sm px-4 py-3 mt-8" role="alert"><p>No results found matching <strong>{{query}}</strong>.</p></div>';
-      const results =
-        '<section class="section-{{ objectID }} w-full "><a href="{{ url }}" class="w-full py-8 flex items-center leading-normal border-b border-gray-200"><div class="flex-1"><div class="text-xs uppercase flex font-normal items-center"><span>{{publish_date}}</span></div><h2 class="font-medium text-xl lg:text-2xl">{{{_highlightResult.title.value}}}</h2><p>{{{_highlightResult.excerpt.value}}}</p></div></a></section>';
+      const results = `<a href="{{ url }}" tabindex="-1" role="option" aria-label="{{{_highlightResult.title.value}}}" class="section-{{ objectID }} w-full py-8 block leading-normal border-b border-gray-200">
+          <span class="text-xs uppercase font-normal">{{publish_date}}</span>
+          <h2 class="font-medium text-xl lg:text-2xl">{{{_highlightResult.title.value}}}</h2>
+          <p>{{{_highlightResult.excerpt.value}}}</p>
+        </a>`;
 
       const searchClient = algoliasearch(
         "S28APXVTR0",
@@ -89,6 +153,8 @@
           "" !== e.state.query
             ? (e.search(), t.classList.remove("hidden"))
             : t.classList.add("hidden");
+          t.querySelector(".ais-Hits-list")?.setAttribute("role", "listbox");
+          t.querySelector(".ais-Hits-list")?.setAttribute("tabindex", "-1");
         },
       });
 
@@ -96,8 +162,8 @@
         instantsearch.widgets.searchBox({
           container: "#searchbox",
           placeholder: "Type to search",
-          showSubmit: !1,
-          showReset: !0,
+          showSubmit: false,
+          showReset: false,
           cssClasses: {
             root: "search-root",
             form: "form",
