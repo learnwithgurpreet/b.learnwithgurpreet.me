@@ -1,6 +1,6 @@
 {
   "name": "learnwithgurpreet-blog",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Personal technology blog by Gurpreet Singh",
   "scripts": {
     "dev:css": "npx tailwindcss -i src/assets/css/input.css -o _site/assets/css/output.css -w",
