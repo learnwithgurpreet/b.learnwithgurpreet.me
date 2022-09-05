@@ -5,7 +5,6 @@ image: /assets/images/cover3.jpg
 imageAlt: "Photo by Nick Fewings on Unsplash"
 excerpt: We often talk about sustainability and try to decrease our CO₂
 tags:
-  - "design"
   - "sustainable-web"
   - "tech"
 ---

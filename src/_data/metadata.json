@@ -30,5 +30,16 @@
     "framework": "https://www.11ty.dev/",
     "hosting": "https://vercel.com/",
     "source": "https://github.com/learnwithgurpreet/learnwithgurpreet"
+  },
+  "tags": {
+    "nodejs": "purple",
+    "programming": "cyan",
+    "privacy": "blue",
+    "thoughts": "blue",
+    "your-first-week-in-nodejs": "red",
+    "raspberry-pi": "green",
+    "analytics": "red",
+    "tech": "cyan",
+    "sustainable-web": "green"
   }
 }
