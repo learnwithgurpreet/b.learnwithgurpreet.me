@@ -1,6 +1,6 @@
 {% if page.url == pagination.href.first %}
   <section class="body-font">
-    <div class="container pb-16 mx-auto">
+    <div class="container pb-8 mx-auto">
       <h1 class="text-3xl font-bold py-12">Recent Posts</h1>
       <section class="flex flex-wrap -m-4" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
         {% for post in postslist | reverse %}

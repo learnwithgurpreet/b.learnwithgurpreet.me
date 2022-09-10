@@ -16,7 +16,7 @@ eleventyComputed:
   title: Tagged “{{ tag }}”
 permalink: /tags/{{ tag | slug }}/
 ---
-<h1 class="text-3xl font-bold text-gray-800 dark:text-gray-100 py-12">Tagged "{{ tag }}"</h1>
+<h1 class="text-3xl font-bold text-gray-800 dark:text-gray-100 py-12">Tagged "<span class="tag {{ metadata.tags[tag] }}">{{ tag }}<span>"</h1>
 
 {% set posts = collections[ tag ] %}
 {% set showTags = false %}

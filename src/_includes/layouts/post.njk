@@ -16,7 +16,7 @@ templateClass: tmpl-post mt-8 container mx-auto px-6
     <ul class="flex flex-wrap gap-1 py-3">
       {%- for tag in tags | filterTagList -%}
         {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-        <li><a href="{{ tagUrl | url }}" class="underline font-medium text-lg text-green-700 dark:text-green-500 hover:text-green-800 dark:hover:text-green-600">#{{ tag }}</a><li>
+        <li><a href="{{ tagUrl | url }}" class="tag {{ metadata.tags[tag] }}">#{{ tag }}</a><li>
       {%- endfor %}
     </ul>
     {% if image %}
