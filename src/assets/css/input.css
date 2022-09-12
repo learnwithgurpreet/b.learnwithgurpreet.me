@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../fonts/Merriweather-Regular.eot');
+  src: url('../fonts/Merriweather-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Merriweather-Regular.woff2') format('woff2'),
+      url('../fonts/Merriweather-Regular.woff') format('woff'),
+      url('../fonts/Merriweather-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1,
+h2, 
+h3, 
+h4,
+h5,
+h6 {
+  @apply font-merriweather;
+}
+
 body,
 .search {
   @apply dark:bg-gray-800 bg-white;
