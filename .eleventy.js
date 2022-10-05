@@ -171,13 +171,13 @@ module.exports = function (eleventyConfig) {
       const dom = new JSDOM(content);
       const document = dom.window.document;
 
-      const [...images] = document.getElementsByTagName("img");
+      const [...images] = document.querySelectorAll(".post-content img");
 
       images.forEach((image) => {
         image.setAttribute("loading", "lazy");
       });
 
-      return document.documentElement.outerHTML;
+      return "<!DOCTYPE html> \n" + document.documentElement.outerHTML;
     } else {
       return content;
     }
