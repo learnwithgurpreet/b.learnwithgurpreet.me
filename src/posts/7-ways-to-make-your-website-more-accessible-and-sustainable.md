@@ -206,6 +206,22 @@ Some mobile users are having OLED screens that use less battery, which is useful
 
 It also helps readers who love reading before going to bed :)
 
+## GoTo platform
+
+You don't need to be a technology expert to run an online business. Digital.com does the research for you, comparing the best products, services, and software to start or grow your small business website or online store.
+
+Digital.com clarifies your options as you choose the right services to run your business – saving you time and money. Digital.com stands out because our team of researchers, writers, and experts have experience running online businesses and using software to meet their business goals.
+
+Real-life experience is the foundation of Digital.com's reviews:
+
+- They obtained trial accounts for each product so that our researchers could experience the onboarding process and user flow.
+- They interview power users of each product in order to incorporate their practical and long-term experience.
+- They summarize every user review available on the web using artificial intelligence to gauge overall user sentiment for each software product.
+- They devote weeks of researching, writing, and editing to develop each analytical review.
+- With this extensive research and testing, their team determines an overall Editor’s Rating to simplify your search.
+
+At Digital.com, their team of experts have spent thousands of hours testing and utilizing all the tools available on the market in order to create and maintain their website. You can visit their site to view the free informational guides and resources they have created to help you with your digital needs.
+
 ## Resources
 
 [www.websitecarbon.com](https://www.websitecarbon.com/)
@@ -217,3 +233,5 @@ It also helps readers who love reading before going to bed :)
 [v-fonts.com/](https://v-fonts.com/)
 
 [www.w3schools.blog/html5-tags](https://www.w3schools.blog/html5-tags)
+
+Digital.com
