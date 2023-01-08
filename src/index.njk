@@ -1,44 +1,12 @@
 ---
-layout: layouts/home.njk
+layout: layouts/base.njk
 title: Home
-eleventyNavigation:
-  key: Home
-  order: 1
 pagination:
   reverse: true
   data: collections.posts
-  size: 7
+  size: 10
   alias: posts
 ---
-{% set postslist = collections.posts | head(-3) %}
-{% set postslistCounter = collections.posts | length %}
-{% set showTags = true %}
-{% set showExcerpt = true %}
-{% set skipForRecentPosts = true %}
-
-{% include "recentposts.njk" %}
+<h1 class="title">Blog</h1>
 {% include "postlist.njk" %}
-
-{# Pagination starts #}
-<div class="w-full border-t border-gray-100 font-mono mt-16">
-  <nav class="pagination flex flex-wrap justify-center -mt-px">
-    {% if page.url != pagination.href.first %}
-      <a href="{{ pagination.href.first }}" class="p-2 mx-1 border-t border-transparent hover:border-gray-700" aria-label="Previous page">
-        <svg xmlns="http://www.w3.org/2000/svg" class="align-middle fill-current inline-block h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
-        </svg>
-      </a>
-    {% endif %}
-    {% for pageEntry in pagination.pages %}
-      <a href="{{ pagination.hrefs[ loop.index0 ] }}" class="p-2 mx-1 border-t hover:border-green-500 {% if page.url == pagination.hrefs[ loop.index0 ] %} border-green-600{% else %}{% endif %}" {% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ loop.index }}</a>
-    {% endfor %}
-    {% if pagination.href.next %}
-    <a class="p-2 mx-1" href="{{ pagination.href.next }}" aria-label="Next page">
-      <svg xmlns="http://www.w3.org/2000/svg" class="align-middle fill-current inline-block h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-      </svg>
-    </a>
-    {% endif %}
-  </nav>
-</div>
-{# Pagination ends #}
+{% include "pagination.njk" %}

@@ -1,23 +1,8 @@
-<header>
-  <div class="shadow">
-    <div class="container px-6 py-4 mx-auto flex justify-between items-center">
-      <div class="flex items-center justify-between">
-        <div>
-          <a class="text-2xl font-bold transition-colors duration-200 transform lg:text-3xl"
-            href="/">{{ metadata.title }}</a>
-        </div>
-      </div>
-      <div class="items-center flex">
-        <nav class="hidden md:flex" aria-label="Main Navigation" tabindex="-1" id="main-nav">
-          <ul class="flex flex-row mx-6">
-            {%- for entry in collections.all | eleventyNavigation %}
-              <li class="my-1 font-medium md:mx-4 md:my-0"><a class="transition-colors duration-200 transform hover:text-blue-600 dark:hover:text-blue-600"
-                href="{{ entry.url | url }}" {%if entry.url == page.url%}aria-current="page"{% endif %}>{{ entry.title }}</a></li>
-            {%- endfor %}
-          </ul>
-        </nav>
-        {% include "search.njk" %}
-      </div>
-    </div>
-  </div>
+<header class="header">
+  <a class="logo" href="/">{{ metadata.title }}</a>
+  <nav>
+    {%- for entry in collections.all | eleventyNavigation %}
+    <a href="{{ entry.url | url }}" {%if entry.url == page.url%}aria-current="page"{% endif %}>{{ entry.title }}</a>
+    {%- endfor %}
+  </nav>
 </header>

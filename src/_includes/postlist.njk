@@ -1,58 +1,10 @@
-<section class="body-font overflow-hidden">
-  <div class="container pb-16 mx-auto">
-      <ol reversed style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
-      {% for post in posts %}
-      {% if page.url != pagination.href.first or page.fileSlug == "archive" %}
-        <li class="py-8 flex flex-wrap md:flex-nowrap px-1">
-          <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-            {% if showTags %}
-              {% for tag in post.data.tags | filterTagList %}
-                {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-                <span class="tracking-widest text-xs title-font font-medium uppercase mb-1"><a class="tag {{ metadata.tags[tag] }}" href="{{ tagUrl | url }}">{{ tag }}</a></span>
-              {% endfor %}
-            {% endif %}
-            <div class="flex flex-row md:flex-col">
-              <time class="mt-2 text-sm mr-2" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-              <span class="mt-2 inline-flex items-center leading-none text-sm">
-                <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" role="presentation">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>{{ post | readingTime }}
-              </span>
-            </div>
-          </div>
-          <a class="md:flex-grow block" aria-label="{{ post.data.title }}" href="{{ post.url | url }}">
-            <h2 class="text-2xl font-semibold title-font mb-2">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h2>
-            {% if showExcerpt %}<p class="leading-relaxed">{{ post.data.excerpt }}</p>{% endif %}
-          </a>
-        </li>
-      {% else %}
-      {% if loop.index0 > 2 %}
-        <li class="py-8 flex flex-wrap md:flex-nowrap px-1">
-          <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-            {% if showTags %}
-              {% for tag in post.data.tags | filterTagList %}
-                {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-                <span class="tracking-widest text-xs title-font font-medium uppercase mb-1"><a class="tag {{ metadata.tags[tag] }}" href="{{ tagUrl | url }}">{{ tag }}</a></span>
-              {% endfor %}
-            {% endif %}
-            <div class="flex flex-row md:flex-col">
-              <time class="mt-2 text-sm mr-2" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-              <span class="mt-2 inline-flex items-center leading-none text-sm">
-                <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" role="presentation">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>{{ post | readingTime }}
-              </span>
-            </div>
-          </div>
-          <a class="md:flex-grow block" aria-label="{{ post.data.title }}" href="{{ post.url | url }}">
-            <h2 class="text-2xl font-semibold title-font mb-2">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h2>
-            {% if showExcerpt %}<p class="leading-relaxed">{{ post.data.excerpt }}</p>{% endif %}
-          </a>
-        </li>
-      {% endif %}
-      {% endif %}
-        
-      {% endfor %}
-    </ol>
-  </div>
-</section>
+<ul reversed class="posts" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
+  {% for post in posts %}
+    <li class="post">
+      <a href="{{ post.url | url }}">
+        <date datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</date>
+        <span>{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
