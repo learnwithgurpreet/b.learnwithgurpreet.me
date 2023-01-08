@@ -23,7 +23,7 @@
     <meta name="og:title" content="{{ title }} - {{ metadata.metaTitle }}">
     <meta name="og:description" content="{{ excerpt or metadata.description }}">
     <meta name="og:image" content="{{metadata.url}}{{ image or metadata.author.image }}">
-    {% set canonical = metadata.url + page.url %}
+    {% set canonical = metadata.canonical + page.url %}
     <link rel="canonical" href="{{ canonical | url }}" />
     <meta name="og:url" content="{{ canonical | url }}">
     <meta name="og:site_name" content="{{ metadata.metaTitle }}">
@@ -31,20 +31,17 @@
     <meta name="og:type" content="website">
     <link rel="manifest" href="/site.webmanifest">
 
-    <link rel="stylesheet" href="{{ '/assets/css/output.css' | url }}">
-    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}" />
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}" />
   </head>
-  <body class="text-gray-600 dark:text-gray-300">
+  <body>
     {% include "../header.njk" %}
     <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
       {{ content | safe }}
     </main>
     {% include "../footer.njk" %}
     <!-- Current page: {{ page.url | url }} -->
-    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js" integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
-    <script src="{{ '/assets/js/app.js' | url }}"></script>
+    {# <script src="{{ '/assets/js/app.js' | url }}"></script> #}
   </body>
 </html>

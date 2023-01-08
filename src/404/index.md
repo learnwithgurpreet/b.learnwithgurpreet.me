@@ -1,5 +1,5 @@
 ---
-layout: layouts/page.njk
+layout: layouts/base.njk
 title: 404
 templateClass: mt-8 container mx-auto px-6
 ---

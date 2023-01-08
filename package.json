@@ -3,12 +3,8 @@
   "version": "1.0.12",
   "description": "Personal technology blog by Gurpreet Singh",
   "scripts": {
-    "dev:css": "npx tailwindcss -i src/assets/css/input.css -o _site/assets/css/output.css -w",
-    "dev:11ty": "eleventy --serve --watch",
-    "dev": "run-p dev:*",
-    "build:css": "NODE_ENV=production npx tailwindcss -i src/assets/css/input.css -o _site/assets/css/output.css -m",
-    "build:11ty": "eleventy",
-    "build": "run-s build:*"
+    "start": "eleventy --serve --watch",
+    "build": "NODE_ENV=production eleventy"
   },
   "repository": {
     "type": "git",
@@ -30,8 +26,6 @@
     "@11ty/eleventy-plugin-rss": "^1.1.2",
     "algoliasearch": "^4.13.1",
     "clean-css": "^5.3.0",
-    "eleventy-plugin-reading-time": "^0.0.1",
-    "eleventy-plugin-toc": "^1.1.5",
     "html-minifier": "^4.0.0",
     "instantsearch.js": "^4.40.6",
     "luxon": "^2.4.0",
