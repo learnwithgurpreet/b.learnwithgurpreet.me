@@ -5,7 +5,7 @@
   {% endif %}
   {% for pageEntry in pagination.pages %}
     {% if page.url == pagination.hrefs[ loop.index0 ] %}
-      <span {% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ loop.index }}<span>
+      <span {% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ loop.index }}</span>
     {% else %}
       <a href="{{ pagination.hrefs[ loop.index0 ] }}" class="{% if page.url == pagination.hrefs[ loop.index0 ] %}current{% else %}{% endif %}" {% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ loop.index }}</a>
     {% endif %}
