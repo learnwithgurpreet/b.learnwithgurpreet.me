@@ -190,6 +190,10 @@ header a + a {
   color: grey;
 }
 
+.featured-image {
+  height: auto;
+}
+
 .pagination {
   margin-top: 20px;
   display: flex;

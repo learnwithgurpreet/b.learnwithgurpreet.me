@@ -21,7 +21,7 @@ const cacheBusterOptions = {
 async function imageShortcode(
   src,
   alt,
-  classList = "mx-auto",
+  classList = "featured-image",
   sizes = "100vw"
 ) {
   let metadata = await Image(src, {
