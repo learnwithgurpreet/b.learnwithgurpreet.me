@@ -2,7 +2,8 @@
   <a class="logo" href="/">{{ metadata.title }}</a>
   <nav>
     {%- for entry in collections.all | eleventyNavigation %}
-    <a href="{{ entry.url | url }}" {%if entry.url == page.url%}aria-current="page"{% endif %}>{{ entry.title }}</a>
+      <a href="{{ entry.url | url }}" {%if entry.url == page.url%}aria-current="page"{% endif %}>{{ entry.title }}</a>
     {%- endfor %}
+    <a href="{{ "/feed/feed.xml" | url }}">RSS</a>
   </nav>
 </header>
