@@ -13,7 +13,8 @@ const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 const { JSDOM } = require("jsdom");
 
 const cacheBusterOptions = {
-  createResourceHash(outputDirectoy, url, target) {
+  sourceAttributes: { script: "src" },
+  createResourceHash(outputDirectory, url, target) {
     return Date.now();
   },
 };

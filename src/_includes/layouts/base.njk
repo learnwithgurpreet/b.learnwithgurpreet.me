@@ -9,7 +9,7 @@
     <meta itemprop="name" content="{{ title }} - {{ metadata.metaTitle }}">
     <meta itemprop="description" content="{{ excerpt or metadata.description }}">
 
-    <link rel="shortcut icon" href="{{ '/assets/favicons/favicon.ico' | url }}">
+    <link rel="shortcut icon" href="{{ '/assets/favicons/favicon.ico' }}">
     <link rel="icon" type="image/png" href="{{ '/assets/favicons/favicon-32x32.png' | url }}" sizes="32x32">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicons/apple-touch-icon.png' | url }}">
 
@@ -23,7 +23,7 @@
     <meta name="og:title" content="{{ title }} - {{ metadata.metaTitle }}">
     <meta name="og:description" content="{{ excerpt or metadata.description }}">
     <meta name="og:image" content="{{metadata.url}}{{ image or metadata.author.image }}">
-    {% set canonical = metadata.canonical + page.url %}
+    {% set canonical = metadata.url + page.url %}
     <link rel="canonical" href="{{ canonical | url }}" />
     <meta name="og:url" content="{{ canonical | url }}">
     <meta name="og:site_name" content="{{ metadata.metaTitle }}">
@@ -32,8 +32,8 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
-    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}" />
-    <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}" />
+    <link rel="alternate" href="{{ metadata.url + metadata.feed.path }}" type="application/atom+xml" title="{{ metadata.title }}" />
+    <link rel="alternate" href="{{ metadata.url + metadata.jsonfeed.path }}" type="application/json" title="{{ metadata.title }}" />
   </head>
   <body>
     {% include "../header.njk" %}
