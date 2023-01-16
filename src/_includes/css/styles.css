@@ -15,7 +15,7 @@ html {
 
 @media (min-width: 768px) {
   html {
-      font-size: 125%;
+      font-size: 1.25rem;
       max-width: 42em;
 } }
 
@@ -26,7 +26,7 @@ h1, h2, h3, h4 {
 }
 
 a {
-  color: #fa6432;
+  color: #cb3300;
   text-decoration: none;
 }
 a:hover, a:focus, a:active {
@@ -138,7 +138,7 @@ figure figcaption {
   font-family: monospace, monospace;
   font-size: 0.75em;
   text-align: center;
-  color: grey;
+  color: #595959;
 }
 
 .footnote-definition sup {
@@ -187,7 +187,7 @@ header a + a {
   font-size: 0.8rem;
   vertical-align: middle;
   padding-right: 2rem;
-  color: grey;
+  color: #595959;
 }
 
 .featured-image {
@@ -200,8 +200,8 @@ header a + a {
   justify-content: center;
 }
 
-.pagination * {
-  margin: 0 10px;
+.pagination *:first-child {
+  margin-left: 0;
 }
 
 .tags-list,
@@ -218,4 +218,8 @@ header a + a {
 footer {
   text-align: center;
   padding: 0.5rem 0;
+}
+
+.pagination * {
+  padding: 0 0.5rem;
 }

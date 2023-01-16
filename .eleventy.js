@@ -4,6 +4,7 @@ const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const striptags = require("striptags");
+const CleanCSS = require("clean-css");
 
 const Image = require("@11ty/eleventy-img");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -110,6 +111,10 @@ module.exports = function (eleventyConfig) {
   }
 
   eleventyConfig.addFilter("filterTagList", filterTagList);
+
+  eleventyConfig.addFilter("cssmin", function (code) {
+    return new CleanCSS({}).minify(code).styles;
+  });
 
   // Create an array of all tags
   eleventyConfig.addCollection("tagList", function (collection) {
