@@ -1,6 +1,6 @@
 {
   "name": "learnwithgurpreet-blog",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Personal technology blog by Gurpreet Singh",
   "scripts": {
     "start": "eleventy --serve --watch",
