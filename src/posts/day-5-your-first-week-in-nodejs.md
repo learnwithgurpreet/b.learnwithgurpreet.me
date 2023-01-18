@@ -49,25 +49,25 @@ We will be using [MongoLabs](https://account.mongodb.com/account/login) for our 
 
 You can go to [https://account.mongodb.com/account/login](https://account.mongodb.com/account/login) and claim your free account. You can follow the given steps to create a new database.
 
-![](/assets/images/SUhXqX_0a-1024x385.png "create-project")
+![create project](/assets/images/SUhXqX_0a-1024x385.png "create-project")
 
 **Create a new project**
 
-![](/assets/images/wCpF9djRm-1024x517.png "save-project")
+![save project](/assets/images/wCpF9djRm-1024x517.png "save-project")
 
 **Save project with members (default is logged-in user)**
 
-![](/assets/images/GjWoGMegW-1024x455.png "create-db")
+![create database](/assets/images/GjWoGMegW-1024x455.png "create-db")
 
 **Create your first database**
 
-![](/assets/images/Es-Go-hMJ-1024x774.png "select-plan")
+![select plan](/assets/images/Es-Go-hMJ-1024x774.png "select-plan")
 
 **Select free plan**
 
 Once you create your cluster, it will take some time for the initial deployment.
 
-![](/assets/images/lm898S-_05-1024x831.png "create-db-user")
+![create a database user](/assets/images/lm898S-_05-1024x831.png "create-db-user")
 
 Now you need to create a user for your database
 

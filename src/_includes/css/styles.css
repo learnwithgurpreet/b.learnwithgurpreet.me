@@ -1,3 +1,10 @@
+:root {
+  --color-1: #000;
+  --color-2: #cb3300;
+  --color-3: #333;
+  --color-4: #eee;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,22 +18,35 @@ html {
   word-wrap: break-word;
   margin: 0 auto;
   padding: 1.5em;
+  background-color: var(--color-4);
+  color: var(--color-1);
 }
 
 @media (min-width: 768px) {
   html {
-      font-size: 1.25rem;
-      max-width: 42em;
-} }
+    font-size: 1.25rem;
+    max-width: 42em;
+  }
+}
 
 h1, h2, h3, h4 {
   margin: 2.5rem 0 1.5rem 0;
   line-height: 1.25;
-  color: #333;
+  color: var(--color-3);
+}
+
+.direct-link {
+  display: none;
+}
+
+h2:hover .direct-link,
+h3:hover .direct-link,
+h4:hover .direct-link {
+  display: inline;
 }
 
 a {
-  color: #cb3300;
+  color: var(--color-2);
   text-decoration: none;
 }
 a:hover, a:focus, a:active {
@@ -38,9 +58,10 @@ p {
   line-height: 1.5;
 }
 p code {
-  background-color: #eee;
+  background-color: var(--color-3);
   padding: 0.05em 0.2em;
-  border: 1px solid #ccc;
+  color: var(--color-4);
+  border-radius: 0.3rem;
 }
 
 ol, ul {
@@ -73,7 +94,7 @@ img {
 blockquote {
   padding-left: 1em;
   font-style: italic;
-  border-left: solid 1px #fa6432;
+  border-left: solid 1px var(--color-2);
 }
 
 table {
@@ -116,12 +137,6 @@ table, .highlight > pre, pre.example {
   font-size: 2.5em;
 }
 
-.subtitle {
-  font-weight: normal;
-  font-size: 0.75em;
-  color: #666;
-}
-
 .tags {
   margin-top: -1.5rem;
   padding-bottom: 1.5em;
@@ -138,7 +153,7 @@ figure figcaption {
   font-family: monospace, monospace;
   font-size: 0.75em;
   text-align: center;
-  color: #595959;
+  color: var(--color-3);
 }
 
 .footnote-definition sup {
@@ -176,18 +191,18 @@ header a + a {
 .posts .post a {
   display: flex;
   padding: 0.5em 0;
-  color: black;
+  color: var(--color-1);
 }
 .posts .post a:hover, .posts .post a:focus, .posts .post a:active {
   text-decoration: none;
-  background: rgba(200, 200, 200, 0.2);
+  background: var(--color-4);
 }
 .posts .post date {
   font-family: monospace, monospace;
   font-size: 0.8rem;
   vertical-align: middle;
   padding-right: 2rem;
-  color: #595959;
+  color: var(--color-3);
 }
 
 .featured-image {
@@ -223,3 +238,137 @@ footer {
 .pagination * {
   padding: 0 0.5rem;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-1: #eee;
+    --color-2: #ff4000;
+    --color-3: #cccccc;
+    --color-4: #000;
+  }
+}
+
+
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+ code[class*="language-"],
+ pre[class*="language-"] {
+   color: #f8f8f2;
+   background: none;
+   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+   font-size: 1em;
+   text-align: left;
+   white-space: pre;
+   word-spacing: normal;
+   word-break: normal;
+   word-wrap: normal;
+   line-height: 1.5;
+ 
+   -moz-tab-size: 4;
+   -o-tab-size: 4;
+   tab-size: 4;
+ 
+   -webkit-hyphens: none;
+   -moz-hyphens: none;
+   -ms-hyphens: none;
+   hyphens: none;
+ }
+ 
+ /* Code blocks */
+ pre[class*="language-"] {
+   padding: 1em;
+   margin: .5em 0;
+   overflow: auto;
+   border-radius: 0.3em;
+ }
+ 
+ :not(pre) > code[class*="language-"],
+ pre[class*="language-"] {
+   background: #272822;
+ }
+ 
+ /* Inline code */
+ :not(pre) > code[class*="language-"] {
+   padding: .1em;
+   border-radius: .3em;
+   white-space: normal;
+ }
+ 
+ .token.comment,
+ .token.prolog,
+ .token.doctype,
+ .token.cdata {
+   color: slategray;
+ }
+ 
+ .token.punctuation {
+   color: #f8f8f2;
+ }
+ 
+ .token.namespace {
+   opacity: .7;
+ }
+ 
+ .token.property,
+ .token.tag,
+ .token.constant,
+ .token.symbol,
+ .token.deleted {
+   color: #f92672;
+ }
+ 
+ .token.boolean,
+ .token.number {
+   color: #ae81ff;
+ }
+ 
+ .token.selector,
+ .token.attr-name,
+ .token.string,
+ .token.char,
+ .token.builtin,
+ .token.inserted {
+   color: #a6e22e;
+ }
+ 
+ .token.operator,
+ .token.entity,
+ .token.url,
+ .language-css .token.string,
+ .style .token.string,
+ .token.variable {
+   color: #f8f8f2;
+ }
+ 
+ .token.atrule,
+ .token.attr-value,
+ .token.function,
+ .token.class-name {
+   color: #e6db74;
+ }
+ 
+ .token.keyword {
+   color: #66d9ef;
+ }
+ 
+ .token.regex,
+ .token.important {
+   color: #fd971f;
+ }
+ 
+ .token.important,
+ .token.bold {
+   font-weight: bold;
+ }
+ .token.italic {
+   font-style: italic;
+ }
+ 
+ .token.entity {
+   cursor: help;
+ }

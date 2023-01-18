@@ -20,6 +20,27 @@ const cacheBusterOptions = {
   },
 };
 
+function lazyImages(eleventyConfig, userOptions = {}) {
+  const { parse } = require("node-html-parser");
+
+  const options = {
+    name: "lazy-images",
+    ...userOptions,
+  };
+
+  eleventyConfig.addTransform(options.extensions, (content, outputPath) => {
+    if (outputPath.endsWith(".html")) {
+      const root = parse(content);
+      const images = root.querySelectorAll("img");
+      images.forEach((img) => {
+        img.setAttribute("loading", "lazy");
+      });
+      return root.toString();
+    }
+    return content;
+  });
+}
+
 async function imageShortcode(
   src,
   alt,
@@ -81,6 +102,7 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addNunjucksAsyncShortcode("responsiveImage", imageShortcode);
   eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
+  eleventyConfig.addPlugin(lazyImages, {});
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
