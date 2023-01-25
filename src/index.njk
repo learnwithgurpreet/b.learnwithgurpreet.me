@@ -1,11 +1,10 @@
 ---
-layout: layouts/base.njk
-title: Home
+layout: layouts/page.njk
 pagination:
   reverse: true
   data: collections.posts
   size: 4
   alias: posts
 ---
-{% include "post-cards.njk" %}
-{# {% include "pagination.njk" %} #}
+{% include "components/intro.njk" %}
+{% include "components/post-cards.njk" %}

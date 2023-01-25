@@ -106,6 +106,7 @@ h4, h5, h6 {
 }
 
 article pre,
+p,
 article p {
   @apply overflow-hidden break-words pt-4 lg:pt-6;
 }
