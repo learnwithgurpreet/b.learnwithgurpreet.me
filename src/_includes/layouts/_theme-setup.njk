@@ -1,0 +1,9 @@
+<script>
+  const prefDark = window.matchMedia('(prefers-color-scheme: dark)');
+  document
+    .querySelector('meta[name="theme-color"]')
+    .setAttribute('content', prefDark ? '#131820' : '#F9FAFB');
+  document
+    .querySelector('meta[name="msapplication-TileColor"]')
+    .setAttribute('content', prefDark ? '#131820' : '#F9FAFB');
+</script>

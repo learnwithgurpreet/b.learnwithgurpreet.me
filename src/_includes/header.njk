@@ -1,9 +1,13 @@
-<header class="header">
-  <a class="logo" href="/">{{ metadata.title }}</a>
-  <nav>
-    {%- for entry in collections.all | eleventyNavigation %}
-      <a href="{{ entry.url | url }}" {%if entry.url == page.url%}aria-current="page"{% endif %}>{{ entry.title }}</a>
-    {%- endfor %}
-    <a href="{{ "/feed/feed.xml" | url }}">RSS</a>
-  </nav>
+<header class="flex flex-col m-5">
+  <div class="flex justify-between items-center flex-row mb-4 lg:mb-11">
+    <a class="block" href="/">{{ metadata.title }}</a>
+    <nav>
+      <div class="fade flex gap-4 flex-wrap items-start justify-start">
+        {%- for entry in collections.all | eleventyNavigation %}
+          <a class="underline" href="{{ entry.url | url }}" {%if entry.url == page.url%}aria-current="page"{% endif %}>{{ entry.title }}</a>
+        {%- endfor %}
+        <a class="underline" href="{{ "/feed/feed.xml" | url }}">RSS</a>
+      </div>
+    </nav>
+  </div>
 </header>

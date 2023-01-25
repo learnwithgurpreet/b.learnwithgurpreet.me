@@ -100,8 +100,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("dd.MM.yyyy");
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
+      "MMM dd, yyyy"
+    );
   });
+  eleventyConfig.addFilter(
+    "readtime",
+    (str) => `${Math.ceil(str.split(" ").length / 200)} min read`
+  );
   eleventyConfig.addNunjucksAsyncShortcode("responsiveImage", imageShortcode);
   eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
   eleventyConfig.addPlugin(lazyImages, {});

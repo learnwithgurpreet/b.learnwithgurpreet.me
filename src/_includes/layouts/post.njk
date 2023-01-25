@@ -1,22 +1,37 @@
----
-layout: layouts/base.njk
----
-<h1 class="title">{{ title }}</h1>
-<ul class="tags">
-  {%- for tag in tags | filterTagList -%}
-    {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-    <li><a href="{{ tagUrl | url }}">{{ tag }}</a><li>
-  {%- endfor %}
-  <li><date datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</date><li>
-</ul>
-{% if image %}
-  {% if imageAlt %}
-    {% set alt = imageAlt %}
-  {% else %}
-    {% set alt = "featured" %}
-  {% endif %}
-  {% responsiveImage "src" + image, alt %}
-  <p class="caption">{{ imageAlt }}</p>
-{% endif %}
-{{ content | safe }}
-<a target="_blank" rel="noopener noreferrer" href="https://github.com/learnwithgurpreet/learnwithgurpreet/blob/main/src/posts/{{ page.fileSlug }}.md">Edit post</a>
+<html lang="en">
+  {% include "./_head.njk" %}
+  <body>
+    {% include "./_theme-setup.njk" %}
+    <main class="container mx-auto flex flex-grow flex-col">
+      {% include "../header.njk" %}
+      <section class="items-center mb-6 gap-5 max-w-6xl mx-auto px-5 w-full">
+        <h1>{{ title }}</h1>
+        <div class="text-sm text-gray-600 mt-5 flex flex-col lg:flex-row gap-3">
+          <date class="slash" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</date>
+          <span class="slash">{{ content | readtime }}</span>
+          <span class="slash">
+            {%- for tag in tags | filterTagList -%}
+              {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+              <span><span class="text-teal-600">#</span><a href="{{ tagUrl | url }}">{{ tag }}</a></span>
+            {%- endfor %}
+          </span>
+        </div>
+        {% if image %}
+          {% if imageAlt %}
+            {% set alt = imageAlt %}
+          {% else %}
+            {% set alt = "featured" %}
+          {% endif %}
+          {% responsiveImage "src" + image, alt %}
+          <p class="text-center text-sm text-gray-600">{{ imageAlt }}</p>
+        {% endif %}
+        <article>
+          {{ content | safe }}
+        </article>
+        
+        <a target="_blank" class="text-teal-600 mt-4 inline-block" rel="noopener noreferrer" href="https://github.com/learnwithgurpreet/learnwithgurpreet/blob/main/src/posts/{{ page.fileSlug }}.md">Edit post</a>
+      </section>
+    </main>
+    {% include "../footer.njk" %}
+  </body>
+</html>

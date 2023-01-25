@@ -4,9 +4,8 @@ title: Home
 pagination:
   reverse: true
   data: collections.posts
-  size: 10
+  size: 4
   alias: posts
 ---
-<h1 class="title">Blog</h1>
-{% include "postlist.njk" %}
-{% include "pagination.njk" %}
+{% include "post-cards.njk" %}
+{# {% include "pagination.njk" %} #}

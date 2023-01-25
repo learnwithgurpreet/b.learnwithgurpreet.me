@@ -18,13 +18,15 @@
   "author": {
     "name": "Gurpreet Singh",
     "description": "I like creating and using specialized tools for making development processes as efficient as possible. I have the experience to work with big projects and big development teams.",
-    "email": "hello@gsin.in",
+    "email": "learnwithgurpreet@gmail.com",
     "url": "/contact/",
     "linkedin": "https://linkedin.com/in/gsin11/",
     "github": "https://github.com/learnwithgurpreet",
-    "mastodon": "https://mastodon.social/web/@gsin",
+    "mastodon": "https://mastodon.social/@gsin",
     "creator": "@gsin11",
-    "image": "/assets/images/profile-pic.jpg"
+    "image": "/assets/images/profile-pic.jpg",
+    "org": "PublicisSapient",
+    "org_link": "https://publicissapient.com/"
   },
   "technology": {
     "framework": "https://www.11ty.dev/",
