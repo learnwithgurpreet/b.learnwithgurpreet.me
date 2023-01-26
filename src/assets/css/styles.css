@@ -89,6 +89,20 @@ blockquote {
   @apply p-4 my-4 border-l-4 border-gray-600 bg-gray-50 dark:border-gray-700 dark:bg-gray-800;
 }
 
+article ol,
+article ul {
+  @apply mt-6;
+}
+
+article ol li,
+article ul li {
+  @apply my-2;
+}
+
+article ul li {
+  @apply list-disc ml-5;
+}
+
 h1 {
   @apply mt-4 lg:mt-6 font-semibold text-3xl lg:text-4xl;
 }

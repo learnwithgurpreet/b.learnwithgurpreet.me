@@ -1,6 +1,6 @@
 {% extends "layouts/base.njk" %}
 {% block content %}
-  <main class="container mx-auto flex flex-grow flex-col">
+  <main class="w-full mx-auto flex flex-grow flex-col">
     {% include "components/header.njk" %}
     <section class="items-center mb-6 gap-5 max-w-6xl mx-auto px-5 w-full">
       <h1>{{ title }}</h1>
@@ -27,6 +27,23 @@
         {{ content | safe }}
       </article>
       <a target="_blank" class="text-teal-600 dark:text-teal-400 mt-4 inline-block" rel="noopener noreferrer" href="https://github.com/learnwithgurpreet/learnwithgurpreet/blob/main/src/posts/{{ page.fileSlug }}.md">Edit post</a>
+    </section>
+
+    {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+    {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+    <section class="gap-1 p-1 my-5 lg:my-8 flex flex-col lg:flex-row justify-center lg:justify-between mx-5">
+      {% if previousPost %}
+        <a class="flex-col items-start justify-center no-decoration" href="{{ previousPost.url | url }}">
+          <span class="text-sm uppercase">← Previous</span>
+          <h3>{{ previousPost.data.title }}</h3>
+        </a>
+      {% endif %}
+      {% if nextPost %}
+        <a class="flex-col items-end justify-center text-right no-decoration" href="{{ nextPost.url | url }}">
+          <span class="text-sm uppercase">Next →</span>
+          <h3>{{ nextPost.data.title }}</h3>
+        </a>
+      {% endif %}
     </section>
   </main>
   {% include "components/footer.njk" %}
