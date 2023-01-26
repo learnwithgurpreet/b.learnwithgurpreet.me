@@ -1,12 +1,5 @@
 ---
-layout: layouts/base.njk
-title: Home
-pagination:
-  reverse: true
-  data: collections.posts
-  size: 10
-  alias: posts
+layout: layouts/page.njk
 ---
-<h1 class="title">Blog</h1>
-{% include "postlist.njk" %}
-{% include "pagination.njk" %}
+{% include "components/intro.njk" %}
+{% include "components/post-cards.njk" %}

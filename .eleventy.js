@@ -4,7 +4,6 @@ const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const striptags = require("striptags");
-const CleanCSS = require("clean-css");
 
 const Image = require("@11ty/eleventy-img");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -12,6 +11,19 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 const { JSDOM } = require("jsdom");
+
+function groupBy(transformer) {
+  return function (arr) {
+    const grouped = {};
+    arr.forEach((a) => {
+      const _key = transformer(a);
+      if (grouped[_key]) grouped[_key].push(a);
+      else grouped[_key] = [a];
+    });
+
+    return Object.entries(grouped);
+  };
+}
 
 const cacheBusterOptions = {
   sourceAttributes: { script: "src" },
@@ -90,16 +102,24 @@ function extractExcerpt(content) {
 }
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("src/assets");
-  eleventyConfig.addPassthroughCopy("src/site.webmanifest");
+  eleventyConfig.addPassthroughCopy("src/assets/js");
+  eleventyConfig.addPassthroughCopy("src/assets/images");
+  eleventyConfig.addPassthroughCopy("src/assets/favicons");
+  eleventyConfig.addPassthroughCopy("src/assets/fonts");
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("dd.MM.yyyy");
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
+      "MMM dd, yyyy"
+    );
   });
+  eleventyConfig.addFilter(
+    "readtime",
+    (str) => `${Math.ceil(str.split(" ").length / 200)} min read`
+  );
   eleventyConfig.addNunjucksAsyncShortcode("responsiveImage", imageShortcode);
   eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
   eleventyConfig.addPlugin(lazyImages, {});
@@ -134,9 +154,10 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("filterTagList", filterTagList);
 
-  eleventyConfig.addFilter("cssmin", function (code) {
-    return new CleanCSS({}).minify(code).styles;
-  });
+  eleventyConfig.addFilter(
+    "groupByYear",
+    groupBy((post) => post.date.getFullYear())
+  );
 
   // Create an array of all tags
   eleventyConfig.addCollection("tagList", function (collection) {

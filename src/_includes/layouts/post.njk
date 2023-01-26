@@ -1,22 +1,50 @@
----
-layout: layouts/base.njk
----
-<h1 class="title">{{ title }}</h1>
-<ul class="tags">
-  {%- for tag in tags | filterTagList -%}
-    {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-    <li><a href="{{ tagUrl | url }}">{{ tag }}</a><li>
-  {%- endfor %}
-  <li><date datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</date><li>
-</ul>
-{% if image %}
-  {% if imageAlt %}
-    {% set alt = imageAlt %}
-  {% else %}
-    {% set alt = "featured" %}
-  {% endif %}
-  {% responsiveImage "src" + image, alt %}
-  <p class="caption">{{ imageAlt }}</p>
-{% endif %}
-{{ content | safe }}
-<a target="_blank" rel="noopener noreferrer" href="https://github.com/learnwithgurpreet/learnwithgurpreet/blob/main/src/posts/{{ page.fileSlug }}.md">Edit post</a>
+{% extends "layouts/base.njk" %}
+{% block content %}
+  <main class="w-full mx-auto flex flex-grow flex-col">
+    {% include "components/header.njk" %}
+    <section class="items-center mb-6 gap-5 max-w-6xl mx-auto px-5 w-full">
+      <h1>{{ title }}</h1>
+      <div class="text-sm text-gray-600 my-5 flex flex-col lg:flex-row gap-3 dark:text-gray-200 border-b border-b-gray-600 dark:border-b-gray-200 pb-8">
+        <date class="slash" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</date>
+        <span class="slash">{{ content | readtime }}</span>
+        <span class="slash">
+          {%- for tag in tags | filterTagList -%}
+            {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+            <span><span class="text-teal-600 dark:text-teal-400">#</span><a href="{{ tagUrl | url }}">{{ tag }}</a></span>
+          {%- endfor %}
+        </span>
+      </div>
+      {% if image %}
+        {% if imageAlt %}
+          {% set alt = imageAlt %}
+        {% else %}
+          {% set alt = "featured" %}
+        {% endif %}
+        {% responsiveImage "src" + image, alt %}
+        <p class="text-center text-sm text-gray-600 dark:text-gray-200">{{ imageAlt }}</p>
+      {% endif %}
+      <article>
+        {{ content | safe }}
+      </article>
+      <a target="_blank" class="text-teal-600 dark:text-teal-400 mt-4 inline-block" rel="noopener noreferrer" href="https://github.com/learnwithgurpreet/learnwithgurpreet/blob/main/src/posts/{{ page.fileSlug }}.md">Edit post</a>
+    </section>
+
+    {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+    {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+    <section class="gap-1 p-1 my-5 lg:my-8 flex flex-col lg:flex-row justify-center lg:justify-between mx-5">
+      {% if previousPost %}
+        <a class="flex-col items-start justify-center no-decoration" href="{{ previousPost.url | url }}">
+          <span class="text-sm uppercase">← Previous</span>
+          <h3>{{ previousPost.data.title }}</h3>
+        </a>
+      {% endif %}
+      {% if nextPost %}
+        <a class="flex-col items-end justify-center text-right no-decoration" href="{{ nextPost.url | url }}">
+          <span class="text-sm uppercase">Next →</span>
+          <h3>{{ nextPost.data.title }}</h3>
+        </a>
+      {% endif %}
+    </section>
+  </main>
+  {% include "components/footer.njk" %}
+{% endblock %}
