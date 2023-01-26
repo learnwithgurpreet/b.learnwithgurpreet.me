@@ -1,7 +1,7 @@
 <aside class="flex flex-col gap-2">
   <ul reversed class="fade grid gap-3 lg:grid-rows-2 lg:grid-flow-col">
-    {% for post in posts %}
-    <li class="transition-all duration-200 border border-gray-600 flex flex-col p-4 relative rounded-md bg-gray-100 hover:scale-105">
+    {% for post in collections.posts | reverse | head(4) %}
+    <li class="transition-all duration-200 border border-gray-600 dark:border-gray-700 flex flex-col p-4 relative rounded-md bg-gray-100 hover:scale-105 dark:bg-gray-800">
       <time datetime="{{ post.date | htmlDateString }}" class="slash text-sm">{{ post.date | readableDate }}</time>
       <h2 class="font-semibold">
         <a href="{{ post.url | url }}" class="after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0">{{ post.data.title }}</a>

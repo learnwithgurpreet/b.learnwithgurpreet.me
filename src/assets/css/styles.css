@@ -48,7 +48,7 @@ html {
 }
 
 body {
-  @apply font-sans-serif flex flex-col text-gray-800 bg-gray-50 text-lg min-h-screen;
+  @apply font-sans-serif flex flex-col text-gray-800 bg-gray-50 text-lg min-h-screen dark:bg-gray-900 dark:text-gray-50;
 }
 
 .fade:hover>*:not(:hover) {
@@ -63,7 +63,7 @@ a:hover,
 article h2:has(a):hover,
 article h3:has(a):hover,
 article h4:has(a):hover {
-  @apply text-teal-600;
+  @apply text-teal-600 dark:text-teal-400;
 }
 
 .slash,
@@ -73,12 +73,12 @@ article h4:has(a):hover {
 
 .slash:before {
   content: "//";
-  @apply text-teal-600;
+  @apply text-teal-600 dark:text-teal-400;
 }
 
 .arrow:after {
   content: "→";
-  @apply text-teal-600;
+  @apply text-teal-600 dark:text-teal-400;
 }
 
 .arrow:hover:after {
@@ -86,7 +86,7 @@ article h4:has(a):hover {
 }
 
 blockquote {
-  @apply p-4 my-4 border-l-4 border-gray-600 bg-gray-50;
+  @apply p-4 my-4 border-l-4 border-gray-600 bg-gray-50 dark:border-gray-700 dark:bg-gray-800;
 }
 
 h1 {
@@ -115,7 +115,7 @@ article p {
   @apply overflow-hidden break-words pt-4 lg:pt-6;
 }
 article a {
-  @apply text-teal-600;
+  @apply text-teal-600 dark:text-teal-400;
 }
 article blockquote p {
   @apply italic font-medium pt-3;
@@ -140,7 +140,7 @@ article h4:hover .direct-link {
 }
 
 :not(pre)>code{
-  @apply font-monospace text-sm text-teal-600 bg-gray-800 px-2 py-1;
+  @apply font-monospace text-sm text-teal-600 dark:text-teal-400 bg-gray-800 px-2 py-1;
 }
 
 .separator:not(:last-child) {
