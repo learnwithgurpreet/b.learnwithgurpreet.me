@@ -105,6 +105,10 @@ h4, h5, h6 {
   @apply font-semibold mt-4;
 }
 
+article {
+  @apply mb-5;
+}
+
 article pre,
 p,
 article p {
@@ -137,6 +141,10 @@ article h4:hover .direct-link {
 
 :not(pre)>code{
   @apply font-monospace text-sm text-teal-600 bg-gray-800 px-2 py-1;
+}
+
+.separator:not(:last-child) {
+  @apply border-b border-b-gray-800;
 }
 
 /* PrismJS 1.29.0

@@ -12,6 +12,19 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 const { JSDOM } = require("jsdom");
 
+function groupBy(transformer) {
+  return function (arr) {
+    const grouped = {};
+    arr.forEach((a) => {
+      const _key = transformer(a);
+      if (grouped[_key]) grouped[_key].push(a);
+      else grouped[_key] = [a];
+    });
+
+    return Object.entries(grouped);
+  };
+}
+
 const cacheBusterOptions = {
   sourceAttributes: { script: "src" },
   createResourceHash(outputDirectory, url, target) {
@@ -141,6 +154,11 @@ module.exports = function (eleventyConfig) {
   }
 
   eleventyConfig.addFilter("filterTagList", filterTagList);
+
+  eleventyConfig.addFilter(
+    "groupByYear",
+    groupBy((post) => post.date.getFullYear())
+  );
 
   // Create an array of all tags
   eleventyConfig.addCollection("tagList", function (collection) {
