@@ -3,103 +3,15 @@ const fs = require("fs");
 const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
-const striptags = require("striptags");
+const StripTags = require("./11ty/stripTags");
+const ImageShortCode = require("./11ty/responsiveImage");
+const GroupBy = require("./11ty/groupBy");
+const LazyImages = require("./11ty/lazyLoad");
 
-const Image = require("@11ty/eleventy-img");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
-const { JSDOM } = require("jsdom");
-
-function groupBy(transformer) {
-  return function (arr) {
-    const grouped = {};
-    arr.forEach((a) => {
-      const _key = transformer(a);
-      if (grouped[_key]) grouped[_key].push(a);
-      else grouped[_key] = [a];
-    });
-
-    return Object.entries(grouped);
-  };
-}
-
-const cacheBusterOptions = {
-  sourceAttributes: { script: "src" },
-  createResourceHash(outputDirectory, url, target) {
-    return Date.now();
-  },
-};
-
-function lazyImages(eleventyConfig, userOptions = {}) {
-  const { parse } = require("node-html-parser");
-
-  const options = {
-    name: "lazy-images",
-    ...userOptions,
-  };
-
-  eleventyConfig.addTransform(options.extensions, (content, outputPath) => {
-    if (outputPath.endsWith(".html")) {
-      const root = parse(content);
-      const images = root.querySelectorAll("img");
-      images.forEach((img) => {
-        img.setAttribute("loading", "lazy");
-      });
-      return root.toString();
-    }
-    return content;
-  });
-}
-
-async function imageShortcode(
-  src,
-  alt,
-  classList = "featured-image",
-  sizes = "100vw"
-) {
-  let metadata = await Image(src, {
-    widths: [400, 640],
-    formats: ["jpeg", "webp"],
-    outputDir: "_site/assets/images/",
-    urlPath: "/assets/images/",
-    sharpOptions: {
-      animated: true,
-    },
-    filenameFormat: function (id, src, width, format, options) {
-      // id: hash of the original image
-      // src: original image path
-      // width: current width in px
-      // format: current file format
-      // options: set of options passed to the Image call
-
-      return `${id}-learwithgurpreet-${width}w.${format}`;
-    },
-  });
-
-  let imageAttributes = {
-    alt,
-    sizes,
-    loading: "lazy",
-    decoding: "async",
-    class: classList,
-  };
-
-  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
-  return Image.generateHTML(metadata, imageAttributes);
-}
-
-function extractExcerpt(content) {
-  let excerpt = null;
-  excerpt = striptags(content)
-    .substring(0, 200) // Cap at 200 characters
-    .replace(/^\s+|\s+$|\s+(?=\s)/g, "")
-    .replace(/\r?\n|\r/g, " ")
-    .trim()
-    .concat("...");
-  return excerpt;
-}
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/js");
@@ -111,6 +23,16 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
+  eleventyConfig.addPlugin(
+    cacheBuster({
+      sourceAttributes: { script: "src" },
+      createResourceHash() {
+        return Date.now();
+      },
+    })
+  );
+  eleventyConfig.addPlugin(LazyImages, {});
+
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
       "MMM dd, yyyy"
@@ -120,9 +42,7 @@ module.exports = function (eleventyConfig) {
     "readtime",
     (str) => `${Math.ceil(str.split(" ").length / 200)} min read`
   );
-  eleventyConfig.addNunjucksAsyncShortcode("responsiveImage", imageShortcode);
-  eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
-  eleventyConfig.addPlugin(lazyImages, {});
+  eleventyConfig.addNunjucksAsyncShortcode("responsiveImage", ImageShortCode);
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
@@ -153,13 +73,10 @@ module.exports = function (eleventyConfig) {
   }
 
   eleventyConfig.addFilter("filterTagList", filterTagList);
-
   eleventyConfig.addFilter(
     "groupByYear",
-    groupBy((post) => post.date.getFullYear())
+    GroupBy((post) => post.date.getFullYear())
   );
-
-  // Create an array of all tags
   eleventyConfig.addCollection("tagList", function (collection) {
     let tagSet = new Set();
     collection.getAll().forEach((item) => {
@@ -185,42 +102,7 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
 
-  // Override Browsersync defaults (used only with --serve)
-  eleventyConfig.setBrowserSyncConfig({
-    callbacks: {
-      ready: function (err, browserSync) {
-        const content_404 = fs.readFileSync("_site/404/index.html");
-
-        browserSync.addMiddleware("*", (req, res) => {
-          // Provides the 404 content without redirect.
-          res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" });
-          res.write(content_404);
-          res.end();
-        });
-      },
-    },
-    ui: false,
-    ghostMode: false,
-  });
-
-  eleventyConfig.addFilter("excerpt", (content) => extractExcerpt(content));
-
-  eleventyConfig.addTransform("lazy-load-images", (content, outputPath) => {
-    if (outputPath.endsWith(".html")) {
-      const dom = new JSDOM(content);
-      const document = dom.window.document;
-
-      const [...images] = document.querySelectorAll(".post-content img");
-
-      images.forEach((image) => {
-        image.setAttribute("loading", "lazy");
-      });
-
-      return "<!DOCTYPE html> \n" + document.documentElement.outerHTML;
-    } else {
-      return content;
-    }
-  });
+  eleventyConfig.addFilter("excerpt", (content) => StripTags(content));
 
   return {
     // Control which files Eleventy will process

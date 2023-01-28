@@ -224,14 +224,14 @@ At Digital.com, their team of experts have spent thousands of hours testing and 
 
 ## Resources
 
-[www.websitecarbon.com](https://www.websitecarbon.com/)
+- [websitecarbon.com](https://www.websitecarbon.com/)
 
-[www.sustainablewebmanifesto.com](https://www.sustainablewebmanifesto.com/)
+- [sustainablewebmanifesto.com](https://www.sustainablewebmanifesto.com/)
 
-[sustainablewebdesign.org](https://www.sustainablewebmanifesto.com/)
+- [sustainablewebdesign.org](https://www.sustainablewebmanifesto.com/)
 
-[v-fonts.com/](https://v-fonts.com/)
+- [v-fonts.com](https://v-fonts.com/)
 
-[www.w3schools.blog/html5-tags](https://www.w3schools.blog/html5-tags)
+- [www.w3schools.blog/html5-tags](https://www.w3schools.blog/html5-tags)
 
-Digital.com
+- digital.com
