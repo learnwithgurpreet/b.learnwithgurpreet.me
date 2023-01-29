@@ -294,8 +294,8 @@ Now if you make any changes to your `app.js` file it will automatically restart 
 
 ## Useful Links
 
-[Create Server](https://nodejs.org/dist/latest-v14.x/docs/api/http.html#http_http_createserver_options_requestlistener)
+- [Create Server](https://nodejs.org/dist/latest-v14.x/docs/api/http.html#http_http_createserver_options_requestlistener)
 
-[Node Package Manager](https://www.npmjs.com/)
+- [Node Package Manager](https://www.npmjs.com/)
 
-[Nodemon](https://www.npmjs.com/package/nodemon)
+- [Nodemon](https://www.npmjs.com/package/nodemon)

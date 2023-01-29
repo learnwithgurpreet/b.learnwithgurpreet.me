@@ -260,10 +260,10 @@ Happy reading!
 
 ## Useful Links
 
-[Install Node.js](https://nodejs.org/en/download/)
+- [Install Node.js](https://nodejs.org/en/download/)
 
-[Global Objects](https://nodejs.org/dist/latest-v14.x/docs/api/globals.html)
+- [Global Objects](https://nodejs.org/dist/latest-v14.x/docs/api/globals.html)
 
-[Events](https://nodejs.org/dist/latest-v14.x/docs/api/events.html)
+- [Events](https://nodejs.org/dist/latest-v14.x/docs/api/events.html)
 
-[File system](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html)
+- [File system](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html)
