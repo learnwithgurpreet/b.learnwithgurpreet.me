@@ -1,3 +1,5 @@
+const { JSDOM } = require("jsdom");
+
 function lazyImages(eleventyConfig, userOptions = {}) {
   const { parse } = require("node-html-parser");
 
@@ -8,12 +10,14 @@ function lazyImages(eleventyConfig, userOptions = {}) {
 
   eleventyConfig.addTransform(options.extensions, (content, outputPath) => {
     if (outputPath.endsWith(".html")) {
-      const root = parse(content);
-      const images = root.querySelectorAll("img");
+      const dom = new JSDOM(content);
+      const document = dom.window.document;
+
+      const [...images] = document.querySelectorAll(".post-content img");
       images.forEach((img) => {
         img.setAttribute("loading", "lazy");
       });
-      return root.toString();
+      return "<!DOCTYPE html> \n" + document.documentElement.outerHTML;
     }
     return content;
   });
