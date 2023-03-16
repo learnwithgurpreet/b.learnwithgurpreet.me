@@ -1,0 +1,30 @@
+---
+layout: layouts/page.njk
+title: Softwares, Gears Gurpreet Singh Uses
+eleventyNavigation:
+  key: Uses
+  order: 3
+---
+<div>
+  <article>
+    <p>I get a lot of questions about what kind of gears, softwares I use. To make it easier to share, I've collected a list here.</p>
+  </article>
+  <h2 class="mt-12">Gears</h2>
+  <div class="mt-2 grid gap-10 sm:grid-cols-2 md:grid-cols-3">
+    {% for gear in metadata.uses.gears %}
+      <div>
+        <h3 class="mb-2 font-semibold">{{gear.title}}</h3>
+        <ul class="text-gray-400 text-sm">
+          {% for hash in gear.hashtags %}
+            <li class="inline">#{{hash}}</li>
+          {% endfor %}
+        </ul>
+        <p class="text-base mb-2">{{gear.details}}</p>
+        <a href="{{gear.more_info_link}}" target="_blank" class="text-sm uppercase text-teal-600 dark:text-teal-500">more info <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 inline">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+          </svg>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>

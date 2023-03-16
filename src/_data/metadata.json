@@ -32,5 +32,51 @@
     "framework": "https://www.11ty.dev/",
     "hosting": "https://vercel.com/",
     "source": "https://github.com/learnwithgurpreet/learnwithgurpreet"
+  },
+  "uses": {
+    "gears": [
+      {
+        "title": "Apple MacBook Pro 2021 (14\")",
+        "hashtags": ["computer"],
+        "details": "This is my personal coding computer. Processor M1 Pro Chip, 8-Core CPU, 16-Core GPU, 16 GB RAM, 512 GB SSD.",
+        "more_info_link": "https://www.apple.com/mac/"
+      },
+      {
+        "title": "Keychron K2 (US layout)",
+        "hashtags": ["keyboard"],
+        "details": "Hot-Swap Mechanical Bluetooth Keyboard (Mac) with Keycap/Gateron Brown Switch/USB C, Compact Wireless RGB.",
+        "more_info_link": "https://www.keychron.com/products/keychron-k2-wireless-mechanical-keyboard?variant=31063869653081"
+      },
+      {
+        "title": "Logitech MX Anywhere 3 (Mac)",
+        "hashtags": ["mouse"],
+        "details": "A perfect mouse with zero lag in doing daily work with 4000 DPI sensor, customizable buttons, USB-C, Bluetooth",
+        "more_info_link": "https://www.logitech.com/en-eu/products/mice/mx-anywhere-3-mac.910-005991.html"
+      },
+      {
+        "title": "Bose QC 35II Headphones",
+        "hashtags": ["audio", "headphones"],
+        "details": "My goto headphones, I am using them on my iPhone, Mac, sometimes with my LG TV ;)",
+        "more_info_link": "https://www.bose.de/de_de/products/headphones/over_ear_headphones/quietcomfort-35-wireless-ii.html#v=qc35_ii_silver"
+      },
+      {
+        "title": "AirPods 2",
+        "hashtags": ["audio", "headphones"],
+        "details": "You already know about them :)",
+        "more_info_link": "https://www.apple.com/airpods-2nd-generation/"
+      },
+      {
+        "title": "SAMSUNG Odyssey G5 (27\")",
+        "hashtags": ["workspace", "monitor"],
+        "details": "A perfect 2K HDR Curved Gaming monitor with active AMD FreeSync (144 Hz), I am using it for gaming (with PS5).",
+        "more_info_link": "https://www.samsung.com/ch/monitors/gaming/odyssey-g5-27-inch-144hz-1ms-curved-lc27g55tqwrxen/"
+      },
+      {
+        "title": "TitanWolf Mate",
+        "hashtags": ["workspace", "monitor"],
+        "details": "Nice mate which compliments to my workspace.",
+        "more_info_link": "https://www.amazon.de/Titanwolf-Tischunterlage-verbessert-Pr%C3%A4zision-Geschwindigkeit/dp/B07BXVM7RN"
+      }
+    ]
   }
 }
