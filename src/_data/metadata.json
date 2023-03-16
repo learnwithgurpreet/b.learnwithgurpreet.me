@@ -76,6 +76,68 @@
         "hashtags": ["workspace", "monitor"],
         "details": "Nice mate which compliments to my workspace.",
         "more_info_link": "https://www.amazon.de/Titanwolf-Tischunterlage-verbessert-Pr%C3%A4zision-Geschwindigkeit/dp/B07BXVM7RN"
+      },
+      {
+        "title": "IKEA height-adjustable table",
+        "hashtags": ["workspace"],
+        "details": "I don't want to set for 8 hours while working, I try to stand at least a little bit each day. This desk has been great for that. I like the color of this which goes perfectly fine with other stuff on my table.",
+        "more_info_link": "https://www.ikea.com/de/de/p/rodulf-schreibtisch-sitz-steh-grau-weiss-s99326170/"
+      },
+      {
+        "title": "BONTEC Monitor Arm",
+        "hashtags": ["workspace"],
+        "details": "Fully adjustable monitor arm that can easily handle weight of SAMSUNG Odyssey G5 (27\") monitor.",
+        "more_info_link": "https://www.amazon.de/gp/product/B01MZ70QJB/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1"
+      },
+      {
+        "title": "Quntis Monitor USB LED Lamp",
+        "hashtags": ["workspace"],
+        "details": "Care about your eyes, please use a lamp on your monitor. It helps to reduce raises coming from your monitor.",
+        "more_info_link": "https://www.amazon.de/gp/product/B08DKQ3JG1/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1"
+      }
+    ],
+    "softwares": [
+      {
+        "title": "Visual Studio Code",
+        "hashtags": ["coding"],
+        "details": "Where I write my code.",
+        "more_info_link": "https://code.visualstudio.com/"
+      },
+      {
+        "title": "Night Owl",
+        "hashtags": ["coding"],
+        "details": "Perfect theme for coding by Sarah Drasner",
+        "more_info_link": "https://marketplace.visualstudio.com/items?itemName=sdras.night-owl"
+      },
+      {
+        "title": "Fire Code Fonts",
+        "hashtags": ["coding"],
+        "details": "An open source font which makes coding simply a fun.",
+        "more_info_link": "https://github.com/tonsky/FiraCode"
+      },
+      {
+        "title": "iTerm2",
+        "hashtags": ["coding"],
+        "details": "I started using it long time ago, because I simply hate default terminal from Mac.",
+        "more_info_link": "https://iterm2.com/"
+      },
+      {
+        "title": "Oh My ZSH!",
+        "hashtags": ["coding"],
+        "details": "It gives perfect detailing to git repositories.",
+        "more_info_link": "https://ohmyz.sh/"
+      },
+      {
+        "title": "Powerlevel10k",
+        "hashtags": ["coding"],
+        "details": "Powerlevel10k is a theme for Zsh. It emphasizes speed, flexibility and out-of-the-box experience.",
+        "more_info_link": "https://github.com/learnwithgurpreet/mac-dev-env-setup"
+      },
+      {
+        "title": "Brave",
+        "hashtags": ["browser"],
+        "details": "Because I am privacy freak ;)",
+        "more_info_link": "https://brave.com/"
       }
     ]
   }
