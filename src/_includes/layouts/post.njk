@@ -23,6 +23,10 @@
         {% responsiveImage "src" + image, alt %}
         <p class="text-center text-sm text-gray-600 dark:text-gray-200">{{ imageAlt }}</p>
       {% endif %}
+      <h2>What's Inside</h2>
+      <aside class="my-8 toc-container">
+        {{ content | toc | safe }}
+      </aside>
       <article>
         {{ content | safe }}
       </article>

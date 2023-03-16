@@ -85,8 +85,21 @@ article h4:has(a):hover {
   @apply right-1;
 }
 
-blockquote {
+blockquote,
+.toc-container {
   @apply p-4 my-4 border-l-4 border-gray-600 bg-gray-50 dark:border-gray-700 dark:bg-gray-800;
+}
+
+.toc li {
+  @apply mb-2;
+}
+
+.toc li ol {
+  @apply ml-4 mt-1;
+}
+
+.toc li:last-child {
+  @apply mb-0;
 }
 
 article ol,

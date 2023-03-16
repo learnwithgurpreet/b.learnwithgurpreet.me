@@ -12,6 +12,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
+const pluginTOC = require("eleventy-plugin-toc");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/js");
@@ -32,6 +33,7 @@ module.exports = function (eleventyConfig) {
     })
   );
   eleventyConfig.addPlugin(LazyImages, {});
+  eleventyConfig.addPlugin(pluginTOC);
 
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
