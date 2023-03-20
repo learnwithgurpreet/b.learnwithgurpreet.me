@@ -1,0 +1,21 @@
+---
+layout: layouts/page.njk
+title: Tags
+eleventyNavigation:
+  key: Tags
+  order: 1
+---
+
+<ul class="mt-11">
+  {# {% for tag in collections.tagList %}
+    {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+    <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+  {% endfor %} #}
+  {% for tag in collections.tagList %}
+    {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+    {% set postCount = collections.posts | postByTag(tag) | length %}
+    <li class="mb-4">
+      <a href="{{ tagUrl | url }}" class="flex-grow w-1/5 pb-6">{{ tag }}({{ postCount }})</a>
+    </li>
+  {% endfor %}
+</ul>
