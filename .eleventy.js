@@ -88,6 +88,12 @@ module.exports = function (eleventyConfig) {
     return filterTagList([...tagSet]);
   });
 
+  eleventyConfig.addFilter("postByTag", (array, tag) => {
+    return array.filter((p) => {
+      return p.data && p.data.tags && p.data.tags.includes(tag);
+    });
+  });
+
   // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({
     html: true,
