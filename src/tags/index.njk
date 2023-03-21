@@ -7,10 +7,6 @@ eleventyNavigation:
 ---
 
 <ul class="mt-11">
-  {# {% for tag in collections.tagList %}
-    {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-    <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-  {% endfor %} #}
   {% for tag in collections.tagList %}
     {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
     {% set postCount = collections.posts | postByTag(tag) | length %}
