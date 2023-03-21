@@ -1,6 +1,6 @@
 ---
-title: "Host to Setup Mac Terminal"
-date: "2023-03-18"
+title: "How to Setup Mac Terminal"
+date: "2023-03-21"
 image: /assets/images/how-to-setup-mac-terminal.jpg
 excerpt: People often ask me how I setup my Mac terminal, here is the guide.
 tags:
