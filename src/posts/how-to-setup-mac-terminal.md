@@ -106,6 +106,10 @@ After installing, please open `~/.zshrc` file and modify the plugins line to wha
 plugins=(git zsh-autosuggestions)
 ```
 
+## Update VSCode Terminal Font (Optional)
+
+Open `settings.json` of your vscode and add `"terminal.integrated.fontFamily": "MesloLGS NF"`
+
 ## We are done!
 
 I believe you will like your terminal more than before 😍
