@@ -155,7 +155,7 @@ article h4[id] {
 article h2 .direct-link,
 article h3 .direct-link,
 article h4 .direct-link {
-  @apply transition-all duration-200 opacity-0 after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0;
+  @apply transition-all ease-in duration-200 opacity-0 after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0;
 }
 article h2:hover .direct-link,
 article h3:hover .direct-link,
