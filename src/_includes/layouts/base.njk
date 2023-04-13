@@ -15,10 +15,10 @@
     {% set secondTitle = "" if page.url === "/" else " - " + title %}
     {% set canonical = metadata.url + page.url %}
 
+    {% set keywords = keywords or "CSS, front-end, web design, consulting, architecture" %}
+
     <title>{{ metadata.metaTitle + secondTitle }}</title>
-    <meta name="keywords" content="CSS, front-end, web design, consulting, architecture" />
-    <meta name="content" content="CSS, front-end, web design, consulting, architecture" />
-    <meta name="property" content="CSS, front-end, web design, consulting, architecture" />
+    <meta name="keywords" content="{{ keywords }}" />
     <meta name="description" content="{{ excerpt or metadata.description }}" />
 
 

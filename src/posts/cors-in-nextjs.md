@@ -3,6 +3,7 @@ title: "CORS in NextJS"
 date: "2021-07-19"
 image: /assets/images/next-and-cors.webp
 excerpt: Setting up CORS is always a challenge for people who are not really from server-side application backgrounds. Luckily it wasn’t the case for me, but Vercel.
+keywords: cors error in next js, cors error nextjs api, cors in next js, cors issue in next js, cors issue in nextjs code, cors issue in nextjs config, cors issue in nextjs example, cors issue in nextjs fetch, cors issue in nextjs fix, cors issue in nextjs header, cors issue in nextjs middleware, cors issue in nextjs page, how to fix cors issue, next cors error, next js cross origin,
 tags:
   - "programming"
 ---
