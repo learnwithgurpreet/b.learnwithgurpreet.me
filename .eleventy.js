@@ -94,11 +94,10 @@ module.exports = function (eleventyConfig) {
     breaks: true,
     linkify: true,
   }).use(markdownItAnchor, {
-    permalink: markdownItAnchor.permalink.ariaHidden({
-      placement: "after",
+    permalink: markdownItAnchor.permalink.headerLink({
       class: "direct-link",
-      symbol: "#",
       level: [1, 2, 3, 4],
+      safariReaderFix: true,
     }),
     slugify: eleventyConfig.getFilter("slug"),
   });

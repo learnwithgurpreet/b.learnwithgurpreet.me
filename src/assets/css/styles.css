@@ -15,7 +15,7 @@ body {
 }
 
 a {
-  @apply transition-all duration-200 ease-in decoration-2 underline-offset-1;
+  @apply transition-all duration-200 ease-in decoration-2 underline-offset-1 motion-reduce:transition-none;
 }
 
 a:hover,
@@ -109,17 +109,10 @@ article blockquote p {
 article h2[id],
 article h3[id],
 article h4[id] {
-  @apply scroll-mt-4 relative transition-colors duration-200 outline-none;
+  @apply scroll-mt-4 relative transition-colors duration-200 outline-none motion-reduce:transition-none;
 }
-article h2 .direct-link,
-article h3 .direct-link,
-article h4 .direct-link {
-  @apply transition-all ease-in duration-200 opacity-0 after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0;
-}
-article h2:hover .direct-link,
-article h3:hover .direct-link,
-article h4:hover .direct-link {
-  @apply opacity-100;
+.direct-link {
+  @apply relative pr-6 transition-all ease-in duration-200 hover:after:content-["#"] focus:after:content-["#"] after:absolute after:right-0 motion-reduce:transition-none;
 }
 .featured-image, article img {
   @apply h-auto mx-auto p-5;

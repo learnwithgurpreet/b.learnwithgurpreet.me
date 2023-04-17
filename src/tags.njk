@@ -17,10 +17,10 @@ eleventyComputed:
 permalink: /tags/{{ tag | slug }}/
 ---
 
-<div class="mt-11 fade transition-all duration-200">
-  <section class="mb-9 pb-9 transition-all duration-200 separator flex flex-col lg:flex-row">
+<div class="mt-11 fade transition-all duration-200 motion-reduce:transition-none">
+  <section class="mb-9 pb-9 transition-all duration-200 separator flex flex-col lg:flex-row motion-reduce:transition-none">
     <span class="flex-grow w-1/5 pb-6">{{ tag }}</span>
-    <ul class="fade transition-all duration-200 w-4/5">
+    <ul class="fade transition-all duration-200 w-4/5 motion-reduce:transition-none">
       {% for post in collections[ tag ] | reverse %}
         <li class="flex-col relative mb-6">
           <time date="{{ post.data.date }}" class="slash text-sm">{{ post.date | readableDate }}</time>
