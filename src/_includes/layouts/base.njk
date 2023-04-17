@@ -13,10 +13,8 @@
     <meta name="theme-color" content="#F9FAFB" />
 
     {% set secondTitle = "" if page.url === "/" else " - " + title %}
-    {% set canonical = metadata.url + page.url %}
-
     {% set keywords = keywords or "CSS, front-end, web design, consulting, architecture" %}
-
+    
     <title>{{ metadata.metaTitle + secondTitle }}</title>
     <meta name="keywords" content="{{ keywords }}" />
     <meta name="description" content="{{ excerpt or metadata.description }}" />
@@ -25,7 +23,7 @@
     <meta name="og:image" content="{{metadata.url}}{{ image or metadata.author.image }}">
     <meta name="og:title" content="{{ metadata.metaTitle + secondTitle }}">
     <meta name="og:description" content="{{ excerpt or metadata.description }}">
-    <meta name="og:url" content="{{ canonical | url }}">
+    <meta name="og:url" content="{{ metadata.url + page.url | url }}">
     <meta name="og:site_name" content="{{ metadata.metaTitle }}">
     <meta name="og:locale" content="en_GB">
     <meta name="og:type" content="article">
@@ -39,10 +37,8 @@
 
     <meta itemprop="name" content="{{ metadata.metaTitle + secondTitle }}">
     <meta itemprop="description" content="{{ excerpt or metadata.description }}">
-    
-    <link rel="canonical" href="{{ canonical | url }}" />
 
-    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | cacheBuster }}">
     <link rel="alternate" href="{{ metadata.url + metadata.feed.path }}" type="application/atom+xml" title="{{ metadata.title }}" />
     <link rel="alternate" href="{{ metadata.url + metadata.jsonfeed.path }}" type="application/json" title="{{ metadata.title }}" />
     <script>
