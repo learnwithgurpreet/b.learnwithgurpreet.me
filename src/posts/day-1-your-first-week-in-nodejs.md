@@ -2,6 +2,7 @@
 title: "Day 1 - Your first week in NodeJS"
 date: 2021-08-03
 image: /assets/images/nodejs-day1.webp
+keywords: buffer node js tutorial, nodejs basics, basic understanding of nodejs, start with nodejs, backend nodejs tutorial, best node js tutorial for beginners, best nodejs tutorial, best practices node js tutorial
 excerpt: I believe you know something about Node.js before starting this course, just to refresh your memory. Node.js is a JavaScript runtime, built on Chrome’s V8 JavaScript engine.
 tags:
   - "nodejs"
