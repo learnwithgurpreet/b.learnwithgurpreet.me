@@ -9,15 +9,26 @@
 
 name: Publish Docker image
 
-env:
-  TAG_NAME: ${GITHUB_RUN_ID}-${GITHUB_RUN_NUMBER}
-
 on:
   push:
     branches:
       - "main"
 
 jobs:
+  get_tags:
+    runs-on: ubuntu-20.04
+    outputs:
+      tags: ${{ steps.set-output-id.outputs.tags }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: set-output
+        id: set-output-id
+        run: |
+          VERSION=edge
+          if [[ $GITHUB_REF == refs/tags/* ]]; then
+            VERSION=${GITHUB_REF#refs/tags/v}
+          fi
+          echo ::set-output name=tags::${VERSION}
   push_to_registry:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
@@ -42,4 +53,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: learnwithgurpreet/learnwithgurpreet.com:latest, learnwithgurpreet/learnwithgurpreet.com:${{env.TAG_NAME}}
+          tags: learnwithgurpreet/learnwithgurpreet.com:latest, learnwithgurpreet/learnwithgurpreet.com:${{steps.get_tags.outputs.tags }}
