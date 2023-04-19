@@ -33,6 +33,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: learnwithgurpreet/learnwithgurpreet.com:latest, learnwithgurpreet/learnwithgurpreet.com:$TAG_NAME
+          tags: learnwithgurpreet/learnwithgurpreet.com:latest, learnwithgurpreet/learnwithgurpreet.com:${{TAG_NAME}}
         env:
           TAG_NAME: main-${{ env.date }}
