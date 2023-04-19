@@ -1,14 +1,4 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# GitHub recommends pinning actions to a commit SHA.
-# To get a newer version, you will need to update the SHA.
-# You can also reference a tag or branch, but the action may change without warning.
-
 name: Publish Docker image
-
 on:
   push:
     branches:
@@ -33,12 +23,16 @@ jobs:
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: learnwithgurpreet/learnwithgurpreet.com
+
+      - name: Create custom tag
+        id: tag
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_STATE
       
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
           context: .
           push: true
-          tags: learnwithgurpreet/learnwithgurpreet.com:latest, learnwithgurpreet/learnwithgurpreet.com:${{ env.CUSTOM_TAG }}
-          env:
-            CUSTOM_TAG=${{ env.BRANCH }}-$GITHUB_RUN_ID
+          tags: learnwithgurpreet/learnwithgurpreet.com:latest, learnwithgurpreet/learnwithgurpreet.com:$TAG_NAME
+        env:
+          TAG_NAME: main-${{ env.date }}
