@@ -39,6 +39,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: learnwithgurpreet/learnwithgurpreet.com:latest, learnwithgurpreet/learnwithgurpreet.com:${{ env.BRANCH }}
+          tags: learnwithgurpreet/learnwithgurpreet.com:latest, learnwithgurpreet/learnwithgurpreet.com:${{ env.TAG }}
           build-args: |
-            BRANCH=${{ env.BRANCH }}-${{ GITHUB_RUN_ID }}
+            TAG=${{ env.BRANCH }}-$GITHUB_RUN_ID
