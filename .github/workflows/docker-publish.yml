@@ -9,6 +9,9 @@
 
 name: Publish Docker image
 
+env:
+  TAG_NAME: ${GITHUB_RUN_ID}-${GITHUB_RUN_NUMBER}
+
 on:
   push:
     branches:
@@ -39,4 +42,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: learnwithgurpreet/learnwithgurpreet.com:latest, learnwithgurpreet/learnwithgurpreet.com:${{ GITHUB_RUN_ID }}
+          tags: learnwithgurpreet/learnwithgurpreet.com:latest, learnwithgurpreet/learnwithgurpreet.com:${{ env.TAG_NAME }}
