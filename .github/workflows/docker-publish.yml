@@ -26,13 +26,11 @@ jobs:
 
       - name: Create custom tag
         id: tag
-        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_STATE
+        run: echo "TAGNAME=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
       
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
           context: .
           push: true
-          tags: learnwithgurpreet/learnwithgurpreet.com:latest, learnwithgurpreet/learnwithgurpreet.com:${{ env.TAG_NAME }}
-        env:
-          TAG_NAME: main-${{ env.date }}
+          tags: learnwithgurpreet/learnwithgurpreet.com:latest, learnwithgurpreet/learnwithgurpreet.com:$TAGNAME
