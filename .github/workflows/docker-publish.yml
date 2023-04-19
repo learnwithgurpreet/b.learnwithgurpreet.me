@@ -42,4 +42,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: learnwithgurpreet/learnwithgurpreet.com:latest, learnwithgurpreet/learnwithgurpreet.com:${{ env.TAG_NAME }}
+          tags: learnwithgurpreet/learnwithgurpreet.com:latest, learnwithgurpreet/learnwithgurpreet.com:${{env.TAG_NAME}}
