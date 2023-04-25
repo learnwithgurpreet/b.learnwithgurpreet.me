@@ -18,13 +18,6 @@ a {
   @apply transition-all duration-200 ease-in decoration-2 underline-offset-1 motion-reduce:transition-none;
 }
 
-a:hover,
-article h2:has(a):hover,
-article h3:has(a):hover,
-article h4:has(a):hover {
-  @apply text-teal-600 dark:text-teal-400;
-}
-
 .slash,
 .arrow {
   @apply flex flex-row gap-1;
@@ -100,8 +93,11 @@ p,
 article p {
   @apply overflow-hidden break-words pt-4 lg:pt-6;
 }
-article a {
+article a:not(.direct-link) {
   @apply text-teal-700 dark:text-teal-400;
+}
+article a:not(.direct-link):hover {
+  @apply text-teal-800 dark:text-teal-300;
 }
 article blockquote p {
   @apply italic font-medium pt-3;
