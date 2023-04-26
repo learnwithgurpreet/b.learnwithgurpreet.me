@@ -18,9 +18,15 @@
     <title>{{ metadata.metaTitle + secondTitle }}</title>
     <meta name="keywords" content="{{ keywords }}" />
     <meta name="description" content="{{ excerpt or metadata.description }}" />
+    <link rel="canonical" href="{{ metadata.url + page.url | url }}">
 
+    <meta name="og:image" content="{{metadata.url + "/assets/images/profile-pic.jpg" | url }}">
+    <meta name="og:image:secure_url" content="{{metadata.url + "/assets/images/profile-pic.jpg" | url }}">
+    <meta property="og:image:width" content="500">
+    <meta property="og:image:height" content="500">
+    <meta property="article:published_time" content="{{ date }}">
+    <meta property="article:modified_time" content="{{ date }}">
 
-    <meta name="og:image" content="{{metadata.url}}{{ image or metadata.author.image }}">
     <meta name="og:title" content="{{ metadata.metaTitle + secondTitle }}">
     <meta name="og:description" content="{{ excerpt or metadata.description }}">
     <meta name="og:url" content="{{ metadata.url + page.url | url }}">
@@ -29,9 +35,9 @@
     <meta name="og:type" content="article">
 
     <meta name="twitter:title" content="{{ metadata.metaTitle + secondTitle }}">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="{{ excerpt or metadata.description }}">
-    <meta name="twitter:image" content="{{metadata.url}}{{ image or metadata.author.image }}">
+    <meta name="twitter:image" content="{{metadata.url + "/assets/images/profile-pic.jpg" | url }}">
 
     <meta name="generator" content="{{ eleventy.generator }}">
 
