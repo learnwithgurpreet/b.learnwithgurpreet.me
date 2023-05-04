@@ -14,19 +14,21 @@
           {%- endfor %}
         </span>
       </div>
-      {% if image %}
-        {% if imageAlt %}
-          {% set alt = imageAlt %}
-        {% else %}
-          {% set alt = "featured" %}
-        {% endif %}
-        {% responsiveImage "src" + image, alt %}
-        <p class="text-center text-sm text-gray-600 dark:text-gray-200">{{ imageAlt }}</p>
-      {% endif %}
-      <h2>What's Inside</h2>
-      <aside class="my-8 toc-container">
-        {{ content | toc | safe }}
-      </aside>
+      <div id="accordionGroup" class="accordion">
+        <h3>
+          <button type="button" aria-expanded="false" class="accordion-trigger" aria-controls="sect1" id="accordion1id">
+            <span class="accordion-title">
+              What's Inside
+              <span class="accordion-icon"></span>
+            </span>
+          </button>
+        </h3>
+        <div id="sect1" role="region" aria-labelledby="accordion1id" class="accordion-panel" hidden="">
+          <aside class="toc-container">
+            {{ content | toc | safe }}
+          </aside>
+        </div>
+      </div>
       <article>
         {{ content | safe }}
       </article>
@@ -51,4 +53,58 @@
     </section>
   </main>
   {% include "components/footer.njk" %}
+  <script>
+    'use strict';
+    class Accordion {
+      constructor(domNode) {
+        this.rootEl = domNode;
+        this.buttonEl = this.rootEl.querySelector('button[aria-expanded]');
+
+        const controlsId = this.buttonEl.getAttribute('aria-controls');
+        this.contentEl = document.getElementById(controlsId);
+
+        this.open = this.buttonEl.getAttribute('aria-expanded') === 'true';
+
+        // add event listeners
+        this.buttonEl.addEventListener('click', this.onButtonClick.bind(this));
+      }
+
+      onButtonClick() {
+        this.toggle(!this.open);
+      }
+
+      toggle(open) {
+        // don't do anything if the open state doesn't change
+        if (open === this.open) {
+          return;
+        }
+
+        // update the internal state
+        this.open = open;
+
+        // handle DOM updates
+        this.buttonEl.setAttribute('aria-expanded', `${open}`);
+        if (open) {
+          this.contentEl.removeAttribute('hidden');
+        } else {
+          this.contentEl.setAttribute('hidden', '');
+        }
+      }
+
+      // Add public open and close methods for convenience
+      open() {
+        this.toggle(true);
+      }
+
+      close() {
+        this.toggle(false);
+      }
+    }
+
+    // init accordions
+    const accordions = document.querySelectorAll('.accordion h3');
+    accordions.forEach((accordionEl) => {
+      new Accordion(accordionEl);
+    });
+  </script>
 {% endblock %}

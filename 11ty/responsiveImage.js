@@ -1,5 +1,10 @@
 const Image = require("@11ty/eleventy-img");
 
+/* 
+Usage:
+{% responsiveImage "src" + image, alt %} 
+*/
+
 async function imageShortCode(
   src,
   alt,
