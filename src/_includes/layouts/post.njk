@@ -15,14 +15,14 @@
         </span>
       </div>
       <div id="accordionGroup" class="accordion">
-        <h3>
+        <h2>
           <button type="button" aria-expanded="false" class="accordion-trigger" aria-controls="sect1" id="accordion1id">
             <span class="accordion-title">
               What's Inside
               <span class="accordion-icon"></span>
             </span>
           </button>
-        </h3>
+        </h2>
         <div id="sect1" role="region" aria-labelledby="accordion1id" class="accordion-panel" hidden="">
           <aside class="toc-container">
             {{ content | toc | safe }}
@@ -101,10 +101,8 @@
       }
     }
 
-    // init accordions
-    const accordions = document.querySelectorAll('.accordion h3');
-    accordions.forEach((accordionEl) => {
-      new Accordion(accordionEl);
-    });
+    // init accordion
+    const accordionEl = document.querySelector('.accordion h2');
+    new Accordion(accordionEl);
   </script>
 {% endblock %}
