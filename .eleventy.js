@@ -1,8 +1,6 @@
 const fs = require("fs");
 
 const { DateTime } = require("luxon");
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
 const StripTags = require("./11ty/stripTags");
 const ImageShortCode = require("./11ty/responsiveImage");
 const GroupBy = require("./11ty/groupBy");
@@ -85,21 +83,6 @@ module.exports = function (eleventyConfig) {
       return p.data && p.data.tags && p.data.tags.includes(tag);
     });
   });
-
-  // Customize Markdown library and settings:
-  let markdownLibrary = markdownIt({
-    html: true,
-    breaks: true,
-    linkify: true,
-  }).use(markdownItAnchor, {
-    permalink: markdownItAnchor.permalink.headerLink({
-      class: "direct-link",
-      level: [1, 2, 3, 4],
-      safariReaderFix: true,
-    }),
-    slugify: eleventyConfig.getFilter("slug"),
-  });
-  eleventyConfig.setLibrary("md", markdownLibrary);
 
   eleventyConfig.addFilter("excerpt", (content) => StripTags(content));
 
