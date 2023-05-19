@@ -41,18 +41,6 @@ blockquote {
   @apply p-4 my-4 border-l-4 border-gray-600 bg-gray-50 dark:border-gray-700 dark:bg-gray-800;
 }
 
-.toc li {
-  @apply mb-2;
-}
-
-.toc li ol {
-  @apply ml-4 mt-1;
-}
-
-.toc li:last-child {
-  @apply mb-0;
-}
-
 article ol,
 article ul {
   @apply mt-6;
@@ -92,14 +80,6 @@ p,
 article p {
   @apply overflow-hidden break-words pt-4 lg:pt-6;
 }
-article a:not(.direct-link),
-.toc li a {
-  @apply underline text-teal-700 dark:text-teal-400;
-}
-article a:not(.direct-link):hover,
-.toc li a:hover {
-  @apply text-teal-800 dark:text-teal-300;
-}
 article blockquote p {
   @apply italic font-medium pt-3;
 }
@@ -108,63 +88,12 @@ article h3[id],
 article h4[id] {
   @apply scroll-mt-4 relative transition-colors duration-200 outline-none motion-reduce:transition-none;
 }
-.direct-link {
-  @apply no-underline relative pr-6 transition-all ease-in duration-200 hover:after:content-["#"] focus:after:content-["#"] after:absolute after:right-0 motion-reduce:transition-none;
-}
-.featured-image, article img {
-  @apply h-auto mx-auto p-5;
-}
-
 :not(pre)>code{
   @apply text-sm text-teal-400 bg-gray-800 px-2 py-1;
 }
 
 .separator:not(:last-child) {
   @apply border-b border-b-gray-800;
-}
-
-/* Accordion styles */
-.accordion {
-  @apply m-0 p-0 border-2 border-gray-600 dark:border-gray-200 rounded-lg w-full;
-}
-
-.accordion:focus-within {
-  @apply border-teal-700 dark:border-teal-400;
-}
-
-.accordion h2 {
-  @apply font-semibold text-2xl lg:text-3xl p-0 m-0;
-}
-
-.accordion > * + * {
-  @apply border-t-gray-400 dark:border-t-gray-100;
-}
-
-.accordion-trigger {
-  @apply bg-none block m-0 py-4 px-6 relative text-left w-full;
-}
-
-.accordion-title {
-  display: block;
-  pointer-events: none;
-  outline: none;
-}
-
-.accordion-icon {
-  @apply border-teal-700 dark:border-teal-400 border-r-2 border-b-2 h-2 pointer-events-none absolute right-8 top-1/2 -translate-y-[60%] w-2 rotate-45;
-}
-
-.accordion-trigger[aria-expanded="true"] .accordion-icon {
-  @apply -translate-y-[50%] -rotate-[135deg];
-}
-
-.accordion-panel {
-  @apply m-0 py-4 px-6;
-}
-
-/* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
-.accordion-panel[hidden] {
-  display: none;
 }
 
 /* PrismJS 1.29.0
