@@ -11,7 +11,6 @@ const LazyImages = require("./11ty/lazyLoad");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
-const pluginTOC = require("eleventy-plugin-toc");
 const cacheBuster = require("./11ty/cacheBuster");
 const htmlMinify = require("./11ty/htmlMinify");
 
@@ -26,7 +25,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(LazyImages, {});
   eleventyConfig.addPlugin(htmlMinify);
-  eleventyConfig.addPlugin(pluginTOC);
 
   eleventyConfig.addFilter("cacheBuster", cacheBuster);
   eleventyConfig.addFilter("readableDate", (dateObj) => {
