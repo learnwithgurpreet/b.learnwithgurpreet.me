@@ -17,7 +17,7 @@ eleventyNavigation:
         <h3 class="mb-2 font-semibold">{{gear.title}}</h3>
         <ul class="text-gray-400 text-sm">
           {% for hash in gear.hashtags %}
-            <li class="inline">#{{hash}}</li>
+            <li class="inline mr-2">#{{hash}}</li>
           {% endfor %}
         </ul>
         <p class="text-base mb-2">{{gear.details}}</p>
@@ -35,7 +35,7 @@ eleventyNavigation:
         <h3 class="mb-2 font-semibold">{{software.title}}</h3>
         <ul class="text-gray-400 text-sm">
           {% for hash in software.hashtags %}
-            <li class="inline">#{{hash}}</li>
+            <li class="inline mr-2">#{{hash}}</li>
           {% endfor %}
         </ul>
         <p class="text-base mb-2">{{software.details}}</p>
