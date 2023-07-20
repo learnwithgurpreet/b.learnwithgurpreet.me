@@ -12,16 +12,19 @@
     <meta name="msapplication-TileColor" content="#F9FAFB" />
     <meta name="theme-color" content="#F9FAFB" />
 
+    {% set currentPageUrl = metadata.url + page.url | url %}
+    {% set autherImage = metadata.url + "/assets/images/profile-pic.jpg" | url %}
+
     {% set secondTitle = "" if page.url === "/" else " - " + title %}
     {% set keywords = keywords or "CSS, front-end, web design, consulting, architecture" %}
     
     <title>{{ metadata.metaTitle + secondTitle }}</title>
     <meta name="keywords" content="{{ keywords }}" />
     <meta name="description" content="{{ excerpt or metadata.description }}" />
-    <link rel="canonical" href="{{ metadata.url + page.url | url }}">
+    <link rel="canonical" href="{{ currentPageUrl }}">
 
-    <meta name="og:image" content="{{metadata.url + "/assets/images/profile-pic.jpg" | url }}">
-    <meta name="og:image:secure_url" content="{{metadata.url + "/assets/images/profile-pic.jpg" | url }}">
+    <meta name="og:image" content="{{ autherImage }}">
+    <meta name="og:image:secure_url" content="{{ autherImage }}">
     <meta property="og:image:width" content="500">
     <meta property="og:image:height" content="500">
     <meta property="article:published_time" content="{{ date }}">
@@ -29,7 +32,7 @@
 
     <meta name="og:title" content="{{ metadata.metaTitle + secondTitle }}">
     <meta name="og:description" content="{{ excerpt or metadata.description }}">
-    <meta name="og:url" content="{{ metadata.url + page.url | url }}">
+    <meta name="og:url" content="{{ currentPageUrl }}">
     <meta name="og:site_name" content="{{ metadata.metaTitle }}">
     <meta name="og:locale" content="en_GB">
     <meta name="og:type" content="article">
@@ -37,7 +40,7 @@
     <meta name="twitter:title" content="{{ metadata.metaTitle + secondTitle }}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="{{ excerpt or metadata.description }}">
-    <meta name="twitter:image" content="{{metadata.url + "/assets/images/profile-pic.jpg" | url }}">
+    <meta name="twitter:image" content="{{ autherImage }}">
 
     <meta name="generator" content="{{ eleventy.generator }}">
 
@@ -47,14 +50,85 @@
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | cacheBuster }}">
     <link rel="alternate" href="{{ metadata.url + metadata.feed.path }}" type="application/atom+xml" title="{{ metadata.title }}" />
     <link rel="alternate" href="{{ metadata.url + metadata.jsonfeed.path }}" type="application/json" title="{{ metadata.title }}" />
+
+    {% if page.url === "/posts/" %}
+      <script type="application/ld+json">
+      {
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "mainEntity": {
+              "@type": "ItemList",
+              "itemListElement": [{% for post in collections.posts | reverse %}
+                  {
+                    "@type": "ListItem",
+                    "position": {{loop.index}},
+                    "url": "{{ metadata.url + post.url | url }}",
+                    "name": "{{ post.data.title }}"
+                  }{% if loop.last === false %},{% endif %}{% endfor %}
+              ]
+          },
+          "headline": "List of Blog Posts",
+          "description": "Explore the collection of blog posts from Learn with Gurpreet.",
+          "publisher": {
+              "@type": "Organization",
+              "name": "Learn with Gurpreet",
+              "logo": {
+                  "@type": "ImageObject",
+                  "url": "{{ autherImage }}",
+                  "width": 500,
+                  "height": 500
+              }
+          },
+          "url": "{{ currentPageUrl }}",
+          "inLanguage": "en_GB"
+      }
+      </script>
+    {% endif %}
+
+    {% if '/posts/' in page.url and page.url !== "/posts/" %}
+      <script type="application/ld+json">
+      {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "{{ currentPageUrl }}"
+          },
+          "headline": "{{ title }}",
+          "description": "{{ excerpt or metadata.description }}",
+          "image": "{{ autherImage }}",
+          "author": {
+              "@type": "Person",
+              "name": "{{ metadata.author.name }}"
+          },
+          "datePublished": "{{ date }}",
+          "dateModified": "{{ date }}",
+          "publisher": {
+              "@type": "Organization",
+              "name": "{{ metadata.metaTitle }}",
+              "logo": {
+                  "@type": "ImageObject",
+                  "url": "{{ autherImage }}",
+                  "width": 500,
+                  "height": 500
+              }
+          },
+          "keywords": "{{ keywords }}",
+          "articleSection": "{{ tags }}",
+          "url": "{{ currentPageUrl }}",
+          "mainEntityOfPage": "{{ currentPageUrl }}",
+          "inLanguage": "en_GB"
+      }
+      </script>
+    {% endif %}
     <script>
       const prefDark = window.matchMedia('(prefers-color-scheme: dark)');
       document
         .querySelector('meta[name="theme-color"]')
-        .setAttribute('content', prefDark ? '#111827' : '#F9FAFB');
+        .setAttribute('content', prefDark ? '#111827' : '#f9fafb');
       document
         .querySelector('meta[name="msapplication-TileColor"]')
-        .setAttribute('content', prefDark ? '#111827' : '#F9FAFB');
+        .setAttribute('content', prefDark ? '#111827' : '#f9fafb');
     </script>
   </head>
   <body>
