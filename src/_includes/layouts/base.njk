@@ -100,7 +100,8 @@
           "image": "{{ authorImage }}",
           "author": {
               "@type": "Person",
-              "name": "{{ metadata.author.name }}"
+              "name": "{{ metadata.author.name }}",
+              "url": "{{ metadata.author.mastodon }}"
           },
           "datePublished": "{{ date }}",
           "dateModified": "{{ date }}",
