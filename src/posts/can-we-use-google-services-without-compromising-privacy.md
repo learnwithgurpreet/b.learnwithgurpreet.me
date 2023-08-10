@@ -4,8 +4,8 @@ date: "2021-02-24"
 image: /assets/images/Nu1AmbsTd-e1643359769782.webp
 excerpt: Over the period of time, people are aware of what internet privacy is and why it is important.
 tags:
-  - "privacy"
-  - "thoughts"
+  - "Privacy"
+  - "Thoughts"
 ---
 
 Over the period of time, people are aware of what internet privacy is and why it is important.

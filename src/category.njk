@@ -1,0 +1,27 @@
+---
+layout: layouts/page.njk
+pagination:
+  reverse: true
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+    - tagList
+  addAllPagesToCollections: false
+eleventyComputed:
+  title: "{{ tag }}"
+permalink: /category/{{ tag | slug }}/
+---
+
+<header class="flex py-6 sm:py-8 md:py-16">
+  <div class="w-full max-w-7xl m-auto px-5">
+    <h1 class="text-2xl font-bold sm:text-4xl">{{ tag }}</h1>
+  </div>
+</header>
+
+{% set allPosts = collections[ tag ] %}
+{% include "components/grid-posts.njk" %}

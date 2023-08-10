@@ -3,10 +3,11 @@ title: "The Rise of Digital Minimalism"
 date: "2023-06-23"
 keywords: digital minimalism, digital minimalism summary, digital minimalism book, digital minimalism phone, what is digital minimalism
 excerpt: Digital minimalism offers a solution to combat information overload, reduce screen time, and create a healthier relationship with technology.
+image: /assets/images/the-rise-of-digital-minimalism.png
 tags:
-  - "thoughts"
-  - "sustainable-web"
-  - "tech"
+  - "Thoughts"
+  - "Sustainability"
+  - "Tech"
 ---
 
 In today's fast-paced digital world, finding balance and decluttering our digital lives has become increasingly important. Digital minimalism offers a solution to combat information overload, reduce screen time, and create a healthier relationship with technology. In this blog post, we'll explore the concept of digital minimalism and provide practical tips on how readers can declutter their digital lives and find balance in the digital age.

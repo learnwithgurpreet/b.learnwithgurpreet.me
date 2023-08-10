@@ -2,9 +2,9 @@
 title: "Dockerizing a React App in Simple Steps"
 date: "2023-05-21"
 excerpt: Docker allows you to package your React app along with its dependencies and configuration into a container...
+image: /assets/images/dockerizing-a-react-app-in-simple-steps.png
 tags:
-  - "docker"
-  - "reactjs"
+  - "Tech"
 ---
 
 Docker allows you to package your React app along with its dependencies and configuration into a container. This ensures that the application runs consistently across different environments, including development, testing, and production.

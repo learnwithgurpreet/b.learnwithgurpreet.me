@@ -4,8 +4,8 @@ date: "2021-03-19"
 image: /assets/images/O_QM4DuC-e1643359836683.webp
 excerpt: These days I often see developers struggle or invest too much time to create proper authorization modules in their Node.js based applications.
 tags:
-  - "nodejs"
-  - "programming"
+  - "NodeJS"
+  - "Tech"
 ---
 
 These days I often see developers struggle or invest too much time to create proper authorization modules in their Node.js based applications. With this detailed tutorial, you will be able to create your authorization module which can be used in any route or sub-route of your application.

@@ -4,8 +4,8 @@ date: "2021-03-02"
 image: /assets/images/lPj3Gib3z-e1643359823522.webp
 excerpt: People who have less time to invest and are familiar with the Handlebar template engine can quickly set up their website.
 tags:
-  - "nodejs"
-  - "programming"
+  - "NodeJS"
+  - "Tech"
 ---
 
 People who have less time to invest and are familiar with the Handlebar template engine can quickly set up their website.

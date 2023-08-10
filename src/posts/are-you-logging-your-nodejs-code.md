@@ -1,13 +1,13 @@
 ---
 title: "Are you logging your NodeJS code?"
 date: "2021-01-16"
-image: /assets/images/cover5.jpg
+image: /assets/images/are-you-logging-your-nodejs-code.png
 imageAlt: "Photo by Christina on Unsplash"
 excerpt: Logs are an essential part of an application, it provides you deep level access of output comes from user inputs. When the application is in production
 keywords: are you logging your nodejs code analysis, are you logging your nodejs code backend, best npm logger, how to check logs in node js, how to create error log file in node js, how to create logs in node js, how to do console log in node js, how to implement logger in node js, how to implement logs in nodejs api, how to implement logs in nodejs app, how to implement logs in nodejs backend, how to implement logs in nodejs example, how to implement logs in nodejs express, how to use console.log in node js, how to use log in node js, how to write log file in node.js, how to write logs in javascript, logging in node, logging in node.js, node.js logging, node.js logs
 tags:
-  - "nodejs"
-  - "programming"
+  - "NodeJS"
+  - "Tech"
 ---
 
 Logs are an essential part of an application, it provides you deep level access of output comes from user inputs. When the application is in production, logs are important to identify the problem if something goes wrong. If you are a developer, have you asked yourself a question, “Am I logging or not?”

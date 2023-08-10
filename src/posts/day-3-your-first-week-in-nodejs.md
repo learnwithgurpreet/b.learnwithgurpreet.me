@@ -1,19 +1,19 @@
 ---
 title: "Day 3 - Your first week in NodeJS"
 date: 2021-08-07
-image: /assets/images/nodejs-day3.webp
+image: /assets/images/your-first-week-in-nodejs.png
 keywords: expressjs tutorial, how to create express server, backend nodejs tutorial, best node js tutorial for beginners, best nodejs tutorial, best practices node js tutorial, buffer node js tutorial, tutorial node js, tutorial node.js, was ist node.js, what is node js tutorial, what is node js with example, why node.js, nodejs basics, basic understanding of nodejs, start with nodejs
 excerpt: I believe you have already read my previous article where I explained, how to spin up a Node.js server instance
 tags:
-  - "nodejs"
-  - "programming"
-  - "your-first-week-in-nodejs"
+  - "NodeJS"
+  - "Tech"
+  - "NodeJS"
 ---
 
 ## Prerequisite
 
-1. [Day 1 - Your first week in NodeJS](/posts/day-1-your-first-week-in-nodejs)
-2. [Day 2 - Your first week in NodeJS](/posts/day-2-your-first-week-in-nodejs)
+1. [Day 1 - Your first week in NodeJS](/posts/day-1-NodeJS)
+2. [Day 2 - Your first week in NodeJS](/posts/day-2-NodeJS)
 
 I believe you have already read my previous article where I explained, how to spin up a Node.js server instance, serve HTML/JSON data via an endpoint, basic routing, npm, and nodemon from creating custom modules, event handling, and file read/write operations. Let’s jump on today’s topic and write the code together.
 

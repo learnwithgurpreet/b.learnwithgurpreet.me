@@ -1,22 +1,22 @@
 ---
 title: "Day 6 (last) - Your first week in NodeJS"
 date: 2021-08-10
-image: /assets/images/nodejs-day6.webp
+image: /assets/images/your-first-week-in-nodejs.png
 keywords: expressjs tutorial, expressjs template engine tutorial, how to create express server, backend nodejs tutorial, best node js tutorial for beginners, best nodejs tutorial, best practices node js tutorial, buffer node js tutorial, tutorial node js, tutorial node.js, was ist node.js, what is node js tutorial, what is node js with example, why node.js, nodejs basics, basic understanding of nodejs, start with nodejs
 excerpt: During the course of this series, we have already developed a Node.js application that can be deployed on the cloud.
 tags:
-  - "nodejs"
-  - "programming"
-  - "your-first-week-in-nodejs"
+  - "NodeJS"
+  - "Tech"
+  - "NodeJS"
 ---
 
 ## Prerequisite
 
-1. [Day 1 - Your first week in NodeJS](/posts/day-1-your-first-week-in-nodejs)
-2. [Day 2 - Your first week in NodeJS](/posts/day-2-your-first-week-in-nodejs)
-3. [Day 3 - Your first week in NodeJS](/posts/day-3-your-first-week-in-nodejs)
-4. [Day 4 - Your first week in NodeJS](/posts/day-4-your-first-week-in-nodejs)
-5. [Day 5 - Your first week in NodeJS](/posts/day-5-your-first-week-in-nodejs)
+1. [Day 1 - Your first week in NodeJS](/posts/day-1-NodeJS)
+2. [Day 2 - Your first week in NodeJS](/posts/day-2-NodeJS)
+3. [Day 3 - Your first week in NodeJS](/posts/day-3-NodeJS)
+4. [Day 4 - Your first week in NodeJS](/posts/day-4-NodeJS)
+5. [Day 5 - Your first week in NodeJS](/posts/day-5-NodeJS)
 
 ## Overview
 
@@ -123,4 +123,4 @@ Hope you liked the series, feel free to drop a comment in case you want me to cr
 ## Useful Links
 
 - [Claim Free Heroku Account](https://signup.heroku.com/login)
-- [Final code](https://github.com/gsin11/your-first-week-in-NodeJS)
+- [Final code](https://github.com/gsin11/NodeJS)

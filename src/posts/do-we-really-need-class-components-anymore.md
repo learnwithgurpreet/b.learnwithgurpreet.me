@@ -4,7 +4,7 @@ date: "2021-04-21"
 image: /assets/images/cTplxzXwl-e1643359863466.webp
 excerpt: ReactJS is a mature enough library that becomes the first choice for developers. When ReactJS got launched it had a strong concept of class components.
 tags:
-  - "thoughts"
+  - "Thoughts"
 ---
 
 ReactJS is a mature enough library that becomes the first choice for developers. When ReactJS got launched it had a strong concept of _class components_. The reason they were popular was because of their life cycle methods. With the ease of these life cycle methods, you can trigger your custom event at the right time.

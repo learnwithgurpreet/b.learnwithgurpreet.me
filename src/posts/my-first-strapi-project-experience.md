@@ -4,8 +4,8 @@ date: "2021-02-26"
 image: /assets/images/ou46q3ChA-e1643359809377.webp
 excerpt: When I was looking for some NodeJS based powerful CMS I found Strapi as a good example since it is not only popular these days but comes with nearly zero bootstrap footprints.
 tags:
-  - "nodejs"
-  - "programming"
+  - "NodeJS"
+  - "Tech"
 ---
 
 When I was looking for some NodeJS based powerful CMS I found Strapi as a good example since it is not only popular these days but comes with nearly zero bootstrap footprints.

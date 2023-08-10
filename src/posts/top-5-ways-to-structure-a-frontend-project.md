@@ -1,12 +1,12 @@
 ---
 title: "Top 5 ways to structure a frontend project"
 date: "2021-09-11"
-image: /assets/images/cover1.jpg
+image: /assets/images/top-5-ways-to-structure-a-frontend-project.png
 imageAlt: "Photo by George Bakos on Unsplash"
 excerpt: While working on the open-source projects you get very little chance to structure the project, but you still can set some guidelines upfront and stick to them.
 tags:
-  - "programming"
-  - "thoughts"
+  - "Tech"
+  - "Thoughts"
 ---
 
 While working on the open-source projects you get very little chance to structure the project, but you still can set some guidelines upfront and stick to them.

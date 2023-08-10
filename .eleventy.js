@@ -27,7 +27,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("cacheBuster", cacheBuster);
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
-      "MMM dd, yyyy"
+      "dd MMMM yyyy"
     );
   });
   eleventyConfig.addFilter(

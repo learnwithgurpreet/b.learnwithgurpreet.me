@@ -1,26 +1,26 @@
 ---
 title: "Day 4 - Your first week in NodeJS"
 date: 2021-08-08
-image: /assets/images/nodejs-day4.webp
+image: /assets/images/your-first-week-in-nodejs.png
 keywords: expressjs tutorial, expressjs template engine tutorial, how to create express server, backend nodejs tutorial, best node js tutorial for beginners, best nodejs tutorial, best practices node js tutorial, buffer node js tutorial, tutorial node js, tutorial node.js, was ist node.js, what is node js tutorial, what is node js with example, why node.js, nodejs basics, basic understanding of nodejs, start with nodejs
 excerpt: I believe by now you are already comfortable with core modules of Node.js and have created your own RESTFul API service.
 tags:
-  - "nodejs"
-  - "programming"
-  - "your-first-week-in-nodejs"
+  - "NodeJS"
+  - "Tech"
+  - "NodeJS"
 ---
 
 ## Prerequisite
 
-1. [Day 1 - Your first week in NodeJS](/posts/day-1-your-first-week-in-nodejs)
-2. [Day 2 - Your first week in NodeJS](/posts/day-2-your-first-week-in-nodejs)
-3. [Day 3 - Your first week in NodeJS](/posts/day-3-your-first-week-in-nodejs)
+1. [Day 1 - Your first week in NodeJS](/posts/day-1-NodeJS)
+2. [Day 2 - Your first week in NodeJS](/posts/day-2-NodeJS)
+3. [Day 3 - Your first week in NodeJS](/posts/day-3-NodeJS)
 
 ## Quick recap
 
 I believe by now you are already comfortable with core modules of Node.js and have created your own RESTFul API service.
 
-It’s time to create a front-end now, which you can use to show users information which we developed in the [last article](https://www.gsin.in/day-3-your-first-week-in-nodejs).
+It’s time to create a front-end now, which you can use to show users information which we developed in the [last article](https://www.gsin.in/day-3-NodeJS).
 
 ## Template engines
 

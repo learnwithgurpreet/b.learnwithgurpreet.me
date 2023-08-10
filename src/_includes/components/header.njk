@@ -1,13 +1,27 @@
-<header class="flex flex-col my-5 max-w-7xl mx-auto w-full px-5">
-  <div class="flex justify-between items-center gap-5 flex-col sm:flex-row mb-4 lg:mb-11">
-    <a class="block font-semibold text-3xl text-teal-600 dark:text-teal-500" href="/">{{ metadata.title }}</a>
-    <nav>
-      <div class="fade flex gap-4 flex-wrap items-start justify-start">
-        {%- for entry in collections.all | eleventyNavigation %}
-          <a class="underline" href="{{ entry.url | url }}" {%if entry.url == page.url%}aria-current="page"{% endif %}>{{ entry.title }}</a>
-        {%- endfor %}
-        <a class="underline" href="{{ "/feed/feed.xml" | url }}">RSS</a>
-      </div>
-    </nav>
+<nav class="flex py-3 items-center bg-black sticky top-0 z-[1]">
+  <div class="flex max-w-7xl mx-auto w-full px-5">
+    <ul class="flex">
+      <li><a href="/" class="text-2xl text-white">{{ metadata.metaTitle }}</a></li>
+    </ul>
+
+    <ul id="list-categories" class="hidden">
+      {% for tag in collections.tagList %}
+        {% set tagUrl %}/category/{{ tag | slug }}/{% endset %}
+        {% set postCount = collections.posts | postByTag(tag) | length %}
+        <li>
+          <a href="{{ tagUrl | url }}" {%if tagUrl == page.url%}aria-current="page"{% endif %}>{{ tag }}</a>
+        </li>
+      {% endfor %}
+        <li>
+          <a href="/contact" {%if "contact" == page.url%}aria-current="page"{% endif %}>Contact</a>
+        </li>
+    </ul>
+    <div class="ml-auto lg:hidden">
+      <button aria-label="Menu" id="hamburger_menu" class="text-white rounded-full lg:rounded-3xl inline-flex items-center p-2 lg:px-3 lg:py-2 active:bg-gray-300 transition-colors duration-200 motion-reduce:transition-none">
+        <svg id="open" width="16" height="16" viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="M2 6h20v3H2V6Z" fill="currentColor"></path>,<path d="M2 15h20v3H2v-3Z" fill="currentColor"></path></svg>
+        <svg id="close" width="16" height="16" viewBox="0 0 24 24" class="w-4 h-4" fill="none"><path d="m21.1 5.1-2.2-2.2-6.9 7-6.9-7-2.2 2.2 7 6.9-7 6.9 2.2 2.2 6.9-7 6.9 7 2.2-2.2-7-6.9 7-6.9Z" fill="currentColor"></path></svg>
+      </button>
+    </div>
   </div>
-</header>
+</nav>
+<div class="bg-white" id="overlay-bg"></div>

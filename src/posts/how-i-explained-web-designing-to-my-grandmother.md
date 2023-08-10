@@ -1,10 +1,10 @@
 ---
 title: "How I explained Web designing to my Grandmother"
 date: "2020-09-10"
-image: /assets/images/3kZii7hdQ-e1643359718726.webp
+image: /assets/images/how-i-explained-web-designing-to-my-grandmother.png
 excerpt: I would like to share a question that I often asked my grandmother, “What are you doing on this laptop?”. I am sure it is difficult for you also to explain what is web designing to your grandparents.
 tags:
-  - "thoughts"
+  - "Thoughts"
 ---
 
 I would like to share a question that I often asked my grandmother, “What are you doing on this laptop?”. I am sure it is difficult for you also to explain what is web designing to your grandparents.

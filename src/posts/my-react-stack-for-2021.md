@@ -4,7 +4,7 @@ date: "2021-05-08"
 image: /assets/images/my-react-tech-stack-e1643359877568.webp
 excerpt: My ReactJS tech stack in which you might be interested. I will showcase what options are available in the market to start on a ReactJS based application.
 tags:
-  - "thoughts"
+  - "Thoughts"
 ---
 
 My ReactJS tech stack in which you might be interested. I will showcase what options are available in the market to start on a [ReactJS based application](https://learnwithgurpreet.com/structure-your-frontend-project/).

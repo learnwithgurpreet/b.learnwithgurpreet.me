@@ -12,7 +12,7 @@ async function imageShortCode(
   sizes = "100vw"
 ) {
   let metadata = await Image(src, {
-    widths: [400, 640],
+    widths: [400, 640, 1024],
     formats: ["jpeg", "webp"],
     outputDir: "_site/assets/images/",
     urlPath: "/assets/images/",
@@ -26,7 +26,7 @@ async function imageShortCode(
       // format: current file format
       // options: set of options passed to the Image call
 
-      return `${id}-learwithgurpreet-${width}w.${format}`;
+      return `${id}-learnwithgurpreet-${width}w.${format}`;
     },
   });
 

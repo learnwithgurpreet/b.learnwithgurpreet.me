@@ -4,7 +4,7 @@ date: "2021-03-27"
 image: /assets/images/xeVWgc_Ki-e1643359851424.webp
 excerpt:
 tags:
-  - "programming"
+  - "Tech"
 ---
 
 I am reading a lot about accessibility guidelines and met/working with some people who are responsible to deliver accessible experiences. Accessibility is something that you can’t just archive by adding `aria` attributes to your DOM elements. After all, there is no need to add the `aria` attribute if you are using the correct DOM element while building your website.

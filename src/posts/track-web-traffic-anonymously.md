@@ -1,13 +1,13 @@
 ---
 title: "Track web traffic anonymously"
 date: "2022-06-27"
-image: /assets/images/kobu-agency-FyvE6XPs5gk-unsplash.jpg
+image: /assets/images/track-web-traffic-anonymously.png
 imageAlt: "Photo by KOBU Agency on Unsplash"
 excerpt: Implementing analytics on any web platform is not a difficult job but keeping it privacy-focused is
 tags:
-  - "privacy"
-  - "analytics"
-  - "tech"
+  - "Privacy"
+  - "Tech"
+  - "Tech"
 ---
 
 Implementing analytics on any web platform is not a difficult job but keeping it privacy-focused is. Considering the privacy of individual users, we should always think twice before considering any platform. I would like to divide this article into two main categories. First, we will talk about some industry-leading analytics tools, second will jump on open source solutions.
