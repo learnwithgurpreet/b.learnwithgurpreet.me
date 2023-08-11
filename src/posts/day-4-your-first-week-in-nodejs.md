@@ -7,14 +7,13 @@ excerpt: I believe by now you are already comfortable with core modules of Node.
 tags:
   - "NodeJS"
   - "Tech"
-  - "NodeJS"
 ---
 
 ## Prerequisite
 
-1. [Day 1 - Your first week in NodeJS](/posts/day-1-NodeJS)
-2. [Day 2 - Your first week in NodeJS](/posts/day-2-NodeJS)
-3. [Day 3 - Your first week in NodeJS](/posts/day-3-NodeJS)
+1. [Day 1 - Your first week in NodeJS](/posts/day-1-your-first-week-in-nodejs/)
+2. [Day 2 - Your first week in NodeJS](/posts/day-2-your-first-week-in-nodejs/)
+3. [Day 3 - Your first week in NodeJS](/posts/day-3-your-first-week-in-nodejs/)
 
 ## Quick recap
 

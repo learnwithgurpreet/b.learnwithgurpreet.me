@@ -7,7 +7,6 @@ excerpt: I believe you know something about Node.js before starting this course,
 tags:
   - "NodeJS"
   - "Tech"
-  - "NodeJS"
 ---
 
 I believe you know something about Node.js before starting this course, just to refresh your memory. Node.js is a JavaScript runtime, built on Chrome’s V8 JavaScript engine. Node.js uses an event-driven, non-blocking model that makes it lightweight and efficient.

@@ -7,17 +7,16 @@ excerpt: I explained how to implement a template engine to get dynamic variables
 tags:
   - "NodeJS"
   - "Tech"
-  - "NodeJS"
 ---
 
 As promised, this is my fifth article of [Your first week in NodeJS](/category/NodeJS/) web article series.
 
 ## Prerequisite
 
-1. [Day 1 - Your first week in NodeJS](/posts/day-1-NodeJS)
-2. [Day 2 - Your first week in NodeJS](/posts/day-2-NodeJS)
-3. [Day 3 - Your first week in NodeJS](/posts/day-3-NodeJS)
-4. [Day 4 - Your first week in NodeJS](/posts/day-4-NodeJS)
+1. [Day 1 - Your first week in NodeJS](/posts/day-1-your-first-week-in-nodejs/)
+2. [Day 2 - Your first week in NodeJS](/posts/day-2-your-first-week-in-nodejs/)
+3. [Day 3 - Your first week in NodeJS](/posts/day-3-your-first-week-in-nodejs/)
+4. [Day 4 - Your first week in NodeJS](/posts/day-4-your-first-week-in-nodejs/)
 
 ## Quick recap
 
