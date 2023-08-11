@@ -13,7 +13,6 @@
     <meta name="theme-color" content="#F9FAFB" />
 
     {% set currentPageUrl = metadata.url + page.url | url %}
-    {% set canonicalUrl = metadata.canonical + page.url | url %}
     {% set authorImage = metadata.url + "/assets/images/profile-pic.jpg" | url %}
 
     {% set secondTitle = "" if page.url === "/" else " - " + title %}
@@ -22,7 +21,6 @@
     <title>{{ metadata.metaTitle + secondTitle }}</title>
     <meta name="keywords" content="{{ keywords }}" />
     <meta name="description" content="{{ excerpt or metadata.description }}" />
-    <link rel="canonical" href="{{ canonicalUrl }}">
 
     <meta name="og:image" content="{{ authorImage }}">
     <meta name="og:image:secure_url" content="{{ authorImage }}">
