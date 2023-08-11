@@ -123,12 +123,12 @@
       </script>
     {% endif %}
   </head>
-  <body class="bg-white text-black">
-    <main>
-      {% include "components/header.njk" %}
+  <body class="bg-white text-black flex flex-col h-screen justify-between">
+    {% include "components/header.njk" %}
+    <main class="mb-auto">
       {% block content %}{% endblock %}
-      {% include "components/footer.njk" %}
     </main>
+    {% include "components/footer.njk" %}
     <script src="{{ '/assets/js/script.js' | cacheBuster }}"></script>
   </body>
 </html>
