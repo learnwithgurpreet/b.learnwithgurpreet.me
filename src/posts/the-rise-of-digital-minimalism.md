@@ -1,6 +1,7 @@
 ---
 title: "The Rise of Digital Minimalism"
 date: "2023-06-23"
+imageCredit: "Photo by Leone Venter on Unsplash"
 keywords: digital minimalism, digital minimalism summary, digital minimalism book, digital minimalism phone, what is digital minimalism
 excerpt: Digital minimalism offers a solution to combat information overload, reduce screen time, and create a healthier relationship with technology.
 image: /assets/images/the-rise-of-digital-minimalism.png

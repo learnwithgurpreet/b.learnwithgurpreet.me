@@ -15,6 +15,9 @@
   {% if image %}
     <div class="mx-auto pb-14 max-w-5xl featured-image-wrapper">
       {% responsiveImage "src" + image, title %}
+      {% if imageCredit %}
+      <p class="text-center pt-2 text-gray-200 text-sm">{{ imageCredit }}</p>
+      {% endif %}
     </div>
   {% endif %}
   <div class="px-3 w-full max-w-3xl m-auto">

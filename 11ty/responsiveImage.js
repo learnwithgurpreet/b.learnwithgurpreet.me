@@ -25,8 +25,9 @@ async function imageShortCode(
       // width: current width in px
       // format: current file format
       // options: set of options passed to the Image call
-
-      return `${id}-learnwithgurpreet-${width}w.${format}`;
+      return `${id}-${alt
+        .replace(/[^A-Z0-9]/gi, "-")
+        .toLowerCase()}-${width}w.${format}`;
     },
   });
 

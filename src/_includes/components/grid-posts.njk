@@ -3,12 +3,7 @@
     <div>
       <a href="{{ post.url | url }}" class="flex h-full min-h-[400px] bg-gray-50 flex-col transition-all motion-reduce:transition-none duration-300 ease-in hover:drop-shadow-3xl">
         {% if post.data.image %}
-          {% if post.data.imageAlt %}
-            {% set alt = post.data.imageAlt %}
-          {% else %}
-            {% set alt = "featured" %}
-          {% endif %}
-          {% responsiveImage "src" + post.data.image, alt %}
+          {% responsiveImage "src" + post.data.image, post.data.title %}
         {% endif %}
         <div class="h-full flex p-5 flex-col">
           <p class="text-gray-300 text-xs">
