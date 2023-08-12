@@ -1,18 +1,18 @@
 <div class="p-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 m-auto w-full max-w-7xl">
   {% for post in allPosts | reverse %}
     <div>
-      <a href="{{ post.url | url }}" class="flex h-full min-h-[400px] bg-gray-50 flex-col transition-all motion-reduce:transition-none duration-300 ease-in hover:drop-shadow-3xl">
+      <a href="{{ post.url | url }}" class="flex h-full min-h-[400px] bg-gray-50 dark:bg-gray-300 dark:text-gray-50 flex-col transition-all motion-reduce:transition-none duration-300 ease-in hover:drop-shadow-3xl">
         {% if post.data.image %}
           {% responsiveImage "src" + post.data.image, post.data.title %}
         {% endif %}
         <div class="h-full flex p-5 flex-col">
-          <p class="text-gray-300 text-xs">
+          <p class="text-gray-300 dark:text-gray-100 text-xs">
             {%- for tag in post.data.tags | filterTagList -%}
               {{ tag }}{{ ', ' if not loop.last }}
             {%- endfor %}
           </p>
           <h2 class="font-medium mb-5 text-xl sm:text-2xl">{{ post.data.title }}</h2>
-          <time datetime="{{ post.date | htmlDateString }}" class="text-xs text-gray-300 mt-auto mb-0">{{ post.date | readableDate }}</time>
+          <time datetime="{{ post.date | htmlDateString }}" class="text-xs text-gray-300 dark:text-gray-100 mt-auto mb-0">{{ post.date | readableDate }}</time>
         </div>
       </a>
     </div>

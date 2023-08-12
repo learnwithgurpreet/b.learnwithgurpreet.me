@@ -5,39 +5,39 @@
       <span>
         {%- for tag in tags | filterTagList -%}
           {%- set tagUrl %}/category/{{ tag | slug }}/{% endset -%}
-          <a href="{{ tagUrl | url }}" class="text-gray-300 text-xs">{{ tag }}</a>{{ ', ' if not loop.last }}
+          <a href="{{ tagUrl | url }}" class="text-gray-300 dark:text-gray-100 text-xs">{{ tag }}</a>{{ ', ' if not loop.last }}
         {%- endfor %}
       </span>
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5">{{ title }}</h1>
-      <time datetime="{{ page.date | htmlDateString }}" class="text-xs text-gray-200 mt-auto mb-0">{{ page.date | readableDate }}</time>
+      <time datetime="{{ page.date | htmlDateString }}" class="text-xs text-gray-200 dark:text-gray-100 mt-auto mb-0">{{ page.date | readableDate }}</time>
     </div>
   </header>
   {% if image %}
     <div class="mx-auto pb-14 max-w-5xl featured-image-wrapper">
       {% responsiveImage "src" + image, title %}
       {% if imageCredit %}
-      <p class="text-center pt-2 text-gray-200 text-sm">{{ imageCredit }}</p>
+      <p class="text-center pt-2 text-gray-200 text-sm dark:text-gray-100">{{ imageCredit }}</p>
       {% endif %}
     </div>
   {% endif %}
   <div class="px-3 w-full max-w-3xl m-auto">
-    <div class="prose md:prose-lg xl:prose-xl max-w-full">
+    <div class="prose md:prose-lg xl:prose-xl max-w-full dark:prose-invert">
       {{ content | safe }}
     </div>
 
     <div class="px-3 max-w-full w-full mx-auto my-14 gap-6 flex flex-col">
-      <hr aria-hidden="true" class="border-t w-8 border-t-gray-100" />
+      <hr aria-hidden="true" class="border-t w-8 border-t-gray-100 dark:border-t-gray-200" />
       {% include "components/author.njk" %}
-      <hr aria-hidden="true" class="border-t w-8 border-t-gray-100" />
-      <div class="flex gap-2 items-center text-gray-200">
+      <hr aria-hidden="true" class="border-t w-8 border-t-gray-100 dark:border-t-gray-200" />
+      <div class="flex gap-2 items-center text-gray-200 dark:text-gray-100">
         Category: {%- for tag in tags | filterTagList -%}
           {%- set tagUrl %}/category/{{ tag | slug }}/{% endset -%}
-          <a href="{{ tagUrl | url }}" class="text-black underline underline-offset-8 hover:text-gray-300">{{ tag }}</a>
+          <a href="{{ tagUrl | url }}" class="text-black underline underline-offset-8 hover:text-gray-300 dark:text-gray-100 dark:hover:text-gray-200">{{ tag }}</a>
         {%- endfor %}
       </div>
-      <hr aria-hidden="true" class="border-t w-8 border-t-gray-100" />
+      <hr aria-hidden="true" class="border-t w-8 border-t-gray-100 dark:border-t-gray-200" />
       {% include "components/social-share.njk" %}
-      <hr aria-hidden="true" class="border-t w-8 border-t-gray-100" />
+      <hr aria-hidden="true" class="border-t w-8 border-t-gray-100 dark:border-t-gray-200" />
     </div>
   </div>
 {% endblock %}
