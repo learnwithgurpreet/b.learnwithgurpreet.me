@@ -1,5 +1,9 @@
 ---
 layout: layouts/page.njk
+pagination:
+  reverse: true
+  data: collections.posts
+  size: 12
 eleventyNavigation:
   key: Home
   order: 1
@@ -11,5 +15,21 @@ keywords: tech blog, gurpreet singh, gurpreet from germany, gurpreet from frankf
     <h2 class="text-lg mt-3">{{ metadata.author.description }}</h2>
   </div>
 </header>
-{% set allPosts = collections.posts %}
+{% set allPosts = pagination.items %}
 {% include "components/grid-posts.njk" %}
+
+<nav class="flex py-6 sm:py-8 w-full max-w-7xl m-auto px-5" aria-labelledby="my-pagination">
+  <h2 id="my-pagination" class="hidden">Pagination, please use below links to navigate through pages.</h2>
+  <ol class="flex gap-2 mx-auto font-medium">
+    {% if page.url === pagination.href.first %}<li><a href="{{ pagination.href.next }}">View More</a></li>{% endif %}
+    {% if page.url !== pagination.href.first %}
+      <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
+      {%- for pageEntry in pagination.pages %}
+        {% if page.url == pagination.hrefs[ loop.index0 ] %}
+          <li><span {% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %} class="px-6 text-sm text-gray-300 dark:text-gray-100 border-x border-gray-100 dark:border-gray-200">Page {{ loop.index }}</span></li>
+        {% endif %}
+      {%- endfor %}
+      <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
+    {% endif %}
+  </ol>
+</nav>

@@ -1,5 +1,5 @@
 <div class="p-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 m-auto w-full max-w-7xl">
-  {% for post in allPosts | reverse %}
+  {% for post in allPosts %}
     <div>
       <a href="{{ post.url | url }}" class="flex h-full min-h-[400px] bg-gray-50 dark:bg-gray-300 dark:text-gray-50 flex-col transition-all motion-reduce:transition-none duration-300 ease-in hover:drop-shadow-3xl">
         {% if post.data.image %}
