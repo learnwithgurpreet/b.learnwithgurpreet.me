@@ -84,6 +84,18 @@ module.exports = function (eleventyConfig) {
     });
   });
 
+  eleventyConfig.addFilter("relatedPosts", (array, tags, excludeMe) => {
+    tags.splice(0, 1);
+    return array.filter((p) => {
+      return (
+        p.data &&
+        p.data.tags &&
+        p.data.page.fileSlug !== excludeMe &&
+        p.data.tags.includes(tags[0])
+      );
+    });
+  });
+
   eleventyConfig.addFilter("excerpt", (content) => StripTags(content));
 
   return {

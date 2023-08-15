@@ -8,7 +8,6 @@
       <ul id="list-categories" class="hidden">
         {% for tag in collections.tagList %}
           {% set tagUrl %}/category/{{ tag | slug }}/{% endset %}
-          {% set postCount = collections.posts | postByTag(tag) | length %}
           <li>
             <a href="{{ tagUrl | url }}" {%if tagUrl == page.url%}aria-current="page"{% endif %}>{{ tag }}</a>
           </li>
