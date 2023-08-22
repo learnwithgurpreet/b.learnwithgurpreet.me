@@ -2,7 +2,7 @@
 title: "Aria is not my thing"
 date: "2021-03-27"
 image: /assets/images/xeVWgc_Ki-e1643359851424.webp
-excerpt:
+excerpt: I am reading a lot about accessibility guidelines and met/working with some people who are responsible to deliver accessible experiences
 tags:
   - "Tech"
 ---
