@@ -7,7 +7,6 @@ excerpt: Implementing analytics on any web platform is not a difficult job but k
 tags:
   - "Privacy"
   - "Tech"
-  - "Tech"
 ---
 
 Implementing analytics on any web platform is not a difficult job but keeping it privacy-focused is. Considering the privacy of individual users, we should always think twice before considering any platform. I would like to divide this article into two main categories. First, we will talk about some industry-leading analytics tools, second will jump on open source solutions.

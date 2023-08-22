@@ -85,15 +85,17 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("relatedPosts", (array, tags, excludeMe) => {
-    tags.splice(0, 1);
-    return array.filter((p) => {
-      return (
-        p.data &&
-        p.data.tags &&
-        p.data.page.fileSlug !== excludeMe &&
-        p.data.tags.includes(tags[0])
-      );
+    const result = [];
+    tags.map((tag) => {
+      if (tag !== "posts") {
+        array.map((p) => {
+          if (p.data.page.fileSlug !== excludeMe && p.data.tags.includes(tag)) {
+            result.push(p);
+          }
+        });
+      }
     });
+    return result;
   });
 
   eleventyConfig.addFilter("excerpt", (content) => StripTags(content));
