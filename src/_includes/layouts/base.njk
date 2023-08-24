@@ -123,8 +123,9 @@
     {% endif %}
   </head>
   <body class="bg-white text-black dark:bg-gray-400 dark:text-gray-100 flex flex-col h-screen justify-between">
+    <a href="#content" class="skip-link p-2 absolute text-center left-0 right-0 bg-gray-50 text-black -translate-y-full transition-transform duration-200 focus:z-20 focus:translate-y-0">Skip to main content</a>
     {% include "components/header.njk" %}
-    <main class="mb-auto">
+    <main class="mb-auto" id="content">
       {% block content %}{% endblock %}
     </main>
     {% include "components/footer.njk" %}
