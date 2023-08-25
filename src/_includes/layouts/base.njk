@@ -5,7 +5,9 @@
     <link rel="icon" type="image/png" href="{{ '/assets/favicons/favicon-32x32.png' | url }}" sizes="32x32" />
     <link rel="icon" type="image/png" href="{{ '/assets/favicons/android-chrome-192x192.png' | url }}" sizes="192x192" />
     <link rel="icon" type="image/png" href="{{ '/assets/favicons/android-chrome-512x512.png' | url }}" sizes="512x512" />
+    {# ios support #}
     <link rel="apple-touch-icon" href="{{ '/assets/favicons/apple-touch-icon.png' | url }}" />
+    <meta name="apple-mobile-web-app-status-bar" content="#333333" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
@@ -50,6 +52,8 @@
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | cacheBuster }}">
     <link rel="alternate" href="{{ metadata.url + metadata.feed.path }}" type="application/atom+xml" title="{{ metadata.title }}" />
     <link rel="alternate" href="{{ metadata.url + metadata.jsonfeed.path }}" type="application/json" title="{{ metadata.title }}" />
+
+    <link rel="manifest" href="/manifest.json">
 
     {% if page.url === "/posts/" %}
       <script type="application/ld+json">

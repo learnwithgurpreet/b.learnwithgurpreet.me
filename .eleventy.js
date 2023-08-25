@@ -16,6 +16,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/js");
   eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy("src/assets/favicons");
+  eleventyConfig.addPassthroughCopy("src/manifest.json");
+  // eleventyConfig.addPassthroughCopy("src/sw.js");
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
