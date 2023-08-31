@@ -16,8 +16,7 @@ We often talk about sustainability and try to decrease our CO² footprints by dr
 
 There is no problem having such expectations but at the same time, we forget about the environment and other key factories which are left behind.
 
-> "If the Internet was a country, it would be the 7th largest polluter"
->
+> If the Internet was a country, it would be the 7th largest polluter
 > sustainablewebmanifesto.com
 
 Before going further, you need to understand your **Digital Carbon Foot Print**
