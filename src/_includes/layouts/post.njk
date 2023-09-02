@@ -45,22 +45,26 @@
   {% set nextPost = collections.posts | getNextCollectionItem %}
 
   <div class="flex justify-center bg-black w-full">
-    <div class="flex w-full max-w-3xl flex-col md:flex-row py-10 px-8">
+    <div class="flex w-full max-w-3xl flex-col md:flex-row py-10 px-8 text-white">
       <div class="block w-full text-left">
         {% if previousPost %}
-          <h4 class="text-2xl font-bold mb-4 text-gray-50">
-            <a href="{{ previousPost.url }}" class="text-white hover:text-gray-100">{{ previousPost.data.title }}</a>
+        <a href="{{ previousPost.url }}" class="hover:underline">
+          <h4 class="text-2xl font-bold mb-4">
+            {{ previousPost.data.title }}
           </h4>
-          <span class="uppercase text-gray-100">← Previous</span>
+          <p class="uppercase">← Previous</p>
+        </a>
         {% endif %}
       </div>
       <div class="bg-gray-100 w-full h-[1px] mx-auto my-10 md:my-0 md:mx-14 md:h-full md:w-[1px]"></div>
       <div class="block w-full md:text-right">
         {% if nextPost %}
+        <a href="{{ nextPost.url }}" class="hover:underline">
           <h4 class="text-2xl font-bold mb-4">
-            <a href="{{ nextPost.url }}" class="text-white hover:text-gray-100">{{ nextPost.data.title }}</a>
+            {{ nextPost.data.title }}
           </h4>
-          <span class="uppercase text-gray-100">Next →</span>
+          <p class="uppercase">Next →</p>
+        </a>
         {% endif %}
       </div>
     </div>

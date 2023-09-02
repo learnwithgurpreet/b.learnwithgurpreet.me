@@ -1,4 +1,4 @@
-{% set allPosts = collections.posts | relatedPosts(tags, page.fileSlug) | reverse | head(-6) %}
+{% set allPosts = collections.posts | relatedPosts(tags, page.fileSlug) | reverse | head(-3) %}
 {% if allPosts.length > 0 %}
   <h3 class="text-2xl font-medium text-center my-6">Related Articles</h3>
 {% endif %}
