@@ -2,7 +2,6 @@
 title: Dahi wale Aloo
 date: "2023-09-03"
 image: /assets/images/dahi-wale-aloo.png
-excludeHome: true
 excerpt: Dahi wale Aloo (Spicy yoghurt potato gravy), can be done with Vegan yogurt as well.
 keywords: dahi wale aloo, potato in yogurt, vegan, recipe, vegan recipe
 tags:
@@ -44,13 +43,13 @@ Coriander
 
 Take hot pan and add coriander seeds, cumin seeds, fennel seeds, black pepper cons and roughly crush them then keep aside for further use.
 
-In a kadai heat ghee and add crushed masala, onion, green chillies and saute until light brown.
+In a kadai/pot heat ghee and add crushed masala, onion, green chillies and saute until light brown.
 
 Now add the mixture of curd, assafoetida, degi red chilli powder / paprika powder, turmeric powder, coriander powder, salt and saute continuously on medium heat until fragrant.
 
 Meanwhile deep fry cubed potatoes in hot oil until golden brown and cooked completely.
 
-Add some water, sugar in the kadai and bring it to a boil.
+Add some water, sugar in the kadai/pot and bring it to a boil.
 
 Once boiled, add the fried potatoes and cook for a minute and switch off the flames.
 
