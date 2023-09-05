@@ -22,7 +22,7 @@
     {% set secondTitle = "" if page.url === "/" else " - " + title %}
     {% set keywords = keywords or "CSS, front-end, web design, consulting, architecture" %}
     
-    <title>{{ metadata.metaTitle + secondTitle }}</title>
+    <title>{{ metadata.title + secondTitle }}</title>
     <meta name="keywords" content="{{ keywords }}" />
     <meta name="description" content="{{ excerpt or metadata.description }}" />
 
@@ -33,26 +33,26 @@
     <meta property="article:published_time" content="{{ date }}">
     <meta property="article:modified_time" content="{{ date }}">
 
-    <meta name="og:title" content="{{ metadata.metaTitle + secondTitle }}">
+    <meta name="og:title" content="{{ metadata.title + secondTitle }}">
     <meta name="og:description" content="{{ excerpt or metadata.description }}">
     <meta name="og:url" content="{{ currentPageUrl }}">
-    <meta name="og:site_name" content="{{ metadata.metaTitle }}">
-    <meta name="og:locale" content="en_GB">
+    <meta name="og:site_name" content="{{ metadata.title }}">
+    <meta name="og:locale" content="{{ metadata.language }}">
     <meta name="og:type" content="article">
 
-    <meta name="twitter:title" content="{{ metadata.metaTitle + secondTitle }}">
+    <meta name="twitter:title" content="{{ metadata.title + secondTitle }}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="{{ excerpt or metadata.description }}">
     <meta name="twitter:image" content="{{ socialImage }}">
 
     <meta name="generator" content="{{ eleventy.generator }}">
 
-    <meta itemprop="name" content="{{ metadata.metaTitle + secondTitle }}">
+    <meta itemprop="name" content="{{ metadata.title + secondTitle }}">
     <meta itemprop="description" content="{{ excerpt or metadata.description }}">
 
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | cacheBuster }}">
-    <link rel="alternate" href="{{ metadata.url + metadata.feed.path }}" type="application/atom+xml" title="{{ metadata.title }}" />
-    <link rel="alternate" href="{{ metadata.url + metadata.jsonfeed.path }}" type="application/json" title="{{ metadata.title }}" />
+    <link rel="alternate" href="{{ metadata.url + metadata.feed.xml }}" type="application/atom+xml" title="{{ metadata.title }}" />
+    <link rel="alternate" href="{{ metadata.url + metadata.feed.json }}" type="application/json" title="{{ metadata.title }}" />
 
     <link rel="manifest" href="/manifest.json">
 
@@ -72,7 +72,7 @@
                   }{% if loop.last === false %},{% endif %}{% endfor %}
               ]
           },
-          "headline": "List of Blog Posts - {{ metadata.author.name }} - {{ metadata.metaTitle }}",
+          "headline": "List of Blog Posts - {{ metadata.author.name }} - {{ metadata.title }}",
           "description": "Explore the collection of blog posts from Learn with Gurpreet.",
           "publisher": {
               "@type": "Organization",
@@ -85,7 +85,7 @@
               }
           },
           "url": "{{ currentPageUrl }}",
-          "inLanguage": "en_GB"
+          "inLanguage": "{{ metadata.language }}"
         }
       </script>
     {% endif %}
@@ -106,7 +106,7 @@
                   }{% if loop.last === false %},{% endif %}{% endfor %}
               ]
           },
-          "headline": "List of Blog Posts under the {{ tag }} category - {{ metadata.author.name }} - {{ metadata.metaTitle }}",
+          "headline": "List of Blog Posts under the {{ tag }} category - {{ metadata.author.name }} - {{ metadata.title }}",
           "description": "Explore the collection of blog posts from Learn with Gurpreet.",
           "publisher": {
               "@type": "Organization",
@@ -119,7 +119,7 @@
               }
           },
           "url": "{{ currentPageUrl }}",
-          "inLanguage": "en_GB"
+          "inLanguage": "{{ metadata.language }}"
         }
       </script>
     {% endif %}
@@ -133,8 +133,8 @@
               "@type": "WebPage",
               "@id": "{{ currentPageUrl }}"
           },
-          "headline": "{{ title }} - {{ metadata.author.name }} - {{ metadata.metaTitle }}",
-          "name": "{{ title }} - {{ metadata.author.name }} - {{ metadata.metaTitle }}",
+          "headline": "{{ title }} - {{ metadata.author.name }} - {{ metadata.title }}",
+          "name": "{{ title }} - {{ metadata.author.name }} - {{ metadata.title }}",
           "description": "{{ excerpt }}",
           "image": "{{ socialImage }}",
           "author": {
@@ -148,7 +148,7 @@
           "dateModified": "{{ page.inputPath | stat('mtime') | htmlDateString }}",
           "publisher": {
               "@type": "Organization",
-              "name": "{{ metadata.metaTitle }}",
+              "name": "{{ metadata.title }}",
               "logo": {
                   "@type": "ImageObject",
                   "url": "{{ authorImage }}",
