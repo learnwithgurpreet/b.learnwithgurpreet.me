@@ -13,7 +13,7 @@ function lazyImages(eleventyConfig, userOptions = {}) {
       const dom = new JSDOM(content);
       const document = dom.window.document;
 
-      const [...images] = document.querySelectorAll(".post-content img");
+      const [...images] = document.querySelectorAll(".prose img");
       images.forEach((img) => {
         img.setAttribute("loading", "lazy");
       });

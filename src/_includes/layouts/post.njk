@@ -49,9 +49,9 @@
       <div class="block w-full text-left">
         {% if previousPost %}
         <a href="{{ previousPost.url }}" class="hover:underline">
-          <h4 class="text-2xl font-bold mb-4">
+          <p class="text-2xl font-bold mb-4">
             {{ previousPost.data.title }}
-          </h4>
+          </p>
           <p class="uppercase">← Previous</p>
         </a>
         {% endif %}
@@ -60,9 +60,9 @@
       <div class="block w-full md:text-right">
         {% if nextPost %}
         <a href="{{ nextPost.url }}" class="hover:underline">
-          <h4 class="text-2xl font-bold mb-4">
+          <p class="text-2xl font-bold mb-4">
             {{ nextPost.data.title }}
-          </h4>
+          </p>
           <p class="uppercase">Next →</p>
         </a>
         {% endif %}
