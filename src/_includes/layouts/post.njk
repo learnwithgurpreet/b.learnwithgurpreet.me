@@ -9,7 +9,8 @@
         {%- endfor %}
       </span>
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5">{{ title }}</h1>
-      <time datetime="{{ page.date | htmlDateString }}" class="text-xs text-gray-200 dark:text-gray-100 mt-auto mb-0">{{ page.date | readableDate }}</time>
+      <time datetime="{{ page.date | htmlDateString }}" class="text-xs text-gray-200 dark:text-gray-100 mt-auto mb-2 block">Created: {{ page.date | readableDate }}</time>
+      <time datetime="{{ page.date | htmlDateString }}" class="text-xs text-gray-200 dark:text-gray-100 mt-auto mb-0 block">Modified: {{ page.inputPath | stat("mtime") | readableDate }}</time>
     </div>
   </header>
   {% if image %}

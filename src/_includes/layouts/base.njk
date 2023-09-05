@@ -56,9 +56,9 @@
 
     <link rel="manifest" href="/manifest.json">
 
-    {% if page.url === "/posts/" %}
+    {% if page.url === "/" %}
       <script type="application/ld+json">
-      {
+        {
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           "mainEntity": {
@@ -72,7 +72,7 @@
                   }{% if loop.last === false %},{% endif %}{% endfor %}
               ]
           },
-          "headline": "List of Blog Posts",
+          "headline": "List of Blog Posts - {{ metadata.author.name }} - {{ metadata.metaTitle }}",
           "description": "Explore the collection of blog posts from Learn with Gurpreet.",
           "publisher": {
               "@type": "Organization",
@@ -80,35 +80,72 @@
               "logo": {
                   "@type": "ImageObject",
                   "url": "{{ socialImage }}",
-                  "width": 1024,
-                  "height": 512
+                  "width": 500,
+                  "height": 500
               }
           },
           "url": "{{ currentPageUrl }}",
           "inLanguage": "en_GB"
-      }
+        }
+      </script>
+    {% endif %}
+
+    {% if '/category/' in page.url %}
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "mainEntity": {
+              "@type": "ItemList",
+              "itemListElement": [{% for post in collections[tag] | reverse %}
+                  {
+                    "@type": "ListItem",
+                    "position": {{loop.index}},
+                    "url": "{{ metadata.url + post.url | url }}",
+                    "name": "{{ post.data.title }}"
+                  }{% if loop.last === false %},{% endif %}{% endfor %}
+              ]
+          },
+          "headline": "List of Blog Posts under the {{ tag }} category - {{ metadata.author.name }} - {{ metadata.metaTitle }}",
+          "description": "Explore the collection of blog posts from Learn with Gurpreet.",
+          "publisher": {
+              "@type": "Organization",
+              "name": "Learn with Gurpreet",
+              "logo": {
+                  "@type": "ImageObject",
+                  "url": "{{ socialImage }}",
+                  "width": 500,
+                  "height": 500
+              }
+          },
+          "url": "{{ currentPageUrl }}",
+          "inLanguage": "en_GB"
+        }
       </script>
     {% endif %}
 
     {% if '/posts/' in page.url and page.url !== "/posts/" %}
       <script type="application/ld+json">
-      {
+        {
           "@context": "https://schema.org",
-          "@type": "Article",
+          "@type": "NewsArticle",
           "mainEntity": {
               "@type": "WebPage",
               "@id": "{{ currentPageUrl }}"
           },
-          "headline": "{{ title }}",
-          "description": "{{ excerpt or metadata.description }}",
+          "headline": "{{ title }} - {{ metadata.author.name }} - {{ metadata.metaTitle }}",
+          "name": "{{ title }} - {{ metadata.author.name }} - {{ metadata.metaTitle }}",
+          "description": "{{ excerpt }}",
           "image": "{{ socialImage }}",
           "author": {
               "@type": "Person",
               "name": "{{ metadata.author.name }}",
               "url": "{{ metadata.author.mastodon }}"
           },
+          "creator": ["{{ metadata.author.name }}"],
+          "dateCreated": "{{ date }}",
           "datePublished": "{{ date }}",
-          "dateModified": "{{ date }}",
+          "dateModified": "{{ page.inputPath | stat('mtime') | htmlDateString }}",
           "publisher": {
               "@type": "Organization",
               "name": "{{ metadata.metaTitle }}",
@@ -119,11 +156,8 @@
                   "height": 500
               }
           },
-          "keywords": "{{ keywords }}",
-          "articleSection": "{{ tags }}",
-          "url": "{{ currentPageUrl }}",
-          "inLanguage": "en_GB"
-      }
+          "mainEntityOfPage": "{{ currentPageUrl }}"
+        }
       </script>
     {% endif %}
   </head>

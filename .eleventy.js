@@ -27,6 +27,20 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(LazyImages, {});
   eleventyConfig.addPlugin(htmlMinify);
 
+  eleventyConfig.addNunjucksAsyncFilter(
+    "stat",
+    (file, prop = "birthtime", callback) => {
+      // If you called a naked `{{ page.inputPath | stat }}`, then the callback
+      // function gets set to the `prop` attribute, so we need to juggle some
+      // attribute values.
+      if (typeof prop === "function") {
+        callback = prop;
+        prop = "birthtime";
+      }
+      fs.stat(file, (err, stats) => callback(err, stats && stats[prop]));
+    }
+  );
+
   eleventyConfig.addFilter("cacheBuster", cacheBuster);
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
