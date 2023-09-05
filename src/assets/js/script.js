@@ -1,3 +1,8 @@
+window.va =
+  window.va ||
+  function () {
+    (window.vaq = window.vaq || []).push(arguments);
+  };
 (() => {
   document.getElementById("hamburger_menu").addEventListener("click", (e) => {
     e.target.classList.toggle("open");
