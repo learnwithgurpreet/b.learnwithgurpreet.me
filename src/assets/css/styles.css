@@ -7,33 +7,62 @@ html {
 }
 
 body {
-  @apply m-0 min-h-full;
+  @apply font-mono flex flex-col text-gray-800 bg-gray-50 text-lg min-h-screen dark:bg-gray-900 dark:text-gray-50;
 }
 
-.featured-image-wrapper .featured-image {
-  @apply w-full;
+.fade:hover>*:not(:hover) {
+  @apply opacity-40;
 }
 
-#list-categories {
-  @apply lg:px-2 ml-auto lg:flex lg:space-x-2 absolute lg:relative top-full left-0 right-0;
+a {
+  @apply underline decoration-current transition-all duration-200 ease-in underline-offset-1 motion-reduce:transition-none;
 }
 
-#list-categories a {
-  @apply lg:text-white font-medium lg:font-normal flex lg:inline-flex p-4 lg:p-2 items-center text-sm rounded-full lg:rounded-3xl lg:px-3 lg:py-2 lg:active:bg-gray-300 lg:hover:bg-gray-400 transition-colors duration-200 motion-reduce:transition-none;
+.slash,
+.arrow {
+  @apply flex flex-row gap-1;
 }
 
-#hamburger_menu > svg {
-  @apply pointer-events-none;
+.slash:before {
+  content: "//";
+  @apply text-teal-700 dark:text-teal-400;
 }
 
-#hamburger_menu.open > #close,
-#hamburger_menu.open > #open {
-  @apply inline;
+.arrow:after {
+  content: "→";
+  @apply text-teal-700 dark:text-teal-400;
 }
 
-#hamburger_menu > #close,
-#hamburger_menu.open > #open {
-  @apply hidden;
+.arrow:hover:after {
+  @apply right-1;
+}
+
+/* blockquote {
+  @apply p-4 my-4 border-l-4 border-gray-600 bg-gray-50 dark:border-gray-700 dark:bg-gray-800;
+}
+
+h1 {
+  @apply mt-4 lg:mt-6 font-semibold text-3xl lg:text-4xl;
+}
+
+h2 {
+  @apply font-semibold mt-6 text-2xl lg:text-3xl;
+}
+
+h3 {
+  @apply font-semibold mt-5 text-xl;
+}
+
+h4, h5, h6 {
+  @apply font-semibold mt-4;
+}
+
+article {
+  @apply mb-5;
+} */
+
+.separator:not(:last-child) {
+  @apply border-b border-b-gray-800;
 }
 
 /* PrismJS 1.29.0

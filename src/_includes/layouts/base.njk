@@ -19,7 +19,7 @@
 
     {% set currentPageUrl = metadata.url + page.url | url %}
 
-    {% set secondTitle = "" if page.url === "/" else " - " + title %}
+    {% set secondTitle = " - " + metadata.description if page.url === "/" else " - " + title %}
     {% set keywords = keywords or "CSS, front-end, web design, consulting, architecture" %}
     
     <title>{{ metadata.title + secondTitle }}</title>
@@ -53,8 +53,6 @@
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | cacheBuster }}">
     <link rel="alternate" href="{{ metadata.url + metadata.feed.xml }}" type="application/atom+xml" title="{{ metadata.title }}" />
     <link rel="alternate" href="{{ metadata.url + metadata.feed.json }}" type="application/json" title="{{ metadata.title }}" />
-
-    <link rel="manifest" href="/manifest.json">
 
     {% if page.url === "/" %}
       <script type="application/ld+json">
@@ -161,14 +159,9 @@
       </script>
     {% endif %}
   </head>
-  <body class="bg-white text-black dark:bg-gray-400 dark:text-gray-100 flex flex-col h-screen justify-between">
-    <a href="#content" class="skip-link p-2 absolute text-center left-0 right-0 bg-gray-50 text-black -translate-y-full transition-transform duration-200 focus:z-20 focus:translate-y-0">Skip to main content</a>
-    {% include "components/header.njk" %}
-    <main class="mb-auto" id="content">
-      {% block content %}{% endblock %}
-    </main>
-    {% include "components/footer.njk" %}
-    <script src="{{ '/assets/js/script.js' | cacheBuster }}"></script>
-    <script defer src="/_vercel/insights/script.js"></script>
+  <body>
+    {# <a href="#content" class="skip-link p-2 absolute text-center left-0 right-0 bg-gray-50 text-black -translate-y-full transition-transform duration-200 focus:z-20 focus:translate-y-0">Skip to main content</a> #}
+    {% block content %}{% endblock %}
+    {# <script defer src="/_vercel/insights/script.js"></script> #}
   </body>
 </html>

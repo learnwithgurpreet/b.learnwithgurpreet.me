@@ -14,11 +14,6 @@
     "type": "git",
     "url": "git@github.com:gsin11/learnwithgurpreet.git"
   },
-  "author": {
-    "name": "Gurpreet Singh",
-    "email": "hi@gsingh.de",
-    "url": "https://learnwithgurpreet.com/"
-  },
   "license": "MIT",
   "issues": {
     "url": "https://github.com/gsin11/learnwithgurpreet/issues"
