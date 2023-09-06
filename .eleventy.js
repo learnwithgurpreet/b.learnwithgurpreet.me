@@ -13,6 +13,11 @@ const htmlMinify = require("./11ty/htmlMinify");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy({
+    "./node_modules/chart.js/dist/chart.umd.js": "assets/js/chart.umd.js",
+    "./node_modules/chart.js/dist/chart.umd.js.map":
+      "assets/js/chart.umd.js.map",
+  });
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);

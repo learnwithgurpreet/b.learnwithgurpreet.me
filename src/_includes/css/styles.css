@@ -463,7 +463,7 @@ ol.big-words > :first-child {
 	-webkit-user-select: all;
 }
 
-.stats-overall {
+.stats {
 	display: flex;
 	list-style: none;
 	align-items: top;
@@ -472,23 +472,19 @@ ol.big-words > :first-child {
 	flex-wrap: wrap;
 }
 
-.stats-overall li {
+.stats li {
 	padding: var(--space-xs);
 	margin: 0;
 	background-color: var(--quaternary-color);
-	text-align: center;
+	text-align: left;
 	min-width: 30%;
 	flex-grow: 1;
 }
 
-.stats-overall li span {
+.stats li span {
 	font-weight: 300;
 	font-size: var(--step-5);
 	display: block;
-}
-
-.stats-overall li:where(:nth-child(4), :nth-child(5)) {
-	text-align: left;
 }
 
 table {

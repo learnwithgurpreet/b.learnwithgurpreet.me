@@ -7,6 +7,7 @@ excerpt: I believe by now you are already comfortable with core modules of Node.
 tags:
   - "NodeJS"
   - "Tech"
+  - "NodeJS Beginner Course"
 ---
 
 ## Prerequisite

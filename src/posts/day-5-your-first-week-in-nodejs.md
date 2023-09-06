@@ -7,6 +7,7 @@ excerpt: I explained how to implement a template engine to get dynamic variables
 tags:
   - "NodeJS"
   - "Tech"
+  - "NodeJS Beginner Course"
 ---
 
 As promised, this is my fifth article of [Your first week in NodeJS](/category/NodeJS/) web article series.
