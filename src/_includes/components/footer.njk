@@ -1,8 +1,11 @@
-<footer class="w-full bg-gray-700 border-t-4 border-teal-600 text-gray-50 flex justify-between text-sm p-4">
-	<span class="italic flex-grow">&copy;2023 {{ metadata.title }}</span>
-	<nav class="flex gap-2">
-		<a rel="me" href="{{ metadata.author.mastodon }}" title="Link to my Mastodon page">mastodon</a>
-    <a rel="me" class="text-gray-50 underline" href="{{ metadata.author.github }}" title="Link to my Github page">github</a>
-    <a rel="me" class="text-gray-50 underline" href="{{ "/feed/feed.xml" | url }}" title="Link to my RSS feed">RSS</a>
-	</nav>
+<footer>
+  <p>&copy; 2023 {{ metadata.author.name }}</p>
+  <nav>
+    <ul>
+      {%- for entry in collections.all | eleventyNavigation %}
+        <li><a href="{{ entry.url | url }}" {%if entry.url == page.url%}aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+      {%- endfor %}
+      <li><a href="{{ metadata.url + metadata.feed.path + metadata.feed.json }}">RSS</a></li>
+    </ul>
+  </nav>
 </footer>

@@ -1,40 +1,26 @@
 {% extends "layouts/base.njk" %}
 {% block content %}
-  <main class="w-full mx-auto flex flex-grow flex-col post-content">
-    {% include "components/header.njk" %}
-    <section class="items-center mb-6 gap-5 max-w-6xl mx-auto px-5 w-full">
+  {% include "components/header.njk" %}
+  <article>
+    <header>
       <h1>{{ title }}</h1>
-      <div class="text-sm text-gray-600 my-5 flex flex-col lg:flex-row gap-3 dark:text-gray-200 border-b border-b-gray-600 dark:border-b-gray-200 pb-8">
-        <date class="slash" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</date>
-        <span class="slash">{{ content | readtime }}</span>
-        <span class="slash">
+      <p><date class="slash" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</date></p>
+    </header>
+    {{ content | safe}}
+    <footer>
+      <div>
+        <p>Tags</p>
+        <ul>
           {%- for tag in tags | filterTagList -%}
             {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-            <span><span class="text-teal-600 dark:text-teal-400">#</span><a href="{{ tagUrl | url }}">{{ tag }}</a></span>
+            <li><a href="{{ tagUrl | url }}">#{{ tag }}</a></li>
           {%- endfor %}
-        </span>
+        </ul>
       </div>
-      <article class="prose md:prose-lg xl:prose-xl dark:prose-invert break-words">
-        {{ content | safe }}
-      </article>
-      <a target="_blank" class="text-teal-700 dark:text-teal-400 mt-4 inline-block" rel="noopener noreferrer" href="https://github.com/learnwithgurpreet/learnwithgurpreet/blob/main/src/posts/{{ page.fileSlug }}.md">Edit post</a>
-    </section>
-    {% set nextPost = collections.posts | getNextCollectionItem(page) %}
-    {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
-    <section class="gap-1 p-1 my-5 lg:my-8 flex flex-col lg:flex-row justify-center lg:justify-between mx-5">
-      {% if previousPost %}
-        <a class="flex-col items-start justify-center no-decoration" href="{{ previousPost.url | url }}">
-          <span class="text-sm uppercase">← Previous</span>
-          <h3>{{ previousPost.data.title }}</h3>
-        </a>
-      {% endif %}
-      {% if nextPost %}
-        <a class="flex-col items-end justify-center text-right no-decoration" href="{{ nextPost.url | url }}">
-          <span class="text-sm uppercase">Next →</span>
-          <h3>{{ nextPost.data.title }}</h3>
-        </a>
-      {% endif %}
-    </section>
-  </main>
+      <p>
+        <a class="button" href="mailto:{{ metadata.author.email }}?subject=Re: {{ title }}">Reply via email</a>
+      </p>
+    </footer>
+  </article>
   {% include "components/footer.njk" %}
 {% endblock %}
