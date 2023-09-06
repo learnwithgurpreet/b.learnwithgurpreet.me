@@ -2,7 +2,7 @@
   "title": "Learn with Gurpreet",
   "url": "https://www.learnwithgurpreet.com",
   "language": "en",
-  "description": "I am working as Senior Architect eXperience Engineering (front-end technologist) with Publicis Sapient. Having more than 15 years of experience in the area of jQuery, JavaScript, HTML5, and CSS3. My expertise is to work on full stack-based projects using NodeJS and ReactJS.",
+  "description": "Every space has a story",
   "feed": {
     "path": "/feed/",
     "xml": "feed.xml",
@@ -10,6 +10,7 @@
   },
   "author": {
     "name": "Gurpreet Singh",
+    "description": "I am working as Senior Architect eXperience Engineering (front-end technologist) with Publicis Sapient. Having more than 15 years of experience in the area of jQuery, JavaScript, HTML5, and CSS3. My expertise is to work on full stack-based projects using NodeJS and ReactJS.",
     "email": "gurupreetsingh2000@gmail.com",
     "linkedin": "https://linkedin.com/in/gsin11/",
     "github": "https://github.com/learnwithgurpreet",
@@ -33,10 +34,10 @@
         "more_info_link": "https://www.keychron.com/products/keychron-k2-wireless-mechanical-keyboard?variant=31063869653081"
       },
       {
-        "title": "Logitech MX Anywhere 3 (Mac)",
+        "title": "Logitech MX Master 3S For Business",
         "hashtags": ["mouse"],
-        "details": "A perfect mouse with zero lag in doing daily work with 4000 DPI sensor, customizable buttons, USB-C, Bluetooth",
-        "more_info_link": "https://www.logitech.com/en-eu/products/mice/mx-anywhere-3-mac.910-005991.html"
+        "details": "A perfect mouse with zero lag in doing daily work with 8000 DPI sensor, customizable buttons, USB-C, Bluetooth",
+        "more_info_link": "https://www.logitech.com/en-eu/products/mice/mx-master-3s-business-wireless-mouse.910-006582.html"
       },
       {
         "title": "Bose QC 35II Headphones",
@@ -51,10 +52,10 @@
         "more_info_link": "https://www.apple.com/airpods-2nd-generation/"
       },
       {
-        "title": "SAMSUNG Odyssey G5 (27\")",
+        "title": "DELL S2722DC (27\")",
         "hashtags": ["workspace", "monitor"],
-        "details": "A perfect 2K HDR Curved Gaming monitor with active AMD FreeSync (144 Hz), I am using it for gaming (with PS5).",
-        "more_info_link": "https://www.samsung.com/ch/monitors/gaming/odyssey-g5-27-inch-144hz-1ms-curved-lc27g55tqwrxen/"
+        "details": "A perfect QHD Monitor with USB-C connectivity, I am also using it for gaming (with PS5).",
+        "more_info_link": "https://www.dell.com/de-de/shop/dell-27-usb-c-monitor-s2722dc/apd/210-bbrr/monitore-und-monitorzubeh%C3%B6r"
       },
       {
         "title": "TitanWolf Mate",
@@ -67,12 +68,6 @@
         "hashtags": ["workspace"],
         "details": "I don't want to set for 8 hours while working, I try to stand at least a little bit each day. This desk has been great for that. I like the color of this which goes perfectly fine with other stuff on my table.",
         "more_info_link": "https://www.ikea.com/de/de/p/rodulf-schreibtisch-sitz-steh-grau-weiss-s99326170/"
-      },
-      {
-        "title": "BONTEC Monitor Arm",
-        "hashtags": ["workspace"],
-        "details": "Fully adjustable monitor arm that can easily handle weight of SAMSUNG Odyssey G5 (27\") monitor.",
-        "more_info_link": "https://www.amazon.de/gp/product/B01MZ70QJB/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1"
       },
       {
         "title": "Quntis Monitor USB LED Lamp",
@@ -103,7 +98,7 @@
       {
         "title": "iTerm2",
         "hashtags": ["coding"],
-        "details": "I started using it long time ago, because I simply hate default terminal from Mac.",
+        "details": "I started using it long time ago, because I simply hate default terminal from Mac. You can check my custom setup <a href=\"/posts/how-to-setup-mac-terminal/\">here</a>",
         "more_info_link": "https://iterm2.com/"
       },
       {

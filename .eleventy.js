@@ -1,10 +1,9 @@
-const fs = require("fs");
-
 const { DateTime } = require("luxon");
 const StripTags = require("./11ty/stripTags");
 const ImageShortCode = require("./11ty/responsiveImage");
 const GroupBy = require("./11ty/groupBy");
 const LazyImages = require("./11ty/lazyLoad");
+const CleanCSS = require("clean-css");
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -13,12 +12,7 @@ const cacheBuster = require("./11ty/cacheBuster");
 const htmlMinify = require("./11ty/htmlMinify");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("src/assets/js");
-  eleventyConfig.addPassthroughCopy("src/assets/images");
-  eleventyConfig.addPassthroughCopy("src/assets/favicons");
-  eleventyConfig.addPassthroughCopy("src/manifest.json");
-  // eleventyConfig.addPassthroughCopy(".well-known");
-  // eleventyConfig.addPassthroughCopy("src/sw.js");
+  eleventyConfig.addPassthroughCopy("src/assets");
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
@@ -26,20 +20,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(LazyImages, {});
   eleventyConfig.addPlugin(htmlMinify);
-
-  eleventyConfig.addNunjucksAsyncFilter(
-    "stat",
-    (file, prop = "birthtime", callback) => {
-      // If you called a naked `{{ page.inputPath | stat }}`, then the callback
-      // function gets set to the `prop` attribute, so we need to juggle some
-      // attribute values.
-      if (typeof prop === "function") {
-        callback = prop;
-        prop = "birthtime";
-      }
-      fs.stat(file, (err, stats) => callback(err, stats && stats[prop]));
-    }
-  );
 
   eleventyConfig.addFilter("cacheBuster", cacheBuster);
   eleventyConfig.addFilter("readableDate", (dateObj) => {
@@ -101,21 +81,11 @@ module.exports = function (eleventyConfig) {
     });
   });
 
-  eleventyConfig.addFilter("relatedPosts", (array, tags, excludeMe) => {
-    const result = [];
-    tags.map((tag) => {
-      if (tag !== "posts") {
-        array.map((p) => {
-          if (p.data.page.fileSlug !== excludeMe && p.data.tags.includes(tag)) {
-            result.push(p);
-          }
-        });
-      }
-    });
-    return result;
-  });
-
   eleventyConfig.addFilter("excerpt", (content) => StripTags(content));
+
+  eleventyConfig.addFilter("cssmin", function (code) {
+    return new CleanCSS({}).minify(code).styles;
+  });
 
   return {
     // Control which files Eleventy will process

@@ -1,36 +1,34 @@
 ---
 layout: layouts/page.njk
-pagination:
-  reverse: true
-  data: collections.posts
-  size: 12
 image: /assets/images/profile-pic.jpg
 eleventyNavigation:
   key: Home
   order: 1
 keywords: tech blog, gurpreet singh, gurpreet from germany, gurpreet from frankfurt, publicissapient, sapient, publicis, advanced javascript tutorials, best free javascript tutorials, best javascript tutorials, best node js tutorials, best tutorials for node js, node js tutorial blog, tutorial javascript, tutorial node js, tutorial node.js, tutorials on javascript, why node.js
 ---
-<header class="flex py-6 sm:py-8 md:py-16">
-  <div class="w-full max-w-7xl m-auto px-5">
-    <h1 class="text-2xl font-bold sm:text-4xl">Hi, I’m {{ metadata.author.name }}</h1>
-    <h2 class="text-lg mt-3">{{ metadata.description }}</h2>
-  </div>
-</header>
-{% set allPosts = pagination.items %}
-{% include "components/grid-posts.njk" %}
+<section>
+  <h1>Hi, I'm gS</h1>
+  <p>{{ metadata.author.description }}</p>
+</section>
 
-<nav class="flex py-6 sm:py-8 w-full max-w-7xl m-auto px-5" aria-labelledby="my-pagination">
-  <h2 id="my-pagination" class="hidden">Pagination, please use below links to navigate through pages.</h2>
-  <ol class="flex gap-2 mx-auto font-medium">
-    {% if page.url === pagination.href.first %}<li><a href="{{ pagination.href.next }}">View More</a></li>{% endif %}
-    {% if page.url !== pagination.href.first %}
-      <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
-      {%- for pageEntry in pagination.pages %}
-        {% if page.url == pagination.hrefs[ loop.index0 ] %}
-          <li><span {% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %} class="px-6 text-sm text-gray-300 dark:text-gray-100 border-x border-gray-100 dark:border-gray-200">Page {{ loop.index }}</span></li>
-        {% endif %}
-      {%- endfor %}
-      <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
-    {% endif %}
+<section>
+  <h2>Table of Contents</h2>
+  <ol class="big-words">
+    {% for entry in collections.all | eleventyNavigation %}
+      {% if entry.url == "/" %}
+        <li>{{ entry.title }}</li>
+      {% else %}
+        <li><a href="{{ entry.url | url }}" {%if entry.url == page.url%}aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+      {% endif %}
+    {% endfor %}
   </ol>
-</nav>
+</section>
+
+<section>
+  <h2>Recent Posts</h2>
+  <ul class="big-words">
+    {% for post in collections.posts | reverse | head(6) %}
+    <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+    {% endfor %}
+  </ul>
+</section>

@@ -1,75 +1,26 @@
 {% extends "layouts/base.njk" %}
 {% block content %}
-  <header class="flex px-3 mt-8 mb-6 lg:mb-10 lg:mt-14">
-    <div class="w-full max-w-3xl m-auto">
-      <span>
-        {%- for tag in tags | filterTagList -%}
-          {%- set tagUrl %}/category/{{ tag | slug }}/{% endset -%}
-          <a href="{{ tagUrl | url }}" class="text-gray-300 dark:text-gray-100 text-xs">{{ tag }}</a>{{ ', ' if not loop.last }}
-        {%- endfor %}
-      </span>
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5">{{ title }}</h1>
-      <time datetime="{{ page.date | htmlDateString }}" class="text-xs text-gray-200 dark:text-gray-100 mt-auto mb-2 block">Created: {{ page.date | readableDate }}</time>
-      <time datetime="{{ page.date | htmlDateString }}" class="text-xs text-gray-200 dark:text-gray-100 mt-auto mb-0 block">Modified: {{ page.inputPath | stat("mtime") | readableDate }}</time>
-    </div>
-  </header>
-  {% if image %}
-    <div class="mx-auto pb-14 max-w-5xl featured-image-wrapper">
-      {% responsiveImage "src" + image, title %}
-      {% if imageCredit %}
-      <p class="text-center pt-2 text-gray-200 text-sm dark:text-gray-100">{{ imageCredit }}</p>
-      {% endif %}
-    </div>
-  {% endif %}
-  <div class="px-3 w-full max-w-3xl m-auto">
-    <div class="prose md:prose-lg xl:prose-xl max-w-full dark:prose-invert break-words">
-      {{ content | safe }}
-    </div>
-
-    <div class="px-3 max-w-full w-full mx-auto my-14 gap-6 flex flex-col">
-      <hr aria-hidden="true" class="border-t w-8 border-t-gray-100 dark:border-t-gray-200" />
-      {% include "components/author.njk" %}
-      <hr aria-hidden="true" class="border-t w-8 border-t-gray-100 dark:border-t-gray-200" />
-      <div class="flex gap-2 items-center text-gray-200 dark:text-gray-100">
-        Category: {%- for tag in tags | filterTagList -%}
-          {%- set tagUrl %}/category/{{ tag | slug }}/{% endset -%}
-          <a href="{{ tagUrl | url }}" class="text-black underline underline-offset-8 hover:text-gray-300 dark:text-gray-100 dark:hover:text-gray-200">{{ tag }}</a>
-        {%- endfor %}
+  {% include "components/header.njk" %}
+  <article>
+    <header>
+      <h1>{{ title }}</h1>
+      <p><date class="slash" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</date></p>
+    </header>
+    {{ content | safe}}
+    <footer>
+      <div>
+        <p>Tags</p>
+        <ul>
+          {%- for tag in tags | filterTagList -%}
+            {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+            <li><a href="{{ tagUrl | url }}">#{{ tag }}</a></li>
+          {%- endfor %}
+        </ul>
       </div>
-      <hr aria-hidden="true" class="border-t w-8 border-t-gray-100 dark:border-t-gray-200" />
-      {% include "components/social-share.njk" %}
-      <hr aria-hidden="true" class="border-t w-8 border-t-gray-100 dark:border-t-gray-200" />
-    </div>
-  </div>
-
-  {% set previousPost = collections.posts | getPreviousCollectionItem %}
-  {% set nextPost = collections.posts | getNextCollectionItem %}
-
-  <div class="flex justify-center bg-black w-full">
-    <div class="flex w-full max-w-3xl flex-col md:flex-row py-10 px-8 text-white">
-      <div class="block w-full text-left">
-        {% if previousPost %}
-        <a href="{{ previousPost.url }}" class="hover:underline">
-          <p class="text-2xl font-bold mb-4">
-            {{ previousPost.data.title }}
-          </p>
-          <p class="uppercase">← Previous</p>
-        </a>
-        {% endif %}
-      </div>
-      <div class="bg-gray-100 w-full h-[1px] mx-auto my-10 md:my-0 md:mx-14 md:h-full md:w-[1px]"></div>
-      <div class="block w-full md:text-right">
-        {% if nextPost %}
-        <a href="{{ nextPost.url }}" class="hover:underline">
-          <p class="text-2xl font-bold mb-4">
-            {{ nextPost.data.title }}
-          </p>
-          <p class="uppercase">Next →</p>
-        </a>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-
-  {% include "components/related-posts.njk" %}
+      <p>
+        <a class="button" href="mailto:{{ metadata.author.email }}?subject=Re: {{ title }}">Reply via email</a>
+      </p>
+    </footer>
+  </article>
+  {% include "components/footer.njk" %}
 {% endblock %}

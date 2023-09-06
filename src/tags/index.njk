@@ -1,0 +1,17 @@
+---
+layout: layouts/page.njk
+title: Tags
+eleventyExcludeFromCollections: true
+---
+
+<h1>Tags</h1>
+
+<ul class="big-words">
+  {% for tag in collections.tagList %}
+    {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+    {% set postCount = collections.posts | postByTag(tag) | length %}
+    <li>
+      <a href="{{ tagUrl | url }}">{{ tag }}({{ postCount }})</a>
+    </li>
+  {% endfor %}
+</ul>
