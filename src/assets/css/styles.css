@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  @apply font-mono flex flex-col text-gray-800 bg-gray-50 text-lg min-h-screen dark:bg-gray-900 dark:text-gray-50;
+  @apply flex flex-col text-gray-800 bg-gray-50 text-lg min-h-screen dark:bg-gray-900 dark:text-gray-50;
 }
 
 .fade:hover>*:not(:hover) {
@@ -37,7 +37,7 @@ a {
   @apply right-1;
 }
 
-/* blockquote {
+blockquote {
   @apply p-4 my-4 border-l-4 border-gray-600 bg-gray-50 dark:border-gray-700 dark:bg-gray-800;
 }
 
@@ -59,7 +59,7 @@ h4, h5, h6 {
 
 article {
   @apply mb-5;
-} */
+}
 
 .separator:not(:last-child) {
   @apply border-b border-b-gray-800;
