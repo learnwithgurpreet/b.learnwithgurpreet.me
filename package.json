@@ -19,6 +19,7 @@
     "@11ty/eleventy-img": "^2.0.1",
     "@11ty/eleventy-navigation": "^0.3.3",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
+    "chart.js": "^4.4.0",
     "jsdom": "^21.1.1",
     "luxon": "^2.4.0",
     "striptags": "^3.2.0"

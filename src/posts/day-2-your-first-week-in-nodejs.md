@@ -7,6 +7,7 @@ excerpt: I believe you have already read my previous article where I explained, 
 tags:
   - "NodeJS"
   - "Tech"
+  - "NodeJS Beginner Course"
 ---
 
 ## Prerequisite

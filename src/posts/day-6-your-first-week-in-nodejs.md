@@ -7,6 +7,7 @@ excerpt: During the course of this series, we have already developed a Node.js a
 tags:
   - "NodeJS"
   - "Tech"
+  - "NodeJS Beginner Course"
 ---
 
 ## Prerequisite
