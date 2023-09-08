@@ -1,7 +1,7 @@
 {% extends "layouts/base.njk" %}
 {% block content %}
   {% include "components/header.njk" %}
-  <article>
+  <article id="content">
     <header>
       <h1>{{ title }}</h1>
       <p><date class="slash" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</date></p>
