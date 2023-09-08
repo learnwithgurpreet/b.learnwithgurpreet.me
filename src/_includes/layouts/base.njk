@@ -9,10 +9,19 @@
     <link rel="icon" type="image/png" href="{{ '/assets/favicons/android-chrome-192x192.png' | url }}" sizes="192x192" />
     <link rel="icon" type="image/png" href="{{ '/assets/favicons/android-chrome-512x512.png' | url }}" sizes="512x512" />
 
-    {% set cssPrimaryColor = "hsl(344deg, 49%, 45%)" %}
-    {% set cssSecondaryColor = "hsl(321deg, 92%, 55%)" %}
-    {% set cssTertiaryColor = "hsl(349deg, 100%, 92%)" %}
-    {% set cssQuaternaryColor = "hsl(349deg, 49%, 92%)" %}
+    {# 
+      https://mui.com/material-ui/customization/color/
+      Color Pallet from Material Design
+      Primary: blue:800
+      Secondary: blue:A700 
+      Tertiary: blue:50
+      Quaternary: blue:100
+    #}
+
+    {% set cssPrimaryColor = "#0d47a1" %}
+    {% set cssSecondaryColor = "#2962ff" %}
+    {% set cssTertiaryColor = "#e3f2fd" %}
+    {% set cssQuaternaryColor = "#bbdefb" %}
     
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{ cssTertiaryColor }}">

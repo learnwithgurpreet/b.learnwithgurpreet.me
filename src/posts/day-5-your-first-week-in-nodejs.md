@@ -10,7 +10,7 @@ tags:
   - "NodeJS Beginner Course"
 ---
 
-As promised, this is my fifth article of [Your first week in NodeJS](/category/NodeJS/) web article series.
+As promised, this is my fifth article of [Your first week in NodeJS](/tags/nodejs-beginner-course/) web article series.
 
 ## Prerequisite
 

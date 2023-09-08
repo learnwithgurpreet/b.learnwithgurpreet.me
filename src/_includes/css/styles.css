@@ -76,6 +76,10 @@ h6 {
 	--step-5: clamp(2.8rem, calc(2.45rem + 1.77vw), 3.82rem);
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: "RecursiveVariable", system-ui, sans-serif;
 	font-size: var(--step-0);
