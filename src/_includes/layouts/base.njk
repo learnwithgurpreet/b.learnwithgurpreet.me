@@ -8,10 +8,15 @@
     <link rel="icon" type="image/png" href="{{ '/assets/favicons/favicon-32x32.png' | url }}" sizes="32x32" />
     <link rel="icon" type="image/png" href="{{ '/assets/favicons/android-chrome-192x192.png' | url }}" sizes="192x192" />
     <link rel="icon" type="image/png" href="{{ '/assets/favicons/android-chrome-512x512.png' | url }}" sizes="512x512" />
+
+    {% set cssPrimaryColor = "hsl(344deg, 49%, 45%)" %}
+    {% set cssSecondaryColor = "hsl(321deg, 92%, 55%)" %}
+    {% set cssTertiaryColor = "hsl(349deg, 100%, 92%)" %}
+    {% set cssQuaternaryColor = "hsl(349deg, 49%, 92%)" %}
     
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="hsl(349deg 100% 90%)">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="hsl(344deg 49% 45%)">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{ cssTertiaryColor }}">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="{{ cssPrimaryColor }}">
     <meta name="generator" content="{{ eleventy.generator }}">
     <meta name="view-transition" content="same-origin">
 
@@ -49,10 +54,30 @@
 
     <meta itemprop="name" content="{{ metadata.title + secondTitle }}">
     <meta itemprop="description" content="{{ excerpt or metadata.description }}">
+    <style type="text/css">
+      :root {
+        --primary-color: {{ cssPrimaryColor }};
+        --secondary-color: {{ cssSecondaryColor }};
+        --tertiary-color: {{ cssTertiaryColor }};
+        --quaternary-color: {{ cssQuaternaryColor }};
+        --thickness: 1px;
+        --border: var(--thickness) solid var(--primary-color);
+        --transition: ease-in-out 150ms;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --primary-color: {{ cssTertiaryColor }};
+          --tertiary-color: {{ cssPrimaryColor }};
+          --quaternary-color: var(--tertiary-color);
+          --border: var(--thickness) solid var(--primary-color);
+        }
+      }
+    </style>
     {% set css %}
       {% include "css/styles.css" %}
     {% endset %}
-    <style>
+    <style type="text/css">
       {{ css | cssmin | safe }}
     </style>
 
@@ -97,7 +122,7 @@
     {% endif %}
   </head>
   <body>
-    {# <a href="#content" class="skip-link p-2 absolute text-center left-0 right-0 bg-gray-50 text-black -translate-y-full transition-transform duration-200 focus:z-20 focus:translate-y-0">Skip to main content</a> #}
+    <a href="#content" class="skip-link">Skip to main content</a>
     {% block content %}{% endblock %}
     {% if page.url === "/stats/" %}
       <script src="/assets/js/chart.umd.js"></script>
@@ -106,7 +131,7 @@
           return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         }
         const ctx = document.getElementById("posts_per_year_chart");
-        const color = isDarkMode() ? '#ffd6de' : '#F623AC';
+        const color = isDarkMode() ? '{{ cssTertiaryColor }}' : '{{ cssSecondaryColor }}';
 
         Chart.defaults.color = color;
         Chart.defaults.backgroundColor = color;
