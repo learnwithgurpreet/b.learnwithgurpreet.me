@@ -31,7 +31,7 @@
 
     {% set authorImage = metadata.url + "/assets/images/profile-pic.jpg" | url %}
 
-    {% set socialImage = metadata.url + image if image != undefined else authorImage %}
+    {% set socialImage = metadata.url + "/assets/images/banner.jpg" | url %}
 
     {% set currentPageUrl = metadata.url + page.url | url %}
 
@@ -42,8 +42,8 @@
     <meta name="keywords" content="{{ keywords }}" />
     <meta name="description" content="{{ excerpt or metadata.description }}" />
 
-    <meta name="og:image" content="{{ authorImage }}">
-    <meta name="og:image:secure_url" content="{{ authorImage }}">
+    <meta name="og:image" content="{{ socialImage }}">
+    <meta name="og:image:secure_url" content="{{ socialImage }}">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="512">
     <meta property="article:published_time" content="{{ date }}">
@@ -59,7 +59,7 @@
     <meta name="twitter:title" content="{{ metadata.title + secondTitle }}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="{{ excerpt or metadata.description }}">
-    <meta name="twitter:image" content="{{ authorImage }}">
+    <meta name="twitter:image" content="{{ socialImage }}">
 
     <meta itemprop="name" content="{{ metadata.title + secondTitle }}">
     <meta itemprop="description" content="{{ excerpt or metadata.description }}">
@@ -106,7 +106,7 @@
           "headline": "{{ title }} - {{ metadata.author.name }} - {{ metadata.title }}",
           "name": "{{ title }} - {{ metadata.author.name }} - {{ metadata.title }}",
           "description": "{{ excerpt }}",
-          "image": "{{ authorImage }}",
+          "image": "{{ socialImage }}",
           "author": {
               "@type": "Person",
               "name": "{{ metadata.author.name }}",
