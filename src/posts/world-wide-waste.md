@@ -80,6 +80,6 @@ Electric vehicles (E-vehicles) don't offer a silver bullet for CO² emissions. T
 
 ## Conclusion
 
-We must master digital or it will master us. We must shape digital or it will shape us. We must control digital or it will control us.
+We need to gain mastery over digital technology, as failing to do so will result in it controlling us. We must actively shape its use, or it will shape our lives. Ultimately, it's imperative to maintain control over the digital realm.
 
 [Link to the book and author's page](https://gerrymcgovern.com/world-wide-waste/)
