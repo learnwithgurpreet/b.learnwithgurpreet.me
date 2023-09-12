@@ -27,7 +27,6 @@
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{ cssTertiaryColor }}">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="{{ cssPrimaryColor }}">
-    <meta name="generator" content="{{ eleventy.generator }}">
     <meta name="view-transition" content="same-origin">
 
     {% set authorImage = metadata.url + "/assets/images/profile-pic.jpg" | url %}
@@ -41,7 +40,7 @@
     
     <title>{{ metadata.title + secondTitle }}</title>
     <meta name="keywords" content="{{ keywords }}" />
-    <meta name="description" content="{{ excerpt or metadata.description }}" />
+    <meta name="description" content="{{ excerpt }}" />
 
     <meta name="og:image" content="{{ socialImage }}">
     <meta name="og:image:secure_url" content="{{ socialImage }}">
@@ -51,7 +50,7 @@
     <meta property="article:modified_time" content="{{ date }}">
 
     <meta name="og:title" content="{{ metadata.title + secondTitle }}">
-    <meta name="og:description" content="{{ excerpt or metadata.description }}">
+    <meta name="og:description" content="{{ excerpt }}">
     <meta name="og:url" content="{{ currentPageUrl }}">
     <meta name="og:site_name" content="{{ metadata.title }}">
     <meta name="og:locale" content="{{ metadata.language }}">
@@ -59,11 +58,11 @@
 
     <meta name="twitter:title" content="{{ metadata.title + secondTitle }}">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:description" content="{{ excerpt or metadata.description }}">
+    <meta name="twitter:description" content="{{ excerpt }}">
     <meta name="twitter:image" content="{{ socialImage }}">
 
     <meta itemprop="name" content="{{ metadata.title + secondTitle }}">
-    <meta itemprop="description" content="{{ excerpt or metadata.description }}">
+    <meta itemprop="description" content="{{ excerpt }}">
     <style type="text/css">
       :root {
         --primary-color: {{ cssPrimaryColor }};
@@ -130,6 +129,7 @@
         }
       </script>
     {% endif %}
+    <meta name="generator" content="{{ eleventy.generator }}">
   </head>
   <body>
     <a href="#content" class="skip-link">Skip to main content</a>

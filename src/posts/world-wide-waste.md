@@ -2,7 +2,7 @@
 title: "World Wide Waste"
 date: "2023-09-11"
 eleventyExcludeFromCollections: true
-excerpt: It is very simple to buy a new computer today and start dumping files on it. But have you ever thought what the plan would be to delete those files, or are those files going to be stored permanently on your hard drive?
+excerpt: Have you ever thought what the plan would be to delete files, or are those files going to be stored permanently on your hard drive?
 keywords: what is digital waste, world wide waste, www, sustainability, sustainability goals, how to prevent digital waste, what is net zero
 tags:
   - "Sustainability"
