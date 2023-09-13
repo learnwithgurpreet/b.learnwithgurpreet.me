@@ -1,7 +1,6 @@
 ---
 title: "My React Stack for 2021"
 date: "2021-05-08"
-image: /assets/images/my-react-tech-stack-e1643359877568.webp
 excerpt: I will showcase what options are available in the market to start on a ReactJS based application.
 tags:
   - "Thoughts"

@@ -1,7 +1,6 @@
 ---
 title: "Day 6 (last) - Your first week in NodeJS"
 date: 2021-08-10
-image: /assets/images/your-first-week-in-nodejs.png
 keywords: expressjs tutorial, expressjs template engine tutorial, how to create express server, backend nodejs tutorial, best node js tutorial for beginners, best nodejs tutorial, best practices node js tutorial, buffer node js tutorial, tutorial node js, tutorial node.js, was ist node.js, what is node js tutorial, what is node js with example, why node.js, nodejs basics, basic understanding of nodejs, start with nodejs
 excerpt: During the course of this series, we have already developed a Node.js application that can be deployed on the cloud.
 tags:
