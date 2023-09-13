@@ -12,13 +12,13 @@ tags:
 
 I recently finished a book called [World Wide Waste](https://gerrymcgovern.com/world-wide-waste/) by [Gerry McGovern](https://gerrymcgovern.com/). The author helps organizations reduce data waste by designing simpler, lighter, and more environmentally friendly websites and apps.
 
-Thank you, [Holger](https://polente.de/), for the recommendation; reading it was indeed worthwhile! 😊
+Thank you, [Holger Hellinger](https://polente.de/), for the recommendation; reading it was indeed worthwhile! 😊
 
 ![world wide waste book cover](/assets/images/world-wide-waste.jpg "world wide waste book cover")
 
 ## What is Digital waste?
 
-**Digital is Physical**, it is quite important to understand whatever you download/upload on the web is all impacting our planet Earth. Single byte causes load on the server which generates CO². I often do research to benchmark my projects on tools where I get information about my carbon footprints. You can check my previous article "[7 ways to make your website more accessible and sustainable](/posts/7-ways-to-make-your-website-more-accessible-and-sustainable/)" to get some idea about how Digital is playing a role in Sustainability and how it can be improved.
+**Digital is Physical**, it is quite important to understand whatever you download/upload on the web is all impacting our planet Earth. Single byte causes load on the server which generates CO₂. I often do research to benchmark my projects on tools where I get information about my carbon footprints. You can check my previous article "[7 ways to make your website more accessible and sustainable](/posts/7-ways-to-make-your-website-more-accessible-and-sustainable/)" to get some idea about how Digital is playing a role in Sustainability and how it can be improved.
 
 ## Define Sustainability Goals
 
@@ -44,7 +44,7 @@ HTML and CSS define the layout of your webpage, and what colors will be shown to
 
 [Learn with Gurpreet](https://www.learnwithgurpreet.com) is developed using custom CSS and [11ty](https://www.11ty.dev/) framework which only helps to pre-render all the pages and I am using Vercel to deploy my application. There is no need to have 100KB of JavaScript to support page transitions user states and whatnot.
 
-There is no harm in using libraries like ReactJS, but make sure you really need it. You can't build the solution without it.
+There is no harm in using libraries like ReactJS, but make sure you really need it. You can build the solution without it.
 
 Wikipedia estimated that they save 4.3 terabytes a day of data bandwidth for their visitors. With that, they saved having to plant almost 700 trees to deal with the yearly pollution that would have been caused.
 
@@ -70,7 +70,7 @@ If you really want to use custom fonts then try variable fonts which will help y
 
 There are multiple approaches to address this challenge. To begin, it's not always necessary to keep pace with the latest tech gadgets. For instance, your mobile phone can serve you well for 4-5 years, and the carbon footprint generated during its production is equivalent to what it emits over that time.
 
-Electric vehicles (E-vehicles) don't offer a silver bullet for CO² emissions. The battery production process consumes significant resources, and these vehicles need to traverse multiple production units, contributing to pollution.
+Electric vehicles (E-vehicles) don't offer a silver bullet for CO₂ emissions. The battery production process consumes significant resources, and these vehicles need to traverse multiple production units, contributing to pollution.
 
 **Prioritize Quality**: Opt for items built to last, as the environmental cost of production is high.
 
