@@ -1,7 +1,6 @@
 ---
 title: "Can we use Google services without compromising privacy?"
 date: "2021-02-24"
-image: /assets/images/tor-browser.png
 excerpt: Over the period of time, people are aware of what internet privacy is and why it is important.
 tags:
   - "Privacy"

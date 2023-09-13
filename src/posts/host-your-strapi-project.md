@@ -1,7 +1,6 @@
 ---
 title: "Host your Strapi project"
 date: "2021-02-25"
-image: /assets/images/strapi-cms.png
 excerpt: In this article, I will walk you through the Strapi CMS setup on your local machine followed by deploying it to Heroku.
 keywords: best hosting for strapi, best place to host strapi, host strapi, host strapi on heroku, host your strapi project app, host your strapi project as a service, host your strapi project site, how to host strapi
 tags:

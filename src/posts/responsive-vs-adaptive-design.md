@@ -1,8 +1,6 @@
 ---
 title: "Responsive vs. Adaptive Design"
 date: "2020-09-06"
-image: /assets/images/responsive-vs-adaptive-design.png
-imageCredit: "Photo by Domenico Loia on Unsplash"
 excerpt: One of the regular topics which usually comes in every discussion before starting a website is actually a bit confusing too.
 tags:
   - "Tech"

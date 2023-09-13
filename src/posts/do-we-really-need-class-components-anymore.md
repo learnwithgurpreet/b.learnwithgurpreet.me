@@ -1,7 +1,6 @@
 ---
 title: "Do we really need class components anymore?"
 date: "2021-04-21"
-image: /assets/images/cTplxzXwl-e1643359863466.webp
 excerpt: ReactJS is a mature enough library that becomes the first choice for developers.
 tags:
   - "Thoughts"

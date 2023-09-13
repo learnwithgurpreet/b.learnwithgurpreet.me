@@ -1,6 +1,5 @@
 const { DateTime } = require("luxon");
 const StripTags = require("./11ty/stripTags");
-const ImageShortCode = require("./11ty/responsiveImage");
 const GroupBy = require("./11ty/groupBy");
 const LazyImages = require("./11ty/lazyLoad");
 const CleanCSS = require("clean-css");
@@ -36,7 +35,6 @@ module.exports = function (eleventyConfig) {
     "readtime",
     (str) => `${Math.ceil(str.split(" ").length / 200)} min read`
   );
-  eleventyConfig.addNunjucksAsyncShortcode("responsiveImage", ImageShortCode);
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {

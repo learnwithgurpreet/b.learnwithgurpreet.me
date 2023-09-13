@@ -1,8 +1,6 @@
 ---
 title: "Track web traffic anonymously"
 date: "2022-06-27"
-image: /assets/images/track-web-traffic-anonymously.png
-imageAlt: "Photo by KOBU Agency on Unsplash"
 excerpt: Implementing analytics on any web platform is not a difficult job but keeping it privacy-focused is
 tags:
   - "Privacy"
