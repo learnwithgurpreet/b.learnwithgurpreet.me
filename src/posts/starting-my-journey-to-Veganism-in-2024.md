@@ -1,6 +1,6 @@
 ---
-title: "Plant-Powered Resolutions: Starting my Journey to Veganism in 2024"
-date: "2023-12-14"
+title: "Starting my Journey to Veganism in 2024"
+date: "2023-12-01"
 eleventyExcludeFromCollections: true
 excerpt: Embark on a journey of self-discovery and sustainability in 2024 as I share my resolution to go vegan. Explore the benefits of a plant-powered lifestyle, from health to ethical considerations. Join me on this transformative path toward a greener and more compassionate future.
 keywords: Vegan Lifestyle, New Year Resolutions, Plant-Based Diet, Sustainable Living, Health and Wellness, Eco-Friendly Choices, Mindful Eating, Ethical Living, Personal Transformation, Green Living, going vegan in 2024
