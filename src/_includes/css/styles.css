@@ -150,7 +150,8 @@ a {
 	transition: var(--transition);
 }
 
-a:hover {
+a:hover,
+[aria-current]:not([aria-current="false"]) {
 	text-underline-offset: 0.1rem;
 	text-decoration-thickness: calc(3 * var(--thickness));
 }
