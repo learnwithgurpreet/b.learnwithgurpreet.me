@@ -8,6 +8,8 @@ tags:
 
 **Exciting news! This project has been featured in the [Official Eleventy Starter Projects](https://www.11ty.dev/docs/starter/).**
 
+**[View Demo](https://www.gurpreet-singh.in/)**
+
 For the past couple of years, I've been utilizing [11ty](https://www.11ty.dev/) as the framework for my personal projects. It has quickly become my preferred tool because it avoids unnecessary JavaScript when it's not essential.
 
 Prior to adopting 11ty, I relied on Gatsby for my personal blogs and static-generated applications. However, Gatsby introduces a lot of asynchronous JavaScript during the build process. In contrast, 11ty doesn't mandate any runtime JavaScript in the browser to run your statically generated content. The effectiveness also depends on how you manage your content.
