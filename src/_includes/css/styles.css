@@ -319,9 +319,8 @@ body > header > a:hover > svg {
 
 body > footer {
 	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-between;
+	flex-direction: column;
+	row-gap: calc(var(--grid-gutter) / 2);
 }
 
 body > footer > p {
