@@ -6,14 +6,10 @@ eleventyNavigation:
   order: 4
 ---
 
-<h1>Tags</h1>
+<header class="w-full mx-auto mb-12 text-left">
+  <h1 class="mb-3 text-3xl font-bold leading-tight text-gray-900 md:text-4xl dark:text-gray-50">
+    Tags
+  </h1>
+</header>
 
-<ul class="big-words">
-  {% for tag in collections.tagList %}
-    {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-    {% set postCount = collections.posts | postByTag(tag) | length %}
-    <li>
-      <a href="{{ tagUrl | url }}">{{ tag }}({{ postCount }})</a>
-    </li>
-  {% endfor %}
-</ul>
+{% include "partials/_tags.njk" %}

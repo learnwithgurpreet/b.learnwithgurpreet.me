@@ -11,23 +11,6 @@
 
     <meta name="google-site-verification" content="QfEK-rmBKbXGQ6woeJAgPBlfEJyLpoLmX3LwFqpYAcg" />
 
-    {# 
-      https://mui.com/material-ui/customization/color/
-      Color Pallet from Material Design
-      Primary: grey:800
-      Secondary: grey:A700 
-      Tertiary: grey:50
-      Quaternary: grey:100
-    #}
-
-    {% set cssPrimaryColor = "#424242" %}
-    {% set cssSecondaryColor = "#616161" %}
-    {% set cssTertiaryColor = "#fafafa" %}
-    {% set cssQuaternaryColor = "#f5f5f5" %}
-    
-    <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{ cssTertiaryColor }}">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="{{ cssPrimaryColor }}">
     <meta name="view-transition" content="same-origin">
 
     {% set authorImage = metadata.url + "/assets/images/profile-pic.jpg" | url %}
@@ -64,32 +47,8 @@
 
     <meta itemprop="name" content="{{ metadata.title + secondTitle }}">
     <meta itemprop="description" content="{{ excerpt }}">
-    <style type="text/css">
-      :root {
-        --primary-color: {{ cssPrimaryColor }};
-        --secondary-color: {{ cssSecondaryColor }};
-        --tertiary-color: {{ cssTertiaryColor }};
-        --quaternary-color: {{ cssQuaternaryColor }};
-        --thickness: 1px;
-        --border: var(--thickness) solid var(--primary-color);
-        --transition: ease-in-out 150ms;
-      }
 
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --primary-color: {{ cssTertiaryColor }};
-          --tertiary-color: {{ cssPrimaryColor }};
-          --quaternary-color: var(--tertiary-color);
-          --border: var(--thickness) solid var(--primary-color);
-        }
-      }
-    </style>
-    {% set css %}
-      {% include "css/styles.css" %}
-    {% endset %}
-    <style type="text/css">
-      {{ css | cssmin | safe }}
-    </style>
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
 
     <link rel="alternate" href="{{ metadata.url + metadata.feed.path + metadata.feed.xml }}" type="application/atom+xml" title="{{ metadata.title }}" />
     <link rel="alternate" href="{{ metadata.url + metadata.feed.path + metadata.feed.json }}" type="application/json" title="{{ metadata.title }}" />
@@ -132,9 +91,16 @@
     {% endif %}
     <meta name="generator" content="{{ eleventy.generator }}">
   </head>
-  <body>
-    <a href="#content" class="skip-link">Skip to main content</a>
-    {% block content %}{% endblock %}
+  <body class="bg-white dark:bg-gray-800 transition-colors duration-300 transform text-gray-600 dark:text-gray-100">
+    <a href="#content" class="absolute p-4 text-center left-0 right-0 transition-all -translate-y-full focus:z-20 focus:translate-y-0 bg-gray-900 text-gray-50">Skip to main content</a>
+    {% include "partials/_nav.njk" %}
+    <main id="content" class="container max-w-2xl px-4 py-16 mx-auto">
+      {% if page.url === "/" %}
+        {% include "partials/_header.njk" %}
+      {% endif %}
+      {% block content %}{% endblock %}
+    </main>
+    {% include "partials/_footer.njk" %}
     {% if page.url === "/stats/" %}
       <script src="/assets/js/chart.umd.js"></script>
       <script>
@@ -142,7 +108,7 @@
           return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         }
         const ctx = document.getElementById("posts_per_year_chart");
-        const color = isDarkMode() ? '{{ cssTertiaryColor }}' : '{{ cssSecondaryColor }}';
+        const color = isDarkMode() ? '#f3f4f6' : '#1f2937';
 
         Chart.defaults.color = color;
         Chart.defaults.backgroundColor = color;

@@ -1,7 +1,7 @@
-<header>
-  <a href="/" title="Home">
-    <svg width="64px" height="64px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-        viewBox="0 0 43.322 43.322" xml:space="preserve">
+<header class="mb-12 text-center">
+  <a href="/" title="Home" class="inline-block logo">
+    <svg width="64px" height="64px" class="w-14 mx-auto h-14 sm:h-20 sm:w-20 text-gray-900 dark:text-gray-100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+        viewBox="0 0 43.322 43.322" xml:space="preserve" fill="currentColor">
       <g>
         <path d="M43.322,21.66c-0.001-1.242-0.479-2.365-1.239-3.233c0.457-1.063,0.564-2.28,0.18-3.463
           c-0.382-1.171-1.174-2.109-2.178-2.707c0.103-1.146-0.171-2.331-0.898-3.332c-0.709-0.975-1.753-1.646-2.91-1.909
@@ -146,14 +146,7 @@
           C41.806,26.314,41.836,27.24,41.55,28.123z"/>
       </g>
     </svg>
-    {# <svg width="64px" height="64px" viewBox="0 0 3375 3149" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-      <g>
-      <path d="M843.75,0c-522.114,301.443 -843.75,858.532 -843.75,1461.42l1036.9,0c0,-232.437 124.004,-447.218 325.301,-563.437l-518.45,-897.981Z" style="fill:currentColor"></path>
-      <path d="M3375,1461.42c-0,-602.886 -321.636,-1159.98 -843.75,-1461.42l-518.45,897.981c201.297,116.219 325.301,331 325.301,563.437l1036.9,-0Z" style="fill:currentColor"></path>
-      <path d="M843.75,2922.84c256.532,148.109 547.532,226.082 843.75,226.082c296.218,0 587.218,-77.973 843.75,-226.082l-518.45,-897.981c-98.903,57.102 -211.096,87.164 -325.3,87.164c-114.204,-0 -226.397,-30.062 -325.3,-87.164l-518.45,897.981Z" style="fill:currentColor"></path>
-      <circle cx="1687.5" cy="1461.42" r="456.25" style="fill:currentColor"></circle>
-      </g>
-    </svg> #}
   </a>
-  <p id="quote">{{ metadata.description }}</p>
+  <h2 class="mb-2 text-3xl font-extrabold leading-tight text-gray-900 dark:text-gray-100">{{ metadata.title }}</h2>
+  <p class="text-lg text-gray-500 dark:text-gray-200">{{ metadata.description }}</p>
 </header>
