@@ -11,7 +11,8 @@ const cacheBuster = require("./11ty/cacheBuster");
 const htmlMinify = require("./11ty/htmlMinify");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/assets/favicons");
+  eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy({
     "./src/site.webmanifest": "site.webmanifest",
     "./node_modules/chart.js/dist/chart.umd.js": "assets/js/chart.umd.js",
@@ -87,9 +88,9 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("excerpt", (content) => StripTags(content));
 
-  eleventyConfig.addFilter("cssmin", function (code) {
-    return new CleanCSS({}).minify(code).styles;
-  });
+  // eleventyConfig.addFilter("cssmin", function (code) {
+  //   return new CleanCSS({}).minify(code).styles;
+  // });
 
   return {
     // Control which files Eleventy will process

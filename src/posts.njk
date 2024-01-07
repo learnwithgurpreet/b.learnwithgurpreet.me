@@ -1,24 +1,26 @@
 ---
 layout: layouts/page.njk
-title: Posts
+title: Archive
 eleventyNavigation:
-  key: Posts
+  key: Archvie
   order: 2
 keywords: tech blog, gurpreet singh, gurpreet from germany, gurpreet from frankfurt, publicissapient, sapient, publicis, advanced javascript tutorials, best free javascript tutorials, best javascript tutorials, best node js tutorials, best tutorials for node js, node js tutorial blog, tutorial javascript, tutorial node js, tutorial node.js, tutorials on javascript, why node.js
 excerpt: Blog posts from Gurpreet Singh on technology, sustainablity, and life.
 ---
 
-<header>
-  <h1>{{ title }}</h1>
+<header class="w-full mx-auto text-left">
+  <h1 class="mb-3 text-3xl font-bold leading-tight text-gray-900 md:text-4xl dark:text-gray-50">
+    {{ title }}
+  </h1>
 </header>
 
 {% for year, yearPosts in collections.posts | groupByYear | reverse %}
-  <h2 id="{{ year }}" class="year">{{ year }}</h2>
-  <ul class="big-words">
-    {% for post in yearPosts | reverse %}
-      <li>
-        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+  <h2 class="mb-4 mt-12 text-2xl font-extrabold leading-snug tracking-tight text-gray-600 md:text-4xl dark:text-gray-300">
+    {{ year }}
+  </h2>
+  {% for post in yearPosts | reverse %}
+    <h3 class="mb-4 text-xl font-extrabold leading-snug tracking md:text-3xl">
+      <a href="{{ post.url | url }}" class="text-gray-900 hover:underline dark:text-gray-50">{{ post.data.title }}</a>
+    </h3>
+  {% endfor %}
 {% endfor %}

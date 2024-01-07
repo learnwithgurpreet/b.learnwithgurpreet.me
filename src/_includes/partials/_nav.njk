@@ -1,0 +1,11 @@
+<nav>
+    <div class="container flex items-center justify-center p-4 mx-auto capitalize max-w-2xl px-4 flex-wrap">
+      {% for entry in collections.all | eleventyNavigation %}
+        {%if entry.url == page.url%}
+          <a href="{{ entry.url | url }}" aria-current="page" class="text-gray-800 dark:text-gray-200 border-b-2 border-gray-500 mx-1.5 sm:mx-6">{{ entry.title }}</a>
+        {% else %}
+          <a href="{{ entry.url | url }}" class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-gray-500 mx-1.5 sm:mx-6">{{ entry.title }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+</nav>

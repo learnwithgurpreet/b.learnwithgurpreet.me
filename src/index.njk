@@ -1,35 +1,61 @@
 ---
 layout: layouts/page.njk
 image: /assets/images/profile-pic.jpg
+pagination:
+  data: collections.posts
+  size: 5
+  alias: postslist
+reverse: true
 eleventyNavigation:
   key: Home
   order: 1
 keywords: tech blog, gurpreet singh, gurpreet from germany, gurpreet from frankfurt, publicissapient, sapient, publicis, advanced javascript tutorials, best free javascript tutorials, best javascript tutorials, best node js tutorials, best tutorials for node js, node js tutorial blog, tutorial javascript, tutorial node js, tutorial node.js, tutorials on javascript, why node.js
 excerpt: Experienced Front-end Technologist | Expert in jQuery, JavaScript, HTML5, CSS3, NodeJS, and ReactJS
 ---
-<section>
-  <h1>{{ metadata.author.title }}</h1>
-  <p>{{ metadata.author.short_description }}</p>
+
+<section class="flex flex-col space-y-12 divide-y divide-gray-200">
+{% for post in postslist %}
+  <div>
+    <date class="pt-12 block mb-3 text-sm font-normal text-gray-500 dark:text-gray-200" datetime="{{ page.date | htmlDateString }}">{{ post.date | readableDate }}</date>
+    <h2 class="mb-2 text-xl font-extrabold leading-snug tracking-tight md:text-3xl">
+      <a href="{{ post.url | url }}" class="text-gray-900 hover:underline dark:text-gray-50">{{ post.data.title }}</a>
+    </h2>
+    <p class="mb-4 text-base font-normal text-gray-600 dark:text-gray-100">{{ post.data.excerpt }}</p>
+    <a href="{{ post.url | url }}" class="btn btn-light btn-sm hover:underline">Continue Reading</a>
+  </div>
+{% endfor %}
 </section>
 
-<section>
-  <h2>Table of Contents</h2>
-  <ol class="big-words">
-    {% for entry in collections.all | eleventyNavigation %}
-      {% if entry.url == "/" %}
-        <li>{{ entry.title }}</li>
+{% if pagination.pageLinks.length > 1 %}
+  <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between my-6 pt-6 border-t border-gray-200">
+    <div class="pb-6 sm:pb-0">
+      <p class="text-md">
+        Showing
+        <span class="font-medium">{{ (pagination.pageNumber * pagination.size) + 1 }}</span>
+        to
+        <span class="font-medium">
+          {% if pagination.nextPageLink %}
+            {{ (pagination.pageNumber * pagination.size) + pagination.size }}
+          {% else %}
+            {{ length }}
+          {% endif %}
+        </span>
+        of
+        <span class="font-medium">{{ collections.posts.length }}</span>
+        results
+      </p>
+    </div>
+    <nav class="pagination">
+      {% if pagination.previousPageLink %}
+        <a class="relative inline-flex items-center px-2 py-2 mr-1 text-md text-sm font-medium" href="{{ pagination.previousPageHref }}">Previous</a>
       {% else %}
-        <li><a href="{{ entry.url | url }}" {%if entry.url == page.url%}aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+        <span class="relative inline-flex items-center px-2 py-2 mr-1 text-sm font-medium text-gray-400">Previous</span>
       {% endif %}
-    {% endfor %}
-  </ol>
-</section>
-
-<section>
-  <h2>Recent Posts</h2>
-  <ul class="big-words">
-    {% for post in collections.posts | reverse | head(6) %}
-    <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
-    {% endfor %}
-  </ul>
-</section>
+      {% if pagination.nextPageLink %}
+        <a class="relative inline-flex items-center px-2 py-2 ml-1 text-sm font-medium" href="{{ pagination.nextPageHref }}">Next</a>
+      {% else %}
+        <span class="relative inline-flex items-center px-2 py-2 ml-1 text-sm font-medium text-gray-400">Next</span>
+      {% endif %}
+    </nav>
+  </div>
+{% endif %}
