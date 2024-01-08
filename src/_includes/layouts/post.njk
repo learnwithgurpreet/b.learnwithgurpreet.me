@@ -6,10 +6,10 @@
       <h1 class="mb-3 text-4xl font-bold leading-tight text-gray-900 md:text-5xl dark:text-gray-50">
         {{ title }}
       </h1>
-      <ul class="flex mb-6 space-x-2 justify-center">
+      <ul class="flex mb-6 space-x-2 mt-2 justify-center">
         {%- for tag in tags | filterTagList -%}
           {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-          <li class="m-2 inline-block"><a class="text-gray-900 dark:bg-gray-200 bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-100 p-1" href="{{ tagUrl | url }}">{{ tag }}</a></li>
+          <li class="inline-block"><a class="text-gray-900 dark:bg-gray-200 bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-100 p-1" href="{{ tagUrl | url }}">{{ tag }}</a></li>
         {%- endfor %}
       </ul>
     </header>
