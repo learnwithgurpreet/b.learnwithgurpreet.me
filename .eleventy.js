@@ -2,7 +2,6 @@ const { DateTime } = require("luxon");
 const StripTags = require("./11ty/stripTags");
 const GroupBy = require("./11ty/groupBy");
 const LazyImages = require("./11ty/lazyLoad");
-const CleanCSS = require("clean-css");
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -87,10 +86,6 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("excerpt", (content) => StripTags(content));
-
-  // eleventyConfig.addFilter("cssmin", function (code) {
-  //   return new CleanCSS({}).minify(code).styles;
-  // });
 
   return {
     // Control which files Eleventy will process

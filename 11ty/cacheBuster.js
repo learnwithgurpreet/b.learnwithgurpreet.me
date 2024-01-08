@@ -1,5 +1,5 @@
 function cacheBuster(url) {
-  return `${url}?v=${new Date().getTime()}`;
+  return `${url}?v=${String(Date.now())}`;
 }
 
 module.exports = cacheBuster;
