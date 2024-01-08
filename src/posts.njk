@@ -8,11 +8,7 @@ keywords: tech blog, gurpreet singh, gurpreet from germany, gurpreet from frankf
 excerpt: Blog posts from Gurpreet Singh on technology, sustainablity, and life.
 ---
 
-<header class="w-full mx-auto text-left">
-  <h1 class="mb-3 text-3xl font-bold leading-tight text-gray-900 md:text-4xl dark:text-gray-50">
-    {{ title }}
-  </h1>
-</header>
+<header class="sr-only"><h1>{{ title }}</h1></header>
 
 {% for year, yearPosts in collections.posts | groupByYear | reverse %}
   <h2 class="mb-4 mt-12 text-2xl font-extrabold leading-snug tracking-tight text-gray-600 md:text-4xl dark:text-gray-300">

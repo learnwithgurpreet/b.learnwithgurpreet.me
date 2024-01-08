@@ -95,7 +95,7 @@
     <a href="#content" class="absolute p-4 text-center left-0 right-0 transition-all -translate-y-full focus:z-20 focus:translate-y-0 bg-gray-900 text-gray-50">Skip to main content</a>
     {% include "partials/_nav.njk" %}
     <main id="content" class="container max-w-2xl px-4 py-16 mx-auto">
-      {% if page.inputPath === "./src/index.njk" %}
+      {% if not '/posts/' in page.filePathStem %}
         {% include "partials/_header.njk" %}
       {% endif %}
       {% block content %}{% endblock %}
