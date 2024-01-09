@@ -2,13 +2,13 @@
     <div class="container flex items-center justify-center p-4 mx-auto capitalize max-w-2xl px-4 flex-wrap">
       {% for entry in collections.all | eleventyNavigation %}
         {%if entry.url == page.url%}
-          <a href="{{ entry.url | url }}" aria-current="page" class="text-gray-800 dark:text-gray-200 border-b-2 border-gray-500 mx-3 sm:mx-6">{{ entry.title }}</a>
+          <a href="{{ entry.url | url }}" aria-current="page" class="mx-3 sm:mx-6">{{ entry.title }}</a>
         {% else %}
-          <a href="{{ entry.url | url }}" class="border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-gray-500 mx-3 sm:mx-6">{{ entry.title }}</a>
+          <a href="{{ entry.url | url }}" class="mx-3 sm:mx-6">{{ entry.title }}</a>
         {% endif %}
       {% endfor %}
         {% if showRSS === true %}
-          <a href="{{ '/feed/feed.xml' | url }}" class="border-b-2 border-transparent text-orange-700 hover:text-orange-800 dark:text-orange-400 dark:hover:text-orange-200 hover:border-orange-500 mx-3 sm:mx-6">RSS</a>
+          <a href="{{ '/feed/feed.xml' | url }}" class="mx-3 sm:mx-6">RSS</a>
         {% endif %}
     </div>
 </nav>

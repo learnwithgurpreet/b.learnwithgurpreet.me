@@ -16,12 +16,12 @@ excerpt: Experienced Front-end Technologist | Expert in jQuery, JavaScript, HTML
 <section class="flex flex-col space-y-12 divide-y divide-gray-200">
 {% for post in postslist %}
   <div>
-    <date class="pt-12 block mb-3 text-sm font-normal text-gray-500 dark:text-gray-200" datetime="{{ page.date | htmlDateString }}">{{ post.date | readableDate }}</date>
+    <date class="pt-12 block mb-3 text-sm font-normal" datetime="{{ page.date | htmlDateString }}">{{ post.date | readableDate }}</date>
     <h2 class="mb-2 text-xl font-extrabold leading-snug tracking-tight md:text-3xl">
-      <a href="{{ post.url | url }}" class="text-gray-900 hover:underline dark:text-gray-50">{{ post.data.title }}</a>
+      <a href="{{ post.url | url }}" class="hover:underline">{{ post.data.title }}</a>
     </h2>
-    <p class="mb-4 text-base font-normal text-gray-600 dark:text-gray-100">{{ post.data.excerpt }}</p>
-    <a href="{{ post.url | url }}" class="orange-link">Continue Reading</a>
+    <p class="mb-4 text-base font-normal">{{ post.data.excerpt }}</p>
+    <a href="{{ post.url | url }}">Continue Reading</a>
   </div>
 {% endfor %}
 </section>
@@ -47,14 +47,14 @@ excerpt: Experienced Front-end Technologist | Expert in jQuery, JavaScript, HTML
     </div>
     <nav class="pagination space-x-4 flex justify-center">
       {% if pagination.previousPageLink %}
-        <a class="relative inline-flex items-center py-1 text-md text-sm font-medium orange-link" href="{{ pagination.previousPageHref }}">Previous</a>
+        <a class="relative inline-flex items-center py-1 text-md text-sm font-medium" href="{{ pagination.previousPageHref }}">Previous</a>
       {% else %}
-        <span class="relative inline-flex items-center py-1 text-sm font-medium text-gray-500 dark:text-gray-400">Previous</span>
+        <span class="relative inline-flex items-center py-1 text-sm font-medium">Previous</span>
       {% endif %}
       {% if pagination.nextPageLink %}
-        <a class="relative inline-flex items-center py-1 text-sm font-medium orange-link" href="{{ pagination.nextPageHref }}">Next</a>
+        <a class="relative inline-flex items-center py-1 text-sm font-medium" href="{{ pagination.nextPageHref }}">Next</a>
       {% else %}
-        <span class="relative inline-flex items-center py-1 text-sm font-medium text-gray-500 dark:text-gray-400">Next</span>
+        <span class="relative inline-flex items-center py-1 text-sm font-medium">Next</span>
       {% endif %}
     </nav>
   </div>

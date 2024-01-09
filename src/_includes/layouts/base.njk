@@ -91,8 +91,8 @@
     {% endif %}
     <meta name="generator" content="{{ eleventy.generator }}">
   </head>
-  <body class="bg-white dark:bg-gray-800 transition-colors duration-300 transform text-gray-600 dark:text-gray-100">
-    <a href="#content" class="absolute p-4 text-center left-0 right-0 transition-all -translate-y-full focus:z-20 focus:translate-y-0 bg-gray-900 text-gray-50">Skip to main content</a>
+  <body class="base-color transition-colors duration-300 transform">
+    <a href="#content" class="absolute p-4 text-center left-0 right-0 transition-all -translate-y-full focus:z-20 focus:translate-y-0">Skip to main content</a>
     {% include "partials/_nav.njk" %}
     <main id="content" class="container max-w-2xl px-4 py-16 mx-auto">
       {% if not '/posts/' in page.filePathStem %}
@@ -108,7 +108,7 @@
           return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         }
         const ctx = document.getElementById("posts_per_year_chart");
-        const color = isDarkMode() ? '#f3f4f6' : '#1f2937';
+        const color = isDarkMode() ? '#3b82f6' : '#2563eb';
 
         Chart.defaults.color = color;
         Chart.defaults.backgroundColor = color;

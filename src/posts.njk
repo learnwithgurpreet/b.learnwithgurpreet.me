@@ -2,7 +2,7 @@
 layout: layouts/page.njk
 title: Archive
 eleventyNavigation:
-  key: Archvie
+  key: Archive
   order: 2
 keywords: tech blog, gurpreet singh, gurpreet from germany, gurpreet from frankfurt, publicissapient, sapient, publicis, advanced javascript tutorials, best free javascript tutorials, best javascript tutorials, best node js tutorials, best tutorials for node js, node js tutorial blog, tutorial javascript, tutorial node js, tutorial node.js, tutorials on javascript, why node.js
 excerpt: Blog posts from Gurpreet Singh on technology, sustainablity, and life.
@@ -11,12 +11,12 @@ excerpt: Blog posts from Gurpreet Singh on technology, sustainablity, and life.
 <header class="sr-only"><h1>{{ title }}</h1></header>
 
 {% for year, yearPosts in collections.posts | groupByYear | reverse %}
-  <h2 class="mb-4 mt-12 text-2xl font-extrabold leading-snug tracking-tight text-gray-600 md:text-4xl dark:text-gray-300 bg-white dark:bg-gray-800 sticky top-0">
+  <h2 class="mb-4 mt-12 text-2xl font-extrabold leading-snug tracking-tight md:text-4xl base-color sticky top-0">
     {{ year }}
   </h2>
   {% for post in yearPosts | reverse %}
     <h3 class="mb-4 text-xl font-extrabold leading-snug tracking md:text-3xl">
-      <a href="{{ post.url | url }}" class="text-gray-900 hover:underline dark:text-gray-50">{{ post.data.title }}</a>
+      <a href="{{ post.url | url }}" class="hover:underline">{{ post.data.title }}</a>
     </h3>
   {% endfor %}
 {% endfor %}
