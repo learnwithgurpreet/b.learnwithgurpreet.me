@@ -4,6 +4,7 @@ date: "2024-01-05"
 excerpt: Despite searching the internet, I couldn't find a quick starter for my online resume project, not even on the official 11ty start page. Consequently, I decided to invest some time in creating one and making it available as a starter project for a broader audience.
 tags:
   - "Tech"
+  - "11ty"
 ---
 
 **Exciting news! This project has been featured in the [Official Eleventy Starter Projects](https://www.11ty.dev/docs/starter/).**
