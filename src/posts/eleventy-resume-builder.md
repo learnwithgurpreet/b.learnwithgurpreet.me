@@ -7,7 +7,11 @@ tags:
   - "11ty"
 ---
 
-**Exciting news! This project has been featured in the [Official Eleventy Starter Projects](https://www.11ty.dev/docs/starter/).**
+> Exciting news! This project has been featured in the [Official Eleventy Starter Projects](https://www.11ty.dev/docs/starter/).
+
+![11ty resume template](/assets/images/11ty-resume-template.png)
+
+![11ty resume template lighthouse scores](/assets/images/11ty-resume-template-lighthouse-score.png)
 
 **[View Demo](https://www.gurpreet-singh.in/)**
 
@@ -16,10 +20,6 @@ For the past couple of years, I've been utilizing [11ty](https://www.11ty.dev/) 
 Prior to adopting 11ty, I relied on Gatsby for my personal blogs and static-generated applications. However, Gatsby introduces a lot of asynchronous JavaScript during the build process. In contrast, 11ty doesn't mandate any runtime JavaScript in the browser to run your statically generated content. The effectiveness also depends on how you manage your content.
 
 Despite searching the internet, I couldn't find a quick starter for my online resume project, not even on the official 11ty start page. Consequently, I decided to invest some time in creating one and making it available as a starter project for a broader audience.
-
-![11ty resume template](/assets/images/11ty-resume-template.png "11ty resume template")
-
-![11ty resume template lighthouse scores](/assets/images/11ty-resume-template-lighthouse-score.png "11ty resume template lighthouse scores")
 
 ## Feature
 
