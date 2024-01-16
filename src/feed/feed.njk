@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title>{{ metadata.title }}</title>
 	<subtitle>{{ metadata.description }}</subtitle>
-	{% set absoluteUrl %}{{ metadata.feed.xml | url | absoluteUrl(metadata.url) }}{% endset %}
+	{% set absoluteUrl %}{{ metadata.url + metadata.feed.path + metadata.feed.xml | url }}{% endset %}
 	<link href="{{ absoluteUrl }}" rel="self"/>
 	<link href="{{ metadata.url }}"/>
 	<updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
