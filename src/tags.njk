@@ -20,19 +20,12 @@ excerpt: List of posts tagged under "{{ tag }}"
 
 <header class="w-full mx-auto mb-12 text-left">
   <h1 class="mb-3 text-3xl font-bold leading-tight md:text-4xl">
-    {{ tag }}
+    Tagged: {{ tag }}
   </h1>
 </header>
 
-<section class="flex flex-col space-y-12 divide-y divide-gray-200">
-{% for post in collections[ tag ] | reverse | head(6) %}
-  <div>
-    <date class="pt-12 block mb-3 text-sm font-normal" datetime="{{ page.date | htmlDateString }}">{{ post.date | readableDate }}</date>
-    <h2 class="mb-2 text-xl font-extrabold leading-snug tracking-tight md:text-3xl">
-      <a href="{{ post.url | url }}" class="hover:underline">{{ post.data.title }}</a>
-    </h2>
-    <p class="mb-4 text-base font-normal">{{ post.data.excerpt }}</p>
-    <a href="{{ post.url | url }}" class="btn btn-light btn-sm hover:underline">Continue Reading</a>
-  </div>
-{% endfor %}
-</section>
+<ul class="flex flex-col space-y-12 divide-y divide-gray-200">
+  {% for post in collections[ tag ] | reverse | head(6) %}
+    {% include "partials/_post_item.njk" %}
+  {% endfor %}
+</ul>

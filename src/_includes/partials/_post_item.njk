@@ -1,0 +1,7 @@
+<li>
+  <date class="pt-12 block mb-3 text-sm font-normal" datetime="{{ page.date | htmlDateString }}">{{ post.date | readableDate }}</date>
+  <h2 class="mb-2 text-xl font-extrabold leading-snug tracking-tight md:text-3xl">
+    <a href="{{ post.url | url }}" class="hover:underline">{{ post.data.title }}</a>
+  </h2>
+  <p class="mb-4 text-base font-normal">{{ post.data.excerpt }}</p>
+</li>
