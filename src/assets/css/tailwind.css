@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    @apply antialiased sm:text-lg md:text-xl lg:text-2xl xl:text-3xl;
+  }
+}
+
 a {
-  @apply text-blue-600 dark:text-blue-500 hover:underline underline-offset-8;
+  @apply text-blue-600 dark:text-blue-500
 }
 
 .base-color {

@@ -13,14 +13,14 @@ keywords: tech blog, gurpreet singh, gurpreet from germany, gurpreet from frankf
 excerpt: Experienced Front-end Technologist | Expert in jQuery, JavaScript, HTML5, CSS3, NodeJS, and ReactJS
 ---
 
-<ul class="flex flex-col divide-y divide-gray-200">
+<ul class="flex flex-col">
 {% for post in postslist %}
   {% include "partials/_post_item.njk" %}
 {% endfor %}
 </ul>
 
 {% if pagination.pageLinks.length > 1 %}
-  <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between my-6 pt-6 border-t border-gray-200">
+  <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between my-6">
     <div class="pb-6 sm:pb-0">
       <p class="text-md">
         Showing

@@ -24,7 +24,7 @@ excerpt: List of posts tagged under "{{ tag }}"
   </h1>
 </header>
 
-<ul class="flex flex-col space-y-12 divide-y divide-gray-200">
+<ul class="flex flex-col">
   {% for post in collections[ tag ] | reverse | head(6) %}
     {% include "partials/_post_item.njk" %}
   {% endfor %}

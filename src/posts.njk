@@ -11,12 +11,18 @@ excerpt: Blog posts from Gurpreet Singh on technology, sustainablity, and life.
 <header class="sr-only"><h1>{{ title }}</h1></header>
 
 {% for year, yearPosts in collections.posts | groupByYear | reverse %}
-  <h2 class="mb-4 mt-12 text-2xl font-extrabold leading-snug tracking-tight md:text-4xl base-color sticky top-0">
+  <h2 class="mb-4 z-[1] mt-12 text-2xl font-extrabold leading-snug tracking-tight md:text-4xl base-color sticky top-0">
     {{ year }}
   </h2>
-  {% for post in yearPosts | reverse %}
-    <h3 class="mb-4 text-xl font-extrabold leading-snug tracking md:text-3xl">
-      <a href="{{ post.url | url }}" class="hover:underline">{{ post.data.title }}</a>
-    </h3>
-  {% endfor %}
+  <ul>
+    {% for post in yearPosts | reverse %}
+      <li class="relative">
+        <h3 class="text-xl font-extrabold leading-snug tracking md:text-3xl">
+          <a href="{{ post.url | url }}" class="hover:underline after:content-[' '] after:absolute after:top-0 after:left-0 after:right-0 after:bottom-0">{{ post.data.title }}</a>
+        </h3>
+        <time class="mb-6 block text-sm font-normal" datetime="{{ page.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+        {# <time class="text-sm text-gray-500" datetime="{{ post.date | date('YYYY-MM-DD') }}">{{ post.date | dateDisplay }}</time> #}
+      </li>
+    {% endfor %}
+  </ul>
 {% endfor %}
