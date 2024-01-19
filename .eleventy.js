@@ -12,6 +12,7 @@ const htmlMinify = require("./11ty/htmlMinify");
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/favicons");
   eleventyConfig.addPassthroughCopy("src/assets/images");
+  eleventyConfig.addPassthroughCopy("src/assets/fonts");
   eleventyConfig.addPassthroughCopy({
     "./src/site.webmanifest": "site.webmanifest",
     "./node_modules/chart.js/dist/chart.umd.js": "assets/js/chart.umd.js",

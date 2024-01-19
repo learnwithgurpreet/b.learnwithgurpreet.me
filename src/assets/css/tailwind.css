@@ -2,20 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Metropolis";
+  src: url("/assets/fonts/Metropolis-Bold.woff2") format("woff2"),
+    url("/assets/fonts/Metropolis-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("/assets/fonts/Metropolis-Medium.woff2") format("woff2"),
+    url("/assets/fonts/Metropolis-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("/assets/fonts/Metropolis-Regular.woff2") format("woff2"),
+    url("/assets/fonts/Metropolis-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   html {
-    @apply antialiased sm:text-lg md:text-xl lg:text-2xl xl:text-3xl;
+    @apply antialiased sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-metropolis;
   }
 }
 
-a {
-  @apply text-blue-600 dark:text-blue-500
+.green-bg {
+  @apply bg-green-400 text-zinc-950;
 }
 
-.base-color {
-  @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-50;
-}
-
-.highlight {
-  @apply bg-gray-100 dark:bg-gray-900;
-}

@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.njk", "./src/**/*.md"],
   theme: {
     extend: {
+      fontFamily: {
+        metropolis: ["Metropolis", "sans-serif"],
+      },
       colors: {
         primary: {
           50: "#fff0e6",
