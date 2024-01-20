@@ -1,14 +1,10 @@
 <nav>
-    <div class="container flex items-center justify-center p-4 mx-auto capitalize max-w-2xl px-4 flex-wrap">
-      {% for entry in collections.all | eleventyNavigation %}
-        {%if entry.url == page.url%}
-          <a href="{{ entry.url | url }}" aria-current="page" class="mx-3 sm:mx-6">{{ entry.title }}</a>
-        {% else %}
-          <a href="{{ entry.url | url }}" class="mx-3 sm:mx-6">{{ entry.title }}</a>
-        {% endif %}
+    <ul class="container flex items-center justify-center p-4 mx-auto capitalize max-w-2xl px-4 flex-wrap">
+      {% for entry in collections.all | eleventyNavigation %}        
+        <li class="mx-3 sm:mx-6"><a href="{{ entry.url | url }}" {%if entry.url == page.url%}aria-current="page"{% endif %} class="{%if entry.url == page.url%}underline{% endif %}">{{ entry.title }}</a></li>
       {% endfor %}
-        {% if showRSS === true %}
-          <a href="{{ '/feed/feed.xml' | url }}" class="mx-3 sm:mx-6">RSS</a>
-        {% endif %}
-    </div>
+      {% if showRSS === true %}
+        <li class="mx-3 sm:mx-6"><a href="{{ '/feed/feed.xml' | url }}">RSS</a></li>
+      {% endif %}
+    </ul>
 </nav>
