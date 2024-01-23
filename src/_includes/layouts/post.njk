@@ -1,7 +1,7 @@
 {% extends "layouts/base.njk" %}
 {% block content %}
   <article class="mx-auto">
-    <header class="w-full mx-auto mb-12 text-center border-b-2 border-gray-200">
+    <header class="w-full mb-12 text-center border-b-2 border-gray-200">
       <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
       <h1 class="mb-3 text-4xl font-bold leading-tight md:text-5xl">
         {{ title }}
@@ -13,8 +13,8 @@
         {%- endfor %}
       </ul>
     </header>
-    <div class="w-full mx-auto prose dark:prose-invert prose-blue">
+    <section class="w-full mx-auto prose dark:prose-invert prose-blue">
       {{ content | safe}}
-    </div>
+    </section>
   </article>
 {% endblock %}

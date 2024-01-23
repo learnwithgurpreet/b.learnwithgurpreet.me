@@ -22,7 +22,7 @@ excerpt: Experienced Front-end Technologist | Expert in jQuery, JavaScript, HTML
 {% if pagination.pageLinks.length > 1 %}
   <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between my-6">
     <div class="pb-6 sm:pb-0">
-      <p class="text-md">
+      <h3 class="text-md">
         Showing
         <span class="font-semibold">{{ (pagination.pageNumber * pagination.size) + 1 }}</span>
         to
@@ -36,7 +36,7 @@ excerpt: Experienced Front-end Technologist | Expert in jQuery, JavaScript, HTML
         of
         <span class="font-semibold">{{ collections.posts.length }}</span>
         results
-      </p>
+      </h3>
     </div>
     <nav class="pagination space-x-4 flex justify-center">
       {% if pagination.previousPageLink %}
