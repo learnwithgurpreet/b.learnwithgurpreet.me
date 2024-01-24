@@ -19,3 +19,7 @@ a {
 .highlight {
   @apply bg-gray-100 dark:bg-gray-900;
 }
+
+.prose p > img {
+  @apply shadow-lg mx-auto;
+}
