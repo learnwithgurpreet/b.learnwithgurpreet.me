@@ -1,7 +1,6 @@
 ---
 title: NextCloud on Synology Docker 2024
 date: "2024-01-25"
-eleventyExcludeFromCollections: true
 excerpt: NextCloud is a widely used hosting solution that offers an integrated office suite, allowing users to utilize the platform in a manner similar to services such as Dropbox and Google Drive.
 keywords: NextCloud, hosting solution, integrated office suite, cloud storage, Dropbox alternative, Google Drive alternative, Web Station, Docker, Container Manager, Synology, Docker container, file synchronization, document management, cloud collaboration, data hosting, Apache server, SQLite, Docker-compose, Redis, Synology NAS, Synology Package Center, NextCloud setup
 tags:
@@ -39,6 +38,7 @@ I suggest opting for the `ssh` method to run the container instead of relying on
 ```
 $ docker run -d \
   --name nextcloud
+  -e TZ=Europe/Berlin \
   -p 8080:80
   -v /volume1/docker/nextcloud/config:/var/www/html/config \
   -v /volume1/docker/nextcloud/data:/var/www/html/data \
