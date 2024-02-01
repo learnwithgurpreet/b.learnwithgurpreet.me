@@ -3,7 +3,6 @@ title: "World Wide Waste"
 date: "2023-09-11"
 eleventyExcludeFromCollections: false
 excerpt: Digital is Physical, it is quite important to understand whatever you download/upload on web is all impacting our planet earth
-keywords: what is digital waste, world wide waste, www, sustainability, sustainability goals, how to prevent digital waste, what is net zero
 tags:
   - "Sustainability"
   - "Thoughts"

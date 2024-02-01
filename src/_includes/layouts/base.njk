@@ -20,10 +20,8 @@
     {% set currentPageUrl = metadata.url + page.url | url %}
 
     {% set secondTitle = " - " + metadata.description if page.url === "/" else " - " + title %}
-    {% set keywords = keywords or "CSS, front-end, web design, consulting, architecture" %}
     
     <title>{{ metadata.title + secondTitle }}</title>
-    <meta name="keywords" content="{{ keywords }}" />
     <meta name="description" content="{{ excerpt }}" />
 
     <meta name="og:image" content="{{ socialImage }}">

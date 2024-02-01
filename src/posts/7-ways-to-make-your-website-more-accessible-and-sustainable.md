@@ -2,7 +2,6 @@
 title: "7 ways to make your website more accessible and sustainable"
 date: "2022-05-21"
 excerpt: We often talk about sustainability and try to decrease our CO₂
-keywords: how do you make a website accessible, how to be more eco friendly, how to be more sustainable, how to make a website accessible to everyone, how to make a website more accessible for the disabled, how to make a website sustainable, how to make your website more accessible and sustainable blog, how to make your website more accessible and sustainable business, how to make your website more accessible and sustainable design, how to make your website more accessible and sustainable for free, making website more accessible, making your website accessible, sustainable website
 tags:
   - "Sustainability"
   - "Tech"

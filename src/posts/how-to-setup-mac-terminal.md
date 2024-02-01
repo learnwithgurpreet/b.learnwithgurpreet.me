@@ -2,7 +2,6 @@
 title: "How to Setup Mac Terminal"
 date: "2023-03-21"
 excerpt: People often ask me how I setup my Mac terminal, here is the guide.
-keywords: best terminal setup for mac, how does mac terminal work, how to clean install mac os x mountain lion from usb, how to clean install mac os x yosemite from usb, how to configure mac terminal, how to configure terminal in mac, how to configure terminal on mac, how to install brew mac terminal, how to install brew on mac through terminal, how to install brew on mac using terminal, how to install homebrew mac terminal, how to install homebrew on mac using terminal, how to setup mac terminal zsh, mac terminal instructions, mac terminal setup, terminal mac tutorial, terminal mac zsh, terminal setup
 tags:
   - "Tech"
 ---

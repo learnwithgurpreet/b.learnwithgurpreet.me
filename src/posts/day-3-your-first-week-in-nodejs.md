@@ -1,7 +1,6 @@
 ---
 title: "Day 3 - Your first week in NodeJS"
 date: 2021-08-07
-keywords: expressjs tutorial, how to create express server, backend nodejs tutorial, best node js tutorial for beginners, best nodejs tutorial, best practices node js tutorial, buffer node js tutorial, tutorial node js, tutorial node.js, was ist node.js, what is node js tutorial, what is node js with example, why node.js, nodejs basics, basic understanding of nodejs, start with nodejs
 excerpt: I believe you have already read my previous article where I explained, how to spin up a Node.js server instance
 tags:
   - "NodeJS"
