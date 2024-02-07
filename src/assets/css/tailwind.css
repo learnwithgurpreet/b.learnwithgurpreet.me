@@ -9,11 +9,11 @@
 }
 
 a {
-  @apply text-blue-600 dark:text-blue-500 underline underline-offset-[0.1em] hover:underline-offset-[0.2em] transition-all duration-150;
+  @apply underline underline-offset-[0.1em] hover:underline-offset-[0.2em] transition-all duration-150;
 }
 
 .base-color {
-  @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-50;
+  @apply bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-50;
 }
 
 .highlight {
