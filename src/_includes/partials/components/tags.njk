@@ -1,0 +1,5 @@
+{% for tag in collections.tagList %}
+  {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+  {% set postCount = collections[tag] | length %}
+  <a href="{{ tagUrl | url }}">{{ tag }}({{ postCount }})</a>
+{%- endfor %}

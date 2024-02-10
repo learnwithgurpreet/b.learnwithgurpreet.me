@@ -1,10 +1,10 @@
 ---
-title: "Can we use Google services without compromising privacy?"
-date: "2021-02-24"
+title: 'Can we use Google services without compromising privacy?'
+date: '2021-02-24'
 excerpt: Over the period of time, people are aware of what internet privacy is and why it is important.
 tags:
-  - "Privacy"
-  - "Thoughts"
+  - 'Privacy'
+  - 'Thoughts'
 ---
 
 Over the period of time, people are aware of what internet privacy is and why it is important.
@@ -23,7 +23,7 @@ Come on, tell me if there is a way to **use Google services without compromising
 
 - Search Engine: If you are not a big fan of Google search, I would recommend start using [https://duckduckgo.com](https://duckduckgo.com/) as a search engine.
 
-![duckduckgo](/assets/images/4iq917j5o.jpeg "duckduckgo-website.jpeg")
+![duckduckgo](/images/4iq917j5o.jpeg 'duckduckgo-website.jpeg')
 
 [](https://www.gsin.in/static/9bb9e4b646dcfd7e6e03235bb5f4c0d2/07f3a/4iq917j5o.jpg)
 
@@ -35,13 +35,13 @@ This search engine is nothing but gives you full access to your search, so whate
 
 - Choosing Strict Mode: By choosing this mode you are telling Firefox to prevent you from Social media trackers, Cross-site tracking cookies, etc. (Disclaimer: It may impact the functionality of some sites).
 
-![firefox settings](/assets/images/DkAXqMOl.jpeg "firefox-settings.jpeg")
+![firefox settings](/images/DkAXqMOl.jpeg 'firefox-settings.jpeg')
 
 [](https://www.gsin.in/static/f7c4fe5e8382dad5129c979a1681ebc2/07f3a/DkAXqMOl.jpg)
 
 - Keep Search suggestions off when you type your search in browser search. You must have seen when you start typing anything in your browser search it immediately gives you results which may be the biggest security concern. Just imagine you accidentally pasted your password or something even more sensitive.
 
-![search suggestions](/assets/images/7f0a1UzMu.jpeg "search-suggestion.jpeg")
+![search suggestions](/images/7f0a1UzMu.jpeg 'search-suggestion.jpeg')
 
 [](https://www.gsin.in/static/a2b4935d47cad7c1dfae870d18b3a5de/51891/7f0a1UzMu.jpg)
 
@@ -49,13 +49,13 @@ This search engine is nothing but gives you full access to your search, so whate
 
 This browser keeps your privacy as a priority. By using onion routing it never discloses your IP address to the destination node. Each packet sending through this browser is encrypted and routed through three nodes (Entry gourd, Middle rely on, Exit rely on).
 
-![tor routing](/assets/images/QYi-JawLN.jpeg "tor-browser.jpeg")
+![tor routing](/images/QYi-JawLN.jpeg 'tor-browser.jpeg')
 
 [](https://www.gsin.in/static/206af35dc8b8f73eef854696056136b8/41099/QYi-JawLN.jpg)
 
 - Tor browser is similar to Firefox in experience since it is built on Firefox and provides another level of encryption layer. You can configure your Tor browser by either directly connecting to your Tor services or Configure your own proxy.
 
-![tor browser](/assets/images/Z332FxhVJ.jpeg "tor.jpeg")
+![tor browser](/images/Z332FxhVJ.jpeg 'tor.jpeg')
 
 [](https://www.gsin.in/static/5f40555e994d13271c1c99861426dc42/07f3a/Z332FxhVJ.jpg)
 

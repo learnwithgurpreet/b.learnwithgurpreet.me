@@ -1,10 +1,10 @@
 ---
-title: "Up and running with RaspberryPi with Docker"
-date: "2021-05-19"
+title: 'Up and running with RaspberryPi with Docker'
+date: '2021-05-19'
 excerpt: How to configure RaspberryPi with docker and docker-compose.
 tags:
-  - "Tech"
-  - "Raspberry PI"
+  - 'Tech'
+  - 'Raspberry PI'
 ---
 
 How to configure RaspberryPi with docker and docker-compose. I am personally using it for my local hone projects where I can run these projects without interfering RaspbianOS image.
@@ -19,7 +19,7 @@ How to configure RaspberryPi with docker and docker-compose. I am personally usi
 
 The first step is to install the Raspbian OS image on your memory card. I would suggest going with [RaspberryPi official](https://www.raspberrypi.org/software/) page to download the Raspberry Pi Imager. I recommend using this imager because it can directly fetch the latest OS image from RaspberryPi’s website.
 
-![raspberry_pi_imager](/assets/images/L2julT0PS.png "raspberry_pi_imager.png")
+![raspberry_pi_imager](/images/L2julT0PS.png 'raspberry_pi_imager.png')
 
 Select OS while formatting your SD card
 

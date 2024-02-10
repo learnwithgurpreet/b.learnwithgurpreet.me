@@ -1,19 +1,19 @@
 ---
-title: "World Wide Waste"
-date: "2023-09-11"
+title: 'World Wide Waste'
+date: '2023-09-11'
 eleventyExcludeFromCollections: false
 excerpt: Digital is Physical, it is quite important to understand whatever you download/upload on web is all impacting our planet earth
 tags:
-  - "Sustainability"
-  - "Thoughts"
-  - "Reading"
+  - 'Sustainability'
+  - 'Thoughts'
+  - 'Reading'
 ---
 
 I recently finished a book called [World Wide Waste](https://gerrymcgovern.com/world-wide-waste/) by [Gerry McGovern](https://gerrymcgovern.com/). The author helps organizations reduce data waste by designing simpler, lighter, and more environmentally friendly websites and apps.
 
 Thank you, [Holger Hellinger](https://polente.de/), for the recommendation; reading it was indeed worthwhile! 😊
 
-![world wide waste book cover](/assets/images/world-wide-waste.jpg "world wide waste book cover")
+![world wide waste book cover](/images/world-wide-waste.jpg 'world wide waste book cover')
 
 ## What is Digital waste?
 

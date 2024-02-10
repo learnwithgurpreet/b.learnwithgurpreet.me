@@ -1,0 +1,35 @@
+.intro {
+  --section-padding: 10vh;
+  --clip-point: calc(var(--section-padding) / 2);
+
+  background: var(--color-theme-highlight-block);
+  padding-block: var(--section-padding);
+  clip-path: polygon(
+    0 var(--clip-point),
+    100% 0,
+    100% calc(100% - var(--clip-point)),
+    0 100%
+  );
+
+  &__summary {
+    --flow-space: #{get-size(500)};
+    font-size: get-size(500);
+
+    a {
+      color: currentColor;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__heading {
+    max-width: 40ex;
+    color: var(--color-theme-feature-text);
+
+    &--compact {
+      max-width: 20ex;
+    }
+  }
+}

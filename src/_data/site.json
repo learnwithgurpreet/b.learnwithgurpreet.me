@@ -1,0 +1,18 @@
+{
+  "showThemeCredit": true,
+  "name": "Learn with Gurpreet",
+  "shortDesc": "Every space has a story",
+  "url": "https://www.learnwithgurpreet.com",
+  "authorEmail": "gsin.hello@gmail.com",
+  "linkedin": "https://linkedin.com/in/gsin11/",
+  "github": "https://github.com/learnwithgurpreet",
+  "mastodon": "https://fosstodon.org/@GurpreetSingh",
+  "buyMeACoffee": "https://www.buymeacoffee.com/gurpreet.singh",
+  "authorHandle": "",
+  "authorName": "Gurpreet Singh",
+  "enableThirdPartyComments": false,
+  "maxPostsPerPage": 6,
+  "paymentPointer": "",
+  "faviconPath": "/images/favicon.png",
+  "googleSiteVerification": "QfEK-rmBKbXGQ6woeJAgPBlfEJyLpoLmX3LwFqpYAcg"
+}
