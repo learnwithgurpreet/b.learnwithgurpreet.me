@@ -1,11 +1,11 @@
 ---
-title: "Day 1 - Your first week in NodeJS"
+title: 'Day 1 - Your first week in NodeJS'
 date: 2021-08-03
 excerpt: I believe you know something about Node.js before starting this course, just to refresh your memory.
 tags:
-  - "NodeJS"
-  - "Tech"
-  - "NodeJS Beginner Course"
+  - 'NodeJS'
+  - 'Tech'
+  - 'NodeJS Beginner Course'
 ---
 
 I believe you know something about Node.js before starting this course, just to refresh your memory. Node.js is a JavaScript runtime, built on Chrome’s V8 JavaScript engine. Node.js uses an event-driven, non-blocking model that makes it lightweight and efficient.
@@ -18,7 +18,7 @@ Node.js package ecosystem, npm, is the largest ecosystem of open source librarie
 
 You can simply go to the [official Node.js website](https://nodejs.org/en/download/) and download the latest stable version (LTS) based on your OS.
 
-![download node](/assets/images/l82jOlmdT.png "image.png")
+![download node](/images/l82jOlmdT.png 'image.png')
 
 download nodejs page
 
@@ -33,7 +33,7 @@ In addition to the above, you can also go to any editor and create a file `app.j
 
 ```js
 // app.js
-console.log("node is working");
+console.log('node is working');
 ```
 
 Now run this file using Node.js
@@ -95,7 +95,7 @@ It can be a file or a function within the same file, you must have heard of the 
 // Create a new file next to your app.js
 // count.js
 
-const count = (arr) => {
+const count = arr => {
   return arr.length;
 };
 ```
@@ -107,7 +107,7 @@ Now you have `count.js` in place, it’s time to make it re-usable for the appli
 ```js
 // count.js
 
-const count = (arr) => {
+const count = arr => {
   return arr.length;
 };
 
@@ -119,7 +119,7 @@ Since we have the `count` module ready to include, let’s call it in `app.js`.
 ```js
 // app.js
 
-const count = require("./count"); // including `count` function as a module
+const count = require('./count'); // including `count` function as a module
 console.log(count([1, 98, 22, 41])); // return: 4
 ```
 
@@ -141,21 +141,21 @@ const getDatabaseName = () => process.env.DB_NAME;
 module.exports = {
   add,
   sub,
-  getDatabaseName,
+  getDatabaseName
 };
 
 // You also change your public function names
 module.exports = {
   plus: add,
   minus: sub,
-  DBName: getDatabaseName,
+  DBName: getDatabaseName
 };
 ```
 
 ```js
 // app.js
 
-const utils = require("./utils");
+const utils = require('./utils');
 
 console.log(utils.add(1, 2)); // result: 3
 console.log(utils.sub(2, 1)); // result: 1
@@ -171,12 +171,12 @@ Similar to JavaScript `click`/`onChange` events Node.js has the capability to de
 ```js
 // custom-events.js
 
-const events = require("events");
-const utils = require("./utils");
+const events = require('events');
+const utils = require('./utils');
 
 const eventEmitter = new events.EventEmitter();
 
-eventEmitter.on("showSum", (a, b) => {
+eventEmitter.on('showSum', (a, b) => {
   console.log(`Sum is: ${utils.add(a, b)}`);
 });
 
@@ -188,8 +188,8 @@ Our event emitter module is now ready, let’s use it in our application.
 ```js
 // app.js
 
-const customEvents = require("./custom-events");
-customEvents.emit("showSum", 1, 2); // Sum is: 3
+const customEvents = require('./custom-events');
+customEvents.emit('showSum', 1, 2); // Sum is: 3
 ```
 
 ## 5\. Read/Write/Steam files
@@ -209,9 +209,9 @@ $ vim ./read.text  // Add some content and save the file.
 ```js
 // app.js
 
-const fs = require("fs");
+const fs = require('fs');
 
-const readMeFile = fs.readFileSync("./read.txt", "utf-8");
+const readMeFile = fs.readFileSync('./read.txt', 'utf-8');
 console.log(readMeFile); // File contents
 ```
 
@@ -220,10 +220,10 @@ console.log(readMeFile); // File contents
 ```js
 // app.js
 
-const fs = require("fs");
+const fs = require('fs');
 
-const readMeFile = fs.readFileSync("./read.txt", "utf-8");
-fs.writeFileSync("./read-new.txt", readMeFile);
+const readMeFile = fs.readFileSync('./read.txt', 'utf-8');
+fs.writeFileSync('./read-new.txt', readMeFile);
 ```
 
 The above statement will simply read the contents from the `read.txt` file write another file `read-new.txt` with its content.
@@ -235,16 +235,16 @@ On the other hand, `fs.readFile` can read files asynchronously, sometimes we use
 > Let’s quick touch upon async. file read operation:
 
 ```js
-const fs = require("fs");
+const fs = require('fs');
 
-fs.readFile("./read.txt", "utf-8", (err, data) => {
+fs.readFile('./read.txt', 'utf-8', (err, data) => {
   if (err) {
     console.error(err);
   }
   console.log(data);
 });
 
-console.log("Am I first?");
+console.log('Am I first?');
 
 // Result:
 // file content

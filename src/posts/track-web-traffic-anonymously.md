@@ -1,10 +1,10 @@
 ---
-title: "Track web traffic anonymously"
-date: "2022-06-27"
+title: 'Track web traffic anonymously'
+date: '2022-06-27'
 excerpt: Implementing analytics on any web platform is not a difficult job but keeping it privacy-focused is
 tags:
-  - "Privacy"
-  - "Tech"
+  - 'Privacy'
+  - 'Tech'
 ---
 
 Implementing analytics on any web platform is not a difficult job but keeping it privacy-focused is. Considering the privacy of individual users, we should always think twice before considering any platform. I would like to divide this article into two main categories. First, we will talk about some industry-leading analytics tools, second will jump on open source solutions.
@@ -27,7 +27,7 @@ I recently came across an open-source analytics tool called **[umami.is](https:/
 
 Their goal is to provide you with a friendlier, privacy-focused alternative to Google Analytics and a free, open-sourced alternative to paid solutions.
 
-![Screenshot](/assets/images/umami-about-screenshot.png "Umami tool example screenshot")<small class="text-center block">Screenshot from [umami.is](https://umami.is/)</small>
+![Screenshot](/images/umami-about-screenshot.png 'Umami tool example screenshot')<small class="text-center block">Screenshot from [umami.is](https://umami.is/)</small>
 
 Data that is being collected by the tool can be exposed over a public URL so that your website users can also see that is being stored in analytics. Example: [https://app.umami.is/share/ISgW2qz8/flightphp.com](https://app.umami.is/share/ISgW2qz8/flightphp.com).
 

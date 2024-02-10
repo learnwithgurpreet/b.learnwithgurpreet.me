@@ -1,7 +1,6 @@
 ---
-layout: layouts/page.njk
+title: Tag Archive
 pagination:
-  reverse: true
   data: collections
   size: 1
   alias: tag
@@ -11,21 +10,26 @@ pagination:
     - post
     - posts
     - tagList
-  addAllPagesToCollections: false
-eleventyComputed:
-  title: Tagged "{{ tag }}"
+    - postFeed
+  addAllPagesToCollections: true
 permalink: /tags/{{ tag | slug }}/
-excerpt: List of posts tagged under "{{ tag }}"
 ---
 
-<header class="w-full mx-auto mb-12 text-left">
-  <h1 class="mb-3 text-3xl font-bold leading-tight md:text-4xl">
-    Tagged: {{ tag }}
-  </h1>
-</header>
+{% extends 'layouts/base.njk' %}
 
-<ul class="flex flex-col">
-  {% for post in collections[ tag ] | reverse %}
-    {% include "partials/_post_item.njk" %}
-  {% endfor %}
-</ul>
+{# Intro content #}
+{% set introHeading %}Posts filed under “{{ tag }}”{% endset %}
+{% set introHeadingLevel = '2' %}
+
+{# Post list content #}
+{% set postListHeadingLevel = '2' %}
+{% set postListHeading = 'Posts' %}
+{% set postListItems = collections[tag] %}
+
+{% block content %}
+  <main id="main-content" tabindex="-1">
+    {% include "partials/components/intro.njk" %}
+    {% include "partials/components/post-list.njk" %}
+    {% include "partials/components/pagination.njk" %}
+  </main>
+{% endblock %}

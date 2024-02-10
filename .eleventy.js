@@ -1,121 +1,98 @@
-const { DateTime } = require("luxon");
-const StripTags = require("./11ty/stripTags");
-const GroupBy = require("./11ty/groupBy");
-const LazyImages = require("./11ty/lazyLoad");
+const rssPlugin = require('@11ty/eleventy-plugin-rss');
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const fs = require('fs');
 
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginNavigation = require("@11ty/eleventy-navigation");
-const htmlMinify = require("./11ty/htmlMinify");
+// Import filters
+const dateFilter = require('./src/filters/date-filter.js');
+const markdownFilter = require('./src/filters/markdown-filter.js');
+const w3DateFilter = require('./src/filters/w3-date-filter.js');
 
-module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("src/assets/favicons");
-  eleventyConfig.addPassthroughCopy("src/assets/images");
-  eleventyConfig.addPassthroughCopy({
-    "./src/site.webmanifest": "site.webmanifest",
-    "./node_modules/chart.js/dist/chart.umd.js": "assets/js/chart.umd.js",
-    "./node_modules/chart.js/dist/chart.umd.js.map":
-      "assets/js/chart.umd.js.map",
-  });
+// Import transforms
+const htmlMinTransform = require('./src/transforms/html-min-transform.js');
+const parseTransform = require('./src/transforms/parse-transform.js');
 
-  // Add plugins
-  eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginSyntaxHighlight);
-  eleventyConfig.addPlugin(pluginNavigation);
-  eleventyConfig.addPlugin(LazyImages, {});
-  eleventyConfig.addPlugin(htmlMinify);
+// Import data files
+const site = require('./src/_data/site.json');
 
-  eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
-      "dd MMMM yyyy"
-    );
-  });
-  eleventyConfig.addFilter(
-    "readtime",
-    (str) => `${Math.ceil(str.split(" ").length / 200)} min read`
-  );
+module.exports = function(config) {
+  // Filters
+  config.addFilter('dateFilter', dateFilter);
+  config.addFilter('markdownFilter', markdownFilter);
+  config.addFilter('w3DateFilter', w3DateFilter);
 
-  // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
-  });
+  // Layout aliases
+  config.addLayoutAlias('home', 'layouts/home.njk');
 
-  // Get the first `n` elements of a collection.
-  eleventyConfig.addFilter("head", (array, n) => {
-    if (!Array.isArray(array) || array.length === 0) {
-      return [];
-    }
-    if (n < 0) {
-      return array.slice(n);
-    }
+  // Transforms
+  config.addTransform('htmlmin', htmlMinTransform);
+  config.addTransform('parse', parseTransform);
 
-    return array.slice(0, n);
-  });
-
-  // Return the smallest number argument
-  eleventyConfig.addFilter("min", (...numbers) => {
-    return Math.min.apply(null, numbers);
+  // Passthrough copy
+  config.addPassthroughCopy('src/fonts');
+  config.addPassthroughCopy('src/images');
+  config.addPassthroughCopy('src/js');
+  config.addPassthroughCopy('src/admin/config.yml');
+  config.addPassthroughCopy('src/admin/previews.js');
+  config.addPassthroughCopy('node_modules/nunjucks/browser/nunjucks-slim.js');
+  config.addPassthroughCopy('src/robots.txt');
+  config.addPassthroughCopy({
+    './node_modules/chart.js/dist/chart.umd.js': '/js/components/chart.umd.js',
+    './node_modules/chart.js/dist/chart.umd.js.map': '/js/components/chart.umd.js.map'
   });
 
   function filterTagList(tags) {
-    return (tags || []).filter(
-      (tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1
-    );
+    return (tags || []).filter(tag => ['posts'].indexOf(tag) === -1);
   }
 
-  eleventyConfig.addFilter("filterTagList", filterTagList);
-  eleventyConfig.addFilter(
-    "groupByYear",
-    GroupBy((post) => post.date.getFullYear())
-  );
-  eleventyConfig.addCollection("tagList", function (collection) {
+  const now = new Date();
+
+  // Custom collections
+  const livePosts = post => post.date <= now && !post.data.draft;
+  config.addCollection('posts', collection => {
+    return [
+      ...collection.getFilteredByGlob('./src/posts/*.md').filter(livePosts)
+    ].reverse();
+  });
+
+  config.addCollection('postFeed', collection => {
+    return [...collection.getFilteredByGlob('./src/posts/*.md').filter(livePosts)]
+      .reverse()
+      .slice(0, site.maxPostsPerPage);
+  });
+
+  config.addCollection('tagList', function(collection) {
     let tagSet = new Set();
-    collection.getAll().forEach((item) => {
-      (item.data.tags || []).forEach((tag) => tagSet.add(tag));
+    collection.getAll().forEach(item => {
+      (item.data.tags || []).forEach(tag => tagSet.add(tag));
     });
 
     return filterTagList([...tagSet]);
   });
 
-  eleventyConfig.addFilter("postByTag", (array, tag) => {
-    return array.filter((p) => {
-      return p.data && p.data.tags && p.data.tags.includes(tag);
-    });
+  // Plugins
+  config.addPlugin(rssPlugin);
+  config.addPlugin(syntaxHighlight);
+
+  // 404
+  config.setBrowserSyncConfig({
+    callbacks: {
+      ready: function(err, browserSync) {
+        const content_404 = fs.readFileSync('dist/404.html');
+
+        browserSync.addMiddleware('*', (req, res) => {
+          // Provides the 404 content without redirect.
+          res.write(content_404);
+          res.end();
+        });
+      }
+    }
   });
 
-  eleventyConfig.addFilter("excerpt", (content) => StripTags(content));
-
   return {
-    // Control which files Eleventy will process
-    // e.g.: *.md, *.njk, *.html, *.liquid
-    templateFormats: ["md", "njk", "html", "liquid"],
-
-    // Pre-process *.md files with: (default: `liquid`)
-    markdownTemplateEngine: "njk",
-
-    // Pre-process *.html files with: (default: `liquid`)
-    htmlTemplateEngine: "njk",
-
-    // -----------------------------------------------------------------
-    // If your site deploys to a subdirectory, change `pathPrefix`.
-    // Don’t worry about leading and trailing slashes, we normalize these.
-
-    // If you don’t have a subdirectory, use "" or "/" (they do the same thing)
-    // This is only used for link URLs (it does not affect your file structure)
-    // Best paired with the `url` filter: https://www.11ty.dev/docs/filters/url/
-
-    // You can also pass this in on the command line using `--pathprefix`
-
-    // Optional (default is shown)
-    pathPrefix: "/",
-    // -----------------------------------------------------------------
-
-    // These are all optional (defaults are shown):
     dir: {
-      input: "src",
-      includes: "_includes",
-      data: "_data",
-      output: "_site",
+      input: 'src',
+      output: 'dist'
     },
+    passthroughFileCopy: true
   };
 };

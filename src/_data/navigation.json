@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "text": "Home",
+      "url": "/",
+      "external": false
+    },
+    {
+      "text": "Archive",
+      "url": "/posts",
+      "external": false
+    },
+    {
+      "text": "Tags",
+      "url": "/tags",
+      "external": false
+    },
+    {
+      "text": "Uses",
+      "url": "/uses",
+      "external": false
+    },
+    {
+      "text": "Contact",
+      "url": "/contact",
+      "external": false
+    }
+  ]
+}

@@ -1,43 +1,45 @@
 {
   "name": "learnwithgurpreet-blog",
-  "version": "1.1.0",
-  "description": "Personal technology blog by Gurpreet Singh",
+  "version": "0.7.0",
+  "description": "A simple Eleventy starter kit to help you have a blog of your own",
+  "main": "index.js",
+  "dependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
+    "@tbranyen/jsdom": "^13.0.0",
+    "concurrently": "^4.1.2",
+    "html-minifier": "^4.0.0",
+    "image-size": "^0.8.3",
+    "json-to-scss": "^1.5.0",
+    "sass": "^1.26.3",
+    "semver": "^6.3.0",
+    "slugify": "^1.4.0",
+    "stalfos": "github:hankchizljaw/stalfos#c8971d22726326cfc04089b2da4d51eeb1ebb0eb"
+  },
+  "devDependencies": {
+    "bl": "^3.0.0",
+    "chokidar-cli": "^2.1.0",
+    "cross-env": "^5.2.1",
+    "make-dir-cli": "^2.0.0",
+    "prettier": "^1.19.1"
+  },
   "scripts": {
-    "start": "npm-run-all -p dev:*",
-    "build": "run-s build:*",
-    "dev:11ty": "eleventy --serve",
-    "dev:css": "tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/styles.css --watch --postcss",
-    "build:11ty": "ELEVENTY_PRODUCTION=true eleventy",
-    "build:css": "NODE_ENV=production tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/styles.css --postcss --minify"
+    "sass:tokens": "npx json-to-scss src/_data/tokens.json src/scss/_tokens.scss",
+    "sass:process": "npm run sass:tokens && sass src/scss/global.scss src/_includes/assets/css/global.css --style=compressed",
+    "start": "concurrently \"npm run sass:process -- --watch\" \"chokidar \\\"src/_includes/**\\\" -c \\\"\" \"npm run serve\"",
+    "serve": "cross-env ELEVENTY_ENV=development npx eleventy --serve",
+    "production": "npm run sass:process && npx eleventy"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:gsin11/learnwithgurpreet.git"
+    "url": "git+https://github.com/hankchizljaw/hylia.git"
   },
+  "keywords": [],
+  "author": "",
   "license": "MIT",
-  "issues": {
-    "url": "https://github.com/gsin11/learnwithgurpreet/issues"
+  "bugs": {
+    "url": "https://github.com/hankchizljaw/hylia/issues"
   },
-  "dependencies": {
-    "chart.js": "^4.4.0",
-    "jsdom": "^21.1.1",
-    "luxon": "^2.4.0",
-    "striptags": "^3.2.0"
-  },
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-navigation": "^0.3.3",
-    "@11ty/eleventy-plugin-rss": "^1.1.2",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
-    "@tailwindcss/typography": "^0.5.10",
-    "autoprefixer": "^10.4.16",
-    "crypto-js": "^4.1.1",
-    "html-minifier": "^4.0.0",
-    "node-html-parser": "^6.1.4",
-    "npm-run-all": "^4.1.5",
-    "path": "^0.12.7",
-    "postcss": "^8.4.33",
-    "sharp": "^0.33.2",
-    "tailwindcss": "^3.4.1"
-  }
+  "homepage": "https://github.com/hankchizljaw/hylia#readme"
 }

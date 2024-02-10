@@ -1,10 +1,10 @@
 ---
-title: "Top 5 ways to structure a frontend project"
-date: "2021-09-11"
+title: 'Top 5 ways to structure a frontend project'
+date: '2021-09-11'
 excerpt: Open-source projects you get very little chance to structure the project, but you still can set guidelines upfront
 tags:
-  - "Tech"
-  - "Thoughts"
+  - 'Tech'
+  - 'Thoughts'
 ---
 
 While working on the open-source projects you get very little chance to structure the project, but you still can set some guidelines upfront and stick to them.
@@ -27,7 +27,7 @@ Write something about the project or module, like some introduction to the proje
 
 Provide clear installation steps so new team members can easily set up. Make sure you address Mac/Linux vs. Windows path problems and other important points like node version etc.
 
-![carbon](/assets/images/EBC7dKHqU-1024x1016.png "carbon.png")
+![carbon](/images/EBC7dKHqU-1024x1016.png 'carbon.png')
 
 Example screenshot
 
@@ -41,7 +41,7 @@ I would recommend creating a new project repository via the GUI tool on GitHub s
 
 Sometimes while working on an open-source personal project you get very little time to keep track of your progress. I would suggest creating a Kanban board to track your progress.
 
-![kanban board](/assets/images/cECKytumv-1024x387.png "Screenshot from 2021-09-11 20-30-38.png")
+![kanban board](/images/cECKytumv-1024x387.png 'Screenshot from 2021-09-11 20-30-38.png')
 
 Kanban board on github
 

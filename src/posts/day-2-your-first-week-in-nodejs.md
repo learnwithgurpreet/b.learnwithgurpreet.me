@@ -1,11 +1,11 @@
 ---
-title: "Day 2 - Your first week in NodeJS"
+title: 'Day 2 - Your first week in NodeJS'
 date: 2021-08-04
 excerpt: I believe you have already read my previous article where I explained, the basics of Node.js
 tags:
-  - "NodeJS"
-  - "Tech"
-  - "NodeJS Beginner Course"
+  - 'NodeJS'
+  - 'Tech'
+  - 'NodeJS Beginner Course'
 ---
 
 ## Prerequisite
@@ -30,7 +30,7 @@ Let’s quickly jump on client-side server creation. We will use the core Node.j
 
 We will divide this into two sections, request and response.
 
-![request and response](/assets/images/NRrw-CXTO-1024x538.png "request-response.png")
+![request and response](/images/NRrw-CXTO-1024x538.png 'request-response.png')
 
 Request and Response architecture
 
@@ -39,15 +39,15 @@ Request and Response architecture
 ```js
 // app.js
 
-const http = require("http");
+const http = require('http');
 
 const server = http.createServer((request, response) => {
-  response.writeHead(200, { "Content-Type": "application/JSON" });
-  response.end(JSON.stringify({ name: "John", employee_id: "DS123" }));
+  response.writeHead(200, {'Content-Type': 'application/JSON'});
+  response.end(JSON.stringify({name: 'John', employee_id: 'DS123'}));
 });
 
-server.listen(3000, "127.0.0.1", () =>
-  console.log("Server is started on http://127.0.0.1:3000")
+server.listen(3000, '127.0.0.1', () =>
+  console.log('Server is started on http://127.0.0.1:3000')
 );
 ```
 
@@ -91,24 +91,24 @@ It is important to understand response headers here, If you check I am sending t
 ```js
 // app.js
 
-const http = require("http");
-const fs = require("fs");
+const http = require('http');
+const fs = require('fs');
 
 const server = http.createServer((request, response) => {
   console.log(`request made: ${request.url}`);
-  response.writeHead(200, { "Content-Type": "text/html" });
-  const readStream = fs.createReadStream(`${__dirname}/index.html`, "utf8");
+  response.writeHead(200, {'Content-Type': 'text/html'});
+  const readStream = fs.createReadStream(`${__dirname}/index.html`, 'utf8');
   readStream.pipe(response);
 });
 
-server.listen(3000, "127.0.0.1", () =>
-  console.log("Server is started on http://127.0.0.1:3000")
+server.listen(3000, '127.0.0.1', () =>
+  console.log('Server is started on http://127.0.0.1:3000')
 );
 ```
 
 #### Output
 
-![webpage output](/assets/images/4YVWO-UmXp-1024x585.png "webpage output")
+![webpage output](/images/4YVWO-UmXp-1024x585.png 'webpage output')
 
 homepage
 
@@ -217,35 +217,35 @@ We will quickly create another `HTML` page so users can navigate through these t
 ```js
 // app.js
 
-const http = require("http");
-const fs = require("fs");
+const http = require('http');
+const fs = require('fs');
 
 const server = http.createServer((request, response) => {
   let readStream;
   const url = request.url;
 
   console.log(`request made: ${url}`);
-  response.writeHead(200, { "Content-Type": "text/html" });
+  response.writeHead(200, {'Content-Type': 'text/html'});
 
-  if (url === "/contact") {
-    readStream = fs.createReadStream(`${__dirname}/contact.html`, "utf8");
+  if (url === '/contact') {
+    readStream = fs.createReadStream(`${__dirname}/contact.html`, 'utf8');
   } else {
-    readStream = fs.createReadStream(`${__dirname}/index.html`, "utf8");
+    readStream = fs.createReadStream(`${__dirname}/index.html`, 'utf8');
   }
 
   readStream.pipe(response);
 });
 
-server.listen(3000, "127.0.0.1", () =>
-  console.log("Server is started on http://127.0.0.1:3000")
+server.listen(3000, '127.0.0.1', () =>
+  console.log('Server is started on http://127.0.0.1:3000')
 );
 ```
 
-![home page](/assets/images/pokvIuVoQV-1024x520.png "index page")
+![home page](/images/pokvIuVoQV-1024x520.png 'index page')
 
 homepage
 
-![contact page](/assets/images/4c3Oe6sO0-1024x546.png "contact page")
+![contact page](/images/4c3Oe6sO0-1024x546.png 'contact page')
 
 Contact Page
 
@@ -265,7 +265,7 @@ You have noticed before whenever we were making any changes to our `app.js` file
 
 You can install this package with `npm install nodemon` and you will see another directory created with some packages called `node_modules`.
 
-![directory structure](/assets/images/D5gk3lR9A2.png "directory structure")
+![directory structure](/images/D5gk3lR9A2.png 'directory structure')
 
 We will now quickly open our `package.json` file and make the following changes:
 

@@ -1,17 +1,17 @@
 ---
-title: "Eleventy Resume Builder"
-date: "2024-01-05"
+title: 'Eleventy Resume Builder'
+date: '2024-01-05'
 excerpt: Despite searching the internet, I couldn't find a quick starter for my online resume project, not even on the official 11ty start page. Consequently, I decided to invest some time in creating one and making it available as a starter project for a broader audience.
 tags:
-  - "Tech"
-  - "11ty"
+  - 'Tech'
+  - '11ty'
 ---
 
 > Exciting news! This project has been featured in the [Official Eleventy Starter Projects](https://www.11ty.dev/docs/starter/).
 
-![11ty resume template](/assets/images/11ty-resume-template.png)
+![11ty resume template](/images/11ty-resume-template.png)
 
-![11ty resume template lighthouse scores](/assets/images/11ty-resume-template-lighthouse-score.png)
+![11ty resume template lighthouse scores](/images/11ty-resume-template-lighthouse-score.png)
 
 **[View Demo](https://www.gurpreet-singh.in/)**
 

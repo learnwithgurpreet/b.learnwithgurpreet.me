@@ -1,7 +1,0 @@
-<ul class="text-center space-x-4 space-y-4">
-  {% for tag in collections.tagList %}
-    {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-    {% set postCount = collections.posts | postByTag(tag) | length %}
-    <li class="inline-block"><a class="p-1 highlight" href="{{ tagUrl | url }}">{{ tag }}({{ postCount }})</a></li>
-  {%- endfor %}
-</ul>

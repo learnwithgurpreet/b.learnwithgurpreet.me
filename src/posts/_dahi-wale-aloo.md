@@ -1,13 +1,13 @@
 ---
 title: Dahi wale Aloo
-date: "2023-09-03"
+date: '2023-09-03'
 eleventyExcludeFromCollections: true
 excerpt: Dahi wale Aloo (Spicy yoghurt potato gravy), can be done with Vegan yogurt as well.
 tags:
-  - "Cooking"
+  - 'Cooking'
 ---
 
-![Dahi wale aloo](/assets/images/dahi-wale-aloo.png "Dahi wale aloo")
+![Dahi wale aloo](/images/dahi-wale-aloo.png 'Dahi wale aloo')
 
 ## Ingredients
 
