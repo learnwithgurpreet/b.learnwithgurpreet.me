@@ -16,6 +16,11 @@
       "external": false
     },
     {
+      "text": "Stats",
+      "url": "/stats",
+      "external": false
+    },
+    {
       "text": "Uses",
       "url": "/uses",
       "external": false

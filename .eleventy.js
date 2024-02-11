@@ -14,11 +14,28 @@ const parseTransform = require('./src/transforms/parse-transform.js');
 // Import data files
 const site = require('./src/_data/site.json');
 
+function groupBy(transformer) {
+  return function(arr) {
+    const grouped = {};
+    arr.forEach(a => {
+      const _key = transformer(a);
+      if (grouped[_key]) grouped[_key].push(a);
+      else grouped[_key] = [a];
+    });
+
+    return Object.entries(grouped);
+  };
+}
+
 module.exports = function(config) {
   // Filters
   config.addFilter('dateFilter', dateFilter);
   config.addFilter('markdownFilter', markdownFilter);
   config.addFilter('w3DateFilter', w3DateFilter);
+  config.addFilter(
+    'groupByYear',
+    groupBy(post => post.date.getFullYear())
+  );
 
   // Layout aliases
   config.addLayoutAlias('home', 'layouts/home.njk');
