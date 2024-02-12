@@ -3,7 +3,7 @@ layout: home
 title: Hi, gS Here!
 postsHeading: Latest posts
 archiveButtonText: See all posts
-metaDesc: 'I am working with Publicis Sapienr as senior architect, experience engineering.'
+metaDesc: 'I am working with Publicis Sapient as senior architect, experience engineering'
 socialImage: ''
 ---
 
