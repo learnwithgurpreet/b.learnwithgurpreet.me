@@ -1,4 +1,4 @@
-Sitemap: https://www.learnwithgurpreet.com/feed/feed.xml
+Sitemap: https://www.learnwithgurpreet.com/sitemap.xml
 
 User-agent: GPTBot
 Disallow: /

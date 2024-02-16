@@ -14,5 +14,6 @@
   "maxPostsPerPage": 6,
   "paymentPointer": "",
   "faviconPath": "/images/favicon.png",
+  "authorImage": "/images/author.jpg",
   "googleSiteVerification": "QfEK-rmBKbXGQ6woeJAgPBlfEJyLpoLmX3LwFqpYAcg"
 }
