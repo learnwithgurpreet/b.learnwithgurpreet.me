@@ -29,11 +29,6 @@
       "text": "Contact",
       "url": "/contact",
       "external": false
-    },
-    {
-      "text": "GitHub",
-      "url": "https://github.com/learnwithgurpreet",
-      "external": true
     }
   ]
 }
