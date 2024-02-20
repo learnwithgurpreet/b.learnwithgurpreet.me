@@ -15,5 +15,6 @@
   "paymentPointer": "",
   "faviconPath": "/images/favicon.png",
   "authorImage": "/images/author.jpg",
-  "googleSiteVerification": "QfEK-rmBKbXGQ6woeJAgPBlfEJyLpoLmX3LwFqpYAcg"
+  "googleSiteVerification": "QfEK-rmBKbXGQ6woeJAgPBlfEJyLpoLmX3LwFqpYAcg",
+  "webmention": "https://webmention.io/www.learnwithgurpreet.com/webmention"
 }
