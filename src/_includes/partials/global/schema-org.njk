@@ -18,8 +18,9 @@
           "url": "{{ site.mastodon }}"
       },
       "creator": ["{{ site.authorName }}"],
-      "dateCreated": "{{ date }}",
-      "datePublished": "{{ date }}",
+      "dateCreated": "{{ date | w3DateFilter }}",
+      "datePublished": "{{ date | w3DateFilter }}",
+      "dateModified": "{{ page.inputPath | stat("mtime") | w3DateFilter }}",
       "publisher": {
           "@type": "Organization",
           "name": "{{ site.name }}",

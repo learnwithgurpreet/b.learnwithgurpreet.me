@@ -37,6 +37,18 @@ module.exports = function(config) {
     groupBy(post => post.date.getFullYear())
   );
 
+  /**
+   * USAGE:
+   * {{ page.inputPath | stat("atime") }} -- The timestamp indicating the last time this file was accessed.
+   * birthtime: {{ page.inputPath | stat }} -- The timestamp indicating the creation time of this file.
+   * mtime: {{ page.inputPath | stat: "mtime" }} -- The timestamp indicating the last time this file was modified.
+   * {{ page.inputPath | stat("ctime") }} --  The timestamp indicating the last time the file status was changed.
+   * size: {{ page.inputPath | stat: "size" }}
+   */
+  config.addFilter('stat', (file, field = 'birthtime') => {
+    return fs.statSync(file)[field];
+  });
+
   // Layout aliases
   config.addLayoutAlias('home', 'layouts/home.njk');
 
