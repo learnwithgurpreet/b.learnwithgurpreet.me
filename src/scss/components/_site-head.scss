@@ -4,4 +4,8 @@
     text-decoration: none;
     color: var(--color-text);
   }
+
+  svg {
+    fill: var(--color-theme-feature-text);
+  }
 }
