@@ -19,13 +19,13 @@
   <main id="main-content" tabindex="-1">
     <article class="[ post ] [ h-entry ]">
       {% include "partials/components/intro.njk" %}
-      <div class="[ post__body ] [ inner-wrapper ] [ leading-loose pad-top-900 {{ 'pad-bottom-900' if not site.enableThirdPartyComments }} text-500 ] [ sf-flow ] [ e-content ]">
+      <div class="[ post__body ] [ inner-wrapper ] [ leading-loose pad-top-900 {{ 'pad-bottom-900' if not site.paymentPointer }} text-500 ] [ sf-flow ] [ e-content ]">
         {{ content | safe }}
       </div>
-      {% if site.enableThirdPartyComments %}
+      {% if site.paymentPointer %}
         <hr />
         <aside class="[ post__body ] [ inner-wrapper ] [ pad-bottom-900 text-500 ]">
-          {% include "partials/global/third-party-comments.njk" %}
+          {% include "partials/global/payment-pointer.njk" %}
         </aside>
       {% endif %}
       {% if tags %}
