@@ -26,6 +26,10 @@ npm run sass:process
 npm run sass:tokens
 ```
 
+## UML diagrams
+
+I am using [Diagrams.net](https://app.diagrams.net/) to define UML diagrams.
+
 ## Getting started with the CMS
 
 Before you can use the CMS, you need to do some config in Netlify. Luckily they provide a [very handy guide to get started](https://www.netlify.com/docs/identity/).
