@@ -11,6 +11,10 @@
   {% set pageDesc = metaDesc %}
 {% endif %}
 
+{% if excerpt %}
+  {% set metaDesc = excerpt %}
+{% endif %}
+
 <title>{{ pageTitle }}</title>
 <link rel="canonical" href="{{ currentUrl }}" />
 <link rel="manifest" href="/manifest.json" />
