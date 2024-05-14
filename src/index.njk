@@ -1,5 +1,5 @@
 ---
-layout: layouts/page.njk
+layout: layouts/home.njk
 image: /assets/images/profile-pic.jpg
 pagination:
   data: collections.posts
@@ -12,42 +12,25 @@ eleventyNavigation:
 excerpt: Experienced Front-end Technologist | Expert in jQuery, JavaScript, HTML5, CSS3, NodeJS, and ReactJS
 ---
 
-<ul class="flex flex-col">
-{% for post in postslist %}
-  {% include "partials/_post_item.njk" %}
-{% endfor %}
-</ul>
-
+{% set showDescription = true %}
+{% include "partials/_page_heading.njk" %}
+<div class="flex flex-col space-y-12 divide-y divide-gray-200">
+  {% for post in postslist %}
+    {% include "partials/_post_item.njk" %}
+  {% endfor %}
+</div>
 {% if pagination.pageLinks.length > 1 %}
-  <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between my-6">
-    <div class="pb-6 sm:pb-0">
-      <h3 class="text-md">
-        Showing
-        <span class="font-semibold">{{ (pagination.pageNumber * pagination.size) + 1 }}</span>
-        to
-        <span class="font-semibold">
-          {% if pagination.nextPageLink %}
-            {{ (pagination.pageNumber * pagination.size) + pagination.size }}
-          {% else %}
-            {{ length }}
-          {% endif %}
-        </span>
-        of
-        <span class="font-semibold">{{ collections.posts.length }}</span>
-        results
-      </h3>
-    </div>
-    <nav class="pagination space-x-4 flex justify-center">
-      {% if pagination.previousPageLink %}
-        <a class="relative inline-flex items-center py-1 text-md text-sm font-medium" href="{{ pagination.previousPageHref }}">Previous</a>
-      {% else %}
-        <span class="relative inline-flex items-center py-1 text-sm font-medium">Previous</span>
-      {% endif %}
-      {% if pagination.nextPageLink %}
-        <a class="relative inline-flex items-center py-1 text-sm font-medium" href="{{ pagination.nextPageHref }}">Next</a>
-      {% else %}
-        <span class="relative inline-flex items-center py-1 text-sm font-medium">Next</span>
-      {% endif %}
-    </nav>
-  </div>
+
 {% endif %}
+<nav class="flex flex-col items-center justify-center pt-12 mt-12 space-x-0 space-y-2 border-t border-gray-200 md:space-x-2 md:space-y-0 md:flex-row">
+  {% if pagination.previousPageLink %}
+    <a class="w-full rounded-full btn btn-light btn-xl md:w-auto" href="{{ pagination.previousPageHref }}">Previous Page</a>
+  {% else %}
+    <span class="w-full rounded-full btn btn-light btn-xl md:w-auto">Previous Page</span>
+  {% endif %}
+  {% if pagination.nextPageLink %}
+    <a class="w-full rounded-full btn btn-light btn-xl md:w-auto" href="{{ pagination.nextPageHref }}">Next Page</a>
+  {% else %}
+    <span class="w-full rounded-full btn btn-light btn-xl md:w-auto">Next Page</span>
+  {% endif %}
+</nav>

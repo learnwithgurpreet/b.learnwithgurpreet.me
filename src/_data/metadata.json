@@ -2,7 +2,7 @@
   "title": "Learn with Gurpreet",
   "url": "https://www.learnwithgurpreet.com",
   "language": "en",
-  "description": "Every space has a story",
+  "description": "Building a greener web: where code meets sustainability to shape a better digital future. 🌍🌱",
   "feed": {
     "path": "/feed/",
     "xml": "feed.xml",
@@ -12,7 +12,6 @@
     "name": "Gurpreet Singh",
     "title": "Hi, I'm gS",
     "email": "gsin.hello@gmail.com",
-    "short_description": "Building a greener web: where code meets sustainability to shape a better digital future. 🌍🌱",
     "description": "I am working as Senior Architect eXperience Engineering (front-end technologist) with Publicis Sapient. Having more than 15 years of experience in the area of jQuery, JavaScript, HTML5, and CSS3. My expertise is to work on full stack-based projects using NodeJS and ReactJS.",
     "linkedin": "https://linkedin.com/in/gsin11/",
     "github": "https://github.com/learnwithgurpreet",

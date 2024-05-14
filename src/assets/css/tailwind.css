@@ -4,25 +4,41 @@
 
 @layer base {
   html {
-    @apply antialiased sm:text-lg md:text-xl lg:text-2xl xl:text-3xl;
+    @apply antialiased;
   }
   ::selection {
     @apply bg-gray-950 text-gray-50 dark:bg-gray-50 dark:text-gray-950;
   }
 }
 
-a {
-  @apply underline underline-offset-[0.1em] hover:underline-offset-[0.2em] transition-all duration-150;
-}
-
-.base-color {
-  @apply bg-gray-50 text-gray-950 dark:bg-gray-950 dark:text-gray-50;
-}
-
-.highlight {
-  @apply bg-gray-100 dark:bg-gray-900;
-}
-
 .prose p > img {
   @apply shadow-lg mx-auto;
+}
+
+.btn.btn-sm, .prose .btn.btn-sm {
+  @apply rounded-md text-sm px-3 py-1;
+}
+
+.btn-light, .prose a.btn-light {
+  @apply bg-gray-100 text-gray-900;
+}
+
+.btn, .prose a.btn {
+  @apply border-current cursor-pointer inline-block font-medium pointer-events-auto text-center no-underline select-none align-middle transition-all duration-150 text-sm px-2 py-3 will-change-transform;
+}
+
+.btn.btn-xl, .prose .btn.btn-xl {
+  @apply text-xl px-6 py-4;
+}
+
+.btn:active, .prose a.btn:active {
+  @apply scale-95;
+}
+
+.btn:active, .btn:focus, .prose a.btn:active, .prose a.btn:focus {
+  @apply outline-2 outline-offset-2 outline-black shadow-purple-100;
+}
+
+.btn-light:hover, .prose a.btn-light:hover {
+  @apply bg-gray-300;
 }

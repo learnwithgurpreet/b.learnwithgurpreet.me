@@ -1,0 +1,8 @@
+{% set pageHeading = title or metadata.title %}
+
+<div class="mb-12 text-left md:text-center">
+  <h1 class="mb-2 text-3xl font-extrabold leading-tight text-gray-900">{{ pageHeading }}</h1>
+  {% if showDescription %}
+    <p class="text-lg text-gray-500">{{ metadata.description }}</p>
+  {% endif %}
+</div>

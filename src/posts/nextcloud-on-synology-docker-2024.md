@@ -34,7 +34,7 @@ Now that we have required folders in place, its time to run docker container.
 
 I suggest opting for the `ssh` method to run the container instead of relying on the Container Manager since configuring it through the Container Manager didn't yield successful results for me.
 
-```
+```sh
 $ docker run -d \
   --name nextcloud
   -e TZ=Europe/Berlin \
