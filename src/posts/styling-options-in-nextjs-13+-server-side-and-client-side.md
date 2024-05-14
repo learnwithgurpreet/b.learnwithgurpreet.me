@@ -74,7 +74,7 @@ export default function RootLayout({children}) {
 
 As per [NextJS documentation](https://nextjs.org/docs/app/building-your-application/styling/css-in-js), CSS-in-JS libraries which require runtime JavaScript are not currently supported in Server Components. However the team to is working on it to make it possible to work in both ways.
 
-I would personally don't recommend since it will bring lot of hassle in production applications.
+I would personally don't recommend since it will bring lot of hassle in production applications and also not good in performance with growing application.
 
 ## External StyleSheets
 
