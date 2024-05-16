@@ -1,0 +1,12 @@
+---
+title: About
+permalink: /about/index.html
+description: 'Gurpreet Singh, working with Publicis Sapient as senior architect, experience engineering'
+layout: page
+---
+
+I am working as Senior Architect eXperience Engineering (front-end technologist) with Publicis Sapient.
+
+Having more than 15 years of experience in the area of jQuery, JavaScript, HTML5, and CSS3. My expertise is to work on full stack-based projects using NodeJS and ReactJS.
+
+I love to capture landscapes, long exposures, and portraits as a hobby photographer 📸
