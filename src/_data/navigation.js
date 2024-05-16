@@ -13,10 +13,6 @@ module.exports = {
       url: '/tags/'
     },
     {
-      text: 'Stats',
-      url: '/stats/'
-    },
-    {
       text: 'Uses',
       url: '/uses/'
     }
