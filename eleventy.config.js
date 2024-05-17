@@ -9,6 +9,8 @@
 
 // JSDoc comment: Hint VS Code for eleventyConfig autocompletion. © Henry Desroches - https://gist.github.com/xdesro/69583b25d281d055cd12b144381123bf
 
+const pluginPWA = require('eleventy-plugin-pwa-v2');
+
 /**
  *  @param {import("@11ty/eleventy/src/UserConfig")} eleventyConfig
  */
@@ -113,6 +115,26 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPlugin(inclusiveLangPlugin);
   eleventyConfig.addPlugin(bundlerPlugin);
   eleventyConfig.setLibrary('md', markdownLib);
+
+  // eleventy-plugin-pwa-v2
+  eleventyConfig.addPlugin(pluginPWA, {
+    cacheId: 'lwg',
+    runtimeCaching: [
+      {
+        urlPattern: /\/$/,
+        handler: 'NetworkFirst'
+      },
+      {
+        urlPattern: /\.html$/,
+        handler: 'NetworkFirst'
+      },
+      {
+        urlPattern:
+          /^.*\.(jpg|png|mp4|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
+        handler: 'StaleWhileRevalidate'
+      }
+    ]
+  });
 
   // Add support for YAML data files with .yaml extension
   eleventyConfig.addDataExtension('yaml', contents => yaml.load(contents));
