@@ -86,5 +86,10 @@ module.exports = {
     allow: true,
     infoText: 'View this page on GitHub'
   },
+  buyMeACoffee: {
+    allow: true,
+    text: 'Buy me a coffee',
+    link: 'https://www.buymeacoffee.com/gurpreet.singh'
+  },
   easteregg: true
 };
