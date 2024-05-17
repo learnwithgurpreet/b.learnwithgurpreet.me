@@ -1,9 +1,4 @@
-.theme-switch h2 {
-  font-size: var(--size-step-min-1);
-  font-family: var(--font-base);
-}
-
-.theme-switch .button {
+#theme-toggle {
   --button-border: var(--color-bg-accent-2);
   border-radius: var(--border-radius);
   font-size: var(--size-step-min-2);
@@ -13,7 +8,7 @@
   text-transform: uppercase;
 }
 
-.theme-switch .button[aria-pressed='true'] {
+#theme-toggle[aria-pressed='true'] {
   --_color-primary-contrast: color-mix(
     in oklab,
     var(--color-primary) 85%,

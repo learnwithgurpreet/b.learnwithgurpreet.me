@@ -8,13 +8,11 @@ const theme = {
 
 window.onload = () => {
   const themeToggle = document.querySelector('#theme-toggle');
-  const switcher = document.querySelector('[data-theme-switcher]');
 
-  if (!switcher) {
+  if (!themeToggle) {
     return;
   }
 
-  switcher.removeAttribute('hidden');
   reflectPreference();
 
   themeToggle.addEventListener('click', () => onClick(theme.value));
