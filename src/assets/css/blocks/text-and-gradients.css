@@ -13,3 +13,7 @@
   background-repeat: repeat;
   background-clip: text;
 }
+
+.text-primary {
+  color: var(--color-primary-highlight);
+}
