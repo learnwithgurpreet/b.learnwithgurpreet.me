@@ -30,6 +30,6 @@ In this article, we'll dive into the fundamentals of state handling in React, ex
 
 ## Application Flow
 
-{% eleventyImage "./src/assets/images/blog/state-management.drawio.svg", "Application flow with selection of state management options" %}
+{% eleventyImage "./src/assets/images/blog/state-management.jpg", "Application flow with selection of state management options" %}
 
 With the help of above example, you can decide which path to got with.
