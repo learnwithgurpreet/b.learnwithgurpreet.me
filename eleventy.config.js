@@ -125,7 +125,8 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addPassthroughCopy({
     './node_modules/chart.js/dist/chart.umd.js': '/assets/scripts/chart.umd.js',
-    './node_modules/chart.js/dist/chart.umd.js.map': '/assets/scripts/chart.umd.js.map'
+    './node_modules/chart.js/dist/chart.umd.js.map': '/assets/scripts/chart.umd.js.map',
+    './src/sw.js': '/sw.js'
   });
 
   // to root

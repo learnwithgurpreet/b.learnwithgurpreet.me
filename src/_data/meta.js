@@ -92,5 +92,6 @@ module.exports = {
     text: 'Buy me a coffee',
     link: 'https://www.buymeacoffee.com/gurpreet.singh'
   },
-  easteregg: false
+  easteregg: false,
+  sw: true
 };
