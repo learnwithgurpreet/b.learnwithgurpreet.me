@@ -11,7 +11,7 @@ tags:
 
 {% eleventyImage "./src/assets/images/blog/11ty-resume-template-lighthouse-score.png", "11ty resume template lighthouse scores" %}
 
-**[View Demo](https://www.gurpreet-singh.in/)**
+**[View Demo](https://www.gurpreetsingh.me/)**
 
 For the past couple of years, I've been utilizing [11ty](https://www.11ty.dev/) as the framework for my personal projects. It has quickly become my preferred tool because it avoids unnecessary JavaScript when it's not essential.
 
