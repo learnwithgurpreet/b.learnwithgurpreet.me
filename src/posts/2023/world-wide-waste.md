@@ -41,7 +41,7 @@ Use Dark mode, it can save up to 30% of battery time.
 
 HTML and CSS define the layout of your webpage, and what colors will be shown to the users. There are `n` number of frameworks out there in the market of open-source that you can use to make your web development faster. These frameworks and libraries can easily kill your website's performance and bloat with a lot of unnecessary code that you might not need at all.
 
-[Learn with Gurpreet](https://www.learnwithgurpreet.com) is developed using custom CSS and [11ty](https://www.11ty.dev/) framework which only helps to pre-render all the pages and I am using Vercel to deploy my application. There is no need to have 100KB of JavaScript to support page transitions user states and whatnot.
+[Learn with Gurpreet](/) is developed using custom CSS and [11ty](https://www.11ty.dev/) framework which only helps to pre-render all the pages and I am using Vercel to deploy my application. There is no need to have 100KB of JavaScript to support page transitions user states and whatnot.
 
 There is no harm in using libraries like ReactJS, but make sure you really need it. You can build the solution without it.
 

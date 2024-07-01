@@ -46,6 +46,6 @@ After having these many benefits I like to recommend Strapi for small to medium 
 
 - [Strapi.io](https://strapi.io/)
 - [Installation guide](https://strapi.io/documentation/developer-docs/latest/getting-started/installation.html#installation-guides)
-- [Host your Strapi Project](https://learnwithgurpreet.com/host-your-strapi-project/)
+- [Host your Strapi Project](/posts/host-your-strapi-project/)
 
 Stay connected, I’ll showcase my Free strapi project hosting set up in my next article.

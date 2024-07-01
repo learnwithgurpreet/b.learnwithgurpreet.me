@@ -71,7 +71,7 @@ $ docker images
 # To check PiHole image
 ```
 
-If you have static IP defined [configured in my previous article](https://learnwithgurpreet.com/posts/up-and-running-with-raspberrypi-with-docker/) then you can access PiHole, at [http://192.168.0.4/admin](http://192.168.0.4/admin)
+If you have static IP defined [configured in my previous article](/posts/up-and-running-with-raspberrypi-with-docker/) then you can access PiHole, at [http://192.168.0.4/admin](http://192.168.0.4/admin)
 
 ## Configure devices
 
