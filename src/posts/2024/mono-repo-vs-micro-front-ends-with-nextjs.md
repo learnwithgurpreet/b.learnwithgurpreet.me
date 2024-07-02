@@ -17,7 +17,7 @@ A mono repo, short for monolithic repository, is a version control strategy wher
 
 ### When to Choose a Mono Repo?
 
-- **Single Deployment:** It involves deploying the entire application as a unified entity rather than dividing it into separate modules or components. This approach simplifies the release process with a single CI/CD pipeline, ensuring consistency across the application and reducing compatibility issues. It enables atomic updates, where all changes are deployed simultaneously, simplifying versioning and ensuring application-wide consistency.
+- **Single App Deployment:** It involves deploying the entire application as a unified entity rather than dividing it into separate apps. This approach simplifies the release process with a single CI/CD pipeline, ensuring consistency across the application and reducing compatibility issues. It enables atomic updates, where all changes are deployed simultaneously, simplifying versioning and ensuring application-wide consistency.[^1]
 
 - **Unified Scaling Needs:** Since we have a single application, it is not possible to scale individual modules separately, such as the catalog flow versus a static page. Instead, everything must be scaled together as one unified application.
 
@@ -107,7 +107,7 @@ Micro front-ends are a front-end development approach where a web application is
 ```lua
 my-mono-repo/
 ├── web-application/
-│   ├── authentication/
+│   ├── authentication-app/
 │   │   ├── app/
 │   │   │   ├── page.js
 │   │   │   ├── login.js
@@ -118,7 +118,7 @@ my-mono-repo/
 │   │   │   ├── globals.css
 │   │   ├── next.config.js
 │   │   ├── package.json
-│   ├── catalog/
+│   ├── catalog-app/
 │   │   ├── app/
 │   │   │   ├── page.js
 │   │   │   ├── product.js
@@ -128,7 +128,7 @@ my-mono-repo/
 │   │   │   ├── globals.css
 │   │   ├── next.config.js
 │   │   ├── package.json
-│   ├── static-pages/
+│   ├── static-pages-app/
 │   │   ├── app/
 │   │   │   ├── page.js
 │   │   │   ├── about.js
@@ -154,12 +154,16 @@ my-mono-repo/
 
 - The `ingress.yaml` file configures an NGINX ingress controller to route traffic to different services based on the URL path.
 
-- Requests to `/authentication` are routed to authentication-service.
+- Requests to `/authentication-app` are routed to authentication-service.
 
-- Requests to `/catalog` are routed to catalog-service.
+- Requests to `/catalog-app` are routed to catalog-service.
 
-- Requests to `/static-pages` are routed to static-pages-service.
+- Requests to `/static-pages-app` are routed to static-pages-service.
 
 ## Conclusion
 
-In summary, choosing a single deployment approach ensures simplicity and consistency throughout your application's updates. However, it requires careful coordination and may have limitations in scalability compared to deploying modules separately. Consider your project needs and team capabilities when deciding on the best deployment strategy for your situation.
+In summary, it completely depends on project needs like, change management cycles, team structure, etc. to choose one or the other approach. Choosing a single deployment approach ensures simplicity and consistency throughout your application's updates. However, it requires careful coordination and may have limitations in scalability compared to deploying apps separately.
+
+Also, there are other ways exists that can bring all your MF apps together for example: Module federation, shell-app concept.
+
+[^1]: This doesn't mean we are bound to deploy everything together, you can still deploy shared packages separately.
