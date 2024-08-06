@@ -9,6 +9,14 @@ eleventyComputed:
   title: '{{ meta.blog.tagSingle }}: {{ tag }}'
 ---
 
+<div class="taglist | mt-s-m cluster">
+  {% for tag in collections.tagList %}
+    {% set compareWith = "/tags/" + tag | slugify + "/" %}
+  <a href="/tags/{{ tag | slugify }}" class="button" {% if page.url === compareWith %} aria-current="page" {% endif %}>
+    {{ tag }}
+  </a>
+  {% endfor %}
+</div>
 
 <ul class="grid region" role="list" data-rows="masonry" data-layout="50-50">
 	<!-- loop posts -->
