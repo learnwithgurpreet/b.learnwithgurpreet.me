@@ -4,7 +4,6 @@ date: '2021-01-16'
 description: Logs are an essential part of an application, it provides you deep level access
 tags:
   - 'NodeJS'
-  - 'Tech'
 ---
 
 Logs are an essential part of an application, it provides you deep level access of output comes from user inputs. When the application is in production, logs are important to identify the problem if something goes wrong. If you are a developer, have you asked yourself a question, “Am I logging or not?”

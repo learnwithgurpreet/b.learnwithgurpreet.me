@@ -4,7 +4,6 @@ date: '2021-09-11'
 description: Open-source projects you get very little chance to structure the project, but you still can set guidelines upfront
 tags:
   - 'Tech'
-  - 'Thoughts'
 ---
 
 While working on the open-source projects you get very little chance to structure the project, but you still can set some guidelines upfront and stick to them.

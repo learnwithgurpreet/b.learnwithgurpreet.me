@@ -3,7 +3,6 @@ title: 'My first Strapi project experience'
 date: '2021-02-26'
 description: I found Strapi as a good example since it is not only popular these days but comes with nearly zero bootstrap footprints.
 tags:
-  - 'NodeJS'
   - 'Tech'
 ---
 

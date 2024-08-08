@@ -3,8 +3,6 @@ title: 'Day 2 - Your first week in NodeJS'
 date: 2021-08-04
 description: I believe you have already read my previous article where I explained, the basics of Node.js
 tags:
-  - 'NodeJS'
-  - 'Tech'
   - 'NodeJS Beginner Course'
 ---
 

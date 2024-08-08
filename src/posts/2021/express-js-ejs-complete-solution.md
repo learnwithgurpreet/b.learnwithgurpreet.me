@@ -4,7 +4,6 @@ date: '2021-03-02'
 description: People who have less time to invest and are familiar with the Handlebar template engine can quickly set up their website.
 tags:
   - 'NodeJS'
-  - 'Tech'
 ---
 
 People who have less time to invest and are familiar with the Handlebar template engine can quickly set up their website.
@@ -142,7 +141,7 @@ server.listen(PORT, () => {
 ```html
 <!-- views/index.ejs -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />

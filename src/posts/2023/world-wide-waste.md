@@ -5,8 +5,6 @@ eleventyExcludeFromCollections: false
 description: Digital is Physical, it is quite important to understand whatever you download/upload on web is all impacting our planet earth
 tags:
   - 'Sustainability'
-  - 'Thoughts'
-  - 'Reading'
 ---
 
 I recently finished a book called [World Wide Waste](https://gerrymcgovern.com/world-wide-waste/) by [Gerry McGovern](https://gerrymcgovern.com/). The author helps organizations reduce data waste by designing simpler, lighter, and more environmentally friendly websites and apps.

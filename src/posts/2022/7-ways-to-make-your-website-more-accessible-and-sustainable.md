@@ -4,7 +4,6 @@ date: '2022-05-21'
 description: We often talk about sustainability and try to decrease our CO₂
 tags:
   - 'Sustainability'
-  - 'Tech'
 ---
 
 I recently gave a talk in my organization [Publicis Sapient](https://www.publicissapient.com/), hence thought to write a blog post to extend my message to a wider audience.

@@ -3,7 +3,6 @@ title: 'Up and running with RaspberryPi with Docker'
 date: '2021-05-19'
 description: How to configure RaspberryPi with docker and docker-compose.
 tags:
-  - 'Tech'
   - 'Raspberry PI'
 ---
 

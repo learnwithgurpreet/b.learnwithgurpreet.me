@@ -4,7 +4,6 @@ date: '2021-03-19'
 description: I often see developers struggle or invest too much time to create authorization modules in their Node.js applications.
 tags:
   - 'NodeJS'
-  - 'Tech'
 ---
 
 These days I often see developers struggle or invest too much time to create proper authorization modules in their Node.js based applications. With this detailed tutorial, you will be able to create your authorization module which can be used in any route or sub-route of your application.
@@ -245,7 +244,7 @@ node_modules
 ```html
 <!-- index.ejs -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -267,7 +266,7 @@ node_modules
 ```html
 <!-- login.ejs -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -301,7 +300,7 @@ node_modules
 ```html
 <!-- register.ejs -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
