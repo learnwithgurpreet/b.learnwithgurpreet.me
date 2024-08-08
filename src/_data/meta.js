@@ -59,7 +59,7 @@ module.exports = {
     ariaBottom: 'Complementary',
     ariaPlatforms: 'Platforms',
     // activate alternative mobile menu with drawer
-    drawerNav: false,
+    drawerNav: true,
     navLabel: 'Menu'
   },
   themeSwitch: {
