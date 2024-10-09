@@ -117,5 +117,48 @@
         }
       </script>
     {% endif %}
+
+    <script>
+      (function(){
+        function hasClass(el, cls) {
+          if (el.className.match('(?:^|\\s)'+cls+'(?!\\S)')) { return true; } 
+        }
+        function addClass(el, cls) {
+          if (!el.className.match('(?:^|\\s)'+cls+'(?!\\S)')){ el.className += ' '+cls; } 
+        }
+        function delClass(el, cls) {
+          el.className = el.className.replace(new RegExp('(?:^|\\s)'+cls+'(?!\\S)'),'');
+        }
+
+        function elementFromTop(elem, classToAdd, distanceFromTop, unit) {
+          var winY = window.innerHeight || document.documentElement.clientHeight,
+              distTop = elem.getBoundingClientRect().top,
+              distPercent = Math.round((distTop / winY) * 100),
+              distPixels = Math.round(distTop),
+              distUnit;
+          
+          distUnit = unit == 'percent' ? distPercent : distPixels;
+
+          if (distUnit <= distanceFromTop) {
+            if (!hasClass(elem, classToAdd)) {
+              elem.dataset.blurRemoved = true;
+              addClass(elem, classToAdd);
+            }
+          } else {
+            if(elem.dataset.blurRemoved === "false") {
+              delClass(elem, classToAdd);
+            }
+          }
+        }
+        // params: element id, class to add, distance from top, unit ('percent' or 'pixels')
+        var allIamagelements = document.querySelectorAll("picture img");
+
+        window.addEventListener('scroll', function() {
+          for (var i = 0; i < allIamagelements.length; i++) {
+            elementFromTop(allIamagelements[i], 'unBlur', window.innerHeight - 150, 'pixels');
+          }
+        }, false);
+      })();
+    </script>
   </body>
 </html>

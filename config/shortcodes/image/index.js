@@ -53,12 +53,13 @@ const imageShortcode = async (
     .join('\n');
 
   const imgageAttributes = stringifyAttributes({
-    src: lowsrc.url,
-    width: lowsrc.width,
-    height: lowsrc.height,
+    'src': lowsrc.url,
+    'width': lowsrc.width,
+    'height': lowsrc.height,
     alt,
     loading,
-    decoding: 'async'
+    'decoding': 'async',
+    'data-blur-removed': false
   });
 
   const imageElement = caption

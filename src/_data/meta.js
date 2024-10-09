@@ -93,5 +93,5 @@ module.exports = {
     link: 'https://www.buymeacoffee.com/gurpreet.singh'
   },
   easteregg: false,
-  sw: true
+  sw: false
 };

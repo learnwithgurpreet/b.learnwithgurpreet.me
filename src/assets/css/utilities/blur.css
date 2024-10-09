@@ -1,3 +1,8 @@
-.blur {
-  filter: blur(0.25rem);
+picture img {
+  filter: blur(1rem);
+  transition: all 150ms;
+}
+
+.unBlur {
+  filter: blur(0);
 }
