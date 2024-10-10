@@ -150,14 +150,18 @@
             }
           }
         }
-        // params: element id, class to add, distance from top, unit ('percent' or 'pixels')
-        var allIamagelements = document.querySelectorAll("picture img");
+        function mapThroughElements() {
+          // params: element id, class to add, distance from top, unit ('percent' or 'pixels')
+          var allIamagelements = document.querySelectorAll("picture img");
 
-        window.addEventListener('scroll', function() {
           for (var i = 0; i < allIamagelements.length; i++) {
-            elementFromTop(allIamagelements[i], 'unBlur', window.innerHeight - 150, 'pixels');
+            elementFromTop(allIamagelements[i], 'unBlur', window.innerHeight - 100, 'pixels');
           }
-        }, false);
+        }
+
+        window.addEventListener('scroll', mapThroughElements, false);
+
+        window.addEventListener('load', mapThroughElements)
       })();
     </script>
   </body>
