@@ -1,5 +1,5 @@
 module.exports = {
-  url: process.env.URL || 'http://localhost:8080',
+  url: process.env.URL || 'http://localhost:8081',
   siteName: 'Learn with Gurpreet',
   tagLine: 'Every space has a story',
   siteDescription:
@@ -10,7 +10,7 @@ module.exports = {
   skipContent: 'Skip to content',
   author: {
     name: 'Gurpreet Singh', // i.e. Gurpreet Singh - page / blog author's name. Must be set.
-    avatar: '/favicon.png',
+    avatar: '/author-pic.jpg',
     email: 'gsin.hello@gmail.com', // i.e. gsin.hello@gmail.com - email of the author
     website: 'https://www.gurpreetsingh.me' // i.e. https.://www.gurpreetsingh.me - the personal site of the author
   },
